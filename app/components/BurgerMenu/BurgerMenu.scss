@@ -1,0 +1,133 @@
+@import "../../../src/styles/functions";
+@import "../../../src/styles/mixins";
+
+.burger {
+
+  &__button {
+    z-index: 101;
+
+    position: relative;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    margin-left: auto;
+
+    width: rem(36);
+    height: rem(36);
+
+    background-color: #353535;
+    border-radius: rem(12);
+    cursor: pointer;
+
+    &:before,
+    &:after {
+
+      content: '';
+
+      width: rem(20);
+      height: rem(1);
+
+      position: absolute;
+      background-color: var(--white);
+      transition: transform .45s ease-in-out;
+
+      will-change: transform;
+    }
+
+    &:before {
+      top: rem(15);
+    }
+
+    &:after {
+      bottom: rem(15);
+    }
+
+    &--open {
+      &:before {
+        top: rem(18);
+        transform: rotate(225deg) translate(1px, 0);
+      }
+
+      &:after {
+        bottom: rem(18);
+        transform: rotate(-225deg) translate(1px, 0);
+
+      }
+    }
+  }
+
+  &__modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 99;
+    background-color: var(--card__bg-color);
+  }
+
+  &__nav {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: rem(40);
+
+    &-item {
+      @include h3;
+      font-size: rem(24);
+      color: var(--white);
+      transition: .2s ease-in-out;
+      text-align: center;
+      cursor: pointer;
+
+      &:hover {
+        color: var(--orange)
+      }
+    }
+
+  }
+
+  &__social {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: rem(20);
+
+    display: flex;
+    justify-content: center;
+    gap: rem(8);
+
+    &-item {
+      @include h3;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: rem(60);
+      height: rem(60);
+      border-radius: rem(60);
+      background-color: #353535;
+      font-size: rem(24);
+      color: var(--white);
+      cursor: pointer;
+      transition: .2s ease-in-out;
+
+      &:hover {
+        background-color: var(--orange);
+      }
+    }
+  }
+
+  @include md {
+    &__button {
+      display: flex;
+    }
+
+  }
+}

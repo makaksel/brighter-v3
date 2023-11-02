@@ -1,0 +1,133 @@
+{
+  "env": {
+    "browser": true,
+    "commonjs": true,
+    "es6": true,
+    "node": true
+  },
+  "extends": [
+    "next",
+    "next/core-web-vitals"
+  ],
+  "parserOptions": {
+    "parser": "@typescript-eslint/parser",
+    "ecmaVersion": 12,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "project": [
+      "./tsconfig.json",
+      "./tsconfig.node.json"
+    ]
+  },
+  "rules": {
+    "max-len": [
+      "error",
+      140,
+      2,
+      {
+        "ignoreUrls": true,
+        "ignoreComments": false,
+        "ignoreRegExpLiterals": true,
+        "ignoreStrings": true,
+        "ignoreTemplateLiterals": true
+      }
+    ],
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "js": "never",
+        "jsx": "never",
+        "ts": "never",
+        "tsx": "never"
+      }
+    ],
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": true
+      }
+    ],
+    "no-multiple-empty-lines": [
+      "error",
+      {
+        "max": 2,
+        "maxEOF": 0,
+        "maxBOF": 0
+      }
+    ],
+    "no-useless-constructor": "off",
+    "import/no-unresolved": "off",
+    "import/no-default-export": "off",
+    "import/prefer-default-export": "off",
+    "react/jsx-filename-extension": [
+      "error",
+      {
+        "extensions": [
+          ".tsx"
+        ]
+      }
+    ],
+    "react/jsx-props-no-spreading": "off",
+    "react/prop-types": "off",
+    "react/jsx-props-no-multi-spaces": "off",
+    "react/no-unescaped-entities": 0,
+    "@typescript-eslint/ban-ts-comment": "off",
+    "@typescript-eslint/no-unsafe-assignment": "off",
+    "react/require-default-props": "off",
+    "@typescript-eslint/no-explicit-any": "off",
+    "camelcase": "off",
+    "jsx-a11y/no-static-element-interactions": "off",
+    "jsx-a11y/click-events-have-key-events": "off",
+    "jsx-a11y/no-noninteractive-element-interactions": "off",
+    // Разрывные строки внутри фигурных скобок. Разрежает записывать объект в строку не более 6 значений (< 7)
+    "object-curly-newline": [
+      "error",
+      {
+        // Объектный литерал
+        "ObjectExpression": {
+          "consistent": true,
+          "minProperties": 7
+        },
+        // Деструктуризация объектов
+        "ObjectPattern": {
+          "consistent": true,
+          "minProperties": 7
+        },
+        // Именованный импорт
+        "ImportDeclaration": {
+          "consistent": true,
+          "minProperties": 7
+        },
+        // Именованный экспорт
+        "ExportDeclaration": {
+          "consistent": true,
+          "minProperties": 7
+        }
+      }
+    ],
+    /**
+     * Разрешает обраться к значениям объекта начинающихся с нижнего подчеркивания _
+     */
+    "no-underscore-dangle": "off",
+    "import/no-cycle": "off",
+    /**
+    * Разрешает багу airbnb lint у функциональных компонент
+    */
+    "react/function-component-definition": [
+      2,
+      {
+        "namedComponents": [
+          "arrow-function",
+          "function-declaration"
+        ],
+        "unnamedComponents": "arrow-function"
+      }
+    ]
+  },
+  "ignorePatterns": [
+    "next.config.js"
+  ]
+}

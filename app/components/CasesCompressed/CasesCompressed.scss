@@ -1,0 +1,49 @@
+@import "../../../src/styles/functions";
+@import "../../../src/styles/mixins";
+
+.cases-compressed {
+  display: flex;
+  align-items: center;
+  gap: rem(20);
+
+  &__list {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    margin-left: rem(40);
+  }
+
+  &__case {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: rem(-40);
+    width: rem(150);
+    height: rem(150);
+
+    background: var(--black);
+
+    border-radius: rem(150);
+    border: rem(1) solid #454545;
+  }
+
+  &__case-icon{
+    width: rem(40);
+  }
+
+  &__count {
+    @include h1;
+  }
+
+  @include lg {
+    &__list {
+      margin-left: rem(12);
+    }
+    &__case {
+      width: rem(60);
+      height: rem(60);
+      margin-left: rem(-12);
+    }
+
+  }
+}

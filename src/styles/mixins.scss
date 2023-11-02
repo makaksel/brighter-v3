@@ -1,0 +1,95 @@
+@import "functions";
+@import "media-queries";
+
+@mixin container {
+  width: 100%;
+  max-width: var(--max-width);
+}
+
+@mixin textBase {
+  cursor: default;
+  font-style: normal;
+
+  leading-trim: both;
+  text-edge: cap;
+}
+
+@mixin h1 {
+  @include textBase;
+  font-size: rem(100);
+  font-weight: 300;
+  line-height: 110%;
+  letter-spacing: rem(-6);
+
+  @include md {
+    font-size: rem(40);
+    letter-spacing: rem(-1.6);
+    line-height: 100%;
+  }
+}
+
+@mixin h2 {
+  @include textBase;
+  font-size: rem(80);
+  font-weight: 300;
+  line-height: 87.5%;
+  letter-spacing: rem(-6);
+
+  @include md {
+    font-size: rem(40);
+    letter-spacing: 0;
+    line-height: 100%;
+  }
+}
+
+@mixin h3 {
+  @include textBase;
+  font-size: rem(50);
+  font-weight: 300;
+  letter-spacing: rem(-1);
+
+  @include md {
+    font-size: rem(22);
+    letter-spacing: 0;
+    line-height: 100%;
+
+  }
+}
+
+@mixin text {
+  @include textBase;
+
+  font-size: rem(22);
+  font-weight: 400;
+
+  line-height: normal;
+
+  @include md {
+    font-size: rem(12);
+    line-height: 110%;
+  }
+}
+
+@mixin textGray {
+  @include text;
+  color: var(--grey-text);
+}
+
+@mixin button {
+  @include text;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  border-radius: var(--button__border-radius);
+  background-color: transparent;
+  box-shadow: none;
+  border: rem(1) solid var(--button__border-color);
+  transition: opacity 0.2s ease-in-out;
+
+  &:hover {
+    cursor: pointer;
+    opacity: 0.75;
+  }
+}

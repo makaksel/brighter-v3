@@ -1,0 +1,45 @@
+@import "../../../src/styles/functions";
+@import "../../../src/styles/mixins";
+
+.header {
+  @include container;
+
+  display: flex;
+  align-items: center;
+
+  padding: rem(40) 0;
+
+  &__logo{
+    z-index: 101;
+  }
+
+  &__nav {
+    display: flex;
+    align-items: center;
+    gap: rem(40);
+    margin-left: auto;
+  }
+
+  &__nav-item {
+    @include textGray;
+
+    transition: opacity .2s ease-in-out;
+
+    &--primary {
+      color: var(--orange)
+    }
+
+    &:hover {
+      opacity: .65;
+      cursor: pointer;
+    }
+  }
+
+  @include md {
+    padding: rem(30) 0 0;
+
+    &__nav {
+      display: none;
+    }
+  }
+}

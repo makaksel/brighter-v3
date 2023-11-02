@@ -1,0 +1,89 @@
+@import "../../../src/styles/functions";
+@import "../../../src/styles/mixins";
+
+.how-we-work {
+  @include container;
+  margin-bottom: var(--section-margin);
+
+  &__header {
+    margin-bottom: rem(80);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: rem(40);
+    align-items: flex-end;
+
+    &-text {
+      @include text;
+      max-width: rem(325);
+      color: var(--grey-text);
+    }
+
+    &-title {
+      @include h1;
+      line-height: 100%;
+    }
+  }
+
+  &__body {
+    display: flex;
+    flex-wrap: wrap;
+    gap: rem(20)
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    flex: 1 1 rem(280);
+    //min-height: rem(380);
+    padding: rem(40);
+
+    background-color: var(--card__bg-color);
+    border-radius: var(--card__border-radius);
+
+    &-icon {
+      width: rem(60);
+      height: rem(60);
+      margin-bottom: rem(80);
+    }
+
+    &-body {
+      display: flex;
+      flex-direction: column;
+      gap: rem(42);
+    }
+
+    &-title {
+      @include h3;
+    }
+
+    &-text {
+      @include textGray;
+    }
+
+  }
+
+  @include md {
+    &__header {
+      margin-bottom: rem(20);
+      grid-template-columns: 1fr;
+      grid-gap: rem(20);
+
+      &-text {
+        order: 2;
+      }
+    }
+
+    &__card {
+      padding: rem(20);
+
+      &-icon {
+        width: rem(30);
+        height: rem(30);
+        margin-bottom: rem(40);
+      }
+    }
+  }
+
+}
