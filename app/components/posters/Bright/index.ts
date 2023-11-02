@@ -1,1 +1,1 @@
-export * from './Bright '
+export * from './Bright';
