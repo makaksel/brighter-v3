@@ -104,6 +104,11 @@
   flex-shrink: 0;
   border-radius: rem(670);
   box-shadow: 0 rem(660) rem(260) 0 $color;
+
+
+  @include md {
+    top: -400%;
+  }
 }
 
 @mixin scrollbar {
