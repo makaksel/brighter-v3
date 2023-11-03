@@ -27,9 +27,7 @@
     border: rem(1) solid #454545;
   }
 
-  &__case-icon{
-    width: rem(40);
-  }
+
 
   &__count {
     @include h1;
@@ -43,6 +41,10 @@
       width: rem(60);
       height: rem(60);
       margin-left: rem(-12);
+
+      &__case-icon{
+        width: rem(40);
+      }
     }
 
   }
