@@ -22,16 +22,15 @@
 
   &__nav-item {
     @include textGray;
-
-    transition: opacity .2s ease-in-out;
+    cursor: pointer;
 
     &--primary {
-      color: var(--orange)
+      color: var(--orange);
     }
 
     &:hover {
-      opacity: .65;
-      cursor: pointer;
+      @include textGray;
+
     }
   }
 

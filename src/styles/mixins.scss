@@ -7,7 +7,6 @@
 }
 
 @mixin textBase {
-  cursor: default;
   font-style: normal;
 
   leading-trim: both;
@@ -86,11 +85,13 @@
   background-color: transparent;
   box-shadow: none;
   border: rem(1) solid var(--button__border-color);
-  transition: opacity 0.2s ease-in-out;
+  transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out;
 
   &:hover {
     cursor: pointer;
-    opacity: 0.75;
+    background-color: var(--orange);
+    border-color: var(--orange);
+
   }
 }
 

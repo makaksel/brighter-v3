@@ -4,6 +4,8 @@
 
 
 .contact-card {
+  $this: &;
+
   @include container;
   min-height: rem(440);
   padding: rem(40) rem(60);
@@ -85,6 +87,26 @@
 
     border-radius: rem(320);
     background-color: var(--white);
+
+    transition: background-color .2s ease-in-out;
+
+    &:hover{
+      background-color: var(--orange);
+
+      #{$this}__link{
+        color: var(--white);
+
+        &-icon{
+          &.white-icon{
+            display: block;
+          }
+          &.black-icon{
+            display: none;
+          }
+        }
+      }
+
+    }
   }
 
   &__link{
@@ -101,6 +123,7 @@
     line-height: 110%;
     font-weight: 400;
     cursor: pointer;
+    transition: none;
 
     > * {
       cursor: pointer;
@@ -110,8 +133,16 @@
       width: rem(44);
       height: rem(44);
       padding: rem(5);
+      transition: opacity .2s ease-in-out;
+
+      &.white-icon{
+        display: none;
+      }
     }
+
+
   }
+
 
 
   @include md {
