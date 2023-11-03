@@ -26,7 +26,7 @@ export default function Home() {
       <Partners/>
       <Services/>
       <Subscribe/>
-      <ContactCard title={`Не нашли<br/> нужной услуги?`} withBadges/>
+      <ContactCard title={`Не нашли<br/> нужной услуги?`}/>
       <Faq/>
       <Footer />
     </main>

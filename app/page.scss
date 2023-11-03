@@ -1,5 +1,6 @@
 @import "../src/styles/functions";
 @import "../src/styles/media-queries";
+@import "../src/styles/mixins";
 
 :root {
 
@@ -33,6 +34,7 @@
   }
 }
 
+@include scrollbar;
 
 body{
   background-color: var(--black-body);
