@@ -65,6 +65,12 @@
       border-radius: rem(60);
 
       background-color: var(--card__bg-color);
+      transition: .2s ease-in-out;
+
+      &:hover {
+        background-color: var(--orange);
+        color: var(--white);
+      }
     }
   }
 
