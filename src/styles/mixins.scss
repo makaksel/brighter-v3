@@ -87,11 +87,13 @@
   border: rem(1) solid var(--button__border-color);
   transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out;
 
+  text-decoration: none;
+
   &:hover {
     cursor: pointer;
     background-color: var(--orange);
     border-color: var(--orange);
-
+    color: var(--white);
   }
 }
 

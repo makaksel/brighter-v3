@@ -3,6 +3,8 @@ import {makeCn} from "@/src/utils";
 import "./Hero.scss";
 import Image from "next/image";
 import Maxim from '@/src/resources/images/maxim.png';
+import { TELEGRAM_BOT_LINK } from "@/src/const";
+import Link from 'next/link';
 
 const cn = makeCn('hero');
 
@@ -16,5 +18,5 @@ export const Hero: React.FC = () => <section className={cn()}>
     <p className={cn('subtitle')}>Представьте себе Кинопоиск для веб-дизайна. Забудьте о сотрудниках, фрилансерах и
         агентствах. Вы можете получить
         лучший дизайн прямо здесь, прямо сейчас.</p>
-    <button className={cn('button')}>Бесплатная консультация</button>
+    <Link href={TELEGRAM_BOT_LINK} className={cn('button')}>Бесплатная консультация</button>
 </section>;

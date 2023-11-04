@@ -9,6 +9,7 @@ import {Ankil} from "@/app/components/posters";
 import {Marta} from "@/app/components/posters/Marta";
 import {Bright} from "@/app/components/posters/Bright/Bright";
 import {BigData} from "@/app/components/posters/BigData";
+import { TELEGRAM_BOT_LINK } from "@/src/const";
 
 const cn = makeCn('cases');
 
@@ -59,5 +60,5 @@ export const Cases: React.FC = () => <section className={cn()}>
             }
         />
     </div>
-    <button className={cn('button')}>Обсудить проект</button>
+    <Link href={TELEGRAM_BOT_LINK} className={cn('button')}>Обсудить проект</Link>
 </section>;

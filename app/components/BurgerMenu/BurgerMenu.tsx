@@ -8,6 +8,7 @@ import "./BurgerMenu.scss";
 import Logo from '@/src/resources/icons/logo.svg?url';
 import Image from "next/image";
 import {AnimatePresence, motion} from 'framer-motion';
+import { TELEGRAM_BOT_LINK } from "@/src/const";
 
 const cn = makeCn('burger');
 
@@ -41,7 +42,7 @@ export const BurgerMenu: React.FC = () => {
                   </div>
                   <div className={cn('social')}>
                     <Link href="#" className={cn('social-item')}>in</Link>
-                    <Link href="#" className={cn('social-item')}>tg</Link>
+                    <Link href={TELEGRAM_BOT_LINK} className={cn('social-item')}>tg</Link>
                     <Link href="#" className={cn('social-item')}>fb</Link>
                   </div>
                 </motion.div>
