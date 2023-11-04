@@ -1,7 +1,6 @@
 import React from 'react';
 import { makeCn } from "@/src/utils";
 import "./Subscribe.scss";
-import Image from "next/image";
 import { TELEGRAM_BOT_LINK } from "@/src/const";
 import Link from 'next/link';
 
@@ -62,6 +61,6 @@ export const Subscribe: React.FC = () => <section className={cn()}>
 
       </div>
     </div>
-    <Link href={TELEGRAM_BOT_LINK} className={cn('button')}>Узнать цену</button>
+  <Link href={TELEGRAM_BOT_LINK} className={cn('button')}>Узнать цену</Link>
   </section>
 ;

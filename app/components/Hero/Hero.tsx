@@ -18,5 +18,5 @@ export const Hero: React.FC = () => <section className={cn()}>
     <p className={cn('subtitle')}>Представьте себе Кинопоиск для веб-дизайна. Забудьте о сотрудниках, фрилансерах и
         агентствах. Вы можете получить
         лучший дизайн прямо здесь, прямо сейчас.</p>
-    <Link href={TELEGRAM_BOT_LINK} className={cn('button')}>Бесплатная консультация</button>
+    <Link href={TELEGRAM_BOT_LINK} className={cn('button')}>Бесплатная консультация</Link>
 </section>;

@@ -41,9 +41,9 @@ export const BurgerMenu: React.FC = () => {
                     <Link href="#" className={cn('nav-item')}>Дизайн-подписка</Link>
                   </div>
                   <div className={cn('social')}>
-                    <Link href="#" className={cn('social-item')}>in</Link>
+                    {/*<Link href="#" className={cn('social-item')}>in</Link>*/}
                     <Link href={TELEGRAM_BOT_LINK} className={cn('social-item')}>tg</Link>
-                    <Link href="#" className={cn('social-item')}>fb</Link>
+                    {/*<Link href="#" className={cn('social-item')}>fb</Link>*/}
                   </div>
                 </motion.div>
             )}

@@ -23,9 +23,9 @@ export const Footer: React.FC = () => <footer className={cn('')}>
     </div>
     <div className={cn("bottom-col")}>
       <div className={cn('social')}>
-        <Link className={cn('social-link')} href={`#`}>in</Link>
+        {/*<Link className={cn('social-link')} href={`#`}>in</Link>*/}
         <Link className={cn('social-link')} href={TELEGRAM_BOT_LINK}>tg</Link>
-        <Link className={cn('social-link')} href={`#`}>vk</Link>
+        {/*<Link className={cn('social-link')} href={`#`}>vk</Link>*/}
       </div>
       <p className={cn("bottom-text")}>поярче© 2023</p>
     </div>
