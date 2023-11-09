@@ -27,12 +27,11 @@ export const HeroBurn: React.FC = () => <section className={cn()}>
 
   <h1 className={cn('title')}>Хотите больше клиентов? <span className={cn('title', { primary: true })}>Прожарьте свой сайт!</span>
   </h1>
-  <p className={cn('subtitle')}>Я показал многим людям, как превратить своих посетителей сайта в постоянных
-    клиентов.</p>
+  <p className={cn('subtitle')}>Я показал многим людям, как превратить своих посетителей сайта в постоянных клиентов</p>
   <div className={cn('rotate-box')}>
     <span className={cn('rotate-item', [cn('rotate-item-left')])}>Нет роста конверсии?<br />Я верну вам деньги</span>
 
-    <span className={cn('rotate-item', [cn('rotate-item-right')])}>Я могу прожарить вашу сайт или дизайн</span>
+    <span className={cn('rotate-item', [cn('rotate-item-right')])}>Я могу прожарить ваш сайт или дизайн</span>
   </div>
   <Link href={TELEGRAM_BOT_LINK} className={cn('button')}>Оставить заявку</Link>
 
