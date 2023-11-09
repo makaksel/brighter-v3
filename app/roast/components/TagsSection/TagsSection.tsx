@@ -80,7 +80,7 @@ export const TagsSection: React.FC = () => {
           {slide}
         </div>))}
       </ParalaxLine>
-      <ParalaxLine speed={-6}>
+      <ParalaxLine speed={-5}>
         {[...slides, ...slides].reverse().map((slide, index) => (<div key={index} className={cn('card')}>
           {slide}
         </div>))}
