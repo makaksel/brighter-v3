@@ -2,7 +2,7 @@
 @import "@/src/styles/mixins";
 
 .faq-burn {
-  @include container;
+  width: 100%;
   margin-bottom: var(--section-margin);
 
   &__header{

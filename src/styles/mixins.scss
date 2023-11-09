@@ -91,7 +91,8 @@
 
   @include md {
     &-title{
-      letter-spacing: -0.27px;
+      font-size: rem(18);
+      letter-spacing: -1.5%;
       line-height: 1;
     }
 

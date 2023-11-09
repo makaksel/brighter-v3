@@ -16,6 +16,7 @@ export const HeroBurn: React.FC = () => <section className={cn()}>
     </div>
     <div className={cn('maxim-wrp')}>
       <Image src={Maxim} className={cn('maxim-img')} alt='Максим Поярче' />
+      <span className={cn('maxim-text')}>Максим Поярче</span>
     </div>
 
     <div className={cn('maxim-pruf', { right: true })}>

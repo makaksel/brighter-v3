@@ -14,6 +14,11 @@ export const BrighterBox: React.FC = () => <section className={cn()}>
         <Image src={longlogo} alt='Поярче' className={cn('img')} />
         <Image src={longlogo} alt='Поярче' className={cn('img')} />
         <Image src={longlogo} alt='Поярче' className={cn('img')} />
+        <Image src={longlogo} alt='Поярче' className={cn('img')} />
+        <Image src={longlogo} alt='Поярче' className={cn('img')} />
+        <Image src={longlogo} alt='Поярче' className={cn('img')} />
+        <Image src={longlogo} alt='Поярче' className={cn('img')} />
+        <Image src={longlogo} alt='Поярче' className={cn('img')} />
       </div>
 
     </div>

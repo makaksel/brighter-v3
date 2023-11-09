@@ -26,7 +26,13 @@
     }
 
     &-text {
-      @include textGray
+      @include textGray;
+      display: none;
+      margin-top: rem(10);
+
+      @include md {
+        display: block;
+      }
     }
 
     &-pruf {
@@ -56,6 +62,7 @@
 
 
       @include md {
+        padding: rem(10);
         &--left{
           margin-left: rem(0);
         }
@@ -129,6 +136,14 @@
   }
 
   @include md{
+
+    &__maxim {
+      &-img {
+        width: rem(60);
+        height: rem(60);
+      }
+
+    }
 
     &__title {
       font-size: rem(32);

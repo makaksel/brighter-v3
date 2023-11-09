@@ -4,11 +4,15 @@
 .tags-section {
 
   &__paralax{
-    width: 100%;
+    display: flex;
+    flex-direction: column;
     flex-wrap: nowrap;
-    overflow: hidden;
+
+    width: 100%;
     margin: 0 0 var(--section-margin);
     gap: rem(20);
+
+    overflow: hidden;
   }
 
   &__body{
@@ -18,10 +22,6 @@
     gap: rem(20);
 
     transform: translate(-500px, 0);
-
-    &:not(:last-child){
-      margin-bottom: rem(10);
-    }
   }
 
   &__card{
