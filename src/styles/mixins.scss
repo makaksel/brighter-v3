@@ -74,6 +74,34 @@
   color: var(--grey-text);
 }
 
+
+@mixin badgeTextSize {
+  @include text;
+
+  &-title{
+    @include h3;
+    font-size: rem(40);
+    line-height: 1;
+  }
+
+  &-text{
+    font-size: rem(16);
+    line-height: 110%;
+  }
+
+  @include md {
+    &-title{
+      letter-spacing: -0.27px;
+      line-height: 1;
+    }
+
+    &-text{
+      font-size: rem(10);
+    }
+  }
+
+}
+
 @mixin button {
   @include text;
 
@@ -85,16 +113,23 @@
   background-color: transparent;
   box-shadow: none;
   border: rem(1) solid var(--button__border-color);
-  transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+  transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, color 0.2s ease-in-out;
 
   text-decoration: none;
 
   &:hover {
     cursor: pointer;
-    background-color: var(--orange);
-    border-color: var(--orange);
+    background-color: var(--primary);
+    border-color: var(--primary);
     color: var(--white);
   }
+}
+
+@mixin buttonBlack {
+  @include button;
+
+  border-color: var(--button-black__border-color);
+  color: var(--black-text)
 }
 
 @mixin caseMediaShadow($color) {
@@ -134,7 +169,7 @@
     background-color: #353535;
 
     &:hover {
-      background-color: var(--orange);
+      background-color: var(--primary);
     }
   }
 }

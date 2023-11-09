@@ -1,6 +1,6 @@
-@import "../../../src/styles/functions";
-@import "../../../src/styles/mixins";
-@import "../../../src/styles/media-queries";
+@import "@/src/styles/functions";
+@import "@/src/styles/mixins";
+@import "@/src/styles/media-queries";
 
 .facilities {
   @include container;

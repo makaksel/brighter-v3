@@ -1,0 +1,59 @@
+@import "@/src/styles/functions";
+@import "@/src/styles/mixins";
+
+.tags-section {
+
+  &__paralax{
+    width: 100%;
+    flex-wrap: nowrap;
+    overflow: hidden;
+    margin: 0 0 var(--section-margin);
+    gap: rem(20);
+  }
+
+  &__body{
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: rem(20);
+
+    transform: translate(-500px, 0);
+
+    &:not(:last-child){
+      margin-bottom: rem(10);
+    }
+  }
+
+  &__card{
+    @include h2;
+    padding: rem(40) rem(80);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: rem(80);
+    color: var(--primary);
+    background-color: var(--white);
+    font-size: rem(60);
+    line-height: 100%;
+    text-transform: uppercase;
+    letter-spacing: normal;
+  }
+
+  @include md{
+
+    &__paralax{
+      width: calc(100% + #{rem(40)});
+      margin: 0 rem(-20) var(--section-margin);
+      gap: rem(10);
+    }
+
+    &__body{
+      gap: rem(1)
+    }
+    &__card{
+      padding: rem(20);
+      font-size: rem(16);
+    }
+  }
+}

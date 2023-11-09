@@ -1,5 +1,5 @@
-@import "../../../src/styles/functions";
-@import "../../../src/styles/mixins";
+@import "@/src/styles/functions";
+@import "@/src/styles/mixins";
 
 @mixin caseHeaderCol {
   display: flex;
@@ -39,7 +39,7 @@
         letter-spacing: 0;
 
         &--primary {
-          color: var(--orange);
+          color: var(--primary);
         }
 
         @include md {

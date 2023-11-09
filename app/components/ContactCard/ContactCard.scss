@@ -1,6 +1,6 @@
-@import "../../../src/styles/functions";
-@import "../../../src/styles/media-queries";
-@import "../../../src/styles/mixins";
+@import "@/src/styles/functions";
+@import "@/src/styles/media-queries";
+@import "@/src/styles/mixins";
 
 
 .contact-card {
@@ -91,7 +91,7 @@
     transition: background-color .2s ease-in-out;
 
     &:hover{
-      background-color: var(--orange);
+      background-color: var(--primary);
 
       #{$this}__link{
         color: var(--white);

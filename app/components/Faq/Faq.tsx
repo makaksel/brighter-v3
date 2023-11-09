@@ -2,7 +2,7 @@ import React from 'react';
 import { makeCn } from "@/src/utils";
 import Link from "next/link";
 import "./Faq.scss";
-import { Collapse } from "@/app/components/Collapse";
+import { Collapse } from "@/src/shared/Collapse";
 
 
 const cn = makeCn('faq');

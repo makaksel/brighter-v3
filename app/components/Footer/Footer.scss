@@ -1,9 +1,27 @@
-@import "../../../src/styles/functions";
-@import "../../../src/styles/mixins";
+@import "@/src/styles/functions";
+@import "@/src/styles/mixins";
 
 .footer {
+  $this: &;
   @include container;
   margin-bottom: rem(123);
+
+
+  &--theme {
+
+    &_light {
+      //background-color: var(--white);
+
+      #{$this}__title {
+        color: var(--black-text);
+      }
+
+      #{$this}__social-link {
+        background-color: var(--white);
+        color: var(--black-text);
+      }
+    }
+  }
 
   &__body {
     display: flex;
@@ -68,7 +86,7 @@
       transition: .2s ease-in-out;
 
       &:hover {
-        background-color: var(--orange);
+        background-color: var(--primary);
         color: var(--white);
       }
     }

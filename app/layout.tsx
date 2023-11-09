@@ -1,6 +1,8 @@
 import type { Metadata } from 'next'
 import { Onest } from 'next/font/google'
 import './globals.css'
+import './page.scss'
+import { SvgSprite } from "@/src/shared/Svg/SvgSprite";
 
 const onest = Onest({ subsets: ['latin'] })
 
@@ -16,7 +18,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ru">
-      <body className={onest.className}>{children}</body>
+      <body className={onest.className}>
+      <SvgSprite />
+      {children}
+      </body>
     </html>
   )
 }

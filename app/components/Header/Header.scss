@@ -1,5 +1,5 @@
-@import "../../../src/styles/functions";
-@import "../../../src/styles/mixins";
+@import "@/src/styles/functions";
+@import "@/src/styles/mixins";
 
 .header {
   @include container;
@@ -24,8 +24,8 @@
     @include textGray;
     cursor: pointer;
 
-    &--primary {
-      color: var(--orange);
+    &--active {
+      color: var(--primary);
     }
 
     &:hover {

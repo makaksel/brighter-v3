@@ -1,5 +1,5 @@
-@import "../../../src/styles/functions";
-@import "../../../src/styles/mixins";
+@import "@/src/styles/functions";
+@import "@/src/styles/mixins";
 
 .burger {
 
@@ -87,7 +87,7 @@
       cursor: pointer;
 
       &:hover {
-        color: var(--orange)
+        color: var(--primary)
       }
     }
 
@@ -119,7 +119,7 @@
       transition: .2s ease-in-out;
 
       &:hover {
-        background-color: var(--orange);
+        background-color: var(--primary);
       }
     }
   }

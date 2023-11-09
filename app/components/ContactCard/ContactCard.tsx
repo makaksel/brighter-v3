@@ -3,7 +3,7 @@ import { makeCn } from "@/src/utils";
 import Link from "next/link";
 import "./ContactCard.scss";
 import Image from "next/image";
-import { TELEGRAM_BOT_LINK } from "@/src/const";
+import { TELEGRAM_BOT_LINK } from "@/src/data/const";
 import ImgMaxim from "@/src/resources/images/maxim.png";
 
 const cn = makeCn('contact-card');

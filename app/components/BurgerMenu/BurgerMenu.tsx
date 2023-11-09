@@ -8,7 +8,7 @@ import "./BurgerMenu.scss";
 import Logo from '@/src/resources/icons/logo.svg?url';
 import Image from "next/image";
 import {AnimatePresence, motion} from 'framer-motion';
-import { TELEGRAM_BOT_LINK } from "@/src/const";
+import { TELEGRAM_BOT_LINK } from "@/src/data/const";
 
 const cn = makeCn('burger');
 

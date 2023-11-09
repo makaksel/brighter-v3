@@ -1,5 +1,4 @@
 import Image from 'next/image'
-import './page.scss'
 import { Header } from "@/app/components/Header";
 import { Hero } from "@/app/components/Hero";
 import { Cases } from "@/app/components/Cases";
@@ -28,7 +27,7 @@ export default function Home() {
       <Subscribe/>
       <ContactCard title={`Не нашли<br/> нужной услуги?`}/>
       <Faq/>
-      <Footer />
+      <Footer/>
     </main>
   )
 }

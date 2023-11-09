@@ -9,7 +9,7 @@ import {Ankil} from "@/app/components/posters";
 import {Marta} from "@/app/components/posters/Marta";
 import {Bright} from "@/app/components/posters/Bright/Bright";
 import {BigData} from "@/app/components/posters/BigData";
-import { TELEGRAM_BOT_LINK } from "@/src/const";
+import { TELEGRAM_BOT_LINK } from "@/src/data/const";
 
 const cn = makeCn('cases');
 

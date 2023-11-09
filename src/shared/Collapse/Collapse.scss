@@ -1,7 +1,8 @@
-@import "../../../src/styles/functions";
-@import "../../../src/styles/mixins";
+@import "../../styles/functions";
+@import "../../styles/mixins";
 
 .collapse {
+  $this: &;
   width: 100%;
 
   background-color: var(--card__bg-color);
@@ -9,6 +10,20 @@
 
   padding: rem(40);
   cursor: pointer;
+
+
+  &--theme{
+
+    &_light{
+
+      background-color: var(--white);
+
+      #{$this}__title{
+        color: var(--black-text);
+      }
+    }
+  }
+
 
   > * {
     cursor: pointer;
