@@ -22,7 +22,7 @@ export const Header: React.FC = () => {
     <Image src={Logo} alt={'Поярче'} className={cn('logo')} />
     <div className={cn('nav')}>
       <Link href={'#'} className={cn('nav-item', { active: pathname === '#' })}>Курс Яркий Бренд</Link>
-      <Link href={routerLinks.doneness} className={cn('nav-item', { active: pathname === routerLinks.doneness })}>Прожарка
+      <Link href={routerLinks.roast} className={cn('nav-item', { active: pathname === routerLinks.roast })}>Прожарка
         сайта</Link>
       <Link href={routerLinks.root}
             className={cn('nav-item', { active: pathname === routerLinks.root })}>Дизайн-подписка</Link>

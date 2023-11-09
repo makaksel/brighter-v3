@@ -3,7 +3,6 @@
 import React, { useRef } from 'react';
 import { makeCn } from '@/src/utils';
 import './TagsSection.scss';
-import Image from 'next/image';
 
 import {
   motion,

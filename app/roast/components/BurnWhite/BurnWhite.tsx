@@ -3,10 +3,10 @@ import { makeCn } from '@/src/utils';
 import './BurnWhite.scss';
 import Link from 'next/link';
 import { TELEGRAM_BOT_LINK } from '@/src/data/const';
-import { AboutBurn } from '@/app/doneness/components/AboutBurn';
-import { TagsSection } from '@/app/doneness/components/TagsSection';
-import { LookLike } from '@/app/doneness/components/LookLike';
-import { ContactOrange } from '@/app/doneness/components/ContactOrange';
+import { AboutBurn } from '@/app/roast/components/AboutBurn';
+import { TagsSection } from '@/app/roast/components/TagsSection';
+import { LookLike } from '@/app/roast/components/LookLike';
+import { ContactOrange } from '@/app/roast/components/ContactOrange';
 
 const cn = makeCn('burn-white');
 

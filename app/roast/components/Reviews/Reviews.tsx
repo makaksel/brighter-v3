@@ -1,7 +1,7 @@
 import React from 'react';
 import { makeCn } from '@/src/utils';
 import './Reviews.scss';
-import { ReviewsSlider } from '@/app/doneness/components/ReviewsSlider';
+import { ReviewsSlider } from '@/app/roast/components/ReviewsSlider';
 
 const cn = makeCn('reviews');
 

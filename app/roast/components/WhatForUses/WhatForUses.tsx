@@ -3,7 +3,7 @@ import { makeCn } from '@/src/utils';
 import './WhatForUses.scss';
 import Link from 'next/link';
 import { TELEGRAM_BOT_LINK } from '@/src/data/const';
-import { Waves } from '@/app/doneness/components/Waves';
+import { Waves } from '@/app/roast/components/Waves';
 
 const cn = makeCn('what-for-uses');
 

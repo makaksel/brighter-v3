@@ -2,6 +2,6 @@
 
 export const routerLinks = {
   root: '/',
-  doneness: '/doneness',
+  roast: '/roast',
 
 }

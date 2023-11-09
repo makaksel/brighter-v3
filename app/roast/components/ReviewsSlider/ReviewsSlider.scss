@@ -98,6 +98,7 @@
     &-person {
       display: flex;
       align-items: center;
+      flex-wrap: wrap;
       gap: rem(15);
 
       &-wrp {
