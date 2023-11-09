@@ -20,7 +20,6 @@ import {
 const cn = makeCn('tags-section');
 
 
-
 export const TagsSection: React.FC = () => {
   const baseX = useMotionValue(-500);
   const { scrollY } = useScroll();
@@ -65,12 +64,12 @@ export const TagsSection: React.FC = () => {
   return (
     <div className={cn('paralax')}>
       <motion.div className={cn('body')} style={{ x }}>
-        {slides.map((slide) => (<div key={slide[0]} className={cn('card')}>
+        {[...slides, ...slides].map((slide, index) => (<div key={index} className={cn('card')}>
           {slide}
         </div>))}
       </motion.div>
       <motion.div className={cn('body')} style={{ x }}>
-        {slides.reverse().map((slide) => (<div key={slide} className={cn('card')}>
+        {[...slides, ...slides].reverse().map((slide, index) => (<div key={`${slide}${index}`} className={cn('card')}>
           {slide}
         </div>))}
       </motion.div>
