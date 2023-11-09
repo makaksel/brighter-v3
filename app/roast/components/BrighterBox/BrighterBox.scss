@@ -49,4 +49,11 @@
   &__footer{
     margin-bottom: 0!important;
   }
+
+  @include md {
+    width: calc(100% + (var(--x-padding) * 2));
+    margin: 0 calc(var(--x-padding) * -1) 0;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
 }

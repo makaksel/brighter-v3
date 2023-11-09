@@ -53,6 +53,11 @@
       flex-wrap: wrap;
     }
 
+    &__body {
+      width: calc(100% + (var(--x-padding) * 2));
+      margin: 0 calc(var(--x-padding) * -1) var(--section-margin);
+    }
+
     &__rotate-box{
       display: none;
     }
