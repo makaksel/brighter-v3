@@ -1,20 +1,22 @@
 'use client';
 
-import React, {useCallback, useState} from 'react';
-import {makeCn} from "@/src/utils";
-import Link from "next/link";
-import "./BurgerMenu.scss";
+import React, { useCallback, useState } from 'react';
+import { makeCn } from '@/src/utils';
+import Link from 'next/link';
+import './BurgerMenu.scss';
 /* @ts-ignore */
-import Logo from '@/src/resources/icons/logo.svg?url';
-import Image from "next/image";
-import {AnimatePresence, motion} from 'framer-motion';
-import { TELEGRAM_BOT_LINK } from "@/src/data/const";
+import { AnimatePresence, motion } from 'framer-motion';
+import { TELEGRAM_BOT_LINK } from '@/src/data/const';
+import { routerLinks } from '@/src/data/navigation';
+import { usePathname } from 'next/navigation';
 
 const cn = makeCn('burger');
 
 
 export const BurgerMenu: React.FC = () => {
-    const [open, setOpen] = useState(false)
+  const pathname = usePathname();
+
+  const [open, setOpen] = useState(false);
 
   const toggleShow = useCallback(() => {
 
@@ -37,8 +39,10 @@ export const BurgerMenu: React.FC = () => {
                 >
                   <div className={cn('nav')}>
                     <Link href="#" className={cn('nav-item')}>Курс Яркий Брендинг</Link>
-                    <Link href="#" className={cn('nav-item')}>Прожарка сайта</Link>
-                    <Link href="#" className={cn('nav-item')}>Дизайн-подписка</Link>
+                    <Link href={routerLinks.roast}
+                          className={cn('nav-item', { active: pathname === routerLinks.roast })}>Прожарка сайта</Link>
+                    <Link href={routerLinks.root}
+                          className={cn('nav-item', { active: pathname === routerLinks.root })}>Дизайн-подписка</Link>
                   </div>
                   <div className={cn('social')}>
                     {/*<Link href="#" className={cn('social-item')}>in</Link>*/}
