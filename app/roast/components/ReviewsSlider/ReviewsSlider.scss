@@ -90,15 +90,15 @@
 
     &-header {
       display: flex;
-      align-items: center;
+      align-items: flex-start;
       justify-content: space-between;
-      gap: rem(20)
+      gap: rem(10)
     }
 
     &-person {
       display: flex;
-      align-items: center;
-      flex-wrap: wrap;
+      align-items: flex-start;
+      //flex-wrap: wrap;
       gap: rem(15);
 
       &-wrp {
@@ -113,6 +113,7 @@
       height: rem(60);
       border-radius: rem(120);
       overflow: hidden;
+      flex: 0 0 auto;
     }
 
     &-img {
@@ -173,9 +174,15 @@
 
     &__card{
       padding: rem(20);
+
       &-media {
         width: rem(40);
         height: rem(40);
+      }
+
+      &-person {
+        gap: rem(8);
+
       }
 
       &-name {
@@ -183,6 +190,7 @@
       }
 
       &-badge {
+        padding: rem(8) rem(16);
         font-size: rem(10);
       }
 
@@ -191,6 +199,9 @@
         margin-top: auto;
       }
 
+      &-rating-icon {
+        width: rem(75);
+      }
     }
 
   }

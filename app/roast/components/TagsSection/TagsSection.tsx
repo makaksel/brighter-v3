@@ -18,8 +18,12 @@ import {
 
 const cn = makeCn('tags-section');
 
+interface ParalaxLineProps {
+  children: React.ReactNode | React.ReactNode[];
+  speed?: number;
+}
 
-export const TagsSection: React.FC = () => {
+const ParalaxLine: React.FC<ParalaxLineProps> = ({ children, speed = 3 }) => {
   const baseX = useMotionValue(-500);
   const { scrollY } = useScroll();
   const scrollVelocity = useVelocity(scrollY);
@@ -40,7 +44,7 @@ export const TagsSection: React.FC = () => {
 
   const directionFactor = useRef<number>(1);
   useAnimationFrame((t, delta) => {
-    let moveBy = directionFactor.current * 3 * (delta / 1000);
+    let moveBy = directionFactor.current * speed * (delta / 1000);
 
     /**
      * This is what changes the direction of the scroll once we
@@ -57,21 +61,30 @@ export const TagsSection: React.FC = () => {
     baseX.set(baseX.get() + moveBy);
   });
 
+  return (
+    <motion.div className={cn('body')} style={{ x }}>
+      {children}
+    </motion.div>
+  );
+};
+
+
+export const TagsSection: React.FC = () => {
 
   const slides = ['структура', 'конверсия', 'Веб', 'Маркетинг', 'Дизайн', 'тренды', 'Анимации'];
 
   return (
     <div className={cn('paralax')}>
-      <motion.div className={cn('body')} style={{ x }}>
+      <ParalaxLine speed={3}>
         {[...slides, ...slides].map((slide, index) => (<div key={index} className={cn('card')}>
           {slide}
         </div>))}
-      </motion.div>
-      <motion.div className={cn('body')} style={{ x }}>
-        {[...slides, ...slides].reverse().map((slide, index) => (<div key={`${slide}${index}`} className={cn('card')}>
+      </ParalaxLine>
+      <ParalaxLine speed={-6}>
+        {[...slides, ...slides].reverse().map((slide, index) => (<div key={index} className={cn('card')}>
           {slide}
         </div>))}
-      </motion.div>
+      </ParalaxLine>
     </div>
   );
 };
