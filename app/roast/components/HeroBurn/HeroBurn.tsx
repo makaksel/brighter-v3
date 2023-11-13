@@ -34,5 +34,4 @@ export const HeroBurn: React.FC = () => <section className={cn()}>
     <span className={cn('rotate-item', [cn('rotate-item-right')])}>Я могу прожарить ваш сайт или дизайн</span>
   </div>
   <Link href={TELEGRAM_BOT_LINK} className={cn('button')}>Оставить заявку</Link>
-
 </section>;
