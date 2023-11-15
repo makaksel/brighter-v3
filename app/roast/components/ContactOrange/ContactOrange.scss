@@ -53,8 +53,12 @@
 
 
     border-color: var(--white);
-    color: var(--white)
+    color: var(--white);
 
+    &:hover {
+      background-color: var(--black);
+    }
+  ;
   }
 
 

@@ -29,8 +29,8 @@
     }
 
     &:hover {
-      @include textGray;
-
+      color: var(--primary) !important;
+      opacity: .65 !important;
     }
   }
 
