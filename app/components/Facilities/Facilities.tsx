@@ -1,9 +1,9 @@
 'use client';
 
-import React, { useEffect, useMemo, useRef } from 'react';
+import React, { useRef } from 'react';
 import { makeCn } from '@/src/utils';
 import './Facilities.scss';
-import { MotionValue, motion, useScroll, useTransform, useInView } from 'framer-motion';
+import { motion, useInView } from 'framer-motion';
 
 const cn = makeCn('facilities');
 
@@ -94,12 +94,12 @@ export const Facilities: React.FC = () => {
       <div className={cn('right')}>
         {/*<h2 className={cn("title")}>Удобство превыше всего</h2>
         <p className={cn("text")}>Это настолько удобно, что вы больше не захотите иметь дело с ненадежными фрилансерами и
-          дорогими студии</p>*/}
+          дорогими студиями</p>*/}
         <div className={cn('right-wrp')}>
           <h2 className={cn('title')}>Удобство превыше всего</h2>
           <p className={cn('text')}>Это настолько удобно, что вы больше не захотите иметь дело с ненадежными
             фрилансерами и
-            дорогими студии</p>
+            дорогими студиями</p>
         </div>
       </div>
     </section>);
