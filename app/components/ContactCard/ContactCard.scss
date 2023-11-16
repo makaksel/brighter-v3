@@ -134,6 +134,7 @@
     transition: none;
 
     &-text {
+      cursor: pointer;
       width: rem(100);
     }
 
@@ -141,6 +142,7 @@
       width: rem(44);
       height: rem(44);
       padding: rem(5);
+      cursor: pointer;
       transition: opacity .2s ease-in-out;
 
       &.white-icon{
