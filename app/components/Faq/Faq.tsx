@@ -1,8 +1,7 @@
 import React from 'react';
-import { makeCn } from "@/src/utils";
-import Link from "next/link";
-import "./Faq.scss";
-import { Collapse } from "@/src/shared/Collapse";
+import { makeCn } from '@/src/utils';
+import './Faq.scss';
+import { Collapse } from '@/src/shared/Collapse';
 
 
 const cn = makeCn('faq');
@@ -25,8 +24,7 @@ export const Faq: React.FC = () => <section className={cn('')}>
       налоги (и удачи вам найти профессионала своего дела).
     </Collapse>
     <Collapse title="Сколько запросов я могу делать за один день?">
-      Вы можете делать столько запросов на дизайн в день, сколько вам нужно. Они будут добавлены в вашу очередь и
-      обрабатываться один за другим.
+      Вы можете делать 1 запрос на дизайн в день, остальные запросы будут поставлены в очередь
     </Collapse>
     <Collapse title="Как быстро я получу свой дизайн?">
       В среднем большинство дизайнерских запросов выполняются всего за два дня или меньше. Однако, обратите внимание,

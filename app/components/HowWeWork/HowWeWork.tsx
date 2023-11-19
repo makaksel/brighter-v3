@@ -1,13 +1,9 @@
 import React from 'react';
-import {makeCn} from "@/src/utils";
-import "./HowWeWork.scss";
+import { makeCn } from '@/src/utils';
+import './HowWeWork.scss';
 /* @ts-ignore */
-import Huge from '@/src/resources/icons/huge.svg?url';
 /* @ts-ignore */
-import Message from '@/src/resources/icons/message.svg?url';
 /* @ts-ignore */
-import Time from '@/src/resources/icons/time.svg?url';
-import Image from "next/image";
 
 const cn = makeCn('how-we-work');
 
@@ -44,7 +40,7 @@ export const HowWeWork: React.FC = () => <section className={cn()}>
             </svg>
             <div className={cn("card-body")}>
                 <p className={cn("card-title")}>Дизайн</p>
-                <p className={cn("card-text")}>Получите свой дизайн до 48 часов или мы вернем вам деньги</p>
+                <p className={cn('card-text')}>Получите свой дизайн до 48 часов</p>
             </div>
         </div>
 

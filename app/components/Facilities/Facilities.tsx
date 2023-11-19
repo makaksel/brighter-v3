@@ -45,7 +45,7 @@ export const Facilities: React.FC = () => {
       <div className={cn('left')}>
         <FacilitiesCard
           title='Всегда готовы'
-          text='Наша команда готова начать работу без задержек, отсутствует необходимость в переговорах и периодах ожидания. Мы приступим к выполнению задач уже через 24 часа'
+          text='Наша команда готова начать работу без задержек, отсутствует необходимость в переговорах и периодах ожидания'
           icon={<svg xmlns='http://www.w3.org/2000/svg' className={cn('card-icon')} width='60' height='60'
                      viewBox='0 0 60 60' fill='none'>
             <path
