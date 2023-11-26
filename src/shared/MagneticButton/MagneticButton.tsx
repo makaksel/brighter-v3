@@ -24,6 +24,7 @@ export const MagneticButton: React.FC<MagneticButtonProps> = ({ children, classN
     const { height, width, left, top } = ref.current.getBoundingClientRect();
     const middleX = clientX - (left + width / 2);
     const middleY = clientY - (top + height / 2);
+    if (middleX >= 200 || middleY >= 200) return;
     setPosition({ x: middleX, y: middleY, x1: middleX, y1: middleY });
   }, []);
 
