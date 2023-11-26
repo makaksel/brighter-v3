@@ -1,0 +1,9 @@
+@import "../../styles/functions";
+@import "../../styles/mixins";
+
+.magnetic-button {
+  &__button,
+  &__text {
+    will-change: transform;
+  }
+}

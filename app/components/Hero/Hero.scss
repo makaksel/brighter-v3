@@ -42,9 +42,14 @@
 
   &__button {
     @include button;
-
+    display: none;
     height: rem(120);
   }
+
+  &__magnet {
+    display: inline-flex;
+  }
+
 
   @include md{
     margin-top: rem(45);
@@ -60,7 +65,12 @@
     }
 
     &__button {
+      display: inline-flex;
       height: rem(60);
+    }
+
+    &__magnet {
+      display: none;
     }
   }
 }
