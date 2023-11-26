@@ -2,6 +2,9 @@
 @import "../../styles/mixins";
 
 .magnetic-button {
+  &__button {
+    overflow: hidden;
+  }
   &__button,
   &__text {
     will-change: transform;
