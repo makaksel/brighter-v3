@@ -42,12 +42,7 @@
 
   &__button {
     @include button;
-    display: none;
     height: rem(120);
-  }
-
-  &__magnet {
-    display: inline-flex;
   }
 
 
@@ -65,12 +60,7 @@
     }
 
     &__button {
-      display: inline-flex;
       height: rem(60);
-    }
-
-    &__magnet {
-      display: none;
     }
   }
 }

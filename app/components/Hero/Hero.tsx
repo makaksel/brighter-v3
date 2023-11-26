@@ -5,7 +5,6 @@ import Image from 'next/image';
 import Maxim from '@/src/resources/images/maxim.png';
 import { TELEGRAM_BOT_LINK } from '@/src/data/const';
 import Link from 'next/link';
-import { MagneticButton } from '@/src/shared/MagneticButton';
 
 const cn = makeCn('hero');
 
@@ -20,7 +19,5 @@ export const Hero: React.FC = () => <section className={cn()}>
     агентствах. Вы можете получить
     лучший дизайн прямо здесь, прямо сейчас.</p>
   <Link href={TELEGRAM_BOT_LINK} className={cn('button')}>Бесплатная консультация</Link>
-  <MagneticButton className={cn('magnet', [cn('button')])}>
-    Бесплатная консультация
-  </MagneticButton>
+
 </section>;
