@@ -6,8 +6,8 @@
     "node": true
   },
   "extends": [
-    "next",
-    "next/core-web-vitals"
+    "next"
+    //    "next/core-web-vitals"
   ],
   "parserOptions": {
     "parser": "@typescript-eslint/parser",
