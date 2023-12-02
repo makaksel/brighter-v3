@@ -11,7 +11,12 @@ const onest = Onest({ subsets: ['latin'] });
 export const metadata: Metadata = {
   title: 'Поярче',
   description: 'Суперсила для вашего бизнеса — дизайн подписка',
+  icons: {
+    icon: '/icon.png',
+  },
 };
+
+
 
 export default function RootLayout({
   children,
