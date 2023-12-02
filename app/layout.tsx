@@ -5,6 +5,7 @@ import './page.scss';
 import { SvgSprite } from '@/src/shared/Svg/SvgSprite';
 import Script from 'next/script';
 import Head from 'next/head';
+import {YANDEX_METRICA_ACCOUNT} from "@/src/data/const";
 
 const onest = Onest({ subsets: ['latin'] });
 
@@ -32,7 +33,7 @@ export default function RootLayout({
           for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
           k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
           (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-          ym(95597975, "init", ${JSON.stringify({
+          ym(${YANDEX_METRICA_ACCOUNT}, "init", ${JSON.stringify({
         clickmap: true,
         trackLinks: true,
         accurateTrackBounce: true,
@@ -45,7 +46,7 @@ export default function RootLayout({
         var settings = {
               need: 30, 
               checkTime: 10,
-              IDmetrika: 95597975,
+              IDmetrika: ${YANDEX_METRICA_ACCOUNT},
           }
           
           var metricsFn = function () {
@@ -268,10 +269,9 @@ export default function RootLayout({
         `}
     </Script>
 
-    {/**/}
     <noscript>
       <div>
-        <img src='https://mc.yandex.ru/watch/95597975' style={{
+        <img src={`https://mc.yandex.ru/watch/${YANDEX_METRICA_ACCOUNT}`} style={{
           position: 'absolute',
           left: '-9999px',
         }} alt='' />
