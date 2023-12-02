@@ -53,20 +53,19 @@
   &__bottom {
     display: flex;
     justify-content: space-between;
-    align-items: flex-end;
+    align-items: center;
     margin-top: var(--section-margin);
 
-    &-text {
+    &-link {
       @include textGray
     }
-
-    &-col {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      flex: 0 1 43%;
-    }
   }
+
+&__docs{
+  display: flex;
+  flex-direction: column;
+  gap: rem(10);
+}
 
   &__social {
     display: flex;
@@ -100,11 +99,6 @@
     &__bottom {
       flex-wrap: wrap;
       gap: rem(40);
-
-      &-col {
-        flex: 1 1 100%;
-        justify-content: space-between;
-      }
     }
 
     &__social {
