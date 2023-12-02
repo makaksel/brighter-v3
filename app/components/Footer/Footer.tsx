@@ -25,7 +25,7 @@ export const Footer: React.FC<FooterProps> = ({theme = 'dark', className}) => <f
     <div className={cn('bottom')}>
         <div className={cn('bottom-col')}>
             <a href='/police.doc' className={cn('bottom-text')} download="Privacy Policy">Privacy Policy</a>
-            <a href='/offert.docx' className={cn('bottom-text')} download="Terms ofUse">Terms of Use</a>
+            <a href='/offert.docx' className={cn('bottom-text')} download="Terms of Use">Terms of Use</a>
         </div>
         <div className={cn('bottom-col')}>
             <div className={cn('social')}>
