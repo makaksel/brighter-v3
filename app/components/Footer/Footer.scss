@@ -56,21 +56,40 @@
     align-items: center;
     margin-top: var(--section-margin);
 
-    &-link {
-      @include textGray
+    &-text {
+      @include textGray;
+
+      @include xs {
+        order: 3;
+      }
+
+    }
+
+    @include xs {
+      flex-direction: column;
+      align-items: flex-start;
     }
   }
 
-&__docs{
-  display: flex;
-  flex-direction: column;
-  gap: rem(10);
-}
+  &__docs {
+    display: flex;
+    flex-direction: column;
+    gap: rem(10);
+    @include xs {
+      order: 1;
+    }
+
+
+  }
 
   &__social {
     display: flex;
     align-items: center;
     gap: rem(8);
+
+    @include xs {
+      order: 0;
+    }
 
     &-link {
       display: flex;
