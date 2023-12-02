@@ -5,7 +5,7 @@ import './page.scss';
 import { SvgSprite } from '@/src/shared/Svg/SvgSprite';
 import Script from 'next/script';
 import Head from 'next/head';
-import {YANDEX_METRICA_ACCOUNT} from "@/src/data/const";
+import { YANDEX_METRICA_ACCOUNT } from '@/src/data/const';
 
 const onest = Onest({ subsets: ['latin'] });
 
@@ -18,14 +18,17 @@ export const metadata: Metadata = {
 };
 
 
-
 export default function RootLayout({
-  children,
-}: {
+                                     children,
+                                   }: {
   children: React.ReactNode
 }) {
   return (
     <html lang='ru'>
+    <Head>
+      <meta name='yandex-verification' content='81fbb74eb4bd19d6' />
+      <link rel='shortcut icon' href='/favicon.ico' />
+    </Head>
     <Script id='yandex-metrica'>
       {`
           (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
