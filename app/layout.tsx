@@ -25,11 +25,6 @@ export default function RootLayout({
 }) {
   return (
     <html lang='ru'>
-    <Head>
-      <link rel='icon' href='/icon.png' sizes='32x32' />
-      <link rel='icon' href='/icon.png' sizes='192x192' />
-      <link rel='apple-touch-icon' href='/icon.png' />
-    </Head>
     <Script id='yandex-metrica'>
       {`
           (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
