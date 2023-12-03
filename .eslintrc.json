@@ -6,8 +6,8 @@
     "node": true
   },
   "extends": [
-    "next"
-    //    "next/core-web-vitals"
+    "next",
+    "next/core-web-vitals"
   ],
   "parserOptions": {
     "parser": "@typescript-eslint/parser",
@@ -17,8 +17,7 @@
       "jsx": true
     },
     "project": [
-      "./tsconfig.json",
-      "./tsconfig.node.json"
+      "./tsconfig.json"
     ]
   },
   "rules": {

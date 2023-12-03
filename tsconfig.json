@@ -1,4 +1,11 @@
 {
+  "ts-node": {
+    "transpileOnly": true,
+    "require": [
+      "ts-node/register",
+      "tsconfig-paths/register"
+    ]
+  },
   "compilerOptions": {
     "baseUrl": "./",
     "target": "es5",
@@ -35,7 +42,7 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "next.config.js",
-    ".eslintrc.cjs"
+    ".eslintrc"
   ],
   "exclude": [
     "node_modules"
