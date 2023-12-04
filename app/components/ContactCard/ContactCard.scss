@@ -68,7 +68,7 @@
     max-height: rem(320);
     border-radius: rem(320);
 
-    &-img{
+    &-img {
       width: 100%;
       height: 100%;
 
@@ -91,17 +91,18 @@
 
     transition: background-color .2s ease-in-out;
 
-    &:hover{
+    &:hover {
       background-color: var(--primary);
 
-      #{$this}__link{
+      #{$this}__link {
         color: var(--white);
 
-        &-icon{
-          &.white-icon{
+        &-icon {
+          &.white-icon {
             display: block;
           }
-          &.black-icon{
+
+          &.black-icon {
             display: none;
           }
         }
@@ -110,7 +111,7 @@
     }
   }
 
-  &__link{
+  &__link {
     @include text;
     position: absolute;
     top: 0;
@@ -138,19 +139,18 @@
       width: rem(100);
     }
 
-    &-icon{
+    &-icon {
       width: rem(44);
       height: rem(44);
       padding: rem(5);
       cursor: pointer;
       transition: opacity .2s ease-in-out;
 
-      &.white-icon{
+      &.white-icon {
         display: none;
       }
     }
   }
-
 
 
   @include md {
@@ -163,11 +163,11 @@
     padding: 0;
     background-color: transparent;
 
-    &__title{
+    &__title {
       margin-bottom: rem(20);
     }
 
-    &__body{
+    &__body {
       flex: auto;
     }
 
@@ -178,18 +178,22 @@
     }
 
     &__people,
-    &__button{
+    &__button {
       max-width: rem(130);
       max-height: rem(130);
       margin-left: 0;
     }
-    &__link{
+
+    &__link {
       gap: rem(3);
-      width: rem(60);
-      &-icon{
+
+      &-icon {
         width: rem(33);
         height: rem(33);
+      }
 
+      &_text {
+        max-width: rem(60);
       }
     }
 
