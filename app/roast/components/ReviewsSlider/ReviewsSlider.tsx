@@ -23,12 +23,12 @@ interface CardProps {
 }
 
 const Card: React.FC<CardProps> = ({
-  name,
-  img,
-  badges,
-  rating,
-  text,
-}) => {
+                                     name,
+                                     img,
+                                     badges,
+                                     rating,
+                                     text,
+                                   }) => {
   const isActive = useCallback((pos: number) => pos <= rating ? '#D51A25' : '#4D4D4D', [rating]);
 
   return (
@@ -41,7 +41,7 @@ const Card: React.FC<CardProps> = ({
           <div className={cn('card-person-wrp')}>
             <p className={cn('card-name')}>{name}</p>
             <div className={cn('card-badges')}>
-              {badges.map((badge) => <span className={cn('card-badge')}>{badge}</span>)}
+              {badges.map((badge) => <span key={badge} className={cn('card-badge')}>{badge}</span>)}
             </div>
 
           </div>
@@ -151,7 +151,7 @@ export const ReviewsSlider: React.FC = () => {
     <div className={cn('viewport')} ref={emblaRef}>
       <div className={cn('container')}>
         {[...slides, ...slides].map((slide, index) => (
-          <div className={cn('slide')} key={index}>
+          <div key={slide.name} className={cn('slide')}>
             <Card {...slide} />
           </div>
         ))}
@@ -160,7 +160,8 @@ export const ReviewsSlider: React.FC = () => {
     <div className={cn('actions')}>
 
       <button className={cn('btn')} onClick={scrollPrev}>
-        <svg xmlns='http://www.w3.org/2000/svg' className={cn('btn-icon')} width='27' height='24' viewBox='0 0 27 24' fill='none'>
+        <svg xmlns='http://www.w3.org/2000/svg' className={cn('btn-icon')} width='27' height='24' viewBox='0 0 27 24'
+             fill='none'>
           <path d='M27 12L0.999999 12' stroke='white' />
           <path d='M12.0742 23.0703L1.00015 11.9962L12.0742 0.922165' stroke='white' />
         </svg>
@@ -169,7 +170,8 @@ export const ReviewsSlider: React.FC = () => {
       <Link href={TELEGRAM_BOT_LINK} className={cn('contact-btn')}>Обсудить проект</Link>
 
       <button className={cn('btn')} onClick={scrollNext}>
-        <svg xmlns='http://www.w3.org/2000/svg' className={cn('btn-icon')} width='27' height='24' viewBox='0 0 27 24' fill='none'>
+        <svg xmlns='http://www.w3.org/2000/svg' className={cn('btn-icon')} width='27' height='24' viewBox='0 0 27 24'
+             fill='none'>
           <path d='M0 12H26' stroke='white' />
           <path d='M14.9258 0.929688L25.9999 12.0038L14.9258 23.0778' stroke='white' />
         </svg>

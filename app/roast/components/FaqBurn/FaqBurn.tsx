@@ -48,7 +48,8 @@ export const FaqBurn: React.FC = () => {
       </p>
     </div>
     <div className={cn('accordion')}>
-      {questions.map((question) => <Collapse title={question.title} theme={'light'}>{question.text}</Collapse>)}
+      {questions.map((question) => <Collapse key={question.title} title={question.title}
+                                             theme={'light'}>{question.text}</Collapse>)}
     </div>
   </section>);
 };

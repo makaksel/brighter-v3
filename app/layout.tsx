@@ -44,7 +44,7 @@ export default function RootLayout({
         `}
     </Script>
 
-    <Script>
+    <Script id='yandex-metrica-seo'>
       {`
         var settings = {
               need: 30, 
