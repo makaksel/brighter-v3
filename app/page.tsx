@@ -10,23 +10,29 @@ import { Services } from '@/app/components/Services';
 import { Subscribe } from '@/app/components/Subscribe';
 import { Footer } from '@/app/components/Footer';
 import { Faq } from '@/app/components/Faq';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Поярче',
+  description: 'Если дизайн, то поярче. Разрабатываем не просто картинки, мы создаем смыслы.',
+};
 
 export default function Home() {
   return (
     <main>
-        <Header />
-        <Hero />
-        <Cases />
-        <HowWeWork />
-        <About />
-        <ContactCard title={`Бесплатная<br/> консультация`} />
-        <Facilities />
-        <Partners />
-        <Services />
-        <Subscribe />
-        <ContactCard title={`Не нашли<br/> нужной услуги?`} />
-        <Faq />
-        <Footer />
+      <Header />
+      <Hero />
+      <Cases />
+      <HowWeWork />
+      <About />
+      <ContactCard title={`Бесплатная<br/> консультация`} />
+      <Facilities />
+      <Partners />
+      <Services />
+      <Subscribe />
+      <ContactCard title={`Не нашли<br/> нужной услуги?`} />
+      <Faq />
+      <Footer />
     </main>
   );
 }
