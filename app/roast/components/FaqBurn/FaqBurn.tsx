@@ -3,7 +3,6 @@ import { makeCn } from '@/src/utils';
 import './FaqBurn.scss';
 import { Collapse } from '@/src/shared/Collapse';
 
-
 const cn = makeCn('faq-burn');
 
 export const FaqBurn: React.FC = () => {
