@@ -22,7 +22,7 @@ export const About: React.FC = () => <section className={cn()}>
           <div className={cn('row-title')}>Экономия времени<br /> и ресурсов</div>
         </div>
         <div className={cn('row-col')}>
-          <p className={cn('row-text')}>Мы всегда на связи и готовы предоставить лучший результата</p>
+          <p className={cn('row-text')}>Мы всегда на связи и готовы предоставить лучший результат</p>
         </div>
       </div>
 
