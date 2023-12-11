@@ -38,10 +38,15 @@ export const BurgerMenu: React.FC = () => {
           className={cn('modal')}
         >
           <div className={cn('nav')}>
-            <Link href={routerLinks.roast}
-                  className={cn('nav-item', { active: pathname === routerLinks.roast })}>Прожарка сайта</Link>
-            <Link href={routerLinks.root}
-                  className={cn('nav-item', { active: pathname === routerLinks.root })}>Дизайн-подписка</Link>
+            {Object.values(routerLinks).map((link) => (
+              <Link
+                key={link.path}
+                href={link.path}
+                className={cn('nav-item', { active: pathname === link.path })}
+              >
+                {link.label}
+              </Link>
+            ))}
           </div>
           <div className={cn('social')}>
             {/*<Link href="#" className={cn('social-item')}>in</Link>*/}

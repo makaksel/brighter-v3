@@ -2,7 +2,7 @@ import React from 'react';
 import { makeCn } from '@/src/utils';
 import './BurnWhite.scss';
 import { AboutBurn } from '@/app/roast/components/AboutBurn';
-import { TagsSection } from '@/app/roast/components/TagsSection';
+import { TagsSection } from 'src/shared/TagsSection';
 import { LookLike } from '@/app/roast/components/LookLike';
 import { ContactOrange } from '@/app/roast/components/ContactOrange';
 
@@ -10,7 +10,7 @@ const cn = makeCn('burn-white');
 
 export const BurnWhite: React.FC = () => <section className={cn()}>
 
-  {/*
+    {/*
       TODO пока что скрыт
       *<div className={cn('header')}>
       <h2 className={cn('header-title')}>Посмотрите<br /><span

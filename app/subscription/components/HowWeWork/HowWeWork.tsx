@@ -1,10 +1,13 @@
 import React from 'react';
-import { makeCn } from '@/src/utils';
-import './Services.scss';
+import { makeCn } from '../../../../src/utils';
+import './HowWeWork.scss';
+/* @ts-ignore */
+/* @ts-ignore */
+/* @ts-ignore */
 
-const cn = makeCn('services');
+const cn = makeCn('how-we-work');
 
-export const Services: React.FC = () => <section className={cn()}>
+export const HowWeWork: React.FC = () => <section className={cn()}>
   <div className={cn('header')}>
     <p className={cn('header-text')}>То, что вы давно искали, то, как это должно работать </p>
     <h2 className={cn('header-title')}>Как мы работаем?</h2>

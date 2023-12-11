@@ -1,5 +1,4 @@
 import React from 'react';
-import { Header } from '@/app/components/Header';
 import { HeroBurn } from '@/app/roast/components/HeroBurn';
 import { BurnWhite } from '@/app/roast/components/BurnWhite';
 import { Reviews } from '@/app/roast/components/Reviews';
@@ -14,13 +13,12 @@ export const metadata: Metadata = {
 };
 export default function Page() {
   return (
-    <main>
-      <Header />
+    <>
       <HeroBurn />
       <BurnWhite />
       <Reviews />
       <WhatForUses />
       <BrighterBox />
-    </main>
+    </>
   );
 }

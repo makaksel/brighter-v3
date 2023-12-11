@@ -29,7 +29,7 @@ const Card: React.FC<CardProps> = ({
                                      rating,
                                      text,
                                    }) => {
-  const isActive = useCallback((pos: number) => pos <= rating ? '#D51A25' : '#4D4D4D', [rating]);
+  const isActive = useCallback((pos: number) => pos <= rating ? '#3E51FF' : '#4D4D4D', [rating]);
 
   return (
     <div className={cn('card')}>

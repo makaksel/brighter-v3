@@ -16,7 +16,7 @@
 
 
   /* colors */
-  --primary: #D51A25;
+  --primary: #3E51FF;
   --white: #FFFFFF;
   --white-bg: #F3F3F5;
   --black-body: #121212;
@@ -26,9 +26,14 @@
   --grey-text: #969696;
   --black-text: #151515;
 
+
   --button__border-color: #818181;
   --button-black__border-color: #4D4D4D;
+
   --badge__border-color: #404040;
+  --badge2__border-color: #454545;
+
+
   --company-card__border-color: #2E2E2E;
   --card__bg-color: #202020;
 }
@@ -47,13 +52,13 @@
 
 @include scrollbar;
 
-body{
+body {
   background-color: var(--black-body);
   color: var(--white);
   overflow-x: hidden;
 }
 
-main{
+main {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -62,7 +67,7 @@ main{
   position: relative;
   max-width: 100vw;
 
-  @include md{
+  @include md {
     padding: 0 var(--x-padding);
   }
 }

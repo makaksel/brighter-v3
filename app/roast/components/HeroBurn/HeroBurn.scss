@@ -42,7 +42,7 @@
       gap: rem(10);
       padding: rem(20);
       border-radius: rem(24);
-      border: rem(1) solid #454545;
+      border: rem(1) solid var(--badge2__border-color);
 
       @include badgeTextSize;
 
@@ -50,12 +50,12 @@
         display: flex;
       }
 
-      &--left{
+      &--left {
         margin-left: rem(76);
         transform: rotate(-20deg);
       }
 
-      &--right{
+      &--right {
         margin-right: rem(76);
         transform: rotate(20deg);
       }
@@ -63,11 +63,11 @@
 
       @include md {
         padding: rem(10);
-        &--left{
+        &--left {
           margin-left: rem(0);
         }
 
-        &--right{
+        &--right {
           margin-right: rem(0);
         }
       }
@@ -135,7 +135,7 @@
     height: rem(100);
   }
 
-  @include md{
+  @include md {
 
     &__maxim {
       &-img {
@@ -150,7 +150,7 @@
       margin-bottom: rem(20);
     }
 
-    &__rotate-box{
+    &__rotate-box {
       display: none;
     }
 

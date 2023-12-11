@@ -1,0 +1,60 @@
+@import "@/src/styles/functions";
+@import "@/src/styles/mixins";
+
+.hero-main {
+  @include container;
+
+  display: flex;
+  flex-direction: column;
+
+  margin-bottom: var(--section-margin);
+  gap: rem(220);
+
+  &__wrp {
+    max-width: rem(1018);
+    margin: rem(90) auto 0;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: rem(50);
+  }
+
+  &__title {
+    @include h1;
+
+    &--primary {
+      color: var(--primary);
+    }
+  }
+
+  &__subtitle {
+    @include textGray;
+
+    max-width: rem(740);
+  }
+
+  &__button {
+    @include button;
+    height: rem(100);
+  }
+
+
+  @include md {
+    margin-top: rem(45);
+    text-align: center;
+    gap: rem(40);
+
+    &__maxim {
+      display: flex;
+    }
+
+    &__title {
+      font-size: rem(26);
+    }
+
+    &__button {
+      height: rem(60);
+    }
+  }
+}

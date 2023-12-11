@@ -6,6 +6,8 @@ import { SvgSprite } from '@/src/shared/Svg/SvgSprite';
 import Script from 'next/script';
 import Head from 'next/head';
 import { YANDEX_METRICA_ACCOUNT } from '@/src/data/const';
+import { Header } from '@/app/components/Header';
+import React from 'react';
 
 const onest = Onest({ subsets: ['latin'] });
 
@@ -282,7 +284,10 @@ export default function RootLayout({
     </noscript>
     <body className={onest.className}>
     <SvgSprite />
-    {children}
+    <main>
+      <Header />
+      {children}
+    </main>
     </body>
     </html>
   );
