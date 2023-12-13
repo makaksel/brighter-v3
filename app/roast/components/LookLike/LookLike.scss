@@ -24,10 +24,6 @@
   &__title {
     @include h1;
     line-height: 100%;
-
-    &--primary {
-      color: var(--primary);
-    }
   }
 
 
@@ -39,9 +35,7 @@
     padding: rem(83) rem(115);
     background-color: var(--white);
     border-radius: var(--card__border-radius);
-
   }
-
 
   &__badge {
     position: absolute;
@@ -106,7 +100,7 @@
   }
 
 
-  @include md{
+  @include md {
     &__header {
       margin-bottom: rem(40);
 
@@ -117,15 +111,15 @@
       }
     }
 
-    &__body{
+    &__body {
       padding: rem(10);
       gap: rem(10)
     }
-    &__badge{
+    &__badge {
       display: none;
     }
 
-    &__row{
+    &__row {
       max-width: 100%;
       padding: rem(20);
       margin: 0;

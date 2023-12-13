@@ -7,7 +7,7 @@ const cn = makeCn('about-burn');
 export const AboutBurn: React.FC = () => <section className={cn()}>
     <div className={cn('header')}>
       <h2 className={cn('title')}>Для чего подходит<br /> <span
-        className={cn('title', { primary: true })}>Прожарка?</span></h2>
+        className={cn('title', ['primary-text'])}>Прожарка?</span></h2>
       <div className={cn('badge')}>
         <span className={cn('badge-title')}>31%</span>
         <span className={cn('badge-text')}>Результат</span>
@@ -19,10 +19,10 @@ export const AboutBurn: React.FC = () => <section className={cn()}>
         <svg xmlns='http://www.w3.org/2000/svg' className={cn('card-icon')} width='60' height='60' viewBox='0 0 60 60'
              fill='none'>
           <path d='M44.7574 22.1279L33.6491 31.1605C31.5504 32.8255 28.5976 32.8255 26.4988 31.1605L15.2969 22.1279'
-                stroke='#3E51FF' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' />
-          <path fill-rule='evenodd' clip-rule='evenodd'
+                stroke='#3E51FF' strokeWidth='2' strokeLinecap='round' strokeLinejoin='round' />
+          <path fillRule='evenodd' clipRule='evenodd'
                 d='M42.2722 52.4999C49.8755 52.5209 55 46.2739 55 38.5959V21.425C55 13.7471 49.8755 7.5 42.2722 7.5H17.7278C10.1245 7.5 5 13.7471 5 21.425V38.5959C5 46.2739 10.1245 52.5209 17.7278 52.4999H42.2722Z'
-                stroke='#3E51FF' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' />
+                stroke='#3E51FF' strokeWidth='2' strokeLinecap='round' strokeLinejoin='round' />
         </svg>
         <p className={cn('card-text')}>Сайт не решает задач бизнеса</p>
       </div>
@@ -32,7 +32,7 @@ export const AboutBurn: React.FC = () => <section className={cn()}>
              fill='none'>
           <path
             d='M23 37.5C23 37.5 25.8125 40 30.5 40C35.1875 40 38 37.5 38 37.5M45.5 5H15.5C9.97715 5 5.5 9.47715 5.5 15V45C5.5 50.5229 9.97715 55 15.5 55H45.5C51.0229 55 55.5 50.5228 55.5 45V15C55.5 9.47715 51.0228 5 45.5 5ZM43 25C43 26.3807 41.8807 27.5 40.5 27.5C39.1193 27.5 38 26.3807 38 25C38 23.6193 39.1193 22.5 40.5 22.5C41.8807 22.5 43 23.6193 43 25ZM23 25C23 26.3807 21.8807 27.5 20.5 27.5C19.1193 27.5 18 26.3807 18 25C18 23.6193 19.1193 22.5 20.5 22.5C21.8807 22.5 23 23.6193 23 25Z'
-            stroke='#3E51FF' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' />
+            stroke='#3E51FF' strokeWidth='2' strokeLinecap='round' strokeLinejoin='round' />
         </svg>
         <p className={cn('card-text')}>Сайт перестал приносить заявки</p>
       </div>
@@ -40,11 +40,11 @@ export const AboutBurn: React.FC = () => <section className={cn()}>
       <div className={cn('card')}>
         <svg xmlns='http://www.w3.org/2000/svg' className={cn('card-icon')} width='60' height='60' viewBox='0 0 60 60'
              fill='none'>
-          <path fill-rule='evenodd' clip-rule='evenodd'
+          <path fillRule='evenodd' clipRule='evenodd'
                 d='M40.835 6.87549H19.1625C11.61 6.87549 6.875 12.223 6.875 19.7905V40.2105C6.875 47.778 11.585 53.1255 19.1625 53.1255H40.8325C48.41 53.1255 53.125 47.778 53.125 40.2105V19.7905C53.125 12.223 48.41 6.87549 40.835 6.87549Z'
-                stroke='#3E51FF' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' />
-          <path d='M38.4775 35.0442L30 29.9867V19.0842' stroke='#3E51FF' stroke-width='2' stroke-linecap='round'
-                stroke-linejoin='round' />
+                stroke='#3E51FF' strokeWidth='2' strokeLinecap='round' strokeLinejoin='round' />
+          <path d='M38.4775 35.0442L30 29.9867V19.0842' stroke='#3E51FF' strokeWidth='2' strokeLinecap='round'
+                strokeLinejoin='round' />
         </svg>
         <p className={cn('card-text')}>Сайт визуально и морально устарел</p>
       </div>

@@ -10,8 +10,6 @@
   &--theme {
 
     &_light {
-      //background-color: var(--white);
-
       #{$this}__title {
         color: var(--black-text);
       }

@@ -11,7 +11,7 @@ export const WhatForUses: React.FC = () => <section className={cn()}>
 
     <div className={cn('header')}>
       <h2 className={cn('title')}>Что дает<br /> <span
-        className={cn('title', { primary: true })}>Прожарка?</span></h2>
+        className={cn('title', ['primary-text'])}>Прожарка?</span></h2>
       <div className={cn('badge')}>
         <span className={cn('badge-title')}>31%</span>
         <span className={cn('badge-text')}>Конверсии</span>

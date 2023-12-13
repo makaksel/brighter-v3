@@ -3,6 +3,13 @@ $Breakpoint__small: 520px;
 $Breakpoint__small: 720px;
 $Breakpoint__medium: 1024px;
 $Breakpoint__large: 1280px;
+$Breakpoint__large_large: 1440px;
+
+@mixin elg {
+  @media screen and (max-width: #{$Breakpoint__large_large}) {
+    @content;
+  }
+}
 
 @mixin lg {
   @media screen and (max-width: #{$Breakpoint__large}) {

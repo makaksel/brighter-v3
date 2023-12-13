@@ -40,10 +40,6 @@
     color: var(--white);
     text-align: center;
     line-height: 100%;
-
-    &--primary {
-      color: var(--black-text);
-    }
   }
 
   &__link {
@@ -76,7 +72,7 @@
       margin-bottom: rem(45);
     }
 
-    &__link  {
+    &__link {
       height: rem(60);
     }
   }

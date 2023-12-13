@@ -4,7 +4,7 @@ import { TagsSection } from '@/src/shared/TagsSection';
 import React from 'react';
 import { HeroMain } from '@/app/components/HeroMain';
 import { Services } from '@/app/components/Services';
-import { ContactCard } from '@/src/shared/ContactCard';
+import { MainContactCard } from '@/app/components/MainContactCard';
 
 export const metadata: Metadata = {
   title: 'Поярче',
@@ -15,13 +15,8 @@ export default function Home() {
   return (
     <>
       <HeroMain />
-
       <Services />
-
-      <ContactCard title={`Бесплатная<br/> консультация`} />
-
-      <div>contact card</div>
-
+      <MainContactCard />
       <TagsSection />
       <Footer />
     </>

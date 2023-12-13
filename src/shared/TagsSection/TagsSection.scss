@@ -8,8 +8,8 @@
     flex-direction: column;
     flex-wrap: nowrap;
 
-    width: calc(100% + (var(--x-padding) * 2));
-    margin: 0 calc(var(--x-padding) * -1) var(--section-margin);
+    width: 100%;
+    margin-bottom: var(--section-margin);
     gap: rem(20);
 
     overflow: hidden;

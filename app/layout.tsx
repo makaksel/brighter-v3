@@ -5,7 +5,7 @@ import './page.scss';
 import { SvgSprite } from '@/src/shared/Svg/SvgSprite';
 import Script from 'next/script';
 import Head from 'next/head';
-import { YANDEX_METRICA_ACCOUNT } from '@/src/data/const';
+// import { YANDEX_METRICA_ACCOUNT } from '@/src/data/const';
 import { Header } from '@/app/components/Header';
 import React from 'react';
 
@@ -25,33 +25,37 @@ export default function RootLayout({
                                    }: {
   children: React.ReactNode
 }) {
+
+  const YM_ID = +process.env.YANDEX_METRICA_ACCOUNT;
+
   return (
     <html lang='ru'>
     <Head>
-      <meta name='yandex-verification' content='81fbb74eb4bd19d6' />
+      {!!YM_ID && <meta name='yandex-verification' content='81fbb74eb4bd19d6' />}
       <link rel='shortcut icon' href='/favicon.ico' />
     </Head>
-    <Script id='yandex-metrica'>
-      {`
+
+    {!!YM_ID && <>
+      <Script id='yandex-metrica'>
+        {`
           (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
           m[i].l=1*new Date();
           for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
           k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
           (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-          ym(${YANDEX_METRICA_ACCOUNT}, "init", ${JSON.stringify({
-        clickmap: true,
-        trackLinks: true,
-        accurateTrackBounce: true,
-      })});
+          ym(${YM_ID}, "init", ${JSON.stringify({
+          clickmap: true,
+          trackLinks: true,
+          accurateTrackBounce: true,
+        })});
         `}
-    </Script>
-
-    <Script id='yandex-metrica-seo'>
-      {`
+      </Script>
+      <Script id='yandex-metrica-seo'>
+        {`
         var settings = {
               need: 30, 
               checkTime: 10,
-              IDmetrika: ${YANDEX_METRICA_ACCOUNT},
+              IDmetrika: ${YM_ID},
           }
           
           var metricsFn = function () {
@@ -272,22 +276,27 @@ export default function RootLayout({
            
           ActiveScore.init(metricsFn);
         `}
-    </Script>
+      </Script>
+    </>}
 
-    <noscript>
-      <div>
-        <img src={`https://mc.yandex.ru/watch/${YANDEX_METRICA_ACCOUNT}`} style={{
-          position: 'absolute',
-          left: '-9999px',
-        }} alt='' />
-      </div>
-    </noscript>
     <body className={onest.className}>
+    {!!YM_ID &&
+      <noscript>
+        <div>
+          <img src={`https://mc.yandex.ru/watch/${YM_ID}`} style={{
+            position: 'absolute',
+            left: '-9999px',
+          }} alt='' />
+        </div>
+      </noscript>}
+
     <SvgSprite />
+
     <main>
       <Header />
       {children}
     </main>
+
     </body>
     </html>
   );

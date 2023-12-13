@@ -13,7 +13,7 @@ export const Hero: React.FC = () => <section className={cn()}>
     <Image src={Maxim} className={cn('maxim-img')} alt='Максим Поярче' />
     <span className={cn('maxim-text')}>Максим Поярче</span>
   </div>
-  <h1 className={cn('title')}>Суперсила для вашего<br />бизнеса — <span className={cn('title', { primary: true })}>дизайн подписка</span>
+  <h1 className={cn('title')}>Суперсила для вашего<br />бизнеса — <span className={cn('title', ['primary-text'])}>дизайн подписка</span>
   </h1>
   <p className={cn('subtitle')}>Представьте себе Кинопоиск для веб-дизайна. Забудьте о сотрудниках, фрилансерах и
     агентствах. Вы можете получить

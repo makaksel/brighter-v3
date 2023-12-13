@@ -14,7 +14,7 @@ export const BurnWhite: React.FC = () => <section className={cn()}>
       TODO пока что скрыт
       *<div className={cn('header')}>
       <h2 className={cn('header-title')}>Посмотрите<br /><span
-        className={cn('header-title', { primary: true })}>Прожарку</span> сайта</h2>
+        className={cn('header-title', ['primary-text'])}>Прожарку</span> сайта</h2>
       <p className={cn('header-text')}>Прожарка будет индивидуальной и на 100% конфиденциальной</p>
     </div>*/}
     <div className={cn('body')}>

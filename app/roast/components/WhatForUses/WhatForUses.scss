@@ -20,10 +20,6 @@
   &__title {
     @include h1;
     line-height: 100%;
-
-    &--primary{
-      color: var(--primary);
-    }
   }
 
   &__text {
@@ -32,7 +28,7 @@
     color: var(--grey-text);
   }
 
-  &__badge{
+  &__badge {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -50,7 +46,7 @@
       display: flex;
     }
 
-    &-text{
+    &-text {
       color: var(--grey-text);
       font-size: rem(16);
       line-height: 110%;
@@ -71,24 +67,23 @@
   }
 
 
-  &__button{
+  &__button {
     @include button;
     height: rem(100);
   }
 
 
-
-  @include md{
-    &__header{
+  @include md {
+    &__header {
       margin-bottom: rem(40);
       flex-wrap: wrap;
     }
 
-    &__button{
+    &__button {
       height: rem(60);
     }
 
-    &__body{
+    &__body {
       width: calc(100% + (var(--x-padding) * 2));
       margin: 0 calc(var(--x-padding) * -1);
     }

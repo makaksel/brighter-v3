@@ -23,12 +23,12 @@ export default function Home() {
       <Cases />
       <HowWeWork />
       <About />
-      <ContactCard title={`Бесплатная<br/> консультация`} />
+      <ContactCard />
       <Facilities />
       <Partners />
       <CanOrder />
       <Subscribe />
-      <ContactCard title={`Не нашли<br/> нужной услуги?`} />
+      <ContactCard />
       <Faq />
       <Footer />
     </>

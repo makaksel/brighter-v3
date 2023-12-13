@@ -15,7 +15,7 @@ const cn = makeCn('cases');
 export const Cases: React.FC = () => <section className={cn()}>
   <div className={cn('header')}>
     <p className={cn('header-left-title')}>10+ Проектов<br /><span
-      className={cn('header-left-title', { primary: true })}>Дизайн-подписки</span></p>
+      className={cn('header-left-title', ['primary-text'])}>Дизайн-подписки</span></p>
     <p className={cn('header-right-title')}>Кейсы</p>
     <p className={cn('header-left-text')}>Мы сотрудничаем с бизнесами любого размера, уверены в важности дизайна
       для

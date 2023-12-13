@@ -1,16 +1,27 @@
 @import "@/src/styles/functions";
 @import "@/src/styles/mixins";
 
+
 .services {
+
   @include container;
-  margin-bottom: var(--section-margin);
+  margin: 0 auto var(--section-margin);
+
+
+  &__wrp {
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: visible;
+    width: 100%;
+  }
 
   &__header {
-    margin-bottom: rem(80);
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: rem(40);
+    display: flex;
+    justify-content: space-between;
     align-items: flex-end;
+
+    gap: rem(40);
+    margin-bottom: rem(80);
 
     &-text {
       @include text;
@@ -21,6 +32,7 @@
     &-title {
       @include h1;
       line-height: 100%;
+
     }
   }
 
@@ -32,58 +44,150 @@
 
   &__card {
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    align-items: center;
 
-    flex: 1 1 rem(280);
-    //min-height: rem(380);
-    padding: rem(40);
+    flex: 1 1 49%;
+    height: rem(234);
 
-    background-color: var(--card__bg-color);
+    padding: rem(40) rem(120);
+
+    border: rem(1) solid var(--button-black__border-color);
     border-radius: var(--card__border-radius);
 
-    &-icon {
-      width: rem(60);
-      height: rem(60);
-      margin-bottom: rem(80);
+    //background-color: var(--black-body);
+
+    cursor: url('/cursor.png'), auto;
+
+    transition: background-color .15s ease-in-out;
+
+
+    &:hover {
+      background: var(--primary);
     }
 
+
     &-body {
+      width: 100%;
+      max-height: rem(100);
       display: flex;
-      flex-direction: column;
-      gap: rem(42);
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: nowrap;
+      gap: rem(20)
     }
 
     &-title {
       @include h3;
+      font-size: rem(38);
+      flex: 1 1 auto;
     }
 
-    &-text {
-      @include textGray;
+    &-icon {
+      flex: 0 0 auto;
     }
+  }
 
+  @include elg {
+    margin-bottom: rem(460);
   }
 
   @include md {
-    &__header {
-      margin-bottom: rem(20);
-      grid-template-columns: 1fr;
-      grid-gap: rem(20);
+    margin-bottom: rem(248);
 
-      &-text {
-        order: 2;
-      }
+    &__header {
+      align-items: flex-start;
+      flex-direction: column;
+      gap: rem(50);
+      margin-bottom: rem(20);
     }
 
     &__card {
+      height: rem(100);
       padding: rem(20);
 
-      &-icon {
-        width: rem(30);
-        height: rem(30);
-        margin-bottom: rem(40);
+      &-title {
+        font-size: rem(22);
       }
     }
   }
+
+
+  /** Картинки с абсолютом start */
+  &__cloudImg {
+    position: absolute;
+    z-index: -1;
+
+    &-img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+
+  &__duga {
+    top: rem(17);
+    left: rem(-50);
+    width: rem(310);
+    height: rem(310);
+
+
+    @include elg {
+      top: rem(10);
+      left: rem(-50);
+      width: rem(225);
+      height: rem(225);
+
+    }
+
+    @include md {
+      display: none;
+    }
+  }
+
+  &__star {
+    top: rem(68);
+    right: rem(-5);
+    width: rem(152);
+    height: rem(134);
+
+    @include elg {
+      top: rem(72);
+      right: rem(-15);
+      width: rem(98);
+      height: rem(89);
+    }
+
+    @include md {
+      top: rem(620);
+      left: rem(-20);
+      width: rem(100);
+      height: rem(90);
+    }
+  }
+
+  &__cart {
+    top: rem(94);
+    right: rem(-68);
+    width: rem(390);
+    height: rem(330);
+
+    @include elg {
+      top: rem(603);
+      right: rem(0);
+      z-index: 1;
+      width: rem(390);
+      height: rem(330);
+    }
+
+    @include md {
+      transform: scale(-1, 1);
+      top: rem(620);
+      left: rem(-25);
+      width: rem(234);
+      height: rem(151);
+    }
+  }
+
+  /** Картинки с абсолютом end */
 
 }

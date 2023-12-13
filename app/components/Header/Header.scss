@@ -7,7 +7,7 @@
   display: flex;
   flex-direction: column;
 
-  padding: rem(40) 0;
+  padding: rem(40) var(--x-padding);
   gap: rem(40);
 
   &__top {
@@ -32,7 +32,7 @@
     width: 100%;
     height: rem(1);
     background: #61636A;
-    transition: all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s;
+    transition: all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.2s;
 
     &-wrp {
       width: 100%;
@@ -41,7 +41,7 @@
   }
 
   &__title {
-    transition: all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 1.2s;
+    transition: all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.9s;
   }
 
   &__nav {

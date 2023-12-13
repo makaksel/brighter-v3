@@ -4,13 +4,14 @@
 @mixin container {
   width: 100%;
   max-width: var(--max-width);
+  padding: 0 var(--x-padding);
 }
 
 @mixin textBase {
   font-style: normal;
 
+  text-edge: cap alphabetic;
   leading-trim: both;
-  text-edge: cap;
 }
 
 @mixin h1 {
@@ -78,25 +79,25 @@
 @mixin badgeTextSize {
   @include text;
 
-  &-title{
+  &-title {
     @include h3;
     font-size: rem(40);
     line-height: 1;
   }
 
-  &-text{
+  &-text {
     font-size: rem(16);
     line-height: 110%;
   }
 
   @include md {
-    &-title{
+    &-title {
       font-size: rem(18);
       letter-spacing: -1.5%;
       line-height: 1;
     }
 
-    &-text{
+    &-text {
       font-size: rem(10);
     }
   }

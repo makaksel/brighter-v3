@@ -1,4 +1,8 @@
 <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path id="Stroke 1" d="M44.7574 22.1279L33.6491 31.1605C31.5504 32.8255 28.5976 32.8255 26.4988 31.1605L15.2969 22.1279" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-<path id="Stroke 3" fill-rule="evenodd" clip-rule="evenodd" d="M42.2722 52.4999C49.8755 52.5209 55 46.2739 55 38.5959V21.425C55 13.7471 49.8755 7.5 42.2722 7.5H17.7278C10.1245 7.5 5 13.7471 5 21.425V38.5959C5 46.2739 10.1245 52.5209 17.7278 52.4999H42.2722Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <path id="Stroke 1"
+          d="M44.7574 22.1279L33.6491 31.1605C31.5504 32.8255 28.5976 32.8255 26.4988 31.1605L15.2969 22.1279"
+          stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+    <path id="Stroke 3" fillRule="evenodd" clipRule="evenodd"
+          d="M42.2722 52.4999C49.8755 52.5209 55 46.2739 55 38.5959V21.425C55 13.7471 49.8755 7.5 42.2722 7.5H17.7278C10.1245 7.5 5 13.7471 5 21.425V38.5959C5 46.2739 10.1245 52.5209 17.7278 52.4999H42.2722Z"
+          stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
 </svg>

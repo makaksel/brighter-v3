@@ -13,7 +13,8 @@ export const ContactOrange = () => <div className={cn()}>
     <div className={cn('people')}>
       <Image src={ImgMaxim} alt={'Максим Поярче'} className={cn('people-img')} />
     </div>
-    <h2 className={cn('title')}>Расскажу чем<br />поможет <span className={cn('title', { primary: true })}>Прожарка</span>
+    <h2 className={cn('title')}>Расскажу чем<br />поможет <span
+      className={cn('title', ['primary-text'])}>Прожарка</span>
     </h2>
     <Link href={TELEGRAM_BOT_LINK} className={cn('link')}>
       Бесплатная консультация

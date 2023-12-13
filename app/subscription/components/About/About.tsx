@@ -32,7 +32,7 @@ export const About: React.FC = () => <section className={cn()}>
                fill='none'>
             <path
               d='M42.5 8.34455C38.8228 6.21743 34.5536 5 30 5C16.1929 5 5 16.1929 5 30C5 43.8071 16.1929 55 30 55C43.8071 55 55 43.8071 55 30C55 26.9217 54.4436 23.9733 53.426 21.25M17.5 25L26.3161 32.0528C28.3843 33.7075 31.3841 33.4621 33.156 31.4933L52.5 10'
-              stroke='#3E51FF' stroke-width='2' stroke-linecap='round' />
+              stroke='#3E51FF' strokeWidth='2' strokeLinecap='round' />
           </svg>
           <div className={cn('row-title')}>Платите<br /> один раз</div>
         </div>

@@ -25,7 +25,7 @@ export const HeroBurn: React.FC = () => <section className={cn()}>
     </div>
   </div>
 
-  <h1 className={cn('title')}>Хотите больше клиентов? <span className={cn('title', { primary: true })}>Прожарьте свой сайт!</span>
+  <h1 className={cn('title')}>Хотите больше клиентов? <span className={cn('title', ['primary-text'])}>Прожарьте свой сайт!</span>
   </h1>
   <p className={cn('subtitle')}>Я показал многим людям, как превратить своих посетителей сайта в постоянных клиентов</p>
   <div className={cn('rotate-box')}>
