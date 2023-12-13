@@ -25,7 +25,6 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
 
-  /* ts-ignore */
   const YM_ID = process?.env?.YANDEX_METRICA_ACCOUNT;
 
   return (
