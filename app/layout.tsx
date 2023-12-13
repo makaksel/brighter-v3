@@ -5,7 +5,6 @@ import './page.scss';
 import { SvgSprite } from '@/src/shared/Svg/SvgSprite';
 import Script from 'next/script';
 import Head from 'next/head';
-// import { YANDEX_METRICA_ACCOUNT } from '@/src/data/const';
 import { Header } from '@/app/components/Header';
 import React from 'react';
 
@@ -26,7 +25,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
 
-  const YM_ID = +process.env.YANDEX_METRICA_ACCOUNT;
+  /* ts-ignore */
+  const YM_ID = process?.env?.YANDEX_METRICA_ACCOUNT;
 
   return (
     <html lang='ru'>
