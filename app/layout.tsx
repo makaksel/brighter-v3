@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import { Onest } from 'next/font/google';
 import './globals.css';
 import './page.scss';
-import { SvgSprite } from '@/src/shared/Svg/SvgSprite';
 import Script from 'next/script';
 import Head from 'next/head';
 import { Header } from '@/app/components/Header';
@@ -25,7 +24,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
 
-  const YM_ID = process?.env?.YANDEX_METRICA_ACCOUNT;
+  const YM_ID = +process?.env?.YANDEX_METRICA_ACCOUNT;
 
   return (
     <html lang='ru'>
@@ -287,9 +286,8 @@ export default function RootLayout({
             left: '-9999px',
           }} alt='' />
         </div>
-      </noscript>}
-
-    <SvgSprite />
+      </noscript>
+    }
 
     <main>
       <Header />

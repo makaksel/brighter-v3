@@ -20,6 +20,7 @@
     justify-content: space-between;
     align-items: flex-end;
 
+
     gap: rem(40);
     margin-bottom: rem(80);
 
@@ -27,11 +28,13 @@
       @include text;
       max-width: rem(325);
       color: var(--grey-text);
+      z-index: 12;
     }
 
     &-title {
       @include h1;
       line-height: 100%;
+      z-index: 12;
 
     }
   }
@@ -60,11 +63,11 @@
 
     transition: background-color .15s ease-in-out;
 
+    z-index: 12;
 
     &:hover {
       background: var(--primary);
     }
-
 
     &-body {
       width: 100%;
@@ -115,12 +118,13 @@
   /** Картинки с абсолютом start */
   &__cloudImg {
     position: absolute;
-    z-index: -1;
+    z-index: 1;
 
     &-img {
       width: 100%;
       height: 100%;
       object-fit: contain;
+      user-select: none;
     }
   }
 

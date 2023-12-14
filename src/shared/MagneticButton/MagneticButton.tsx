@@ -1,59 +1,62 @@
 'use client';
 
-import React, { useCallback, useRef, useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { makeCn } from '@/src/utils';
 import './MagneticButton.scss';
 import { motion } from 'framer-motion';
-import { TELEGRAM_BOT_LINK } from '@/src/data/const';
 
 const cn = makeCn('magnetic-button');
 
 interface MagneticButtonProps {
   children: React.ReactNode | React.ReactNode[];
   className?: string;
+  activeStiffness?: number;
 }
 
-export const MagneticButton: React.FC<MagneticButtonProps> = ({ children, className }) => {
-  const ref = useRef();
+export const MagneticButton: React.FC<MagneticButtonProps> = ({
+                                                                children,
+                                                                className,
+                                                                activeStiffness = 10,
+                                                              }) => {
+  const ref = useRef<HTMLDivElement | null>(null);
 
-  const [position, setPosition] = useState({ x: 0, y: 0, x1: 0, y1: 0 });
+  const [position, setPosition] = useState({ x: 0, y: 0 });
+  const [isHover, setIsHover] = useState(false);
+  const { x, y } = position;
 
-  const handleMouse = useCallback((e: React.MouseEvent) => {
+
+  const handleMouse = (e: React.MouseEvent) => {
+    if (!isHover) setIsHover(true);
+
     const { clientX, clientY } = e;
     // @ts-ignore
     const { height, width, left, top } = ref.current.getBoundingClientRect();
     const middleX = clientX - (left + width / 2);
     const middleY = clientY - (top + height / 2);
-    if (middleX >= 200 || middleY >= 200) return;
-    setPosition({ x: middleX, y: middleY, x1: middleX, y1: middleY });
-  }, []);
 
-  const reset = useCallback(() => {
-    setPosition({ x: 0, y: 0, x1: 0, y1: 0 });
-  }, []);
+    setPosition({ x: middleX, y: middleY });
+  };
 
-  const { x, y, x1, y1 } = position;
+  const reset = () => {
+    if (isHover) setIsHover(false);
+
+    setPosition({ x: 0, y: 0 });
+  };
+
   return (
-    <motion.a
-      className={cn('button', [className])}
-      style={{ position: 'relative' }}
-      // @ts-ignore
-      ref={ref}
-      href={TELEGRAM_BOT_LINK}
-      onMouseMove={handleMouse}
-      onMouseLeave={reset}
-      animate={{ x, y }}
-      transition={{ type: 'spring', stiffness: 25, damping: 250 }}
+    <div className={cn('wrp')}
+         onMouseMove={handleMouse}
+         onMouseLeave={reset}
     >
-      <motion.span
-        className={cn('text')}
-        style={{ position: 'relative' }}
-        animate={{ x: x1, y: y1 }}
-        transition={{ type: 'spring', stiffness: 50, damping: 55 }}
+      <motion.div
+        className={cn('', [className])}
+        ref={ref}
+        animate={{ x, y }}
+        transition={{ type: 'spring', stiffness: isHover ? activeStiffness : 120, damping: 25 }}
       >
         {children}
-      </motion.span>
-    </motion.a>
+      </motion.div>
+    </div>
   );
 
 };

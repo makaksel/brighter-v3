@@ -2,11 +2,14 @@
 @import "../../styles/mixins";
 
 .magnetic-button {
-  &__button {
-    overflow: hidden;
-  }
-  &__button,
-  &__text {
-    will-change: transform;
+  position: relative;
+  will-change: transform;
+
+  &__wrp {
+    user-select: none;
+
+    @include md {
+      pointer-events: none;
+    }
   }
 }

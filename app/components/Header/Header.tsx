@@ -34,7 +34,6 @@ const HeaderTop: React.FC = () => {
         <span className={cn('line')}
               style={{
                 width: isInView ? '100%' : '0',
-
                 opacity: isInView ? 1 : 0,
               }} />
       </div>
