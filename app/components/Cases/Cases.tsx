@@ -2,12 +2,12 @@ import React from 'react';
 import { makeCn } from '@/src/utils';
 import Link from 'next/link';
 import './Cases.scss';
-import { CasesCompressed } from '@/app/subscription/components/CasesCompressed';
-import { CaseCard } from '@/app/subscription/components/CaseCard';
-import { Ankil } from '@/app/subscription/components/posters';
-import { Marta } from '@/app/subscription/components/posters/Marta';
-import { Bright } from '@/app/subscription/components/posters/Bright/Bright';
-import { BigData } from '@/app/subscription/components/posters/BigData';
+import { CasesCompressed } from '@/app/components/CasesCompressed';
+import { CaseCard } from '@/app/components/CaseCard';
+import { Ankil } from '@/app/components/posters';
+import { Marta } from '@/app/components/posters/Marta';
+import { Bright } from '@/app/components/posters/Bright/Bright';
+import { BigData } from '@/app/components/posters/BigData';
 import { TELEGRAM_BOT_LINK } from '@/src/data/const';
 
 const cn = makeCn('cases');

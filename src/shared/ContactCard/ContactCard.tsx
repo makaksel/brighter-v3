@@ -4,7 +4,7 @@ import Link from 'next/link';
 import './ContactCard.scss';
 import Image from 'next/image';
 import { TELEGRAM_BOT_LINK } from '@/src/data/const';
-import MaximInBlue from '@/src/resources/images/maximInBlue.png';
+import Maxim from '@/src/resources/images/maxim.jpg';
 
 const cn = makeCn('contact-card');
 
@@ -20,7 +20,7 @@ export const ContactCard: React.FC = () => <div className={cn()}>
     </div>
     <div className={cn('media')}>
       <div className={cn('people')}>
-        <Image src={MaximInBlue} alt={'Максим Поярче'} className={cn('people-img')} />
+        <Image src={Maxim} alt={'Максим Поярче'} className={cn('people-img')} />
       </div>
       <div className={cn('button')}>
         <Link href={TELEGRAM_BOT_LINK} className={cn('link')}>

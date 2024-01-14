@@ -2,7 +2,6 @@
 
 import React, { useRef } from 'react';
 import { makeCn } from '@/src/utils';
-import Link from 'next/link';
 import './Header.scss';
 /* @ts-ignore */
 import Logo from '@/src/resources/icons/logo.svg?url';
@@ -12,8 +11,6 @@ import LogoMobile from '@/src/resources/icons/logo-mobile.svg?url';
 import Title from '@/src/resources/icons/title.svg?url';
 import Image from 'next/image';
 import { BurgerMenu } from '@/app/components/BurgerMenu';
-import { usePathname } from 'next/navigation';
-import { routerLinks } from '@/src/data/navigation';
 import { useInView } from 'framer-motion';
 
 const cn = makeCn('header');
@@ -47,30 +44,14 @@ const HeaderTop: React.FC = () => {
   );
 };
 
-export const Header: React.FC = () => {
-  const pathname = usePathname();
+export const Header: React.FC = () => (
+  <div className={cn('')}>
 
-  return (
-    <div className={cn('')}>
+    <HeaderTop />
 
-      <HeaderTop />
+    <Image src={LogoMobile} alt={'Поярче'} className={cn('logo-mobile')} />
 
-      <Image src={LogoMobile} alt={'Поярче'} className={cn('logo-mobile')} />
+    <BurgerMenu />
 
-      <div className={cn('nav')}>
-        {Object.values(routerLinks).map((link) => (
-          <Link
-            key={link.path}
-            href={link.path}
-            className={cn('nav-item', { active: pathname === link.path })}
-          >
-            {link.label}
-          </Link>
-        ))}
-      </div>
-
-      <BurgerMenu />
-
-    </div>
-  );
-};
+  </div>
+);

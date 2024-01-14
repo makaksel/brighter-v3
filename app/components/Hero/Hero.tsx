@@ -2,7 +2,7 @@ import React from 'react';
 import { makeCn } from '@/src/utils';
 import './Hero.scss';
 import Image from 'next/image';
-import Maxim from '@/src/resources/images/maxim.png';
+import Maxim from '@/src/resources/images/maxim-hero.png';
 import { TELEGRAM_BOT_LINK } from '@/src/data/const';
 import Link from 'next/link';
 
