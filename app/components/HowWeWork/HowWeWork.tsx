@@ -22,7 +22,7 @@ const cardsList = [
   },
 ];
 
-const Card: React.FC = ({ title, body }) => <div className={cn('card')}>
+const Card: React.FC<{ title: string, body: string }> = ({ title, body }) => <div className={cn('card')}>
   <svg width='60' height='60' className={cn('card-icon')} viewBox='0 0 60 60' fill='none'
        xmlns='http://www.w3.org/2000/svg'>
     <path id='Stroke 1'

@@ -18,6 +18,7 @@ export const ContactCard: React.FC = () => <div className={cn()}>
       </p>
       <p className={cn('text')}>Напишите мне в Telegram</p>
     </div>
+    Ам
     <div className={cn('media')}>
       <div className={cn('people')}>
         <Image src={Maxim} alt={'Максим Поярче'} className={cn('people-img')} />
