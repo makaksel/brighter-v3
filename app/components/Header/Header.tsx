@@ -6,11 +6,9 @@ import './Header.scss';
 /* @ts-ignore */
 import Logo from '@/src/resources/icons/logo.svg?url';
 /* @ts-ignore */
-import LogoMobile from '@/src/resources/icons/logo-mobile.svg?url';
 /* @ts-ignore */
 import Title from '@/src/resources/icons/title.svg?url';
 import Image from 'next/image';
-import { BurgerMenu } from '@/app/components/BurgerMenu';
 import { useInView } from 'framer-motion';
 
 const cn = makeCn('header');
@@ -46,12 +44,6 @@ const HeaderTop: React.FC = () => {
 
 export const Header: React.FC = () => (
   <div className={cn('')}>
-
     <HeaderTop />
-
-    <Image src={LogoMobile} alt={'Поярче'} className={cn('logo-mobile')} />
-
-    <BurgerMenu />
-
   </div>
 );

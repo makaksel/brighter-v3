@@ -69,25 +69,19 @@
   @include md {
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
+
 
     padding: rem(30) 0 0;
 
-    &__top {
-      display: none;
-    }
-
-    &__logo-mobile {
-      display: block;
-    }
-
     &__line {
-
+      display: none;
     }
 
     &__title {
       width: rem(100);
       height: rem(14);
+      display: none;
     }
 
     &__nav {

@@ -5,7 +5,7 @@
   @include container;
 
 
-  &__header{
+  &__header {
     display: flex;
     align-items: flex-end;
     flex-wrap: nowrap;
@@ -14,23 +14,24 @@
     margin-bottom: rem(80);
   }
 
-  &__title{
+  &__title {
     @include h1;
     flex: 1 0 66%;
   }
-  &__text{
+
+  &__text {
     @include textGray
   }
 
-  &__paralax{
-    width: calc(100% + #{rem(80)});
+  &__paralax {
+    width: 100%;
     flex-wrap: nowrap;
     overflow: hidden;
     margin: 0 rem(-40) var(--section-margin);
 
   }
 
-  &__body{
+  &__body {
     display: flex;
     align-items: center;
     flex-wrap: nowrap;
@@ -39,7 +40,7 @@
     transform: translate(-500px, 0);
   }
 
-  &__card{
+  &__card {
     width: rem(266);
     height: rem(140);
     padding: rem(20) rem(40);
@@ -51,25 +52,25 @@
     border-radius: rem(20);
     border: rem(1) solid var(--grey);
 
-    &-img{
+    &-img {
       width: 100%;
       height: 100%;
       object-fit: contain;
     }
   }
 
-  @include md{
-    &__header{
+  @include md {
+    &__header {
       flex-wrap: wrap-reverse;
       margin-bottom: rem(20);
     }
 
-    &__paralax{
+    &__paralax {
       width: calc(100% + #{rem(40)});
       margin: 0 rem(-20) var(--section-margin);
     }
 
-    &__card{
+    &__card {
       width: rem(180);
       height: rem(120);
       padding: rem(20);
