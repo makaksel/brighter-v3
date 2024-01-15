@@ -2,7 +2,7 @@ import React from 'react';
 import { makeCn } from '@/src/utils';
 import Link from 'next/link';
 import './Footer.scss';
-import { EMAIL, TELEGRAM_BOT_LINK } from '@/src/data/const';
+import { EMAIL, PHONE, TELEGRAM_BOT_LINK } from '@/src/data/const';
 
 
 const cn = makeCn('footer');
@@ -21,6 +21,7 @@ export const Footer: React.FC<FooterProps> = ({ theme = 'dark', className }) => 
     <div className={cn('contact')}>
       <Link className={cn('contact-link')} href={TELEGRAM_BOT_LINK}>@xpoyarche</Link>
       <Link className={cn('contact-link')} href={`mailto:${EMAIL}`}>{EMAIL}</Link>
+      <Link className={cn('contact-link')} href={`tel:${PHONE}`}>{PHONE}</Link>
     </div>
   </div>
   <div className={cn('bottom')}>

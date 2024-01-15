@@ -11,6 +11,7 @@ export const Subscribe: React.FC = () => <section className={cn()}>
     <div className={cn('wrp')}>
       <p className={cn('title')}>Оформите подписку и получите лучший сервис</p>
       <div className={cn('body')}>
+
         <div className={cn('card')}>
           <svg xmlns='http://www.w3.org/2000/svg' className={cn('card-icon')} width='61' height='60' viewBox='0 0 61 60'
                fill='none'>
@@ -61,6 +62,6 @@ export const Subscribe: React.FC = () => <section className={cn()}>
 
       </div>
     </div>
-    <Link href={TELEGRAM_BOT_LINK} className={cn('button')}>Узнать цену</Link>
+    <Link href={TELEGRAM_BOT_LINK} className={cn('button')}>Оплатить - 50.000 руб</Link>
   </section>
 ;
