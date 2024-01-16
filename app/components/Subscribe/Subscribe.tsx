@@ -62,6 +62,6 @@ export const Subscribe: React.FC = () => <section className={cn()}>
 
       </div>
     </div>
-    <Link href={TELEGRAM_BOT_LINK} className={cn('button')}>Оплатить - 50.000 руб</Link>
+    <Link href={TELEGRAM_BOT_LINK} className={cn('button')}>Узнать цену</Link>
   </section>
 ;
