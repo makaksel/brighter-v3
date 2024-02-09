@@ -1,26 +1,22 @@
 export const routerLinks = {
   root: {
     path: '/',
-    label: 'Главная',
+    label: 'главная',
   },
-  subscription: {
-    path: '/subscription',
-    label: 'Дизайн подписка',
+  portfolio: {
+    path: '/portfolio',
+    label: 'порфтолио',
   },
-  /* TODO
-  express: {
-    path: '/express',
-    label: 'Экспресс-дизайн',
+  services: {
+    path: '/services',
+    label: 'услуги',
   },
-   */
-  roast: {
-    path: '/roast',
-    label: 'Прожарка сайта',
+  contacts: {
+    path: '/contacts',
+    label: 'контакты',
   },
-  /* TODO
-  personal: {
-    path: '/personal',
-    label: 'Личное консультирование',
+  about: {
+    path: '/about',
+    label: 'о нас',
   },
-   */
 };

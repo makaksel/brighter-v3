@@ -3,50 +3,28 @@
 @import "../src/styles/mixins";
 
 :root {
-
   /* sizes */
-  --max-width: 1440px;
+  --max-width: 1880px;
 
-  --x-padding: 40px;
-  --section-margin: 240px;
-
-  --card__border-radius: 40px;
-  --white-box__border-radius: 60px;
-  --button__border-radius: 24px;
+  --x-padding: 20px;
 
 
   /* colors */
-  --primary: #3E51FF;
+  --black: #080808;
   --white: #FFFFFF;
-  --white-bg: #F3F3F5;
-  --black-body: #121212;
 
-  --black: #272727;
-  --grey: #2E2E2E;
-  --grey-text: #969696;
-  --black-text: #151515;
+  --red: #FF3E13;
 
+  --gray-black: #2D2D2D;
+  --gray-light: #A1A1A1;
 
-  --button__border-color: #818181;
-  --button-black__border-color: #4D4D4D;
-
-  --badge__border-color: #404040;
-  --badge2__border-color: #454545;
-
-
-  --company-card__border-color: #2E2E2E;
-  --card__bg-color: #202020;
 }
 
 
 @include md {
   :root {
     /* sizes */
-    --card__border-radius: 20px;
-    --x-padding: 20px;
-    --white-box__border-radius: 20px;
-    --button__border-radius: 20px;
-    --section-margin: 80px;
+
   }
 }
 
@@ -54,26 +32,28 @@
 
 
 body {
-  background-color: var(--black-body);
+  background-color: var(--black);
   color: var(--white);
   overflow-x: hidden;
+
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: always;
 }
 
 main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  //padding: 0 var(--x-padding);
+  padding: 0 var(--x-padding);
   min-height: 100vh;
   position: relative;
   max-width: 100vw;
+  @include textBase;
+
 
   @include md {
-    //padding: 0 var(--x-padding);
+    padding: 0 var(--x-padding);
   }
 }
 
 
-.primary-text {
-  color: var(--primary);
-}

@@ -1,16 +1,8 @@
 import { Metadata } from 'next';
-import { Footer } from '@/app/components/Footer';
+import { Footer } from '@/src/components/Footer';
 import React from 'react';
-import { Hero } from '@/app/components/Hero';
-import { Cases } from '@/app/components/Cases';
-import { HowWeWork } from '@/app/components/HowWeWork';
-import { About } from '@/app/components/About';
-import { ContactCard } from '@/src/shared/ContactCard';
-import { Facilities } from '@/app/components/Facilities';
-import { Partners } from '@/app/components/Partners';
-import { CanOrder } from '@/app/components/CanOrder';
-import { Subscribe } from '@/app/components/Subscribe';
-import { Faq } from '@/app/components/Faq';
+import { Hero } from '@/src/components/Hero';
+import { Faq } from '@/src/components/Faq';
 
 export const metadata: Metadata = {
   title: 'Поярче',
@@ -21,17 +13,9 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <Cases />
-      <HowWeWork />
-      <About />
-      <ContactCard />
-      <Facilities />
-      <Partners />
-      <CanOrder />
-      <Subscribe />
-      <ContactCard />
-      <Faq />
-      <Footer />
+
+
+      {/*<Footer />*/}
     </>
   );
 }

@@ -36,7 +36,6 @@
 
   }
   &__title{
-    @include text;
     font-size: rem(28);
     line-height: normal;
 
@@ -52,7 +51,7 @@
   }
 
   &__body{
-    @include textGray;
+
     padding-top: rem(30);
   }
 

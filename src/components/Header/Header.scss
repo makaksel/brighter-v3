@@ -1,0 +1,51 @@
+@import "@/src/styles/functions";
+@import "@/src/styles/mixins";
+
+.header {
+  @include container;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: rem(30) 0;
+
+
+  &__logo-link{
+    display: flex;
+    align-items: center;
+  }
+
+
+  &__nav {
+    display: flex;
+    align-items: center;
+    gap: rem(50);
+
+  }
+
+  &__nav-link {
+    @include hoverUnderline;
+    @include textBase;
+
+    &--active{
+      border-bottom: rem(1) solid var(--white)
+    }
+  }
+
+
+  &__contact-link{
+    display: flex;
+    align-items: center;
+    gap: rem(10);
+
+    @include hoverUnderline;
+
+    &-icon{
+      fill: var(--white)
+    }
+
+  }
+
+
+}

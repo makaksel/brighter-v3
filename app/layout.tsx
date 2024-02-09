@@ -4,7 +4,7 @@ import './globals.css';
 import './page.scss';
 import Script from 'next/script';
 import Head from 'next/head';
-import { Header } from '@/app/components/Header';
+import { Header } from '@/src/components/Header';
 import React from 'react';
 
 const onest = Onest({ subsets: ['latin'] });
@@ -34,22 +34,22 @@ export default function RootLayout({
     </Head>
 
     {!!YM_ID && <>
-      <Script id='yandex-metrica'>
-        {`
+        <Script id='yandex-metrica'>
+          {`
           (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
           m[i].l=1*new Date();
           for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
           k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
           (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
           ym(${YM_ID}, "init", ${JSON.stringify({
-          clickmap: true,
-          trackLinks: true,
-          accurateTrackBounce: true,
-        })});
+            clickmap: true,
+            trackLinks: true,
+            accurateTrackBounce: true,
+          })});
         `}
-      </Script>
-      <Script id='yandex-metrica-seo'>
-        {`
+        </Script>
+        <Script id='yandex-metrica-seo'>
+          {`
         var settings = {
               need: 30, 
               checkTime: 10,
@@ -274,7 +274,9 @@ export default function RootLayout({
            
           ActiveScore.init(metricsFn);
         `}
-      </Script>
+        </Script>
+        <Script src="//code.jivo.ru/widget/q8y0uWKZps" async></Script>
+        <script src="//code.jivo.ru/widget/q8y0uWKZps" async></script>
     </>}
 
     <body className={onest.className}>
