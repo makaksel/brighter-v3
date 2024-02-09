@@ -8,8 +8,11 @@
   align-items: center;
   justify-content: space-between;
 
-  padding: rem(30) 0;
+  padding: rem(30) var(--x-padding);
 
+  background-color: var(--black);
+
+  z-index: 20;
 
   &__logo-link{
     display: flex;

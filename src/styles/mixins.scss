@@ -47,10 +47,7 @@
 
   position: relative;
   cursor: pointer;
-
-  > * {
-    cursor: pointer;
-  }
+  @include childPointer;
 
 
   &:after {
@@ -83,6 +80,12 @@
     transition: width 0.5s;
   }
 
+}
+
+@mixin childPointer {
+  > * {
+    cursor: pointer;
+  }
 }
 
 

@@ -9,12 +9,25 @@
 
   &__preloader {
     position: absolute;
-    top: 0;
+    top: rem(-80);
     left: 0;
 
     width: 100%;
     height: 100%;
     background: url("/heroMain.png") no-repeat center;
+    z-index: -4;
+  }
+
+  &__mutted{
+    position: absolute;
+    top: rem(-80);
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+    background-color: var(--black);
+    opacity: 0.3;
+    z-index: -4;
   }
 
   &__content {
@@ -22,6 +35,8 @@
     flex-direction: column;
 
     max-width: rem(620);
+
+    padding: 0 var(--x-padding);
     margin-top: rem(116);
     gap: rem(50)
   }
@@ -29,4 +44,6 @@
   &__title {
     @include h1;
   }
+
+
 }

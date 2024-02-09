@@ -8,12 +8,8 @@ import Image from "next/image";
 const cn = makeCn('hero');
 
 export const MainHero: React.FC = () => <section className={cn()}>
-  <div className={cn("preloader")}>
-    {/*<Image src={Hero} alt={'Поярче видео'} />*/}
-  </div>
-  <div className={cn("mutted")}>
-
-  </div>
+  <div className={cn("preloader")} />
+  <div className={cn("mutted")} />
   <div className={cn('content')}>
     <h1 className={cn('title')}>если дизайн, то поярче</h1>
 

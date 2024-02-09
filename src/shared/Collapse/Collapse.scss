@@ -11,6 +11,8 @@
   padding: rem(40);
   cursor: pointer;
 
+  @include childPointer;
+
 
   &--theme{
 
@@ -24,10 +26,6 @@
     }
   }
 
-
-  > * {
-    cursor: pointer;
-  }
 
   &__header{
     display: flex;

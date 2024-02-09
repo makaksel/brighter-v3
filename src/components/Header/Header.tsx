@@ -9,8 +9,12 @@ import { DiscussLink } from "@/src/components/DiscussLink";
 
 const cn = makeCn('header');
 
-export const Header: React.FC = () => (
-  <div className={cn('')}>
+interface HeaderProps {
+  className?: string;
+}
+
+export const Header: React.FC<HeaderProps> = ({className}) => (
+  <div className={cn('', [className])}>
 
     <Link className={cn('logo-link')} href={routerLinks.root}>
       <Logo className={cn('logo')} alt={'Поярче'}/>
