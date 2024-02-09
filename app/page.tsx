@@ -1,8 +1,6 @@
 import { Metadata } from 'next';
-import { Footer } from '@/src/components/Footer';
 import React from 'react';
-import { Hero } from '@/src/components/Hero';
-import { Faq } from '@/src/components/Faq';
+import { MainHero } from 'src/components/MainHero';
 
 export const metadata: Metadata = {
   title: 'Поярче',
@@ -12,7 +10,7 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <>
-      <Hero />
+      <MainHero />
 
 
       {/*<Footer />*/}

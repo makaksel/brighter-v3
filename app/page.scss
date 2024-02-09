@@ -4,7 +4,7 @@
 
 :root {
   /* sizes */
-  --max-width: 1880px;
+  --max-width: 100%; // todo 1880px - если решаться ограничить
 
   --x-padding: 20px;
 
@@ -29,7 +29,6 @@
 }
 
 @include scrollbar;
-
 
 body {
   background-color: var(--black);

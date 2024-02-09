@@ -1,22 +1,27 @@
 export const routerLinks = {
-  root: {
-    path: '/',
-    label: 'главная',
-  },
+  root: '/',
+  portfolio: '/portfolio',
+  services: '/services',
+  contacts: '/contacts',
+  about: '/about',
+  brif: '/brif',
+}
+
+export const navigation = {
   portfolio: {
-    path: '/portfolio',
+    path: routerLinks.portfolio,
     label: 'порфтолио',
   },
   services: {
-    path: '/services',
+    path: routerLinks.services,
     label: 'услуги',
   },
   contacts: {
-    path: '/contacts',
+    path: routerLinks.contacts,
     label: 'контакты',
   },
   about: {
-    path: '/about',
+    path: routerLinks.about,
     label: 'о нас',
   },
 };

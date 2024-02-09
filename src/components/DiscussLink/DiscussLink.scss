@@ -1,0 +1,16 @@
+@import "@/src/styles/functions";
+@import "@/src/styles/mixins";
+
+.discuss-link {
+  display: flex;
+  align-items: center;
+  gap: rem(10);
+  max-width: max-content;
+
+  border-bottom: rem(1) solid var(--white);
+
+  &__icon{
+    fill: var(--white)
+  }
+
+}
