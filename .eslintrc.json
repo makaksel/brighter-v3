@@ -83,7 +83,7 @@
     "jsx-a11y/no-noninteractive-element-interactions": "off",
     // Разрывные строки внутри фигурных скобок. Разрежает записывать объект в строку не более 6 значений (< 7)
     "object-curly-newline": [
-      "error",
+      "warn",
       {
         // Объектный литерал
         "ObjectExpression": {

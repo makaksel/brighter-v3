@@ -35,7 +35,11 @@ export const CaseCard: React.FC<CaseCardProps> = ({
 
         <div className={cn('about')}>
           <p className={cn('title')}>
-            <Link href={`${routerLinks.portfolio}/${id}`} className={cn('title-text')}>{title}</Link>
+            <Link
+              href={`${routerLinks.portfolio}/${id}`}
+              className={cn('title-text')}>
+              {title}
+            </Link>
             <Verified className={cn('title-icon')} />
           </p>
           {desc && <p className={cn('desc')} dangerouslySetInnerHTML={{ __html: desc }}></p>}

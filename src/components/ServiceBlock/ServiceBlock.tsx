@@ -18,7 +18,7 @@ interface ServiceBlockProps {
   collapseList?: React.ReactNode | React.ReactNode[];
 }
 
-export const ServiceBlock: React.FC<ServiceBlockProps> = ({
+export const  ServiceBlock: React.FC<ServiceBlockProps> = ({
   id,
   titleNumber,
   badge,

@@ -6,9 +6,6 @@ import { Footer } from '@/src/components/Footer';
 import { makeCn } from '@/src/utils';
 import { ServicesHero } from '@/src/components/ServicesHero';
 import { ServiceBlock } from '@/src/components/ServiceBlock';
-import { number } from 'prop-types';
-import { list } from 'postcss';
-import { Collapse } from '@/src/shared/Collapse';
 import { ContactCollapse } from '@/src/components/ContactCollapse';
 
 export const metadata: Metadata = {
@@ -63,7 +60,7 @@ export default function page() {
           titleNumber="01"
           badge="айдентика"
           about="логотип и 5 примеров использования / разработка фирменного знака базовые правила использования логотипа / геометрия и построение  размеры / масштабирование / цветовая схема / шрифт / дизайн отдельного фирменного элемента"
-          adsText="создаем яркий брендинг, который выделяет "
+          adsText="создаем яркий брендинг, который выделяет"
           collapseList={
             <>
               {indeed.map((item) => (
