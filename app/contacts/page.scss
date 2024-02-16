@@ -1,0 +1,19 @@
+@import "@/src/styles/mixins";
+
+.contacts-page{
+
+  &__title{
+    @include container;
+    @include h1;
+    margin: rem(116) 0 rem(300);
+    max-width: max-content;
+
+    color: var(--text-color)
+  }
+
+  &__wrp{
+    @include container;
+    margin-bottom: rem(200);
+
+  }
+}

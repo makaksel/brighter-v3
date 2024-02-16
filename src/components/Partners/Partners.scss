@@ -1,0 +1,30 @@
+@import "@/src/styles/functions";
+@import "@/src/styles/mixins";
+
+.partners {
+
+
+  &__paralax{
+    width: 100%;
+    flex-wrap: nowrap;
+    overflow: hidden;
+
+    margin-bottom: rem(200);
+  }
+
+  &__body{
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: rem(200);
+
+    transform: translate(-200px, 0);
+  }
+
+  &__card{
+    overflow: hidden;
+    min-width: min-content;
+    width: 100%;
+  }
+
+}

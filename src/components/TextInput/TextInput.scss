@@ -1,0 +1,65 @@
+@import '@/src/styles/functions';
+@import '@/src/styles/mixins';
+
+.TextInput {
+  $this: &;
+
+  position: relative;
+
+
+  &__Input {
+    @include textBase;
+    $self: &;
+
+    width: 100%;
+    padding: rem(17) rem(20);
+
+    color: var(--text-color);
+
+    background-color: transparent;
+    border: none;
+    border-bottom: rem(2) solid rgba(45, 45, 45, 0.6);
+
+    transition: border .15s ease-in-out, background-color .15s ease-in-out, color .15s ease-in-out;
+
+    &::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+      color: var(--gray-opacity);
+      opacity: 1; /* Firefox */
+    }
+
+    &:-ms-input-placeholder { /* Internet Explorer 10-11 */
+      color: var(--gray-opacity);
+    }
+
+    &::-ms-input-placeholder { /* Microsoft Edge */
+      color: var(--gray-opacity);
+    }
+
+    &[value=''] {
+      background-color: transparent;
+    }
+
+
+    &:focus {
+      //border-color: var(--light-600);
+      outline: none;
+    }
+
+    &--error {
+      border-bottom: rem(2) solid var(--red) !important;
+      color: var(--red) !important;
+    }
+  }
+
+  &--error {
+    #{$this}__Icon {
+      fill: var(--red) !important;
+    }
+  }
+
+  &__Message {
+    color: var(--error);
+    margin-left: rem(15);
+    margin-top: rem(5);
+  }
+}

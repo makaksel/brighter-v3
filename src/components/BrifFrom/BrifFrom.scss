@@ -1,0 +1,149 @@
+@import "@/src/styles/functions";
+@import "@/src/styles/mixins";
+
+
+.brif-from {
+  @include container;
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  grid-gap: rem(20);
+
+  max-width: rem(1306);
+  margin: 0 auto rem(300);
+
+  .mt-100{
+    margin-top: rem(100);
+  }
+
+  &__row {
+    width: 100%;
+    min-width: 1px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: rem(20);
+  }
+
+  &__title-cell {
+    @include textBase;
+
+    display: flex;
+    align-items: center;
+
+    max-height: rem(58);
+    height: 100%;
+
+    gap: rem(20);
+
+    border-bottom: rem(1) solid rgba(45, 45, 45, 0.1);
+
+    &-text {
+      color: var(--text-color);
+    }
+
+    &-icon {
+      fill: var(--gray-black);
+    }
+  }
+
+  &__checkboxes {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: rem(10)
+  }
+
+  &__file-input {
+    cursor: pointer;
+
+    > * {
+      cursor: pointer;
+    }
+
+    &-field{
+      display: none;
+      color: transparent;
+
+      &::-webkit-file-upload-button {
+        visibility: hidden;
+      }
+    }
+
+
+    &-label{
+      @include h3;
+      color: var(--text-color);
+      border-bottom: rem(2) solid var(--text-color);
+    }
+
+    &::before {
+
+
+      //display: inline-block;
+
+      outline: none;
+      white-space: nowrap;
+      -webkit-user-select: none;
+      cursor: pointer;
+    }
+
+    &:hover::before {
+      //border-color: black;
+    }
+
+    &:active {
+      outline: 0;
+    }
+
+    &:active::before {
+      //background: red;
+    }
+  }
+
+  &__submit-btn {
+    @include h1;
+
+    grid-column: 2/2;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100%;
+
+    gap: rem(10);
+    margin-bottom: rem(50);
+
+    border: none;
+    padding-bottom: rem(12);
+    border-bottom: rem(5) solid var(--text-color);
+
+    outline: none;
+    background-color: transparent;
+
+
+    cursor: pointer;
+
+    > * {
+      cursor: pointer;
+    }
+
+    &-text {
+      @include h1;
+
+      color: var(--text-color);
+    }
+
+    &-icon {
+      stroke: var(--text-color);
+      stroke-width: rem(6);
+    }
+  }
+
+  &__actions {
+    margin-top: rem(150);
+  }
+
+}

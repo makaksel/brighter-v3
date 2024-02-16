@@ -10,8 +10,25 @@
     @include hoverUnderline;
     @include textBase;
 
+    color: var(--text-color);
+    border-color: var(--text-color);
+
     &--active {
-      border-bottom: rem(1) solid var(--white)
+      border-bottom: rem(1) solid var(--text-color);
+    }
+
+  }
+
+
+  @include md {
+    align-items: flex-start;
+
+    &__link {
+      @include h1;
+
+      &--active {
+        border-bottom: rem(2) solid var(--text-color);
+      }
     }
   }
 }

@@ -1,0 +1,44 @@
+@import "@/src/styles/functions";
+@import "@/src/styles/mixins";
+
+.contacts {
+  $this: &;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: rem(20);
+
+  margin-bottom: rem(100);
+  position: relative;
+
+  &__row {
+    display: grid;
+    grid-template-columns: 1fr minmax(rem(375), rem(1167));
+    grid-gap: var(--x-padding);
+  }
+
+  &__col {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: rem(20);
+
+    position: relative;
+  }
+
+  &__contact {
+
+    &-link {
+      @include h2;
+
+      border-bottom: rem(2) solid var(--text-color);
+    }
+
+    &-line {
+      width: 100%;
+      height: rem(1);
+      background-color: var(--footer-line);
+
+    }
+  }
+}

@@ -13,6 +13,10 @@
 
   font-style: normal;
   font-weight: 500;
+
+  @include md {
+    font-size: rem(15);
+  }
 }
 
 @mixin h1 {
@@ -20,6 +24,10 @@
   font-size: rem(90);
   line-height: 85%;
   letter-spacing: -3%;
+
+  @include md {
+    font-size: rem(36);
+  }
 }
 
 @mixin h2 {
@@ -27,6 +35,10 @@
   font-size: rem(40);
   line-height: 100%;
   letter-spacing: -3%;
+
+  @include md {
+    font-size: rem(20);
+  }
 }
 
 @mixin h3 {
@@ -34,20 +46,26 @@
   font-size: rem(32);
   line-height: 120%;
   letter-spacing: -3%;
+
+  @include md {
+    font-size: rem(18);
+  }
 }
 
 @mixin h4 {
   @include textBase;
   font-size: rem(20);
   line-height: 120%;
+
+  @include md {
+    font-size: rem(15) ;
+  }
 }
 
 
 @mixin hoverUnderline {
-
   position: relative;
   cursor: pointer;
-  @include childPointer;
 
 
   &:after {
@@ -78,13 +96,6 @@
     height: 1px;
     background-color: currentColor;
     transition: width 0.5s;
-  }
-
-}
-
-@mixin childPointer {
-  > * {
-    cursor: pointer;
   }
 }
 
@@ -129,10 +140,10 @@
     background-clip: padding-box;
     transition: background-color .2s ease-in-out;
 
-    background-color: #353535;
+    background-color: var(--scroll-color);
 
     &:hover {
-      background-color: var(--primary);
+      background-color: var(--scroll-color);
     }
   }
 }

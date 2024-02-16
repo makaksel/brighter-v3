@@ -7,10 +7,10 @@
   gap: rem(10);
   max-width: max-content;
 
-  border-bottom: rem(1) solid var(--white);
+  border-bottom: rem(1) solid var(--text-color);
 
   &__icon{
-    fill: var(--white)
+    fill: var(--text-color)
   }
 
 }

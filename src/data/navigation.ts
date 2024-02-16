@@ -1,6 +1,7 @@
 export const routerLinks = {
   root: '/',
   portfolio: '/portfolio',
+  portfolioItem: '/portfolio/:id',
   services: '/services',
   contacts: '/contacts',
   about: '/about',

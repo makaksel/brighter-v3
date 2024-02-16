@@ -4,6 +4,11 @@ import { MainHero } from 'src/components/MainHero';
 import { Header } from "@/src/components/Header";
 import { makeCn } from "@/src/utils";
 import { Footer } from "@/src/components/Footer";
+import { Partners } from "@/src/components/Partners/Partners";
+import { MainCases } from "src/components/MainCases";
+import { Card } from "@/src/components/Card";
+import { MainServices } from '@/src/components/MainServices';
+import { Media } from '@/src/components/Media';
 
 export const metadata: Metadata = {
   title: 'Поярче',
@@ -12,17 +17,24 @@ export const metadata: Metadata = {
 
 const cn = makeCn('main-page')
 
-export default function Home() {
+export default function page() {
   return (
-    <>
+    <main className={cn()}>
       <div className={cn('hero')}>
         <Header className={cn('header')} />
         <MainHero />
       </div>
 
+      <Partners />
 
+      <MainCases />
+
+      <MainServices />
+
+      <Media />
 
       <Footer />
-    </>
+    </main>
+
   );
 }

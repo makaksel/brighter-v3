@@ -1,0 +1,34 @@
+@import "@/src/styles/functions";
+@import "@/src/styles/mixins";
+
+
+.contact-collapse {
+  &:not(:last-child){
+    margin-bottom: rem(50);
+  }
+
+  &__header {
+    width: 100%;
+    max-width: rem(660);
+
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+
+    align-items: center;
+
+    cursor: pointer;
+
+    > * {
+      cursor: pointer;
+    }
+  }
+
+  &__title{
+    @include h2
+  }
+
+  &__days{
+    color: var(--gray-light)
+  }
+
+}

@@ -8,36 +8,27 @@
   background-color: var(--card__bg-color);
   border-radius: var(--card__border-radius);
 
-  padding: rem(40);
+  padding-bottom: rem(20);
+  border-bottom: rem(1.5) solid var(--gray-opacity);
+
   cursor: pointer;
 
-  @include childPointer;
+  &__header{
+    width: 100%;
+    display: flex;
+    align-items: center;
 
+    cursor: pointer;
 
-  &--theme{
+    &-wrp{
+      width: 100%;
+    }
 
-    &_light{
-
-      background-color: var(--white);
-
-      #{$this}__title{
-        color: var(--black-text);
-      }
+    & > * {
+      cursor: pointer;
     }
   }
 
-
-  &__header{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-  }
-  &__title{
-    font-size: rem(28);
-    line-height: normal;
-
-  }
 
   &__icon{
     transform: rotate(-180deg);
@@ -49,17 +40,8 @@
   }
 
   &__body{
-
-    padding-top: rem(30);
+    padding-top: rem(50);
+    color: var(--gray-light);
   }
 
-  @include md {
-
-    padding: rem(20);
-
-    &__icon{
-      width: rem(12);
-      height: rem(5);
-    }
-  }
 }

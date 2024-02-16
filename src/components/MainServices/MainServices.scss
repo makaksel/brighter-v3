@@ -1,0 +1,73 @@
+@import "@/src/styles/functions";
+@import "@/src/styles/mixins";
+
+.main-services {
+  @include container;
+  width: 100%;
+
+  margin-bottom: rem(200);
+
+  &__header {
+    display: grid;
+    grid-template-columns: 1fr 6fr 1fr;
+    grid-gap: rem(20);
+
+    margin-bottom: rem(60);
+  }
+
+  &__title {
+    @include h1;
+    grid-column: 2/2;
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    gap: rem(50);
+
+  }
+
+
+  &__service {
+    width: 100%;
+    min-width: 1px;
+
+    display: grid;
+    grid-template-columns: 1fr 3fr 3fr 1fr;
+    align-items: flex-start;
+
+    grid-gap: rem(20);
+    padding-top: rem(20);
+    border-top: rem(1) solid rgba(255, 255, 255, 0.2);
+
+    &-number, &-title {
+      color: var(--gray-light)
+    }
+
+    &-badge {
+      @include h2;
+
+      max-width: max-content;
+
+      padding: rem(12) rem(20);
+
+      border-radius: rem(60);
+      border: rem(2) solid rgba(255, 255, 255, 0.2);
+    }
+
+    &-link {
+      display: flex;
+      align-items: center;
+      flex-wrap: nowrap;
+      white-space: nowrap;
+
+      gap: rem(10);
+      border-bottom: rem(1) solid var(--white);
+
+      &-icon {
+        fill: var(--white)
+      }
+    }
+  }
+
+}

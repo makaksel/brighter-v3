@@ -4,7 +4,9 @@
 .footer {
   $this: &;
   @include container;
+
   position: relative;
+  margin-top: auto;
 
   &__row {
     display: grid;
@@ -23,8 +25,7 @@
 
 
   &__brif-link {
-    @include h1();
-    @include childPointer();
+    @include h1;
 
     display: flex;
     align-items: center;
@@ -36,10 +37,13 @@
     margin-bottom: rem(200);
     gap: rem(10);
 
-    border-bottom: rem(5) solid var(--white);
+    padding-bottom: rem(12);
+    border-bottom: rem(5) solid var(--text-color);
+
 
     &-icon {
-      fill: var(--white);
+      stroke: var(--text-color);
+      stroke-width: rem(6);
     }
   }
 
@@ -58,15 +62,14 @@
     &-link {
       @include h2;
 
-      border-bottom: rem(2) solid var(--white);
+      border-bottom: rem(2) solid var(--text-color);
     }
 
     &-line {
       width: 100%;
       height: rem(1);
-      background-color: rgba(255, 255, 255, 0.2);
+      background-color: var(--footer-line);
 
-      z-index: -1;
     }
   }
 
@@ -75,6 +78,8 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    margin-bottom: rem(50);
     gap: rem(50);
 
     color: var(--gray-light);
@@ -84,7 +89,6 @@
   &__privacy {
     display: flex;
     align-items: center;
-    margin-bottom: rem(50);
     gap: rem(50);
 
     &-link {

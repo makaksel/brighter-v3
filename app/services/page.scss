@@ -1,0 +1,15 @@
+@import "@/src/styles/functions";
+
+.services-page{
+  --bg-color: var(--white);
+  --text-color: var(--gray-black);
+
+  --footer-line: rgba(45, 45, 45, 0.2);
+
+  background-color: var(--bg-color);
+  color: var(--text-color);
+
+  &__list{
+    margin-bottom: rem(300);
+  }
+}

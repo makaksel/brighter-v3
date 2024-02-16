@@ -4,37 +4,34 @@ import React, { useState } from 'react';
 import { makeCn } from '@/src/utils';
 import './Collapse.scss';
 import { AnimatePresence, motion } from 'framer-motion';
+import PlusIcon from '@/src/resources/icons/plus.svg';
 
 const cn = makeCn('collapse');
 
 interface CollapseProps {
   children: React.ReactNode | React.ReactNode[];
-  title: string;
-  theme?: 'dark' | 'light';
+  header: React.ReactNode | React.ReactNode[];
+  className?: string;
 }
 
-export const Collapse: React.FC<CollapseProps> = ({ children, title, theme = 'dark' }) => {
+export const Collapse: React.FC<CollapseProps> = ({ children, header, className }) => {
   const [open, setOpen] = useState<boolean>(false);
 
-  return (<div className={cn({ theme })} onClick={() => setOpen(!open)}>
+  return (<div className={cn('',[className])} onClick={() => setOpen(!open)}>
     <div className={cn('header')}>
-      <p className={cn('title')}>
-        {title}
-      </p>
-      <svg xmlns='http://www.w3.org/2000/svg' className={cn('icon', { open })} width='29' height='13'
-           viewBox='0 0 29 13'
-           fill='none'>
-        <path d='M1 11.2919L15.4 1.29297L28 11.293' stroke={theme === 'dark' ? 'white' : 'black'} strokeWidth='2'
-              strokeLinecap='round' />
-      </svg>
+      <div className={cn('header-wrp')}>
+        {header}
+      </div>
+
+      <PlusIcon className={cn('icon', { open })} />
     </div>
     <AnimatePresence initial={false}>
       {open && (
         <motion.section
-          key='content'
-          initial='collapsed'
-          animate='open'
-          exit='collapsed'
+          key="content"
+          initial="collapsed"
+          animate="open"
+          exit="collapsed"
           variants={{
             open: { opacity: 1, height: 'auto' },
             collapsed: { opacity: 0, height: 0, overflow: 'hidden' },

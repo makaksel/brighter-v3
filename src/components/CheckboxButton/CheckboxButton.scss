@@ -1,0 +1,93 @@
+@import "@/src/styles/mixins";
+@import "@/src/styles/media-queries";
+
+.checkbox-button {
+  $this: &;
+  display: inline-flex;
+
+  &__label {
+    width: 100%;
+    display: inline-flex;
+    position: relative;
+  }
+
+  &__input {
+    position: absolute;
+    opacity: 0;
+    z-index: -1;
+  }
+
+  &__input:checked ~ &__content {
+    background-color: var(--black);
+    color: var(--white);
+  }
+
+  &__content {
+    @include h4;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+
+    width: 100%;
+    padding: rem(12) rem(20);
+
+
+    color: var(--black);
+
+    border-radius: rem(60);
+    border: rem(1) solid var(--gray-opacity);
+    cursor: pointer;
+    user-select: none;
+
+    transition: background-color .15s, opacity .15s;
+
+    #{$this}__label:hover & {
+      opacity: 0.8;
+    }
+
+    > * {
+      cursor: pointer;
+    }
+
+  }
+
+  &_disabled {
+    pointer-events: none;
+    opacity: 0.25;
+  }
+
+  &--variant {
+
+    &_outline {
+      height: rem(50);
+
+      #{$this}__input:checked ~ #{$this}__content {
+        background-color: var(--primary-color);
+
+        & > span {
+          display: none;
+        }
+
+        &::before {
+          content: url("data:image/svg+xml, <svg width='28' height='21' viewBox='0 0 28 21' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M2 10L10 18L26 2' stroke='white' stroke-width='3'/></svg>");
+          width: 28px;
+          height: 21px;
+        }
+      }
+
+      #{$this}__content {
+        padding: rem(15) rem(23);
+        font-size: rem(16);
+        font-weight: 700;
+        line-height: normal;
+        color: var(--primary-color);
+        border: rem(2) solid var(--primary-color);
+        background-color: transparent;
+      }
+    }
+  }
+}
+
+

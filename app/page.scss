@@ -18,13 +18,20 @@
   --gray-black: #2D2D2D;
   --gray-light: #A1A1A1;
 
+  --card-media--bg: #232323;
+
+  --scroll-color: #353535;
+
+  --gray-opacity: rgba(45, 45, 45, 0.2);
+
+  --footer-line: rgba(255, 255, 255, 0.2);
 }
 
 
 @include md {
   :root {
     /* sizes */
-
+    --x-padding: 10px;
   }
 }
 
@@ -32,7 +39,6 @@
 
 body {
   background-color: var(--black);
-  color: var(--white);
   overflow-x: hidden;
 
   -webkit-font-smoothing: antialiased;
@@ -40,18 +46,28 @@ body {
 }
 
 main {
+  --bg-color: var(--black);
+  --text-color: var(--white);
+
   display: flex;
   flex-direction: column;
-  align-items: center;
+
+  position: relative;
 
   min-height: 100vh;
-  position: relative;
   max-width: 100vw;
   @include textBase;
+
+
+
+  background-color: var(--bg-color);
+  color: var(--text-color);
 
 }
 
 .main-page{
+
+
 
   &__hero{
     display: flex;
@@ -66,3 +82,8 @@ main {
   }
 
 }
+
+a > * {
+  cursor: pointer;
+}
+
