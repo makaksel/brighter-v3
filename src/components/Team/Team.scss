@@ -11,6 +11,14 @@
   grid-gap: rem(20);
   margin-bottom: rem(300);
 
+  @include md{
+    display: flex;
+    flex-direction: column;
+    gap: rem(50);
+
+    margin-bottom: rem(150);
+  }
+
 
   &__content {
     display: flex;

@@ -42,6 +42,10 @@
   &__body{
     padding-top: rem(50);
     color: var(--gray-light);
+
+    @include md{
+      padding-top: rem(20);
+    }
   }
 
 }

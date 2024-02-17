@@ -9,16 +9,16 @@ const cn = makeCn('main-cases');
 export const MainCases: React.FC = () => (
   <div className={cn()}>
     <div className={cn('row')}>
-      <Card></Card>
-      <Card></Card>
+      <Card />
+      <Card />
     </div>
     <div className={cn('row')}>
-      <Card></Card>
-      <Card></Card>
+      <Card />
+      <Card />
     </div>
     <div className={cn('row')}>
-      <Card></Card>
-      <Card></Card>
+      <Card />
+      <Card />
     </div>
   </div>
 );

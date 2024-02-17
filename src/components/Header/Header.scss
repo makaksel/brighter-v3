@@ -44,9 +44,7 @@
   &__burger {
     $burger: &;
     display: none;
-
     flex-direction: column;
-    //justify-content: space-evenly;
 
     position: relative;
     width: rem(40);
@@ -54,6 +52,7 @@
 
     background-color: transparent;
     border: none;
+    outline: none;
     box-shadow: none;
     cursor: pointer;
 
@@ -139,43 +138,36 @@
 
       .brif-link {
         @include h1;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
 
-        &-icon{}
+        max-width: 100%;
+        width: 100%;
+
+        gap: rem(10);
+
+        padding-bottom: rem(5);
+        border-bottom: rem(2) solid var(--text-color);
+
+        &-icon {
+          stroke: var(--text-color);
+          stroke-width: rem(2);
+
+          @include md{
+            &.mobile{
+              display: block;
+
+              stroke: var(--text-color);
+              stroke-width: rem(2);
+            }
+          }
+        }
       }
     }
 
     &-contacts {
-      display: flex;
-      flex-direction: column;
-
-
-
-
-      &-row {
-        display: grid;
-        grid-template-columns: max-content 1fr max-content;
-        align-items: center;
-        grid-gap: rem(20);
-      }
-
-      &-title {
-      }
-
-      &-line {
-        width: 100%;
-        height: rem(2);
-        background-color: var(--gray-opacity);
-
-      }
-
-      &-link {
-        @include h3;
-        align-items: flex-end;
-
-      }
-
-
-
+      margin-bottom: 0 !important;
     }
 
 

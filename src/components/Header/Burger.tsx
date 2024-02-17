@@ -5,9 +5,10 @@ import { usePathname } from 'next/navigation';
 import { HeaderNav } from '@/src/components/HeaderNav';
 import { cn } from './Header';
 import Link from 'next/link';
-import { EMAIL, TELEGRAM_BOT_LINK } from '@/src/data/const';
 import ArrowRight from '@/src/resources/icons/ArrowRight.svg';
 import { routerLinks } from '@/src/data/navigation';
+import { Contacts } from '@/src/components/Contacts';
+import ArrowRightMobile from '@/src/resources/icons/ArrowRightMobile.svg';
 
 export const Burger = () => {
   const pathname = usePathname();
@@ -53,23 +54,14 @@ export const Burger = () => {
         <HeaderNav className={cn('burger-nav')} />
 
         <div className={cn('burger-footer')}>
+
           <Link className={'brif-link'} href={routerLinks.brif}>
             <span>обсудить проект</span>
-            <ArrowRight className={'brif-link-icon'} />
+            <ArrowRight className={'brif-link-icon hide-md'} />
+            <ArrowRightMobile className={'brif-link-icon mobile'} />
           </Link>
 
-          <div className={cn('burger-contacts')}>
-            <div className={cn('burger-contacts-row')}>
-              <span className={cn('burger-contacts-title')}>telegram</span>
-              <span className={cn('burger-contacts-line')}></span>
-              <Link className={cn('burger-contacts-link')} href={TELEGRAM_BOT_LINK}>@xpoyarche</Link>
-            </div>
-            <div className={cn('burger-contacts-row')}>
-              <span className={cn('burger-contacts-title')}>email</span>
-              <span className={cn('burger-contacts-line')}></span>
-              <Link className={cn('burger-contacts-link')} href={`mailto:${EMAIL}`}>hello@poyarche.ru</Link>
-            </div>
-          </div>
+          <Contacts className={cn('burger-contacts')}/>
         </div>
       </div>
     </>

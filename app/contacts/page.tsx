@@ -16,7 +16,9 @@ export default function page() {
   return (
     <main>
       <Header />
+
       <h1 className={cn('title')}>контакты</h1>
+
       <div className={cn('wrp')}>
         <Contacts />
       </div>

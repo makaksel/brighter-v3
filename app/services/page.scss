@@ -1,15 +1,21 @@
 @import "@/src/styles/functions";
+@import "@/src/styles/mixins";
 
 .services-page{
   --bg-color: var(--white);
   --text-color: var(--gray-black);
 
   --footer-line: rgba(45, 45, 45, 0.2);
+  --gray-opacity: rgba(45, 45, 45, 0.2);
 
   background-color: var(--bg-color);
   color: var(--text-color);
 
   &__list{
     margin-bottom: rem(300);
+
+    @include md{
+      margin-bottom: rem(150);
+    }
   }
 }

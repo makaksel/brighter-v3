@@ -9,11 +9,19 @@
 
   margin-bottom: var(--section-margin);
 
+  @include md{
+    gap: rem(20)
+  }
+
 
   &__header{
     display: flex;
     align-items: center;
     gap: rem(20);
+
+    @include md{
+      gap: rem(10)
+    }
 
     cursor: pointer;
 

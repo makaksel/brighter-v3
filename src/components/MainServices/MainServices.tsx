@@ -25,7 +25,7 @@ export const Service: React.FC<ServiceProps> = ({ number, title, badge, hashLink
       {badge}
     </span>
     <Link href={`${routerLinks.services}#${hashLink}`} className={cn('service-link')}>
-      <span>подробнее об услуге</span>
+      <span>подробнее <span className={'hide-md'}>об услуге</span></span>
       <ArrowRight className={cn('service-link-icon')} />
     </Link>
   </div>

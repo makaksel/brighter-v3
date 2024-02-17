@@ -29,15 +29,19 @@ export const  ServiceBlock: React.FC<ServiceBlockProps> = ({
   linkText,
 }) => (
   <div className={cn()} id={id}>
+
     <div className={cn('number')}>
       <span>[{titleNumber}]</span>
     </div>
+
     <div className={cn('badge-wrp')}>
       <span className={cn('badge')}>{badge}</span>
     </div>
+
     <div className={cn('about')}>
       <p>{about}</p>
     </div>
+
     <div className={cn('ads')}>
       {adsText && <p className={cn('ads-text')}>{adsText}</p>}
       <Link href={link} className={cn('ads-link')}>
@@ -45,8 +49,10 @@ export const  ServiceBlock: React.FC<ServiceBlockProps> = ({
         <ArrowRight className={cn('ads-link-icon')} />
       </Link>
     </div>
+
     <div className={cn('list')}>
       {collapseList}
     </div>
+
   </div>
 );

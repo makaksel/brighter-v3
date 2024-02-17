@@ -12,6 +12,10 @@
     display: grid;
     grid-template-columns: 1fr minmax(rem(375), rem(1167));
     grid-gap: var(--x-padding);
+
+    @include md{
+      grid-template-columns: 1fr;
+    }
   }
 
   &__col {
@@ -44,6 +48,25 @@
     &-icon {
       stroke: var(--text-color);
       stroke-width: rem(6);
+
+      &.mobile{
+        display: none;
+      }
+
+      @include md{
+        &.mobile{
+          display: block;
+
+          stroke: var(--text-color);
+          stroke-width: rem(2);
+        }
+      }
+    }
+
+    @include md{
+      margin-bottom: rem(50);
+      padding-bottom: rem(5);
+      border-bottom: rem(2) solid var(--text-color);
     }
   }
 
@@ -78,9 +101,10 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap-reverse;
 
     margin-bottom: rem(50);
-    gap: rem(50);
+    gap: rem(15) rem(50);
 
     color: var(--gray-light);
   }
@@ -89,11 +113,18 @@
   &__privacy {
     display: flex;
     align-items: center;
-    gap: rem(50);
+    flex-wrap: wrap;
+    gap: rem(15) rem(50);
 
     &-link {
       color: var(--gray-light);
       border-bottom: rem(1) solid var(--gray-light);
     }
+
+    @include xs{
+      flex-direction: column;
+      align-items: flex-start;
+    }
   }
+
 }

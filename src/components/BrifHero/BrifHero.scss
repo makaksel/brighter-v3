@@ -7,6 +7,11 @@
   width: 100%;
   height: rem(484);
 
+
+  @include md{
+    height: rem(260);
+  }
+
   &__back-link {
     display: flex;
     align-items: center;
@@ -35,6 +40,8 @@
       fill: var(--text-color);
       rotate: 180deg;
     }
+
+
   }
 
   &__content {
@@ -45,6 +52,10 @@
 
     padding: 0 var(--x-padding);
     margin-top: rem(41);
+
+    @include md{
+      margin-top: rem(20);
+    }
   }
 
   &__title {

@@ -11,6 +11,7 @@ import { Onest } from 'next/font/google';
 import { Controller, useForm } from 'react-hook-form';
 
 import get from 'lodash/get';
+import ArrowRightMobile from '@/src/resources/icons/ArrowRightMobile.svg';
 
 const onest = Onest({ subsets: ['latin'] });
 
@@ -195,7 +196,8 @@ export const BrifFrom: React.FC = () => {
       <div className={cn('row', [cn('actions')])}>
         <button type={'submit'} className={cn('submit-btn', [onest.className])}>
           <span className={cn('submit-btn-text')}>отправить</span>
-          <ArrowRight className={cn('submit-btn-icon')} />
+          <ArrowRight className={cn('submit-btn-icon', ['hide-md'])} />
+          <ArrowRightMobile className={cn('submit-btn-icon', ['mobile'])} />
         </button>
       </div>
 

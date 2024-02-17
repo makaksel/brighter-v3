@@ -15,6 +15,12 @@
     display: grid;
     grid-template-columns: 1fr minmax(rem(375), rem(1167));
     grid-gap: var(--x-padding);
+
+    @include md{
+      display: none;
+
+    }
+
   }
 
   &__col {
@@ -40,5 +46,42 @@
       background-color: var(--footer-line);
 
     }
+  }
+
+
+  &__mobile-contacts {
+    display: none;
+    flex-direction: column;
+
+    @include md{
+      display: flex;
+    }
+
+
+    &-row {
+      display: grid;
+      grid-template-columns: max-content 1fr max-content;
+      align-items: center;
+      grid-gap: rem(20);
+    }
+
+    &-title {
+    }
+
+    &-line {
+      width: 100%;
+      height: rem(2);
+      background-color: var(--gray-opacity);
+
+    }
+
+    &-link {
+      @include h3;
+      align-items: flex-end;
+
+    }
+
+
+
   }
 }

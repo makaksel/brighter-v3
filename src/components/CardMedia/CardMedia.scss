@@ -8,6 +8,9 @@
   flex-direction: column;
   gap: rem(50);
 
+  flex: 1 1 48%;
+  min-width: rem(330);
+
   &__media{
     background-color: var(--card-media--bg);
   }

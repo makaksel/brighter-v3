@@ -1,8 +1,6 @@
 import React from 'react';
 import { makeCn } from '@/src/utils';
 import './ServicesHero.scss';
-import { DiscussLink } from "@/src/components/DiscussLink";
-import Image from "next/image";
 
 
 const cn = makeCn('services-hero');

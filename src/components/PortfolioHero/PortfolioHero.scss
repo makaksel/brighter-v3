@@ -24,4 +24,13 @@
   }
 
 
+  @include md{
+    height: rem(375);
+
+    &__content {
+      margin-top: rem(50);
+      gap: rem(60);
+    }
+  }
+
 }

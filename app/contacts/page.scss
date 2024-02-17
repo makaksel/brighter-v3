@@ -8,12 +8,19 @@
     margin: rem(116) 0 rem(300);
     max-width: max-content;
 
-    color: var(--text-color)
+    color: var(--text-color);
+
+    @include md{
+      margin: rem(50) 0 rem(156);
+    }
   }
 
   &__wrp{
     @include container;
     margin-bottom: rem(200);
 
+    @include md{
+      margin-bottom: rem(0);
+    }
   }
 }

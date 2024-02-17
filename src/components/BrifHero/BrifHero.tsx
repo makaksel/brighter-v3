@@ -3,10 +3,10 @@
 import React from 'react';
 import { makeCn } from '@/src/utils';
 import './BrifHero.scss';
-import Link from 'next/link';
 import ArrowRight from '@/src/resources/icons/ArrowRight.svg';
 import { useRouter } from 'next/navigation';
 import { Onest } from 'next/font/google';
+
 const onest = Onest({ subsets: ['latin'] });
 
 const cn = makeCn('brif-hero');

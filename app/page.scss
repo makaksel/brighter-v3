@@ -22,7 +22,7 @@
 
   --scroll-color: #353535;
 
-  --gray-opacity: rgba(45, 45, 45, 0.2);
+  --gray-opacity: rgba(255, 255, 255, 0.2);
 
   --footer-line: rgba(255, 255, 255, 0.2);
 }
@@ -47,6 +47,7 @@ body {
 
 main {
   --bg-color: var(--black);
+  --text-color: var(--white);
   --text-color: var(--white);
 
   display: flex;
@@ -85,5 +86,11 @@ main {
 
 a > * {
   cursor: pointer;
+}
+
+.hide-md{
+  @include md{
+    display: none;
+  }
 }
 

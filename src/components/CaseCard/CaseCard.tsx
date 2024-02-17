@@ -9,6 +9,7 @@ import Link from 'next/link';
 import { routerLinks } from '@/src/data/navigation';
 import ArrowRight from '@/src/resources/icons/ArrowRight.svg';
 import ReactStars from 'react-stars';
+import { useMediaQuery } from '@/src/utils/useMediaQuery';
 
 const cn = makeCn('case-card');
 
@@ -21,12 +22,15 @@ interface CaseCardProps {
   img: string | StaticImageData;
 }
 
-export const CaseCard: React.FC<CaseCardProps> = ({
-  id,
+
+export const CaseCard: React.FC<CaseCardProps> = ({id,
   theme,
   title,
   img,
   desc }) => {
+
+  const isDesktop = useMediaQuery('(min-width:1024px)')
+
   return (
     <div className={cn()}>
       <div className={cn('body')}>
@@ -49,7 +53,7 @@ export const CaseCard: React.FC<CaseCardProps> = ({
           <ReactStars
             count={5}
             value={4.5}
-            size={25}
+            size={isDesktop ? 27 : 20}
             color1={'#080808'}
             color2={'#A1A1A1'}
             edit={false}

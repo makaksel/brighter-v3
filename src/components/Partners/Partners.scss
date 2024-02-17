@@ -10,6 +10,10 @@
     overflow: hidden;
 
     margin-bottom: rem(200);
+
+    @include md{
+      margin-bottom: rem(50);
+    }
   }
 
   &__body{
@@ -19,6 +23,10 @@
     gap: rem(200);
 
     transform: translate(-200px, 0);
+
+    @include md{
+      gap: rem(80);
+    }
   }
 
   &__card{
