@@ -57,8 +57,13 @@ export const BrifFrom: React.FC = () => {
   const servicesWatch = watch('services');
   const budgetWatch = watch('budget');
 
-  const processData = (data: BrifFrom) => {
+  const processData = async (data: BrifFrom) => {
     console.log('processData: ', data);
+
+    const response = await fetch('/api/contact', {
+      method: 'post',
+      body: JSON.stringify(data),
+    });
   };
 
   const servicesHandleChange = (val: boolean, name: any) => {
@@ -74,7 +79,8 @@ export const BrifFrom: React.FC = () => {
   };
 
   const fileHandleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    console.log(event);
+    var tmppath = event.target.files[0].mozFullPath;
+    console.log(tmppath);
   };
 
   return (

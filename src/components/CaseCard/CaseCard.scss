@@ -82,6 +82,10 @@
     color: var(--gray-light)
   }
 
+  &__desc{
+    max-width: rem(350);
+  }
+
   &__media {
     width: 100%;
     height: rem(670);

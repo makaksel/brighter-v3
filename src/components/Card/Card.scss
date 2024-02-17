@@ -52,6 +52,8 @@
   }
 
   &__desc{
-    color: var(--gray-light)
+    color: var(--gray-light);
+    max-width: rem(350);
+
   }
 }

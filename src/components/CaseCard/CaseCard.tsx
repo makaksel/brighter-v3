@@ -19,15 +19,18 @@ interface CaseCardProps {
   title: string;
   desc?: string;
   rating?: number;
-  img: string | StaticImageData;
+  imgs: (string | StaticImageData)[] ;
 }
 
 
-export const CaseCard: React.FC<CaseCardProps> = ({id,
+export const CaseCard: React.FC<CaseCardProps> = ({
+  id,
   theme,
   title,
-  img,
-  desc }) => {
+  imgs,
+  desc,
+  rating= 5,
+}) => {
 
   const isDesktop = useMediaQuery('(min-width:1024px)')
 
@@ -39,11 +42,10 @@ export const CaseCard: React.FC<CaseCardProps> = ({id,
 
         <div className={cn('about')}>
           <p className={cn('title')}>
-            <Link
-              href={`${routerLinks.portfolio}/${id}`}
+            <span
               className={cn('title-text')}>
               {title}
-            </Link>
+            </span>
             <Verified className={cn('title-icon')} />
           </p>
           {desc && <p className={cn('desc')} dangerouslySetInnerHTML={{ __html: desc }}></p>}
@@ -52,7 +54,7 @@ export const CaseCard: React.FC<CaseCardProps> = ({id,
         <div className={cn('rating')}>
           <ReactStars
             count={5}
-            value={4.5}
+            value={rating}
             size={isDesktop ? 27 : 20}
             color1={'#080808'}
             color2={'#A1A1A1'}
@@ -68,9 +70,10 @@ export const CaseCard: React.FC<CaseCardProps> = ({id,
       </div>
 
       <div className={cn('media')}>
-        <Image src={img} className={cn('img')} alt={title} />
-        <Image src={img} className={cn('img')} alt={title} />
-        <Image src={img} className={cn('img')} alt={title} />
+        {imgs.map((img) => (
+          <Image key={null} src={img} className={cn('img')} alt={title} />
+        ))}
+
 
       </div>
 

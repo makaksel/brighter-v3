@@ -3,7 +3,6 @@ import { makeCn } from '@/src/utils';
 import './CardMedia.scss';
 import Image, { StaticImageData } from 'next/image';
 import CaseImg1 from '@/src/resources/images/case1.png';
-import Verified from '@/src/resources/icons/verified.svg';
 import Link from 'next/link';
 
 const cn = makeCn('card-media');
@@ -13,6 +12,7 @@ interface CardMediaProps {
   img: string | StaticImageData;
   date: string;
   desc: string;
+  link: string;
 }
 
 export const CardMedia: React.FC<CardMediaProps> = ({
@@ -20,6 +20,7 @@ export const CardMedia: React.FC<CardMediaProps> = ({
   img = CaseImg1,
   date,
   desc,
+  link,
 }) => {
   return (
     <div className={cn()}>
@@ -28,7 +29,7 @@ export const CardMedia: React.FC<CardMediaProps> = ({
       </div>
       <div className={cn('body')}>
         <p className={cn('title')}>
-          <Link href="#" className={cn('title-text')}>{title}</Link>
+          <Link href={link} className={cn('title-text')}>{title}</Link>
           <span className={cn('title-date')}>{date}</span>
         </p>
         <p className={cn('desc')}>[{desc}]</p>
