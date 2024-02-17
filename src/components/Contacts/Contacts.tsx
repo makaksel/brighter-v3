@@ -18,7 +18,7 @@ export const Contacts: React.FC<ContactsProps> = ({
     <div className={cn('', [className])}>
       <div className={cn('row')}>
         <div className={cn('col')}>
-          <span className={cn('contact-label')}>telegramm</span>
+          <span className={cn('contact-label')}>telegram</span>
           <span className={cn('contact-line')} />
         </div>
         <div className={cn('col')}>

@@ -48,16 +48,30 @@
     &--error {
       border-bottom: rem(2) solid var(--red) !important;
       color: var(--red) !important;
+
+
+      &::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+        color: var(--red);
+        opacity: 1; /* Firefox */
+      }
+
+      &:-ms-input-placeholder { /* Internet Explorer 10-11 */
+        color: var(--red);
+      }
+
+      &::-ms-input-placeholder { /* Microsoft Edge */
+        color: var(--red);
+      }
     }
   }
 
   &--error {
-    #{$this}__Icon {
-      fill: var(--red) !important;
-    }
+
   }
 
   &__Message {
+    position: absolute;
+
     color: var(--error);
     margin-left: rem(15);
     margin-top: rem(5);

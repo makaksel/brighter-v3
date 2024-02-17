@@ -60,6 +60,10 @@
 
     &-icon {
       fill: var(--gray-black);
+
+      &--error{
+        fill: var(--red);
+      }
     }
 
     @include md{

@@ -79,8 +79,8 @@ export const BrifFrom: React.FC = () => {
   };
 
   const fileHandleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    var tmppath = event.target.files[0].mozFullPath;
-    console.log(tmppath);
+    // var tmppath = event.target.files[0].mozFullPath;
+    // console.log(tmppath);
   };
 
   return (
@@ -89,7 +89,7 @@ export const BrifFrom: React.FC = () => {
       <div className={cn('row')}>
         <p className={cn('title-cell')}>
           <span className={cn('title-cell-text')}>[ваше имя]</span>
-          <RequiredIcon className={cn('title-cell-icon')} />
+          <RequiredIcon className={cn('title-cell-icon', { error: !!get(errors, 'name.message') })} />
         </p>
         <Controller
           control={control}
@@ -108,7 +108,7 @@ export const BrifFrom: React.FC = () => {
       <div className={cn('row')}>
         <p className={cn('title-cell')}>
           <span className={cn('title-cell-text')}>[почта или контакт в любом мессенджере]</span>
-          <RequiredIcon className={cn('title-cell-icon')} />
+          <RequiredIcon className={cn('title-cell-icon', { error: !!get(errors, 'contact.message') })} />
         </p>
         <Controller
           control={control}

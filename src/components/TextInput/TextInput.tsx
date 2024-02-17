@@ -58,10 +58,10 @@ export const TextInput: React.FC<TextInputProps> = (props) => {
           disabled={disabled}
           onChange={onChange}
           value={value}
-          placeholder={placeholder}
+          placeholder={error || placeholder}
         />
       </div>
-      {error && <span className={cn('Message')}>{error}</span>}
+      {/*{error && <span className={cn('Message')}>{error}</span>}*/}
     </div>
   );
 };
