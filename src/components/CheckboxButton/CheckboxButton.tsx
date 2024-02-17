@@ -26,9 +26,6 @@ export const CheckboxButton: React.FC<CheckboxButtonProps> = ({
   children,
   ...rest
 }) => {
-  console.log('checked', checked, name);
-  console.log('value', value, name);
-
   const handleChange = useCallback((x: React.ChangeEvent<HTMLInputElement>) => {
     if (!onChange) return;
     onChange(!checked, name);
