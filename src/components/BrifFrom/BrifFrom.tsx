@@ -17,7 +17,7 @@ const onest = Onest({ subsets: ['latin'] });
 
 const cn = makeCn('brif-from');
 
-interface BrifFrom {
+export interface BrifFrom {
   name: string;
   contact: string;
   company: string;
@@ -26,7 +26,7 @@ interface BrifFrom {
     site: boolean;
     design: boolean;
     consultation: boolean;
-  },
+  } | string,
   budget: string;
   file: string;
 }
@@ -57,12 +57,25 @@ export const BrifFrom: React.FC = () => {
   const servicesWatch = watch('services');
   const budgetWatch = watch('budget');
 
+  const servicesMap = {
+    branding: 'брендинг',
+    site: 'сайты',
+    design: 'дизайн-поддержка',
+    consultation: 'консультация',
+  }
+
   const processData = async (data: BrifFrom) => {
     console.log('processData: ', data);
+    const servicesData = Object.entries(data.services).reduce((acc: string[], [key, val]: [string, boolean]) => {
+      if(!val) return acc;
+      const newService: string = servicesMap[key];
+      return [...acc, newService]
+    }, []).join(', ')
+    const resultData = {...data, services: servicesData}
 
     const response = await fetch('/api/contact', {
       method: 'post',
-      body: JSON.stringify(data),
+      body: JSON.stringify(resultData),
     });
   };
 
@@ -157,8 +170,10 @@ export const BrifFrom: React.FC = () => {
           <CheckboxButton name="services.design" onChange={servicesHandleChange} checked={servicesWatch.design}>
             дизайн-поддержка
           </CheckboxButton>
-          <CheckboxButton name="services.consultation" onChange={servicesHandleChange}
-                          checked={servicesWatch.consultation}>
+          <CheckboxButton name="services.consultation"
+                          onChange={servicesHandleChange}
+                          checked={servicesWatch.consultation}
+          >
             консультация
           </CheckboxButton>
         </div>
