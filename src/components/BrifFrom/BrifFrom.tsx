@@ -26,7 +26,7 @@ export interface BrifFrom {
     site: boolean;
     design: boolean;
     consultation: boolean;
-  } | string,
+  },
   budget: string;
   file: string;
 }
@@ -65,9 +65,10 @@ export const BrifFrom: React.FC = () => {
   }
 
   const processData = async (data: BrifFrom) => {
-    console.log('processData: ', data);
+
     const servicesData = Object.entries(data.services).reduce((acc: string[], [key, val]: [string, boolean]) => {
       if(!val) return acc;
+      // @ts-ignore
       const newService: string = servicesMap[key];
       return [...acc, newService]
     }, []).join(', ')
