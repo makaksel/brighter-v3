@@ -19,7 +19,7 @@ interface CaseCardProps {
   title: string;
   desc?: string;
   rating?: number;
-  imgs: (string | StaticImageData)[] ;
+  imgs: (string | StaticImageData)[];
 }
 
 
@@ -29,10 +29,10 @@ export const CaseCard: React.FC<CaseCardProps> = ({
   title,
   imgs,
   desc,
-  rating= 5,
+  rating = 5,
 }) => {
 
-  const isDesktop = useMediaQuery('(min-width:1024px)')
+  const isDesktop = useMediaQuery('(min-width:1024px)');
 
   return (
     <div className={cn()}>
@@ -42,10 +42,12 @@ export const CaseCard: React.FC<CaseCardProps> = ({
 
         <div className={cn('about')}>
           <p className={cn('title')}>
-            <span
-              className={cn('title-text')}>
+            <Link
+              href={`${routerLinks.portfolio}/${id}`}
+              className={cn('title-text')}
+            >
               {title}
-            </span>
+            </Link>
             <Verified className={cn('title-icon')} />
           </p>
           {desc && <p className={cn('desc')} dangerouslySetInnerHTML={{ __html: desc }}></p>}
