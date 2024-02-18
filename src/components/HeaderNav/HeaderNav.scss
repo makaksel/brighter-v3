@@ -7,16 +7,14 @@
   gap: rem(50);
 
   &__link {
-    @include hoverUnderline;
     @include textBase;
 
     color: var(--text-color);
-    border-color: var(--text-color);
 
     &--active {
-      border-bottom: rem(1) solid var(--text-color);
+      @include hoverUnderline;
+      @include hoverActiveUnderline;
     }
-
   }
 
 
@@ -27,7 +25,8 @@
       @include h1;
 
       &--active {
-        border-bottom: rem(2) solid var(--text-color);
+        @include hoverUnderline(2, 5);
+        @include hoverActiveUnderline;
       }
     }
   }

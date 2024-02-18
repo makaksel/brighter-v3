@@ -147,8 +147,8 @@
 
         gap: rem(10);
 
-        padding-bottom: rem(5);
-        border-bottom: rem(2) solid var(--text-color);
+        @include hoverUnderline(2, 7);
+        @include hoverActiveUnderline;
 
         &-icon {
           stroke: var(--text-color);

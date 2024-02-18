@@ -20,6 +20,7 @@ export const MainCases: React.FC = () => (
         title={'ник чернобаев'}
         about={`разработка логотипа и брендбука, продуктовый дизайн`}
         img={CaseImg1}
+
       />
       <Card
         id={1}

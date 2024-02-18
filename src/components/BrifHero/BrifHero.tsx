@@ -5,9 +5,6 @@ import { makeCn } from '@/src/utils';
 import './BrifHero.scss';
 import ArrowRight from '@/src/resources/icons/ArrowRight.svg';
 import { useRouter } from 'next/navigation';
-import { Onest } from 'next/font/google';
-
-const onest = Onest({ subsets: ['latin'] });
 
 const cn = makeCn('brif-hero');
 
@@ -18,10 +15,10 @@ export const BrifHero: React.FC = () => {
     <section className={cn()}>
 
       <div className={cn('content')}>
-        <button className={cn('back-link', [onest.className])} onClick={() => router.back()}>
+        <span className={cn('back-link')} onClick={() => router.back()}>
           <ArrowRight className={cn('back-link-icon')} />
           <span>назад</span>
-        </button>
+        </span>
         <h1 className={cn('title')}>настало время заполнить бриф</h1>
 
         <p className={cn('text')}>чем больше вы дадите информации, тем точнее мы поймем ваш запрос</p>

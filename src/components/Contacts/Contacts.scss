@@ -16,7 +16,7 @@
     grid-template-columns: 1fr minmax(rem(375), rem(1167));
     grid-gap: var(--x-padding);
 
-    @include md{
+    @include md {
       display: none;
 
     }
@@ -37,7 +37,8 @@
     &-link {
       @include h2;
 
-      border-bottom: rem(2) solid var(--text-color);
+      @include hoverUnderline(2, 0);
+      @include hoverActiveUnderline;
     }
 
     &-line {
@@ -53,7 +54,7 @@
     display: none;
     flex-direction: column;
 
-    @include md{
+    @include md {
       display: flex;
     }
 
@@ -79,8 +80,10 @@
       @include h3;
       align-items: flex-end;
 
-    }
+      @include hoverUnderline;
+      @include hoverActiveUnderline;
 
+    }
 
 
   }

@@ -62,42 +62,51 @@
   }
 }
 
-
-@mixin hoverUnderline {
-  position: relative;
-  cursor: pointer;
-
-
-  &:after {
-    border: none;
-    content: "";
-    display: block;
-    position: absolute;
-    right: 0;
-    bottom: -1px;
-    width: 0;
-    height: 1px;
-    background-color: currentColor;
-    transition: width 0.5s;
+@mixin hoverActiveUnderline {
+  &:hover{
+    &::after {
+      transform-origin: bottom right;
+      transform: scaleX(0);
+    }
   }
-
-  &:hover:before {
-    border-bottom: 1px solid currentColor;
-  }
-
-  &:hover:after {
-    border: none;
-    content: "";
-    width: 100%;
-    display: block;
-    position: absolute;
-    left: 0;
-    bottom: -1px;
-    height: 1px;
-    background-color: currentColor;
-    transition: width 0.5s;
+  &::after {
+    transform-origin: bottom left;
+    transform: scaleX(1);
   }
 }
+
+
+@mixin hoverUnderline($borderHeight: 1, $bottom: 0) {
+  cursor: pointer;
+  display: inline-flex;
+
+  position: relative;
+
+  &:hover{
+    &::after {
+      transform-origin: bottom left;
+      transform: scaleX(1);
+    }
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: rem($borderHeight);
+    bottom: rem(-$bottom);
+    left: 0;
+    background-color: currentColor;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+  }
+
+  &--active {
+    @include hoverActiveUnderline;
+  }
+}
+
 
 
 @mixin button {

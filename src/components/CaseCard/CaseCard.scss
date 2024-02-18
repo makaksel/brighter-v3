@@ -57,7 +57,8 @@
     margin-bottom: rem(15);
 
     &-text {
-      border-bottom: rem(2) solid var(--white);
+      @include hoverUnderline(2);
+      @include hoverActiveUnderline;
     }
   }
 
@@ -66,7 +67,9 @@
     align-items: center;
 
     gap: rem(10);
-    border-bottom: rem(1) solid var(--white);
+
+    @include hoverUnderline;
+    @include hoverActiveUnderline;
 
     &-icon {
       fill: var(--white)

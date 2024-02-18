@@ -23,11 +23,9 @@
     gap: rem(10);
     margin-bottom: rem(50);
 
-    border: none;
-    border-bottom: rem(1) solid var(--text-color);
+    @include hoverUnderline;
+    @include hoverActiveUnderline;
 
-    outline: none;
-    background-color: transparent;
     @include textBase;
 
     cursor: pointer;

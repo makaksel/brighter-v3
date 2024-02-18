@@ -7,10 +7,10 @@
   gap: rem(10);
   max-width: max-content;
 
-  border-bottom: rem(1) solid var(--text-color);
+  @include hoverUnderline(2, 2);
+  @include hoverActiveUnderline;
 
   &__icon{
     fill: var(--text-color)
   }
-
 }

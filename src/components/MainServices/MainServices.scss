@@ -7,7 +7,7 @@
 
   margin-bottom: rem(200);
 
-  @include md{
+  @include md {
     margin-bottom: rem(150);
   }
 
@@ -51,8 +51,9 @@
     &-number {
       order: 1;
     }
-     &-title {
-       order: 3;
+
+    &-title {
+      order: 3;
       color: var(--gray-light)
     }
 
@@ -68,7 +69,6 @@
 
       order: 4;
 
-
     }
 
     &-link {
@@ -80,8 +80,11 @@
       max-width: max-content;
 
       gap: rem(10);
-      border-bottom: rem(1) solid var(--white);
+
       order: 12;
+
+      @include hoverUnderline;
+      @include hoverActiveUnderline;
 
       &-icon {
         fill: var(--white)
@@ -89,7 +92,7 @@
     }
 
 
-    @include md{
+    @include md {
       grid-template-columns: 1fr 1fr;
       align-items: center;
       border: none;
@@ -98,7 +101,7 @@
         order: -1;
       }
 
-      &-number{
+      &-number {
         margin-left: auto;
       }
 
@@ -106,12 +109,12 @@
         grid-column: 1/3;
       }
 
-      &-title{
+      &-title {
         padding-top: rem(15);
         border-top: rem(1) solid rgba(255, 255, 255, 0.2);
       }
 
-      &-link{
+      &-link {
         @include h3;
       }
     }

@@ -41,8 +41,8 @@
     margin-bottom: rem(200);
     gap: rem(10);
 
-    padding-bottom: rem(12);
-    border-bottom: rem(5) solid var(--text-color);
+    @include hoverUnderline(5, 22);
+    @include hoverActiveUnderline;
 
 
     &-icon {
@@ -65,8 +65,8 @@
 
     @include md{
       margin-bottom: rem(50);
-      padding-bottom: rem(5);
-      border-bottom: rem(2) solid var(--text-color);
+      @include hoverUnderline(2, 5);
+      @include hoverActiveUnderline;
     }
   }
 
@@ -79,23 +79,6 @@
     margin-bottom: rem(100);
 
   }
-
-  &__contact {
-
-    &-link {
-      @include h2;
-
-      border-bottom: rem(2) solid var(--text-color);
-    }
-
-    &-line {
-      width: 100%;
-      height: rem(1);
-      background-color: var(--footer-line);
-
-    }
-  }
-
 
   &__bottom {
     display: flex;
@@ -118,7 +101,9 @@
 
     &-link {
       color: var(--gray-light);
-      border-bottom: rem(1) solid var(--gray-light);
+
+      @include hoverUnderline;
+      @include hoverActiveUnderline;
     }
 
     @include xs{

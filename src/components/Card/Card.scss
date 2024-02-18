@@ -2,7 +2,7 @@
 @import "@/src/styles/media-queries";
 @import "@/src/styles/mixins";
 
-.card{
+.card {
   max-width: 100%;
   width: 100%;
   display: flex;
@@ -13,11 +13,11 @@
 
   min-width: rem(325);
 
-  &:nth-child(even){
+  &:nth-child(even) {
     flex: 1 1 36.5%;
   }
 
-  &__media{
+  &__media {
 
     background-color: var(--card-media--bg);
 
@@ -26,19 +26,19 @@
     }
   }
 
-  &__img{
+  &__img {
     display: flex;
     width: 100%;
     height: 100%;
     object-fit: cover;
   }
 
-  &__rating{
+  &__rating {
     display: flex;
     margin-bottom: rem(20);
   }
 
-  &__title{
+  &__title {
     @include h3;
     max-width: max-content;
     display: flex;
@@ -46,12 +46,13 @@
     gap: rem(10);
     margin-bottom: rem(15);
 
-    &-text{
-      border-bottom: rem(2) solid var(--white);
+    &-text {
+      @include hoverUnderline(2);
+      @include hoverActiveUnderline;
     }
   }
 
-  &__desc{
+  &__desc {
     color: var(--gray-light);
     max-width: rem(350);
 

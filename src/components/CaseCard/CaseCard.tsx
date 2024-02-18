@@ -62,7 +62,7 @@ export const CaseCard: React.FC<CaseCardProps> = ({
           />
         </div>
 
-        <Link href={routerLinks.portfolioItem} className={cn('link')}>
+        <Link href={`${routerLinks.portfolio}/${id}`} className={cn('link')}>
           <span className={cn('link-text')}>подробнее о проекте</span>
           <ArrowRight className={cn('link-icon')} />
         </Link>

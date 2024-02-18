@@ -39,8 +39,13 @@
       @include h3;
       max-width: max-content;
 
-      text-decoration: underline;
+      text-decoration: underline var(--text-color);
       text-underline-offset: 7px;
+      transition: text-decoration-color 300ms;
+
+      &:hover{
+        text-decoration-color: rgba(0, 0, 0, 0);
+      }
     }
 
     &-date{

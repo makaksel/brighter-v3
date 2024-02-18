@@ -101,31 +101,24 @@
     &-label {
       @include h3;
       color: var(--text-color);
-      border-bottom: rem(2) solid var(--text-color);
+
+      @include hoverUnderline(2,4);
+      @include hoverActiveUnderline;
+
     }
 
     &::before {
-
-
-      //display: inline-block;
-
       outline: none;
       white-space: nowrap;
       -webkit-user-select: none;
       cursor: pointer;
     }
 
-    &:hover::before {
-      //border-color: black;
-    }
-
     &:active {
       outline: 0;
     }
 
-    &:active::before {
-      //background: red;
-    }
+
   }
 
   &__submit-btn {
@@ -142,8 +135,10 @@
     gap: rem(10);
 
     border: none;
-    padding-bottom: rem(12);
-    border-bottom: rem(5) solid var(--text-color);
+
+
+    @include hoverUnderline(5,17);
+    @include hoverActiveUnderline;
 
     outline: none;
     background-color: transparent;

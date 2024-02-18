@@ -6,6 +6,8 @@ import './Card.scss';
 import Image, { StaticImageData } from 'next/image';
 import Verified from '@/src/resources/icons/verified.svg';
 import ReactStars from 'react-stars';
+import Link from 'next/link';
+import { routerLinks } from '@/src/data/navigation';
 
 const cn = makeCn('card');
 
@@ -41,7 +43,7 @@ export const Card: React.FC<CardProps> = ({
           />
         </div>
         <p className={cn('title')}>
-          <span className={cn('title-text')}>{title}</span>
+          <Link href={`${routerLinks.portfolio}/${id}`} className={cn('title-text')}>{title}</Link>
           <Verified className={cn('title-icon')} />
         </p>
         <p className={cn('desc')}>{about}</p>
