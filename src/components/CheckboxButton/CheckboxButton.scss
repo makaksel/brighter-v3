@@ -31,6 +31,7 @@
     position: relative;
 
     width: 100%;
+    max-height: rem(50);
     padding: rem(12) rem(20);
 
 
@@ -78,6 +79,7 @@
       }
 
       #{$this}__content {
+        max-height: 100%;
         padding: rem(15) rem(23);
         font-size: rem(16);
         font-weight: 700;
