@@ -4,7 +4,6 @@ import './globals.css';
 import './page.scss';
 import Script from 'next/script';
 import Head from 'next/head';
-import { Header } from '@/src/components/Header';
 import React from 'react';
 
 const onest = Onest({ subsets: ['latin'] });
@@ -24,7 +23,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
 
-  const YM_ID = +process?.env?.YANDEX_METRICA_ACCOUNT;
+  const YM_ID = process.env.YANDEX_METRICA_ACCOUNT;
 
   return (
     <html lang="ru">
@@ -275,6 +274,7 @@ export default function RootLayout({
           ActiveScore.init(metricsFn);
         `}
       </Script>
+      <script src="//code.jivo.ru/widget/n5UOqKOYFI" async></script>  
     </>}
 
     <body className={onest.className}>

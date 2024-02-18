@@ -10,7 +10,8 @@ export const metadata: Metadata = {
   description: 'Если дизайн, то поярче. Разрабатываем не просто картинки, мы создаем смыслы.',
 };
 
-export default function page() {
+export default async function page() {
+
   return (
     <main>
       <Header />

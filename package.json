@@ -9,6 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@contentful/rich-text-html-renderer": "^16.3.4",
+    "contentful": "^10.6.21",
     "dompurify": "^3.0.6",
     "embla-carousel-react": "^8.0.0-rc14",
     "framer-motion": "^10.16.4",

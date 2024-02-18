@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { makeCn } from '@/src/utils';
+import { makeCn, useMediaQuery } from '@/src/utils';
 import './CaseCard.scss';
 import Image, { StaticImageData } from 'next/image';
 import Verified from '@/src/resources/icons/verified.svg';
@@ -9,12 +9,11 @@ import Link from 'next/link';
 import { routerLinks } from '@/src/data/navigation';
 import ArrowRight from '@/src/resources/icons/ArrowRight.svg';
 import ReactStars from 'react-stars';
-import { useMediaQuery } from '@/src/utils/useMediaQuery';
 
 const cn = makeCn('case-card');
 
 interface CaseCardProps {
-  id: number;
+  id: string | number;
   theme: string;
   title: string;
   desc?: string;

@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { makeCn } from '@/src/utils';
+import { makeCn, useMediaQuery } from '@/src/utils';
 import './TeamSlider.scss';
 import Image, { StaticImageData } from 'next/image';
 import TeamImg from '@/src/resources/images/team1.jpg';
@@ -26,7 +26,6 @@ import 'swiper/css';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, FreeMode, Navigation, Thumbs } from 'swiper/modules';
 import type { Swiper as SwiperClass } from 'swiper/types';
-import { useMediaQuery } from '@/src/utils/useMediaQuery';
 
 const cn = makeCn('team-slider');
 
