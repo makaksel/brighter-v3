@@ -29,7 +29,7 @@ export const CardMedia: React.FC<CardMediaProps> = ({
       </div>
       <div className={cn('body')}>
         <p className={cn('title')}>
-          <Link href={link} className={cn('title-text')}>{title}</Link>
+          <Link href={link} className={cn('title-link')}><span className={cn('title-text')}>{title}</span></Link>
           <span className={cn('title-date')}>{date}</span>
         </p>
         <p className={cn('desc')}>[{desc}]</p>

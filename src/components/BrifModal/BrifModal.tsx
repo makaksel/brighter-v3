@@ -38,13 +38,13 @@ export const BrifModal: React.FC<BrifModalProps> = ({ open }) => {
               </div>
             </div>
 
-            <div className={cn('block')}>
+            <div className={cn('block')} style={{ alignItems: 'flex-end' }}>
               <div className={cn('block-col')}>
                 <p className={cn('block-title')}>скачайте гайд</p>
                 <span className={cn('block-line')}></span>
               </div>
               <div className={cn('block-col')}>
-                <a href={"/guide.pdf"} className={cn('load-guide')} download="гайд">скачать</a>
+                <a href={'/guide.pdf'} className={cn('load-guide')} download="гайд">скачать</a>
               </div>
             </div>
 
