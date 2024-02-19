@@ -5,6 +5,8 @@
   $this: &;
   display: inline-flex;
 
+  max-height: rem(50);
+
   &__label {
     width: 100%;
     display: inline-flex;
