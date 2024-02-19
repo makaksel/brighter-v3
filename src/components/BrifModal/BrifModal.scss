@@ -1,0 +1,196 @@
+@import "@/src/styles/functions";
+@import "@/src/styles/mixins";
+
+
+.brif-modal {
+  z-index: 99999999999;
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+  background-color: rgba(22, 22, 22, 0.5);
+
+  display: none;
+
+  overflow: auto;
+
+
+
+  &--open {
+    display: flex;
+  }
+
+  &__wrp {
+    @include container;
+    display: flex;
+    flex-direction: column;
+
+    margin: auto;
+    max-width: rem(1207);
+    max-height: 90%;
+  }
+
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--white);
+    padding: rem(40);
+
+
+
+    @include md{
+      padding: rem(20) rem(10);
+    }
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+
+    margin-bottom: rem(150);
+
+    @include md{
+      margin-bottom: rem(100);
+    }
+  }
+
+  &__title {
+    @include h1;
+    margin-bottom: rem(20);
+  }
+
+  &__subtitle {
+    @include h2;
+    margin-bottom: rem(50);
+    color: var(--gray-light)
+  }
+
+  &__block {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: rem(20);
+
+
+    @include md{
+      grid-template-columns: 1fr;
+    }
+
+    &-col{
+      display: flex;
+      align-items: center;
+      gap: rem(20);
+      width: 100%;
+
+    }
+
+    &-title{
+      flex: 1 0 auto;
+      color: var(--gray-light)
+    }
+
+    &-line{
+      display: flex;
+      width: 100%;
+      height: rem(1);
+      flex: 0 1 auto;
+      background-color: var(--gray-opacity);
+
+    }
+
+    &:not(:last-child){
+      margin-bottom: rem(50);
+    }
+  }
+
+  &__load-guide{
+    @include h3;
+    @include hoverUnderline(2);
+    @include hoverActiveUnderline;
+
+    width: 100%;
+
+    @include md{
+      max-width: max-content;
+    }
+
+  }
+
+  &__social{
+    gap: rem(10);
+
+    @include md{
+      flex-wrap: wrap;
+    }
+
+    &-link{
+      @include h4;
+      padding: rem(12) rem(20);
+      border: rem(1) solid var(--gray-opacity);
+      border-radius: rem(60);
+    }
+  }
+
+  &__footer {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: rem(50);
+
+    color: var(--gray-light);
+
+    @include md{
+      flex-wrap: wrap-reverse;
+    }
+
+  }
+
+  &__link{
+    @include h1;
+    color: var(--text-color);
+
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+
+    gap: rem(10);
+
+    @include hoverUnderline(6, 15);
+    @include hoverActiveUnderline;
+
+    @include md{
+      width: 100%;
+      justify-content: space-between;
+      @include hoverUnderline(2, 4);
+      @include hoverActiveUnderline;
+    }
+
+    &:hover{
+      color: var(--text-color);
+    }
+
+    &-icon {
+      stroke: var(--text-color);
+      stroke-width: rem(6);
+
+      &.mobile {
+        display: none;
+
+      }
+
+      @include md {
+        &.mobile {
+          display: block;
+
+
+          stroke: var(--text-color);
+          stroke-width: rem(2);
+        }
+      }
+    }
+
+  }
+
+}

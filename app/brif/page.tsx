@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import React from 'react';
-import './page.scss'
+import './page.scss';
 import { Header } from '@/src/components/Header';
 import { Footer } from '@/src/components/Footer';
 import { makeCn } from '@/src/utils';

@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import { makeCn } from '@/src/utils';
 import './BrifFrom.scss';
 import { TextInput } from '@/src/components/TextInput';
@@ -12,6 +12,7 @@ import { Controller, useForm } from 'react-hook-form';
 
 import get from 'lodash/get';
 import ArrowRightMobile from '@/src/resources/icons/ArrowRightMobile.svg';
+import { BrifModal } from '@/src/components/BrifModal';
 
 const onest = Onest({ subsets: ['latin'] });
 
@@ -32,6 +33,7 @@ export interface BrifFrom {
 }
 
 export const BrifFrom: React.FC = () => {
+
   const {
     control,
     handleSubmit,
@@ -62,22 +64,31 @@ export const BrifFrom: React.FC = () => {
     site: 'сайты',
     design: 'дизайн-поддержка',
     consultation: 'консультация',
-  }
+  };
+
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [modalIsOpen, setModalIsOpen] = useState<boolean>(false);
 
   const processData = async (data: BrifFrom) => {
+    setIsLoading(true);
 
     const servicesData = Object.entries(data.services).reduce((acc: string[], [key, val]: [string, boolean]) => {
-      if(!val) return acc;
+      if (!val) return acc;
       // @ts-ignore
       const newService: string = servicesMap[key];
-      return [...acc, newService]
-    }, []).join(', ')
-    const resultData = {...data, services: servicesData}
+      return [...acc, newService];
+    }, []).join(', ');
+    const resultData = { ...data, services: servicesData };
 
     const response = await fetch('/api/contact', {
       method: 'post',
       body: JSON.stringify(resultData),
     });
+
+    if (response) {
+      setModalIsOpen(true);
+      setIsLoading(false);
+    }
   };
 
   const servicesHandleChange = (val: boolean, name: any) => {
@@ -216,12 +227,14 @@ export const BrifFrom: React.FC = () => {
 
 
       <div className={cn('row', [cn('actions')])}>
-        <button type={'submit'} className={cn('submit-btn', [onest.className])}>
+        <button type={'submit'} className={cn('submit-btn', {loading: isLoading}, [onest.className])}>
           <span className={cn('submit-btn-text')}>отправить</span>
           <ArrowRight className={cn('submit-btn-icon', ['hide-md'])} />
           <ArrowRightMobile className={cn('submit-btn-icon', ['mobile'])} />
         </button>
       </div>
+
+      <BrifModal open={modalIsOpen} />
 
     </form>
   );
