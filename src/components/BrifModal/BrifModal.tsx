@@ -44,7 +44,7 @@ export const BrifModal: React.FC<BrifModalProps> = ({ open }) => {
                 <span className={cn('block-line')}></span>
               </div>
               <div className={cn('block-col')}>
-                <Link href={"#"} className={cn('load-guide')}>скачать</Link>
+                <a href={"/guide.pdf"} className={cn('load-guide')} download="гайд">скачать</a>
               </div>
             </div>
 
