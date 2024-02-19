@@ -11,12 +11,15 @@
     width: 100%;
     display: inline-flex;
     position: relative;
+    max-height: rem(50);
   }
 
   &__input {
     position: absolute;
     opacity: 0;
     z-index: -1;
+    top: 0;
+    left: 0;
   }
 
   &__input:checked ~ &__content {
