@@ -5,7 +5,7 @@ import Link from 'next/link';
 import ArrowRight from '@/src/resources/icons/ArrowRight_big.svg';
 import ArrowRightMobile from '@/src/resources/icons/ArrowRightMobile.svg';
 import { routerLinks } from '@/src/data/navigation';
-import { TELEGRAM_BOT_LINK } from '@/src/data/const';
+import { BEHANCE_LINK, INSTAGRAM_LINK, TELEGRAM_BOT_LINK, YOUTUBE_LINK } from '@/src/data/const';
 
 const cn = makeCn('brif-modal');
 
@@ -32,9 +32,9 @@ export const BrifModal: React.FC<BrifModalProps> = ({ open }) => {
               </div>
               <div className={cn('block-col', [cn('social')])}>
                 <Link href={TELEGRAM_BOT_LINK} className={cn('social-link')}>telegram</Link>
-                <Link href={"#"} className={cn('social-link')}>instagram</Link>
-                <Link href={"#"} className={cn('social-link')}>behance</Link>
-                <Link href={"#"} className={cn('social-link')}>youtube</Link>
+                <Link href={INSTAGRAM_LINK} className={cn('social-link')}>instagram</Link>
+                <Link href={BEHANCE_LINK} className={cn('social-link')}>behance</Link>
+                <Link href={YOUTUBE_LINK} className={cn('social-link')}>youtube</Link>
               </div>
             </div>
 

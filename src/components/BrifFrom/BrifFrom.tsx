@@ -172,43 +172,48 @@ export const BrifFrom: React.FC = () => {
         <p className={cn('title-cell')}>
           <span className={cn('title-cell-text')}>[вас интересуют]</span>
         </p>
-        <div className={cn('checkboxes')}>
-          <CheckboxButton name="services.branding" onChange={servicesHandleChange} checked={servicesWatch.branding}>
-            брендинг
-          </CheckboxButton>
-          <CheckboxButton name="services.site" onChange={servicesHandleChange} checked={servicesWatch.site}>
-            сайты
-          </CheckboxButton>
-          <CheckboxButton name="services.design" onChange={servicesHandleChange} checked={servicesWatch.design}>
-            дизайн-поддержка
-          </CheckboxButton>
-          <CheckboxButton name="services.consultation"
-                          onChange={servicesHandleChange}
-                          checked={servicesWatch.consultation}
-          >
-            консультация
-          </CheckboxButton>
+        <div>
+          <div className={cn('checkboxes')}>
+            <CheckboxButton name="services.branding" onChange={servicesHandleChange} checked={servicesWatch.branding}>
+              брендинг
+            </CheckboxButton>
+            <CheckboxButton name="services.site" onChange={servicesHandleChange} checked={servicesWatch.site}>
+              сайты
+            </CheckboxButton>
+            <CheckboxButton name="services.design" onChange={servicesHandleChange} checked={servicesWatch.design}>
+              дизайн-поддержка
+            </CheckboxButton>
+            <CheckboxButton name="services.consultation"
+                            onChange={servicesHandleChange}
+                            checked={servicesWatch.consultation}
+            >
+              консультация
+            </CheckboxButton>
+          </div>
         </div>
+
       </div>
 
       <div className={cn('row')}>
         <p className={cn('title-cell')}>
           <span className={cn('title-cell-text')}>[бюджет]</span>
         </p>
-        <div className={cn('checkboxes')}>
-          <CheckboxButton name="150000" onChange={budgetHandleChange} checked={budgetWatch === '150000'}>
-            ~ 150 000 ₽
-          </CheckboxButton>
-          <CheckboxButton name="250000" onChange={budgetHandleChange} checked={budgetWatch === '250000'}>
-            ~ 250 000 ₽
-          </CheckboxButton>
-          <CheckboxButton name="350000" onChange={budgetHandleChange} checked={budgetWatch === '350000'}>
-            ~ 350 000 ₽
-          </CheckboxButton>
-          <CheckboxButton name="450000" onChange={budgetHandleChange} checked={budgetWatch === '450000'}>
-            ~ 450 000 ₽
-          </CheckboxButton>
+        <div>
+          <div className={cn('checkboxes')}>
+            <CheckboxButton name="150000" onChange={budgetHandleChange} checked={budgetWatch === '150000'}>
+              ~ 150 000 ₽
+            </CheckboxButton>
+            <CheckboxButton name="250000" onChange={budgetHandleChange} checked={budgetWatch === '250000'}>
+              ~ 250 000 ₽
+            </CheckboxButton>
+            <CheckboxButton name="350000" onChange={budgetHandleChange} checked={budgetWatch === '350000'}>
+              ~ 350 000 ₽
+            </CheckboxButton>
+            <CheckboxButton name="450000" onChange={budgetHandleChange} checked={budgetWatch === '450000'}>
+              ~ 450 000 ₽
+            </CheckboxButton>
 
+          </div>
         </div>
       </div>
 
@@ -227,7 +232,7 @@ export const BrifFrom: React.FC = () => {
 
 
       <div className={cn('row', [cn('actions')])}>
-        <button type={'submit'} className={cn('submit-btn', {loading: isLoading}, [onest.className])}>
+        <button type={'submit'} className={cn('submit-btn', { loading: isLoading }, [onest.className])}>
           <span className={cn('submit-btn-text')}>отправить</span>
           <ArrowRight className={cn('submit-btn-icon', ['hide-md'])} />
           <ArrowRightMobile className={cn('submit-btn-icon', ['mobile'])} />
