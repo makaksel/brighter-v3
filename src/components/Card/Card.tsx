@@ -1,9 +1,9 @@
 'use client';
 
 import React from 'react';
-import { makeCn } from '@/src/utils';
+import { makeCn, MediaObject } from '@/src/utils';
 import './Card.scss';
-import Image, { StaticImageData } from 'next/image';
+import Image from 'next/image';
 import Verified from '@/src/resources/icons/verified.svg';
 import ReactStars from 'react-stars';
 import Link from 'next/link';
@@ -12,10 +12,10 @@ import { routerLinks } from '@/src/data/navigation';
 const cn = makeCn('card');
 
 interface CardProps {
-  id: number;
+  id: string;
   title: string;
   about: string;
-  img: string | StaticImageData;
+  img: MediaObject;
   rating?: number;
 }
 
@@ -29,7 +29,13 @@ export const Card: React.FC<CardProps> = ({
   return (
     <div className={cn()}>
       <div className={cn('media')}>
-        <Image src={img} className={cn('img')} alt={title} />
+        <Image
+          src={`https://${img.fields.file.url}`}
+          className={cn('img')}
+          width={img.fields.file.details.image.width}
+          height={img.fields.file.details.image.height}
+          alt={title}
+        />
       </div>
       <div className={cn('body')}>
         <div className={cn('rating')}>
@@ -46,7 +52,7 @@ export const Card: React.FC<CardProps> = ({
           <Link href={`${routerLinks.portfolio}/${id}`} className={cn('title-text')}>{title}</Link>
           <Verified className={cn('title-icon')} />
         </p>
-        <p className={cn('desc')}>{about}</p>
+        <div className={cn('desc')} dangerouslySetInnerHTML={{ __html: about }}></div>
       </div>
 
     </div>

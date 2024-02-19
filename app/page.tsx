@@ -16,7 +16,8 @@ export const metadata: Metadata = {
 
 const cn = makeCn('main-page')
 
-export default function page() {
+export default async function page() {
+
   return (
     <main className={cn()}>
       <div className={cn('hero')}>

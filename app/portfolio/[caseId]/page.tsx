@@ -4,30 +4,39 @@ import { CaseSidebar } from '@/src/components/CaseSidebar';
 import './page.scss';
 import { makeCn } from '@/src/utils';
 import Image from 'next/image';
-import CaseImg1 from '@/src/resources/images/case1.png';
+import getCaseById from '@/src/utils/getCaseById';
+import { IPageProps } from '@/src/models';
 
 export const metadata: Metadata = {
   title: 'Поярче',
   description: 'Если дизайн, то поярче. Разрабатываем не просто картинки, мы создаем смыслы.',
 };
 
-const cn = makeCn('case-page')
+const cn = makeCn('case-page');
 
-export default function page() {
-  return  (
+export default async function page({ params }: IPageProps) {
+  const { fields } = await getCaseById({ id: params.caseId });
+
+  return (
     <main className={cn()}>
       <CaseSidebar
-        title={'ник чернобаев'}
-        subtitle={'сайт-курс'}
-        caseLink={'https://nickchernobaev.com/'}
-        behanceLink={'https://www.behance.net/'}
+        title={fields.title}
+        subtitle={fields.subtitle}
+        caseLink={fields.link}
+        behanceLink={fields.behanceLink}
       />
       <div className={cn('media')}>
-        <Image src={CaseImg1} alt={"ник чернобаев"} className={cn('media-img')}/>
-        <Image src={CaseImg1} alt={"ник чернобаев"} className={cn('media-img')}/>
-        <Image src={CaseImg1} alt={"ник чернобаев"} className={cn('media-img')}/>
-        <Image src={CaseImg1} alt={"ник чернобаев"} className={cn('media-img')}/>
-
+        {!!fields?.imgs && fields?.imgs.map((img) => {
+          return (
+            <Image
+              key={img.fields.file.url}
+              src={`https://${img.fields.file.url}`}
+              alt={'ник чернобаев'}
+              className={cn('media-img')}
+              width={img.fields.file.details.image.width}
+              height={img.fields.file.details.image.height}
+            />);
+        })}
       </div>
     </main>
   );

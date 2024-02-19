@@ -1,9 +1,9 @@
 'use client';
 
 import React from 'react';
-import { makeCn, useMediaQuery } from '@/src/utils';
+import { makeCn, MediaObject, useMediaQuery } from '@/src/utils';
 import './CaseCard.scss';
-import Image, { StaticImageData } from 'next/image';
+import Image from 'next/image';
 import Verified from '@/src/resources/icons/verified.svg';
 import Link from 'next/link';
 import { routerLinks } from '@/src/data/navigation';
@@ -18,7 +18,7 @@ interface CaseCardProps {
   title: string;
   desc?: string;
   rating?: number;
-  imgs: (string | StaticImageData)[];
+  imgs: MediaObject[];
 }
 
 
@@ -49,7 +49,7 @@ export const CaseCard: React.FC<CaseCardProps> = ({
             </Link>
             <Verified className={cn('title-icon')} />
           </p>
-          {desc && <p className={cn('desc')} dangerouslySetInnerHTML={{ __html: desc }}></p>}
+          {desc && <div className={cn('desc')} dangerouslySetInnerHTML={{ __html: desc }}></div>}
         </div>
 
         <div className={cn('rating')}>
@@ -70,13 +70,14 @@ export const CaseCard: React.FC<CaseCardProps> = ({
 
       </div>
 
-      <div className={cn('media')}>
-        {imgs.map((img) => (
-          <Image key={null} src={img} className={cn('img')} alt={title} />
+      {!!imgs?.length && <div className={cn('media')}>
+        {!!imgs?.length && imgs.map((img) => (
+          <Image key={null} src={`https://${img.fields.file.url}`} className={cn('img')} alt={title}
+                 width={img.fields.file.details.image.width} height={img.fields.file.details.image.height
+          } />
         ))}
-
-
-      </div>
+        
+      </div>}
 
     </div>
   );
