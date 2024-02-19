@@ -179,7 +179,7 @@
 
     &--loading{
       opacity: .5;
-      user-select: none;
+      pointer-events: none;
     }
 
   }
