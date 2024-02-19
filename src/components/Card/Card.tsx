@@ -30,7 +30,7 @@ export const Card: React.FC<CardProps> = ({
     <div className={cn()}>
       <div className={cn('media')}>
         <Image
-          src={`https://${img.fields.file.url}`}
+          src={`${img.fields.file.url}`}
           className={cn('img')}
           width={img.fields.file.details.image.width}
           height={img.fields.file.details.image.height}

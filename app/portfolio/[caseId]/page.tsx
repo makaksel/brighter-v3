@@ -30,7 +30,7 @@ export default async function page({ params }: IPageProps) {
           return (
             <Image
               key={img.fields.file.url}
-              src={`https://${img.fields.file.url}`}
+              src={`${img.fields.file.url}`}
               alt={'ник чернобаев'}
               className={cn('media-img')}
               width={img.fields.file.details.image.width}

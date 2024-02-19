@@ -72,7 +72,7 @@ export const CaseCard: React.FC<CaseCardProps> = ({
 
       {!!imgs?.length && <div className={cn('media')}>
         {!!imgs?.length && imgs.map((img) => (
-          <Image key={null} src={`https://${img.fields.file.url}`} className={cn('img')} alt={title}
+          <Image key={null} src={`${img.fields.file.url}`} className={cn('img')} alt={title}
                  width={img.fields.file.details.image.width} height={img.fields.file.details.image.height
           } />
         ))}
