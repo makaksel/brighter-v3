@@ -8,20 +8,20 @@
 
   display: flex;
   flex-direction: column;
-  gap: rem(20);
+  gap: rem(10);
 
   max-width: rem(1306);
   margin: 0 auto rem(300);
 
-  @include md{
-    gap: rem(50);
+  @include md {
+    gap: rem(40);
     margin-bottom: rem(150);
   }
 
   .mt-100 {
     margin-top: rem(100);
 
-    @include md{
+    @include md {
       margin: 0;
     }
   }
@@ -33,8 +33,10 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: rem(20);
+    padding-bottom: rem(10);
+    overflow: hidden;
 
-    @include md{
+    @include md {
       display: flex;
       flex-direction: column;
       gap: rem(20);
@@ -61,12 +63,12 @@
     &-icon {
       fill: var(--gray-black);
 
-      &--error{
+      &--error {
         fill: var(--red);
       }
     }
 
-    @include md{
+    @include md {
       width: 100%;
       justify-content: space-between;
       align-items: flex-start;
@@ -91,6 +93,9 @@
     &-field {
       display: none;
       color: transparent;
+      visibility: hidden;
+      padding: 0;
+      margin: 0;
 
       &::-webkit-file-upload-button {
         visibility: hidden;
@@ -102,7 +107,7 @@
       @include h3;
       color: var(--text-color);
 
-      @include hoverUnderline(2,4);
+      @include hoverUnderline(2, 4);
       @include hoverActiveUnderline;
 
     }
@@ -137,7 +142,7 @@
     border: none;
 
 
-    @include hoverUnderline(5,17);
+    @include hoverUnderline(5, 17);
     @include hoverActiveUnderline;
 
     outline: none;
@@ -149,7 +154,7 @@
       cursor: pointer;
     }
 
-    @include md{
+    @include md {
       padding-bottom: rem(6);
       border-bottom: rem(2) solid var(--text-color);
     }
@@ -164,20 +169,20 @@
       stroke: var(--text-color);
       stroke-width: rem(6);
 
-      &.mobile{
+      &.mobile {
         stroke: var(--text-color);
         stroke-width: rem(2);
         display: none;
       }
 
-      @include md{
-        &.mobile{
+      @include md {
+        &.mobile {
           display: block;
         }
       }
     }
 
-    &--loading{
+    &--loading {
       opacity: .5;
       pointer-events: none;
     }
@@ -187,7 +192,7 @@
   &__actions {
     margin-top: rem(150);
 
-    @include md{
+    @include md {
       margin-top: rem(100);
     }
   }
