@@ -90,6 +90,11 @@
       cursor: pointer;
     }
 
+    &-wrp{
+      position: relative;
+      
+    }
+
     &-field {
       display: none;
       color: transparent;

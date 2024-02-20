@@ -223,11 +223,13 @@ export const BrifFrom: React.FC = () => {
         </p>
 
         <div>
-          <label className={cn('file-input')}>
-            <input type="file" name="file" title="upload btn" className={cn('file-input-field', [onest.className])}
-                   accept=".doc, .docx, .txt, .pdf" onChange={fileHandleChange} />
-            <span className={cn('file-input-label')}>выбрать файл</span>
-          </label>
+          <div className={cn('file-input-wrp')}>
+            <label className={cn('file-input')}>
+              <input type="file" name="file" title="upload btn" className={cn('file-input-field', [onest.className])}
+                     accept=".doc, .docx, .txt, .pdf" onChange={fileHandleChange} />
+              <span className={cn('file-input-label')}>выбрать файл</span>
+            </label>
+          </div>
         </div>
 
       </div>
