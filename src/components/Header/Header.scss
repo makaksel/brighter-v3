@@ -147,11 +147,11 @@
 
         gap: rem(10);
 
-        @include hoverUnderline(2, 7);
-        @include hoverActiveUnderline;
+        @include underline(2, 7);
+        @include underlineActive(2);
 
         &-icon {
-          stroke: var(--text-color);
+          fill: var(--text-color);
           stroke-width: rem(2);
 
           @include md{

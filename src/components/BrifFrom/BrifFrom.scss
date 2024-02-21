@@ -8,13 +8,13 @@
 
   display: flex;
   flex-direction: column;
-  gap: rem(10);
+  gap: 0;
 
   max-width: rem(1306);
   margin: 0 auto rem(300);
 
   @include md {
-    gap: rem(40);
+    gap: rem(30);
     margin-bottom: rem(150);
   }
 
@@ -33,7 +33,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: rem(20);
-    padding-bottom: rem(10);
+    padding-bottom: rem(20);
     overflow: hidden;
 
     @include md {
@@ -112,8 +112,8 @@
       @include h3;
       color: var(--text-color);
 
-      @include hoverUnderline(2, 4);
-      @include hoverActiveUnderline;
+      @include underline(2, 4);
+      @include underlineActive(2);
 
     }
 
@@ -147,8 +147,8 @@
     border: none;
 
 
-    @include hoverUnderline(5, 17);
-    @include hoverActiveUnderline;
+    @include underline(5, 17);
+    @include underlineActive(5);
 
     outline: none;
     background-color: transparent;
@@ -171,7 +171,7 @@
     }
 
     &-icon {
-      stroke: var(--text-color);
+      fill: var(--text-color);
       stroke-width: rem(6);
 
       &.mobile {

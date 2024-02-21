@@ -38,8 +38,8 @@
 
     cursor: pointer;
 
-    @include hoverUnderline(2);
-    @include hoverActiveUnderline;
+    @include underline(2);
+    @include underlineActive(2);
 
     > * {
       cursor: pointer;
@@ -148,8 +148,8 @@
 
     justify-content: space-between;
 
-    @include hoverUnderline(2);
-    @include hoverActiveUnderline;
+    @include underline(2);
+    @include underlineActive(2);
   }
 
   &__behance-link {
@@ -159,8 +159,8 @@
 
     max-width: max-content;
 
-    @include hoverUnderline(2);
-    @include hoverActiveUnderline;
+    @include underline(2);
+    @include underlineActive(2);
   }
 
   &__arrow-icon{

@@ -23,8 +23,8 @@
     gap: rem(10);
     margin-bottom: rem(50);
 
-    @include hoverUnderline;
-    @include hoverActiveUnderline;
+    @include underline;
+    @include underlineActive;
 
     @include textBase;
 

@@ -71,6 +71,7 @@ export const BrifFrom: React.FC = () => {
 
   const processData = async (data: BrifFrom) => {
     setIsLoading(true);
+    setModalIsOpen(true);
 
     const servicesData = Object.entries(data.services).reduce((acc: string[], [key, val]: [string, boolean]) => {
       if (!val) return acc;
@@ -86,7 +87,6 @@ export const BrifFrom: React.FC = () => {
     });
 
     if (response) {
-      setModalIsOpen(true);
       setIsLoading(false);
     }
   };
@@ -242,8 +242,7 @@ export const BrifFrom: React.FC = () => {
           <ArrowRightMobile className={cn('submit-btn-icon', ['mobile'])} />
         </button>
       </div>
-
-      <BrifModal open={modalIsOpen} />
+      <BrifModal open={modalIsOpen} handleClose={() => setModalIsOpen(false)} />
 
     </form>
   );

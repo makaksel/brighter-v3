@@ -58,8 +58,8 @@
     margin-bottom: rem(15);
 
     &-text {
-      @include hoverUnderline(2);
-      @include hoverActiveUnderline;
+      @include underline(2);
+      @include underlineActive(2);
     }
   }
 
@@ -69,8 +69,8 @@
 
     gap: rem(10);
 
-    @include hoverUnderline;
-    @include hoverActiveUnderline;
+    @include underline;
+    @include underlineActive;
 
     &-icon {
       fill: var(--white)

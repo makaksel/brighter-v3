@@ -47,8 +47,8 @@
     margin-bottom: rem(15);
 
     &-text {
-      @include hoverUnderline(2);
-      @include hoverActiveUnderline;
+      @include underline(2);
+      @include underlineActive(2);
     }
   }
 

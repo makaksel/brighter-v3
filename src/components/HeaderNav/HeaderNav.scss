@@ -2,6 +2,7 @@
 @import "@/src/styles/mixins";
 
 .header-nav {
+  $this: &;
   display: flex;
   align-items: center;
   gap: rem(50);
@@ -10,8 +11,18 @@
     @include textBase;
 
     color: var(--text-color);
+  }
 
-    @include hoverUnderline;
+
+  &--active {
+  }
+
+  &__underline{
+    @include underline();
+
+    &--active{
+      @include underlineActive();
+    }
   }
 
 
@@ -21,9 +32,13 @@
     &__link {
       @include h1;
 
+    }
+
+    &__underline{
+      @include underline(2, 5);
+
       &--active {
-        @include hoverUnderline(2, 5);
-        @include hoverActiveUnderline;
+        @include underlineActive(2);
       }
     }
   }

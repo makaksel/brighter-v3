@@ -1,7 +1,6 @@
 import React from 'react';
 import './MainServices.scss';
 import { makeCn } from '@/src/utils';
-import { Card } from '@/src/components/Card';
 import Link from 'next/link';
 import { routerLinks } from '@/src/data/navigation';
 import ArrowRight from '@/src/resources/icons/ArrowRight.svg';

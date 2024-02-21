@@ -37,7 +37,7 @@ export const Footer: React.FC<FooterProps> = ({
 
   <div className={cn('bottom')}>
     <div>
-      <span>©2024 поярче. Все авторские права защищены.</span>
+      <span>© 2024 поярче. Все авторские права защищены.</span>
     </div>
     <div className={cn('privacy')}>
       <a href="/police.doc" className={cn('privacy-link')} download="Политика конфиденциальности">Политика

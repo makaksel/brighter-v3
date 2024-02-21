@@ -35,6 +35,8 @@
     }
   }
   &__about {
+    max-width: rem(660);
+
     @include md {
       grid-column: 1/3;
       margin: rem(35) 0;
@@ -89,6 +91,7 @@
     display: flex;
     flex-direction: column;
     gap: rem(50);
+    max-width: rem(340);
 
     @include md{
       gap: rem(20);
@@ -105,8 +108,8 @@
       max-width: max-content;
       gap: rem(10);
 
-      @include hoverUnderline;
-      @include hoverActiveUnderline;
+      @include underline;
+      @include underlineActive;
 
       @include md{
         justify-content: space-between;

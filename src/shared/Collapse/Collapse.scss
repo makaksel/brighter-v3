@@ -31,17 +31,23 @@
 
 
   &__icon{
-    transform: rotate(-180deg);
-    transition: transform .2s ease-in-out;
+    transform: rotate(0);
+    transition: transform .3s linear;
 
     &--open{
-      transform: rotate(0);
+      transform: rotate(45deg);
     }
   }
 
   &__body{
     padding-top: rem(50);
     color: var(--gray-light);
+    opacity: 0;
+    transition: opacity .3s linear;
+
+    &--open{
+      opacity: 1;
+    }
 
     @include md{
       padding-top: rem(20);

@@ -21,10 +21,16 @@
     > * {
       cursor: pointer;
     }
+
+    &--longText{
+      display: flex;
+    }
   }
 
   &__title{
-    @include h2
+    @include h3;
+
+
   }
 
   &__days{

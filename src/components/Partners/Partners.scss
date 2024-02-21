@@ -8,12 +8,6 @@
     width: 100%;
     flex-wrap: nowrap;
     overflow: hidden;
-
-    margin-bottom: rem(200);
-
-    @include md{
-      margin-bottom: rem(50);
-    }
   }
 
   &__body{
@@ -21,6 +15,7 @@
     align-items: center;
     flex-wrap: nowrap;
     gap: rem(200);
+    padding: rem(10) 0;
 
     transform: translate(-200px, 0);
 

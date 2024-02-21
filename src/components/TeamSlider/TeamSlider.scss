@@ -1,6 +1,7 @@
 @import "@/src/styles/functions";
 @import "@/src/styles/mixins";
-
+@import "@/node_modules/swiper/swiper";
+@import "@/node_modules/swiper/modules/effect-fade";
 
 .team-slider {
   $this: &;
@@ -60,8 +61,6 @@
     }
 
     &-img {
-
-
       @include md{
         display: none;
 

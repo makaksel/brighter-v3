@@ -37,8 +37,8 @@
     &-link {
       @include h2;
 
-      @include hoverUnderline(2, 0);
-      @include hoverActiveUnderline;
+      @include underline(2, 0);
+      @include underlineActive(2);
     }
 
     &-line {
@@ -80,8 +80,8 @@
       @include h3;
       align-items: flex-end;
 
-      @include hoverUnderline;
-      @include hoverActiveUnderline;
+      @include underline;
+      @include underlineActive;
 
     }
 

@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React from 'react';
 import { makeCn } from '@/src/utils';
 import './Collapse.scss';
 import { AnimatePresence, motion } from 'framer-motion';
@@ -12,12 +12,14 @@ interface CollapseProps {
   children: React.ReactNode | React.ReactNode[];
   header: React.ReactNode | React.ReactNode[];
   className?: string;
+  open?: boolean;
+  handleClick?: () => void;
 }
 
-export const Collapse: React.FC<CollapseProps> = ({ children, header, className }) => {
-  const [open, setOpen] = useState<boolean>(false);
+export const Collapse: React.FC<CollapseProps> = ({ open, children, header, className, handleClick }) => {
 
-  return (<div className={cn('',[className])} onClick={() => setOpen(!open)}>
+
+  return (<div className={cn('', [className])} onClick={handleClick}>
     <div className={cn('header')}>
       <div className={cn('header-wrp')}>
         {header}
@@ -36,9 +38,9 @@ export const Collapse: React.FC<CollapseProps> = ({ children, header, className 
             open: { opacity: 1, height: 'auto' },
             collapsed: { opacity: 0, height: 0, overflow: 'hidden' },
           }}
-          transition={{ duration: 0.8, ease: [0.04, 0.62, 0.23, 0.98] }}
+          transition={{ duration: 0.3 }}
         >
-          <div className={cn('body')}>
+          <div className={cn('body', { open })}>
             {children}
           </div>
 

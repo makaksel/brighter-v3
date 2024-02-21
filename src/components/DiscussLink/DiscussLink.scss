@@ -7,8 +7,8 @@
   gap: rem(10);
   max-width: max-content;
 
-  @include hoverUnderline(2, 2);
-  @include hoverActiveUnderline;
+  @include underline(2, 2);
+  @include underlineActive(2);
 
   &__icon{
     fill: var(--text-color)
