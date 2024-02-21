@@ -112,10 +112,12 @@ export const BrifFrom: React.FC = () => {
     <form className={cn()} onSubmit={handleSubmit(processData)}>
 
       <div className={cn('row')}>
-        <p className={cn('title-cell')}>
-          <span className={cn('title-cell-text')}>[ваше имя]</span>
-          <RequiredIcon className={cn('title-cell-icon', { error: !!get(errors, 'name.message') })} />
-        </p>
+        <div>
+          <p className={cn('title-cell')}>
+            <span className={cn('title-cell-text')}>[ваше имя]</span>
+            <RequiredIcon className={cn('title-cell-icon', { error: !!get(errors, 'name.message') })} />
+          </p>
+        </div>
         <Controller
           control={control}
           name="name"
@@ -131,10 +133,13 @@ export const BrifFrom: React.FC = () => {
       </div>
 
       <div className={cn('row')}>
-        <p className={cn('title-cell')}>
-          <span className={cn('title-cell-text')}>[почта или контакт в любом мессенджере]</span>
-          <RequiredIcon className={cn('title-cell-icon', { error: !!get(errors, 'contact.message') })} />
-        </p>
+        <div>
+          <p className={cn('title-cell')}>
+            <span className={cn('title-cell-text')}>[почта или контакт в любом мессенджере]</span>
+            <RequiredIcon className={cn('title-cell-icon', { error: !!get(errors, 'contact.message') })} />
+          </p>
+        </div>
+
         <Controller
           control={control}
           name="contact"
@@ -152,9 +157,11 @@ export const BrifFrom: React.FC = () => {
       </div>
 
       <div className={cn('row')}>
-        <p className={cn('title-cell')}>
-          <span className={cn('title-cell-text')}>[название компании]</span>
-        </p>
+        <div>
+          <p className={cn('title-cell')}>
+            <span className={cn('title-cell-text')}>[название компании]</span>
+          </p>
+        </div>
         <Controller
           control={control}
           name="company"
@@ -169,9 +176,11 @@ export const BrifFrom: React.FC = () => {
       </div>
 
       <div className={cn('row', ['mt-100'])}>
-        <p className={cn('title-cell')}>
-          <span className={cn('title-cell-text')}>[вас интересуют]</span>
-        </p>
+        <div>
+          <p className={cn('title-cell')}>
+            <span className={cn('title-cell-text')}>[вас интересуют]</span>
+          </p>
+        </div>
         <div>
           <div className={cn('checkboxes')}>
             <CheckboxButton name="services.branding" onChange={servicesHandleChange} checked={servicesWatch.branding}>
@@ -195,9 +204,11 @@ export const BrifFrom: React.FC = () => {
       </div>
 
       <div className={cn('row')}>
-        <p className={cn('title-cell')}>
-          <span className={cn('title-cell-text')}>[бюджет]</span>
-        </p>
+        <div>
+          <p className={cn('title-cell')}>
+            <span className={cn('title-cell-text')}>[бюджет]</span>
+          </p>
+        </div>
         <div>
           <div className={cn('checkboxes')}>
             <CheckboxButton name="150000" onChange={budgetHandleChange} checked={budgetWatch === '150000'}>
@@ -218,9 +229,11 @@ export const BrifFrom: React.FC = () => {
       </div>
 
       <div className={cn('row', ['mt-100'])}>
-        <p className={cn('title-cell')}>
-          <span className={cn('title-cell-text')}>[Прикрепите бриф (если есть)]</span>
-        </p>
+        <div>
+          <p className={cn('title-cell')}>
+            <span className={cn('title-cell-text')}>[Прикрепите бриф (если есть)]</span>
+          </p>
+        </div>
 
         <div>
           <div className={cn('file-input-wrp')}>

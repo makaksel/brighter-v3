@@ -2,7 +2,7 @@ import React from 'react';
 import { makeCn } from '@/src/utils';
 import './BrifModal.scss';
 import Link from 'next/link';
-import Plus from '@/src/resources/icons/plus.svg';
+import Plus from '@/src/resources/icons/plus_big.svg';
 import ArrowRightMobile from '@/src/resources/icons/ArrowRightMobile.svg';
 import { BEHANCE_LINK, INSTAGRAM_LINK, TELEGRAM_BOT_LINK, YOUTUBE_LINK } from '@/src/data/const';
 import { routerLinks } from '@/src/data';
