@@ -71,6 +71,11 @@
   background-size: 0% rem($borderHeight);
   transition: background-size .2s ease;
   padding-bottom: rem($bottom);
+  cursor: pointer;
+
+  > * {
+    cursor: pointer;
+  }
 
   &:hover{
     background-size: 100% rem($borderHeight);
