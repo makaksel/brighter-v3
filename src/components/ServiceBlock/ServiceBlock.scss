@@ -108,8 +108,8 @@
       max-width: max-content;
       gap: rem(10);
 
-      @include underline;
-      @include underlineActive;
+      @include underline(1.5, 4);
+      @include underlineActive(1.5);
 
       @include md{
         justify-content: space-between;

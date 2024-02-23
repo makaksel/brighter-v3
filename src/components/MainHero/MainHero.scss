@@ -6,7 +6,7 @@
   position: relative;
   width: 100%;
   height: rem(1080);
-  margin-bottom: rem(-30);
+  margin-bottom: rem(-80);
   z-index: 2;
 
   &__preloader {
@@ -50,7 +50,7 @@
 
   @include md{
     height: rem(729);
-    margin-bottom: rem(-15);
+    margin-bottom: rem(-65);
 
     &__preloader {
       top: rem(-65);

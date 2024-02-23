@@ -17,6 +17,18 @@
     flex: 1 1 36.5%;
   }
 
+
+
+
+  @include md{
+    gap: rem(15);
+
+    &__title-icon{
+      width: rem(21);
+      height: rem(21);
+    }
+  }
+
   &__media {
 
     background-color: var(--card-media--bg);
@@ -36,6 +48,10 @@
   &__rating {
     display: flex;
     margin-bottom: rem(20);
+
+    @include md {
+      margin-bottom: rem(10);
+    }
   }
 
   &__title {
@@ -50,6 +66,10 @@
       @include underline(2);
       @include underlineActive(2);
     }
+
+    @include md {
+      margin-bottom: rem(10);
+    }
   }
 
   &__desc {
@@ -57,4 +77,19 @@
     max-width: rem(350);
 
   }
+
+  &__rating-component{
+
+
+    @include md{
+      & > span {
+        font-size: 17px!important;
+
+        &:not(:last-child) {
+          margin-right: 1px;
+        }
+      }
+    }
+  }
+
 }

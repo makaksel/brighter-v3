@@ -19,7 +19,7 @@ export const Service: React.FC<ServiceProps> = ({ number, title, badge, hashLink
     <span className={cn('service-number')}>
       {`[${number.padStart(2, '0')}]`}
     </span>
-    <span className={cn('service-title')}>{title}</span>
+    <p className={cn('service-title')}><span className={cn('service-title-text')}>{title}</span></p>
     <span className={cn('service-badge')}>
       {badge}
     </span>

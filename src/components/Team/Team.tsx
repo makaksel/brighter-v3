@@ -3,6 +3,7 @@ import { makeCn } from '@/src/utils';
 import './Team.scss';
 import Image from 'next/image';
 import TeamImg from '@/src/resources/images/about.jpg';
+import TeamMobileImg from '@/src/resources/images/team-vertical.png';
 
 
 const cn = makeCn('team');
@@ -15,7 +16,8 @@ export const Team: React.FC = () => <section className={cn()}>
   </div>
 
   <div className={cn('media')}>
-    <Image className={cn('img')} src={TeamImg} alt={'команда'} />
+    <Image className={cn('img', ['hide-md'])} src={TeamImg} alt={'команда'} />
+    <Image className={cn('img', { mobileImg: true })} src={TeamMobileImg} alt={'команда'} />
   </div>
 
 </section>;

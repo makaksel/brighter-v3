@@ -58,6 +58,17 @@
     width: 100%;
     height: 100%;
     object-fit: contain;
+
+    &--mobileImg{
+      display: none;
+    }
+
+    @include md{
+      &--mobileImg{
+        height: auto;
+        display: flex;
+      }
+    }
   }
 
 }

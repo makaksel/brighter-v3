@@ -13,7 +13,7 @@ import TeamImg6 from '@/src/resources/images/team6.jpg';
 import TeamImgMobile from '@/src/resources/images/team1_mobile.jpg';
 import TeamImg2Mobile from '@/src/resources/images/team2_mobile.jpg';
 import TeamImg3Mobile from '@/src/resources/images/team3_mobile.jpg';
-import TeamImg4Mobile from '@/src/resources/images/team4_mobile.jpg';
+import TeamImg4Mobile from '@/src/resources/images/team4_mobile.png';
 import TeamImg5Mobile from '@/src/resources/images/team5_mobile.jpg';
 import TeamImg6Mobile from '@/src/resources/images/team6_mobile.jpg';
 import TeamImgThumb from '@/src/resources/images/team1_thumb.jpg';
@@ -91,7 +91,7 @@ export const TeamSlider: React.FC = () => {
             imgMobile={TeamImgMobile}
             name={'максим поярче'}
             since={'[с 2021 года]'}
-            major={'арт-директор'}
+            major={'основатель студии'}
             quote={'"мы не просто рисуем дизайн, мы инженеры впечатлений, строящие мосты между вашим бизнесом и сердцами клиентов."'}
           />
         </SwiperSlide>
@@ -141,7 +141,7 @@ export const TeamSlider: React.FC = () => {
             imgMobile={TeamImg6Mobile}
             name={'алена тетёкина'}
             since={'[с 2024 года]'}
-            major={'проджект-менеджер'}
+            major={'менеджер'}
             quote={'"что важнее: дизайн или смыслы, переданные через текст? Это неправильный вопрос”'}
           />
         </SwiperSlide>

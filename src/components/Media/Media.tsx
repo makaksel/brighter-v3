@@ -15,7 +15,7 @@ export const Media: React.FC = () => (
     </div>
     <div className={cn('body')}>
       <CardMedia
-        title={'здесь должен быть какой-то заголовок для видео'}
+        title={'Как получить ХУДШИЙ дизайн в вашей жизни'}
         link={'https://youtu.be/DLC8VQar4BU?si=B6aS0YPNWBgtuV9g'}
         date={'15 августа 2023'}
         desc={'Youtube, 38 минут'}

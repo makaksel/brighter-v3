@@ -17,11 +17,19 @@
     grid-gap: rem(20);
 
     margin-bottom: rem(60);
+
+    @include md {
+      grid-template-columns: 1fr;
+    }
   }
 
   &__title {
     @include h1;
     grid-column: 2/2;
+
+    @include md {
+      grid-column: auto;
+    }
   }
 
   &__body {
@@ -93,7 +101,7 @@
 
 
     @include md {
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: minmax(rem(50), 1fr);
       align-items: center;
       border: none;
 
@@ -103,6 +111,11 @@
 
       &-number {
         margin-left: auto;
+      }
+
+      &-title-text{
+        display: inline-flex;
+        max-width: rem(264);
       }
 
       &-title, &-link {

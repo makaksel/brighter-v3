@@ -20,10 +20,9 @@ export default async function page() {
 
   return (
     <main className={cn()}>
-      <div className={cn('hero')}>
-        <Header className={cn('header')} />
-        <MainHero />
-      </div>
+      <Header />
+      <MainHero />
+
 
       <Partners />
 
