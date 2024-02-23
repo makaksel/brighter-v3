@@ -78,18 +78,5 @@
 
   }
 
-  &__rating-component{
-
-
-    @include md{
-      & > span {
-        font-size: 17px!important;
-
-        &:not(:last-child) {
-          margin-right: 1px;
-        }
-      }
-    }
-  }
 
 }

@@ -21,8 +21,16 @@
     }
   }
 
+
   @include md {
     flex-direction: column-reverse;
+
+    //gap: rem(15);
+
+    &__title-icon{
+      width: rem(21);
+      height: rem(21);
+    }
   }
 
   &__body {

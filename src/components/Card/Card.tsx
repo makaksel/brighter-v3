@@ -39,10 +39,10 @@ export const Card: React.FC<CardProps> = ({
       <div className={cn('body')}>
         <div className={cn('rating')}>
           <ReactStars
-            className={cn('rating-component')}
+            className={'rating-component'}
             count={5}
             value={rating}
-            size={25}
+            size={27}
             color1={'#080808'}
             color2={'#A1A1A1'}
             edit={false}

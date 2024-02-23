@@ -74,10 +74,17 @@ a > * {
   cursor: pointer;
 }
 
-.star{
+.rating-component{
 
-  &:not(:last-child){
-    margin-right: 5px;
+
+  @include md{
+    & > span {
+      font-size: 17px!important;
+
+      &:not(:last-child) {
+        margin-right: 2px;
+      }
+    }
   }
 }
 
@@ -86,6 +93,8 @@ a > * {
     display: none;
   }
 }
+
+
 
 
 
