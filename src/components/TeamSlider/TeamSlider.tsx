@@ -77,7 +77,6 @@ export const TeamSlider: React.FC = () => {
         slidesPerView={1}
         loop={true}
         effect={'fade'}
-        fadeEffect={{ crossFade: true }}
         autoplay={{
           delay: 5000,
           disableOnInteraction: false,
