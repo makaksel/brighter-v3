@@ -146,7 +146,7 @@ export const BrifFrom: React.FC = () => {
           rules={{ required: '[обязательно]' }}
           render={({ field }) =>
             <TextInput
-              placeholder="poyarche@mail.ru / @poyarche"
+              placeholder="hello@poyarche.ru / @xpoyarche"
               inputClassName={cn('input', [onest.className])}
               error={get(errors, 'contact.message') as unknown as string}
               {...field}
