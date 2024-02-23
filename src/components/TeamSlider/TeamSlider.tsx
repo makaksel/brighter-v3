@@ -52,12 +52,12 @@ const Slide: React.FC<SlideProps> = ({
       <Image className={cn('slide-img', ['mobile'])} src={imgMobile} alt={name} />
     </div>
     <div className={cn('slide-body')}>
-      <p>{quote}</p>
+      <p className={'text-animate'}>{quote}</p>
     </div>
     <div className={cn('slide-footer')}>
-      <span>{name}</span>
-      <span>{major}</span>
-      <span className={('hide-md')}>{since}</span>
+      <span  className={'text-animate'}>{name}</span>
+      <span  className={'text-animate'}>{major}</span>
+      <span className={'text-animate hide-md'}>{since}</span>
     </div>
     <span className={cn('slide-since')}>{since}</span>
   </div>
@@ -141,7 +141,7 @@ export const TeamSlider: React.FC = () => {
             name={'алена тетёкина'}
             since={'[с 2024 года]'}
             major={'менеджер'}
-            quote={'"что важнее: дизайн или смыслы, переданные через текст? Это неправильный вопрос”'}
+            quote={'"Люди и их эмоции — настоящее вдохновение, энергия, приводящая в творчество”'}
           />
         </SwiperSlide>
 
