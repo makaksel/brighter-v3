@@ -163,13 +163,6 @@
 
     }
 
-    &.swiper-slide-thumb-active {
-      &::before {
-        width: 100%;
-        transition: width 5s linear;
-      }
-    }
-
 
     @include md{
       width: rem(46) !important;

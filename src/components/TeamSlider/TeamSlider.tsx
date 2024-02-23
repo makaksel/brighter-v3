@@ -24,7 +24,7 @@ import TeamImg5Thumb from '@/src/resources/images/team5_thumb.jpg';
 import TeamImg6Thumb from '@/src/resources/images/team6_thumb.jpg';
 import 'swiper/css';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, EffectFade, FreeMode, Navigation, Thumbs } from 'swiper/modules';
+import { EffectFade, FreeMode, Navigation, Thumbs } from 'swiper/modules';
 import type { Swiper as SwiperClass } from 'swiper/types';
 
 const cn = makeCn('team-slider');
@@ -77,11 +77,7 @@ export const TeamSlider: React.FC = () => {
         slidesPerView={1}
         loop={true}
         effect={'fade'}
-        autoplay={{
-          delay: 5000,
-          disableOnInteraction: false,
-        }}
-        modules={[Autoplay, Navigation, Thumbs, EffectFade]}
+        modules={[Navigation, Thumbs, EffectFade]}
         thumbs={{ swiper: thumbsSwiper && !thumbsSwiper.destroyed ? thumbsSwiper : null }}
       >
         <SwiperSlide>
