@@ -52,7 +52,7 @@ const Slide: React.FC<SlideProps> = ({
       <Image className={cn('slide-img', ['mobile'])} src={imgMobile} alt={name} />
     </div>
     <div className={cn('slide-body')}>
-      <p className={'text-animate'}>{quote}</p>
+      <p className={'text-animate-slow'}>{quote}</p>
     </div>
     <div className={cn('slide-footer')}>
       <span  className={'text-animate'}>{name}</span>

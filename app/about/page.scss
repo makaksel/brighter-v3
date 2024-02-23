@@ -11,18 +11,23 @@
 }
 
 
-.text-animate {
+
+
+.text-animate, .text-animate-slow {
   opacity: 0;
   transform: translateY(3vw);
   animation: fadeOut .5s, moveDown .5s;
-}
 
+}
 
 
 .swiper-slide-active .text-animate  {
-  animation: fadeIn 0.6s 0.2s forwards, moveUp 0.6s 0.2s forwards;
+  animation: fadeIn 0.8s 0.2s forwards, moveUp 0.8s 0.2s forwards;
 }
 
+.swiper-slide-active .text-animate-slow  {
+  animation: fadeIn 0.8s 0.5s forwards, moveUp 0.8s 0.5s forwards;
+}
 
 @keyframes fadeIn {
   0% {
