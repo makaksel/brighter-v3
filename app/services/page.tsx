@@ -6,7 +6,7 @@ import { Footer } from '@/src/components/Footer';
 import { makeCn } from '@/src/utils';
 import { ServicesHero } from '@/src/components/ServicesHero';
 import { ServiceBlock } from '@/src/components/ServiceBlock';
-import { design, indeed, site } from '@/src/data';
+import { design, indeed } from '@/src/data';
 
 export const metadata: Metadata = {
   title: 'Поярче',
@@ -29,23 +29,15 @@ export default function page() {
           titleNumber="01"
           badge="айдентика"
           about="логотип и 5 примеров использования / разработка фирменного знака базовые правила использования логотипа / геометрия и построение  размеры / масштабирование / цветовая схема / шрифт / дизайн отдельного фирменного элемента"
-          adsText="Создаем уникальный стиль компании, который выражает ваши ценности и привлекает клиентов"
+          adsText="создадим уникальный и привлекательный фирменный стиль, который привлечет клиентов к вашей компании"
           collapseList={indeed}
         />
 
         <ServiceBlock
-          id="site"
-          titleNumber="02"
-          badge="сайт"
-          about="разработка мудборда / базовый концепт сайта / создание и утверждение прототипа / реализация дизайна главной и субстраниц / верстка"
-          adsText="создаем дизайн сайта, который привлекает клиентов, говорит на их языке и повышает конверсию лидов"
-          collapseList={site}
-        />
-        <ServiceBlock
           id="design"
-          titleNumber="03"
+          titleNumber="02"
           badge="дизайн-поддержка"
-          adsText="дизайн-студия по подписке; решаем все задачи, связанные с визуалом"
+          adsText="работа студии по подписке, решаем все ваши задачи, связанные с дизайном"
           link="#"
           linkText="перейти"
           collapseList={design}
