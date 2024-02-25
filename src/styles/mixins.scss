@@ -92,7 +92,7 @@
   background-size: 100% rem($borderHeight);
 
   &:hover{
-    animation: hoverOff .2s ease ;
+    animation: hoverOff .4s ease ;
     animation-fill-mode: forwards;
     //background-size: 0 rem($borderHeight);
   }
@@ -101,15 +101,17 @@
     0% {
       background-size: 100% rem($borderHeight);
     }
+    25% {
+      background-size: 20% rem($borderHeight);
+    }
     50% {
-      background-size: 50% rem($borderHeight);
+      background-size: 10% rem($borderHeight);
     }
     75% {
-      background-size: 25% rem($borderHeight);
-      background-image: linear-gradient(transparent, transparent);
+      background-size: 5% rem($borderHeight);
     }
     100% {
-      background-size: 0% rem($borderHeight);
+      background-size: 0 rem($borderHeight);
       background-image: linear-gradient(transparent, transparent);
     }
   }
