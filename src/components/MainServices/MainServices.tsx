@@ -45,12 +45,6 @@ export const MainServices: React.FC = () => (
       />
       <Service
         number={'2'}
-        title={'создаем яркие сайты, ориентированные на клиентов'}
-        badge={'сайт'}
-        hashLink={'site'}
-      />
-      <Service
-        number={'3'}
         title={'помогаем бизнесам решать задачи по дизайну'}
         badge={'дизайн-поддержка'}
         hashLink={'design'}
