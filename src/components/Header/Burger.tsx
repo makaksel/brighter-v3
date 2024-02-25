@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useCallback, useEffect, useRef, useState } from 'react';
-import { usePathname } from 'next/navigation';
 import { HeaderNav } from '@/src/components/HeaderNav';
 import { cn } from './Header';
 import Link from 'next/link';
@@ -11,30 +10,28 @@ import { Contacts } from '@/src/components/Contacts';
 import ArrowRightMobile from '@/src/resources/icons/ArrowRightMobile.svg';
 
 export const Burger = () => {
-  const pathname = usePathname();
   const anchorEl = useRef<HTMLButtonElement | null>(null);
   const [open, setOpen] = useState(false);
+  const [closing, setClosing] = useState(false);
 
   const handleChangeOverflowBody = useCallback((value: string) => {
     document.body.style.overflow = value;
   }, []);
 
-  useEffect(() => {
-    if (open) setOpen(false);
-
-    return () => {
-      handleChangeOverflowBody('');
-    };
-  }, [handleChangeOverflowBody, pathname]);
+  useEffect(() => () => {
+    handleChangeOverflowBody('');
+  }, [handleChangeOverflowBody]);
 
 
   const handleToggleOpen = useCallback(() => {
     setOpen((prev) => !prev);
 
     if (open) {
+      setClosing(true);
       setTimeout(() => {
         handleChangeOverflowBody('');
-      }, 300);
+        setClosing(false);
+      }, 400);
     } else {
       handleChangeOverflowBody('hidden');
     }
@@ -42,12 +39,13 @@ export const Burger = () => {
 
   return (
     <>
-      <button ref={anchorEl} type="button" className={cn('burger', [open ? 'open' : ''])} onClick={handleToggleOpen}>
+      <button ref={anchorEl} type="button" className={cn('burger', { open, closing })}
+              onClick={handleToggleOpen}>
         <span className={cn('burger-line')} />
         <span className={cn('burger-line')} />
       </button>
       <div
-        className={cn('burger-dropdown', [open ? 'show' : ''])}
+        className={cn('burger-dropdown', { show: open, closing })}
       >
         <Link className={'header-nav__link'} href="/">главная</Link>
 
@@ -61,7 +59,7 @@ export const Burger = () => {
             <ArrowRightMobile className={'brif-link-icon mobile'} />
           </Link>
 
-          <Contacts className={cn('burger-contacts')}/>
+          <Contacts className={cn('burger-contacts')} />
         </div>
       </div>
     </>
