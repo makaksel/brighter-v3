@@ -92,14 +92,14 @@
   background-size: 100% rem($borderHeight);
 
   &:hover{
-    animation: hoverOff .4s ease ;
+    animation: hoverOff .8s ease ;
     animation-fill-mode: forwards;
     //background-size: 0 rem($borderHeight);
   }
 
   @keyframes hoverOff {
     0% {
-      background-size: 100% rem($borderHeight);
+      background-size: 60% rem($borderHeight);
     }
     25% {
       background-size: 20% rem($borderHeight);
@@ -107,8 +107,8 @@
     50% {
       background-size: 10% rem($borderHeight);
     }
-    75% {
-      background-size: 5% rem($borderHeight);
+    85% {
+      background-size: 3% rem($borderHeight);
     }
     100% {
       background-size: 0 rem($borderHeight);
