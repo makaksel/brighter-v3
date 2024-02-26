@@ -76,12 +76,16 @@ export const CaseCard: React.FC<CaseCardProps> = ({
       </div>
 
       {!!imgs?.length && <div className={cn('media')}>
+
         {!!imgs?.length && imgs.map((img) => (
           <Image key={null} src={`https:${img.fields.file.url}`} className={cn('img')} alt={title}
                  width={img.fields.file.details.image.width} height={img.fields.file.details.image.height
           } />
         ))}
-
+        <Link
+          href={`${routerLinks.portfolio}/${id}`}
+          className="stretched-link"
+        />
       </div>}
 
     </div>

@@ -95,9 +95,11 @@
   @keyframes hoverOff {
     0% {
       background-size: 100% rem($borderHeight);
+      background-image: linear-gradient(color-mix(in srgb, currentColor 100%, transparent), color-mix(in srgb, currentColor 100%, transparent));
     }
     25% {
       background-size: 75% rem($borderHeight);
+      background-image: linear-gradient(color-mix(in srgb, currentColor 95%, transparent), color-mix(in srgb, currentColor 95%, transparent));
     }
     50% {
       background-size: 50% rem($borderHeight);

@@ -35,7 +35,7 @@
     }
 
     &__underline{
-      @include underline(2, 5);
+      @include underline(2);
 
       &--active {
         @include underlineActive(2);

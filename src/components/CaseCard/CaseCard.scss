@@ -99,11 +99,12 @@
   }
 
   &__media {
+    position: relative;
     width: 100%;
     height: rem(670);
     display: grid;
     grid-template-columns: 2fr 1fr 1fr;
-    grid-gap: rem(20);
+    grid-gap: 0 rem(20);
     min-width: 1px;
 
     @include md {
