@@ -154,9 +154,9 @@
         width: 100%;
 
         gap: rem(10);
-
+        background-color: red;
         @include underline(2, 7);
-        @include underlineActive(2);
+        @include underlineActive(2, red);
 
         &-icon {
           fill: var(--text-color);

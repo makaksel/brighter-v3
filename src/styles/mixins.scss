@@ -58,20 +58,18 @@
   line-height: 120%;
 
   @include md {
-    font-size: rem(15) ;
+    font-size: rem(15);
   }
 }
 
 
 @mixin underline($borderHeight: 1, $bottom: 0) {
-  --border-height: rem($borderHeight);
-
   color: inherit;
   text-decoration: none;
   background: no-repeat 0 100%;
   background-image: linear-gradient(currentColor, currentColor);
   background-size: 0 rem($borderHeight);
-  transition: background-size .2s ease;
+  transition: background-size .3s ease, background-image .3s ease;
   padding-bottom: rem($bottom);
   cursor: pointer;
 
@@ -79,90 +77,45 @@
     cursor: pointer;
   }
 
-  &:hover{
+  &:hover {
     background-size: 100% rem($borderHeight);
   }
-
 
 }
 
 
-
-@mixin underlineActive($borderHeight: 1) {
+@mixin underlineActive($borderHeight: 1, $color: white) {
   background-size: 100% rem($borderHeight);
 
-  &:hover{
-    animation: hoverOff .8s ease ;
+  &:hover {
+    animation: hoverOff .3s ease;
     animation-fill-mode: forwards;
-    //background-size: 0 rem($borderHeight);
   }
 
   @keyframes hoverOff {
     0% {
-      background-size: 60% rem($borderHeight);
+      background-size: 100% rem($borderHeight);
     }
     25% {
-      background-size: 20% rem($borderHeight);
+      background-size: 75% rem($borderHeight);
     }
     50% {
-      background-size: 10% rem($borderHeight);
+      background-size: 50% rem($borderHeight);
+      background-image: linear-gradient(color-mix(in srgb, currentColor 85%, transparent), color-mix(in srgb, currentColor 85%, transparent));
     }
-    85% {
-      background-size: 3% rem($borderHeight);
+    75% {
+      background-size: 25% rem($borderHeight);
+      background-image: linear-gradient(color-mix(in srgb, currentColor 45%, transparent), color-mix(in srgb, currentColor 45%, transparent));
     }
     100% {
       background-size: 0 rem($borderHeight);
-      background-image: linear-gradient(transparent, transparent);
+      background-image: linear-gradient(color-mix(in srgb, currentColor 0%, transparent), color-mix(in srgb, currentColor 0%, transparent));
+
     }
   }
 
 }
 
-
-/*
-@mixin hoverActiveUnderline {
-  &:hover{
-    &::after {
-      transform-origin: bottom right;
-      transform: scaleX(0);
-    }
-  }
-  &::after {
-    transform-origin: bottom left;
-    transform: scaleX(1);
-  }
-}
-
-@mixin hoverUnderline($borderHeight: 1, $bottom: 0) {
-  cursor: pointer;
-  display: inline-flex;
-
-  position: relative;
-
-  &:hover{
-    &::after {
-      transform-origin: bottom left;
-      transform: scaleX(1);
-    }
-  }
-
-  &::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    transform: scaleX(0);
-    height: rem($borderHeight);
-    bottom: rem(-$bottom);
-    left: 0;
-    background-color: currentColor;
-    transform-origin: bottom right;
-    transition: transform 0.25s ease-out;
-  }
-
-  &--active {
-    @include hoverActiveUnderline;
-  }
-}*/
 
 
 @mixin scrollbar {

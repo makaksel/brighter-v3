@@ -75,7 +75,7 @@ a > * {
 }
 
 .rating-component{
-
+  overflow: visible;
 
   @include md{
     & > span {
