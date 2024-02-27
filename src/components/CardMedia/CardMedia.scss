@@ -2,7 +2,7 @@
 @import "@/src/styles/media-queries";
 @import "@/src/styles/mixins";
 
-.card-media{
+.card-media {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -11,44 +11,54 @@
   flex: 1 1 48%;
   min-width: rem(330);
 
-  &__media{
+  &__media {
     background-color: var(--card-media--bg);
   }
 
-  &__img{
+  &__img {
     display: flex;
     width: 100%;
     height: 100%;
     object-fit: cover;
   }
 
-  &__body{
+  &__body {
     display: flex;
     flex-direction: column;
 
     gap: rem(20);
   }
 
-  &__title{
+  &__title {
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
     gap: rem(30);
 
-    &-text{
+    &-text {
       @include h3;
 
-      @include underlineActive(2);
+      color: inherit;
+      text-decoration: none;
+      background: no-repeat 0 100%;
+      background-image: linear-gradient(currentColor, currentColor);
+      background-size: 100% rem(2);
+      transition: .3s linear;
+      cursor: pointer;
 
+
+      &:hover {
+        background-size: 0 rem(2);
+      }
     }
 
-    &-date{
+    &-date {
       color: var(--gray-light);
       white-space: nowrap;
     }
   }
 
-  &__desc{
+  &__desc {
     color: var(--gray-light)
   }
 }
