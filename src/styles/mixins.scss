@@ -84,40 +84,92 @@
 }
 
 
-@mixin underlineActive($borderHeight: 1, $bottom: 0) {
-  $animation: hoverOff1;
-
-  @if $borderHeight == 5 {
-    $animation: hoverOff5;
-  } @else if $borderHeight == 3 {
-    $animation: hoverOff3;
-  } @else if $borderHeight == 2 {
-    $animation: hoverOff2;
-  } @else if $borderHeight == 1{
-    $animation: hoverOff1;
-  }
-
-  color: inherit;
+/*a {
+  color: #fff;
+  text-transform: uppercase;
   text-decoration: none;
-  background: no-repeat 0 100%;
-  background-image: linear-gradient(color-mix(in srgb, currentColor 100%, transparent), color-mix(in srgb, currentColor 100%, transparent));
-  background-size: 100% rem($borderHeight);
-  transition: .3s linear;
-  padding-bottom: rem($bottom);
-  cursor: pointer;
-  will-change: auto;
+  letter-spacing: 0.15em;
 
-  > * {
-    cursor: pointer;
+  display: inline-block;
+  padding: 15px 20px;
+  position: relative;
+}
+a:after {
+  background: none repeat scroll 0 0 transparent;
+  bottom: 0;
+  content: "";
+  display: block;
+  height: 2px;
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  background: #fff;
+  transition: 0.3s ease;
+  width: 0;
+}
+a:hover:after {
+  width: 100%;
+  opacity: 1;
+  left: 0;
+}*/
+
+@mixin underlineActive($borderHeight: 1, $bottom: 0) {
+  position: relative;
+
+  &:after {
+    background: none repeat scroll 0 0 transparent;
+    bottom: rem(-$bottom);
+    content: "";
+    display: block;
+    height: rem($borderHeight);
+    left: 0;
+    opacity: 1;
+    position: absolute;
+    background: currentColor;
+    transition: width 0.3s ease, opacity 0.3s ease 0.1s;
+    width: 100%;
   }
 
-  &:hover {
-    animation-name: #{$animation};
-    animation-duration: 0.8s;
-    animation-fill-mode: both;
-    animation-timing-function: linear;
+  &:hover:after {
+    width: 0;
+    opacity: 0;
   }
 }
+
+//@mixin underlineActive($borderHeight: 1, $bottom: 0) {
+//  $animation: hoverOff1;
+//
+//  @if $borderHeight == 5 {
+//    $animation: hoverOff5;
+//  } @else if $borderHeight == 3 {
+//    $animation: hoverOff3;
+//  } @else if $borderHeight == 2 {
+//    $animation: hoverOff2;
+//  } @else if $borderHeight == 1{
+//    $animation: hoverOff1;
+//  }
+//
+//  color: inherit;
+//  text-decoration: none;
+//  background: no-repeat 0 100%;
+//  background-image: linear-gradient(color-mix(in srgb, currentColor 100%, transparent), color-mix(in srgb, currentColor 100%, transparent));
+//  background-size: 100% rem($borderHeight);
+//  transition: .3s linear;
+//  padding-bottom: rem($bottom);
+//  cursor: pointer;
+//  will-change: auto;
+//
+//  > * {
+//    cursor: pointer;
+//  }
+//
+//  &:hover {
+//    animation-name: #{$animation};
+//    animation-duration: 0.8s;
+//    animation-fill-mode: both;
+//    animation-timing-function: linear;
+//  }
+//}
 
 
 
