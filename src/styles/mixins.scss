@@ -105,6 +105,7 @@
   transition: .3s linear;
   padding-bottom: rem($bottom);
   cursor: pointer;
+  will-change: auto;
 
   > * {
     cursor: pointer;
@@ -112,7 +113,7 @@
 
   &:hover {
     animation-name: #{$animation};
-    animation-duration: 0.3s;
+    animation-duration: 0.8s;
     animation-fill-mode: both;
     animation-timing-function: linear;
   }
