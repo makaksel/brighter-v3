@@ -218,11 +218,11 @@ a > * {
   }
   50% {
     background-size: 50% rem(1);
-    background-image: linear-gradient(color-mix(in srgb, currentColor 75%, transparent), color-mix(in srgb, currentColor 75%, transparent));
+    background-image: linear-gradient(color-mix(in srgb, currentColor 50%, transparent), color-mix(in srgb, currentColor 50%, transparent));
   }
   75% {
     background-size: 25% rem(1);
-    background-image: linear-gradient(color-mix(in srgb, currentColor 50%, transparent), color-mix(in srgb, currentColor 50%, transparent));
+    background-image: linear-gradient(color-mix(in srgb, currentColor 37.5%, transparent), color-mix(in srgb, currentColor 37.5%, transparent));
   }
   100% {
     background-size: 0 rem(1);
@@ -239,11 +239,11 @@ a > * {
   }
   50% {
     background-size: 50% rem(2);
-    background-image: linear-gradient(color-mix(in srgb, currentColor 75%, transparent), color-mix(in srgb, currentColor 75%, transparent));
+    background-image: linear-gradient(color-mix(in srgb, currentColor 50%, transparent), color-mix(in srgb, currentColor 50%, transparent));
   }
   75% {
     background-size: 25% rem(2);
-    background-image: linear-gradient(color-mix(in srgb, currentColor 50%, transparent), color-mix(in srgb, currentColor 50%, transparent));
+    background-image: linear-gradient(color-mix(in srgb, currentColor 37.5%, transparent), color-mix(in srgb, currentColor 37.5%, transparent));
   }
   100% {
     background-size: 0 rem(2);
@@ -260,11 +260,11 @@ a > * {
   }
   50% {
     background-size: 50% rem(3);
-    background-image: linear-gradient(color-mix(in srgb, currentColor 75%, transparent), color-mix(in srgb, currentColor 75%, transparent));
+    background-image: linear-gradient(color-mix(in srgb, currentColor 50%, transparent), color-mix(in srgb, currentColor 50%, transparent));
   }
   75% {
     background-size: 25% rem(3);
-    background-image: linear-gradient(color-mix(in srgb, currentColor 50%, transparent), color-mix(in srgb, currentColor 50%, transparent));
+    background-image: linear-gradient(color-mix(in srgb, currentColor 37.5%, transparent), color-mix(in srgb, currentColor 37.5%, transparent));
   }
   100% {
     background-size: 0 rem(3);
@@ -281,11 +281,11 @@ a > * {
   }
   50% {
     background-size: 50% rem(5);
-    background-image: linear-gradient(color-mix(in srgb, currentColor 75%, transparent), color-mix(in srgb, currentColor 75%, transparent));
+    background-image: linear-gradient(color-mix(in srgb, currentColor 50%, transparent), color-mix(in srgb, currentColor 50%, transparent));
   }
   75% {
     background-size: 25% rem(5);
-    background-image: linear-gradient(color-mix(in srgb, currentColor 50%, transparent), color-mix(in srgb, currentColor 50%, transparent));
+    background-image: linear-gradient(color-mix(in srgb, currentColor 37.5%, transparent), color-mix(in srgb, currentColor 37.5%, transparent));
   }
   100% {
     background-size: 0 rem(5);
