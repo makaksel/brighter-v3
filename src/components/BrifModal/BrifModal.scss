@@ -139,7 +139,6 @@
 
   &__load-guide {
     @include h3;
-    @include underline(2);
     @include underlineActive(2);
 
     width: 100%;
@@ -177,7 +176,6 @@
     @include md {
       display: flex;
       flex-direction: column-reverse;
-      //flex-wrap: wrap-reverse;
     }
 
   }
@@ -186,56 +184,5 @@
     grid-column: 2/2;
     opacity: 0.5;
   }
-
-  //&__link {
-  //  @include h1;
-  //  color: var(--text-color);
-  //
-  //  > * {
-  //    color: var(--text-color);
-  //  }
-  //
-  //  display: none;
-  //  align-items: center;
-  //  white-space: nowrap;
-  //
-  //  gap: rem(10);
-  //
-  //  @include underline(6, 15);
-  //  @include underlineActive(6);
-  //
-  //  @include md {
-  //    display: flex;
-  //    width: 100%;
-  //    justify-content: space-between;
-  //    @include underline(2, 4);
-  //    @include underlineActive(2);
-  //  }
-  //
-  //  &:hover {
-  //    color: var(--text-color);
-  //  }
-  //
-  //  &-icon {
-  //    fill: var(--text-color);
-  //    stroke-width: rem(6);
-  //
-  //    &.mobile {
-  //      display: none;
-  //
-  //    }
-  //
-  //    @include md {
-  //      &.mobile {
-  //        display: block;
-  //
-  //
-  //        stroke: var(--text-color);
-  //        stroke-width: rem(2);
-  //      }
-  //    }
-  //  }
-  //
-  //}
 
 }

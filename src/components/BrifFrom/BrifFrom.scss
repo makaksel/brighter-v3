@@ -40,7 +40,6 @@
     }
 
 
-
     @include md {
       display: flex;
       flex-direction: column;
@@ -95,9 +94,9 @@
       cursor: pointer;
     }
 
-    &-wrp{
+    &-wrp {
       position: relative;
-      
+
     }
 
     &-field {
@@ -117,7 +116,6 @@
       @include h3;
       color: var(--text-color);
 
-      @include underline(2, 4);
       @include underlineActive(2);
 
     }
@@ -151,9 +149,7 @@
 
     border: none;
 
-
-    @include underline(5, 17);
-    @include underlineActive(5);
+    @include underlineActive(5, 16);
 
     outline: none;
     background-color: transparent;
@@ -167,8 +163,7 @@
     @include md {
       max-width: 100%;
 
-      @include underline(2, 6);
-      @include underlineActive(2);
+      @include underlineActive(2, 10);
     }
 
     &-text {

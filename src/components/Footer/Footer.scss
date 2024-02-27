@@ -41,8 +41,7 @@
     margin-bottom: rem(200);
     gap: rem(10);
 
-    @include underline(5, 22);
-    @include underlineActive(5);
+    @include underlineActive(5, 16);
 
 
     &-icon {
@@ -64,8 +63,7 @@
 
     @include md{
       margin-bottom: rem(50);
-      @include underline(2, 5);
-      @include underlineActive(2);
+      @include underlineActive(2, 10);
     }
   }
 
@@ -101,7 +99,6 @@
     &-link {
       color: var(--gray-light);
 
-      @include underline;
       @include underlineActive;
     }
 

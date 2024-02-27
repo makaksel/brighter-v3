@@ -37,7 +37,6 @@
     &-link {
       @include h2;
 
-      @include underline(2, 0);
       @include underlineActive(2);
     }
 

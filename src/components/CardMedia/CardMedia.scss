@@ -38,7 +38,6 @@
     &-text{
       @include h3;
 
-      @include underline(2, 2);
       @include underlineActive(2);
 
     }

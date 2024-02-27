@@ -84,38 +84,36 @@
 }
 
 
-@mixin underlineActive($borderHeight: 1, $color: white) {
+@mixin underlineActive($borderHeight: 1, $bottom: 0) {
+  $animation: hoverOff1;
+
+  @if $borderHeight == 5 {
+    $animation: hoverOff5;
+  } @else if $borderHeight == 3 {
+    $animation: hoverOff3;
+  } @else if $borderHeight == 2 {
+    $animation: hoverOff2;
+  } @else if $borderHeight == 1{
+    $animation: hoverOff1;
+  }
+
+  color: inherit;
+  text-decoration: none;
+  background: no-repeat 0 100%;
+  background-image: linear-gradient(currentColor, currentColor);
   background-size: 100% rem($borderHeight);
+  transition: background-size .3s ease, background-image .3s ease;
+  padding-bottom: rem($bottom);
+  cursor: pointer;
+
+  > * {
+    cursor: pointer;
+  }
 
   &:hover {
-    animation: hoverOff .3s ease;
+    animation: #{$animation} .3s linear;
     animation-fill-mode: forwards;
   }
-
-  @keyframes hoverOff {
-    0% {
-      background-size: 100% rem($borderHeight);
-      background-image: linear-gradient(color-mix(in srgb, currentColor 100%, transparent), color-mix(in srgb, currentColor 100%, transparent));
-    }
-    25% {
-      background-size: 75% rem($borderHeight);
-      background-image: linear-gradient(color-mix(in srgb, currentColor 95%, transparent), color-mix(in srgb, currentColor 95%, transparent));
-    }
-    50% {
-      background-size: 50% rem($borderHeight);
-      background-image: linear-gradient(color-mix(in srgb, currentColor 85%, transparent), color-mix(in srgb, currentColor 85%, transparent));
-    }
-    75% {
-      background-size: 25% rem($borderHeight);
-      background-image: linear-gradient(color-mix(in srgb, currentColor 45%, transparent), color-mix(in srgb, currentColor 45%, transparent));
-    }
-    100% {
-      background-size: 0 rem($borderHeight);
-      background-image: linear-gradient(color-mix(in srgb, currentColor 0%, transparent), color-mix(in srgb, currentColor 0%, transparent));
-
-    }
-  }
-
 }
 
 

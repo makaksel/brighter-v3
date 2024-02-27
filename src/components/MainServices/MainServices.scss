@@ -91,8 +91,7 @@
 
       order: 12;
 
-      @include underline(1, 3);
-      @include underlineActive;
+      @include underlineActive(1, 3);
 
       &-icon {
         fill: var(--white)

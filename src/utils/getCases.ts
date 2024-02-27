@@ -44,8 +44,6 @@ export interface CaseResponse {
   items: Case[];
 }
 
-
-// Retrieve the list of blog posts from Contentful
 const getCases = async () => {
   const response = await contentfulClient.getEntries<{ contentTypeId: string, fields: CaseFields }>({
     content_type: 'case',
