@@ -102,7 +102,7 @@
   background: no-repeat 0 100%;
   background-image: linear-gradient(color-mix(in srgb, currentColor 100%, transparent), color-mix(in srgb, currentColor 100%, transparent));
   background-size: 100% rem($borderHeight);
-  transition: background-size .3s ease, background-image .3s ease;
+  transition: .3s linear;
   padding-bottom: rem($bottom);
   cursor: pointer;
 
@@ -111,8 +111,10 @@
   }
 
   &:hover {
-    animation: #{$animation} .3s linear;
-    animation-fill-mode: forwards;
+    animation-name: #{$animation};
+    animation-duration: 0.3s;
+    animation-fill-mode: both;
+    animation-timing-function: linear;
   }
 }
 
