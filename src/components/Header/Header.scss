@@ -157,7 +157,7 @@
         width: 100%;
 
         gap: rem(10);
-        background-color: red;
+
         @include underlineActive(2, 7);
 
         &-icon {

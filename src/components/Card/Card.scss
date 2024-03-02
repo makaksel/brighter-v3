@@ -29,9 +29,6 @@
   }
 
 
-
-
-
   @include md {
     &__title-icon {
       width: rem(21);
@@ -53,6 +50,11 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+  }
+
+  &__body{
+    display: flex;
+    flex-direction: column;
   }
 
   &__rating {

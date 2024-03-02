@@ -87,7 +87,7 @@ a > * {
 }
 
 .rating-component {
-  overflow: visible;
+  overflow: visible!important;
 
   & > span {
     &:not(:last-child) {
