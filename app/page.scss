@@ -95,6 +95,12 @@ a > * {
     }
   }
 
+  &-icon{
+    @include md {
+      width: rem(15);
+    }
+  }
+
   @include md {
     & > span {
       font-size: 17px !important;

@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { makeCn, MediaObject, useMediaQuery } from '@/src/utils';
+import { makeCn, MediaObject } from '@/src/utils';
 import './CaseCard.scss';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -29,8 +29,6 @@ export const CaseCard: React.FC<CaseCardProps> = ({
   desc,
   rating = 5,
 }) => {
-
-  const isDesktop = useMediaQuery('(min-width:1024px)');
 
   return (
     <div className={cn()}>
@@ -61,10 +59,18 @@ export const CaseCard: React.FC<CaseCardProps> = ({
             className={'rating-component'}
             count={5}
             value={rating}
+            char={(
+              <svg width="25" height="23" className={'rating-component-icon'}  viewBox="0 0 25 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M12.5 0L15.3064 8.63729H24.3882L17.0409 13.9754L19.8473 22.6127L12.5 17.2746L5.15268 22.6127L7.95911 13.9754L0.611794 8.63729H9.69357L12.5 0Z"
+                  fill="#A2A2A2" />
+              </svg>
+            ) as never as string}
             size={27}
             color1={'#080808'}
             color2={'#A1A1A1'}
             edit={false}
+
           />
         </div>
 
