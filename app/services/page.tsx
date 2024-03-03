@@ -38,8 +38,6 @@ export default function page() {
           titleNumber="02"
           badge="дизайн-поддержка"
           adsText="работа студии по подписке, решаем все ваши задачи, связанные с дизайном"
-          link="#"
-          linkText="перейти"
           collapseList={design}
         />
       </div>
