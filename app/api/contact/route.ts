@@ -1,11 +1,7 @@
 import { NextResponse } from 'next/server';
 import { telegramBotId, telegramChatId } from '@/src/data';
-import { Telegram } from 'telegraf';
 import path from 'path';
-import { writeFile } from 'fs/promises';
-
-const telegramm = new Telegram(telegramBotId);
-
+import { promises as fs } from 'fs';
 
 export async function POST(request: Request) {
   const requestData = await request.formData();
@@ -20,12 +16,12 @@ export async function POST(request: Request) {
     const filename = file.name.replaceAll(' ', '_');
     console.log(filename);
 
-    await writeFile(
-      path.join(process.cwd(), 'public/assets/' + filename),
+    await fs.writeFile(
+      path.join(process.cwd(), '/public/assets/' + filename),
       buffer,
     );
 
-    uploadedFileLink = `https://www.poyarche.ru/${filename}`
+    uploadedFileLink = `https://www.poyarche.ru/${filename}`;
   }
 
 
