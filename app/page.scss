@@ -90,6 +90,8 @@ a > * {
   overflow: visible!important;
 
   & > span {
+    overflow: visible;!important;
+
     &:not(:last-child) {
       margin-right: 2px;
     }
