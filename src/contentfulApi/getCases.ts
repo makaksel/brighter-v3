@@ -1,5 +1,5 @@
 import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
-import { contentfulClient } from '@/src/utils/contentfulClient';
+import { contentfulClient } from '@/src/contentfulApi/contentfulClient';
 
 
 export interface MediaObject {
@@ -45,8 +45,13 @@ export interface CaseResponse {
 }
 
 const getCases = async () => {
+
   const response = await contentfulClient.getEntries<{ contentTypeId: string, fields: CaseFields }>({
     content_type: 'case',
+    // @ts-ignore
+    // order: 'fields.title',
+    // @ts-ignore
+    // select: ['fields.title'].join(',')
   }).then((response) => {
     return response.items.map((elem) => ({
       ...elem,

@@ -6,7 +6,7 @@ import { Footer } from '@/src/components/Footer';
 import { makeCn } from '@/src/utils';
 import { ServicesHero } from '@/src/components/ServicesHero';
 import { ServiceBlock } from '@/src/components/ServiceBlock';
-import { design, indeed } from '@/src/data';
+import { getServices } from '@/src/contentfulApi/getServices';
 
 export const metadata: Metadata = {
   title: 'Поярче',
@@ -16,7 +16,9 @@ export const metadata: Metadata = {
 const cn = makeCn('services-page');
 
 
-export default function page() {
+export default async function page() {
+  const services = await getServices();
+
   return (
     <main className={cn()}>
       <Header />
@@ -24,22 +26,21 @@ export default function page() {
       <ServicesHero />
 
       <div className={cn('list')}>
-        <ServiceBlock
-          id="identity"
-          titleNumber="01"
-          badge="айдентика"
-          about="логотип и 5 примеров использования / разработка фирменного знака базовые правила использования логотипа / геометрия и построение  размеры / масштабирование / цветовая схема / шрифт / дизайн отдельного фирменного элемента"
-          adsText="создадим уникальный и привлекательный фирменный стиль, который привлечет клиентов к вашей компании"
-          collapseList={indeed}
-        />
+        {services.map((service) => (
 
-        <ServiceBlock
-          id="design"
-          titleNumber="02"
-          badge="дизайн-поддержка"
-          adsText="работа студии по подписке, решаем все ваши задачи, связанные с дизайном"
-          collapseList={design}
-        />
+          <ServiceBlock
+            key={service.fields.number}
+            id={service.fields.number}
+            titleNumber={`${service.fields.number}`}
+            badge={service.fields.title}
+            about={service.fields.about}
+            cost={service.fields.cost}
+            addition={service.fields.addition}
+            collapseList={service.fields.faq}
+          />
+        ))}
+
+
       </div>
 
       <Footer />

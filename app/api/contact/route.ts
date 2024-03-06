@@ -1,48 +1,88 @@
-import { NextRequest, NextResponse } from 'next/server';
-import { BrifFrom } from '@/src/components/BrifFrom';
+import { NextResponse } from 'next/server';
+import { telegramBotId, telegramChatId } from '@/src/data';
 
-const nodemailer = require('nodemailer');
 
-const username = process.env.EMAIL_USERNAME;
-const password = process.env.EMAIL_PASSWORD;
+export async function POST(request: Request) {
+  const requestData = await request.formData();
+  const formData = Object.fromEntries(requestData);
+/*
+  const formDataForUpload = new FormData();
 
-const transporter = nodemailer.createTransport({
-  host: 'mail.hosting.reg.ru',
-  port: 465,
+  const fileData: File = formData.file
+  console.log(fileData);
+  if (fileData) {
 
-  auth: {
-    user: username,
-    pass: password,
-  },
-});
+    const bytes = await fileData.arrayBuffer();
+    const buffer = Buffer.from(bytes)
 
-export async function POST(req: NextRequest) {
-  const json = req.json();
-  const formData: BrifFrom = await json;
-
-  try {
-    const mail = await transporter.sendMail({
-      from: username,
-      to: username,
-      subject: `Новая заявка`,
-      html: `
-            <!DOCTYPE html>
-            <html dir="ltr" lang="ru">
-              <body>
-                 <p><b>имя: </b> ${formData.name}</p>
-                 <p><b>почта или контакт в любом мессенджере: </b> ${formData.contact}</p>
-                 <p><b>название компании: </b> ${formData.company}</p>
-                 <p><b>интересуют: </b> ${String(formData.services)}</p>
-                 <p><b>бюджет: </b> ${formData.budget}</p>
-              </body>
-            </html>
-            `,
-    });
-
-    return NextResponse.json({ message: 'Success: email was sent' });
-
-  } catch (error) {
-    console.log(error);
-    NextResponse.json({ message: 'COULD NOT SEND MESSAGE' });
+    const file = fs.readFileSync(requestData.get('file') as string);
+    //@ts-ignore
+    const upload = await contentfulClient.upload.create({
+        file: buffer,
+      }
+    );
+    console.log(upload);
   }
+*/
+
+
+/*
+  console.log('requestData.get(\'file\')', requestData.get('file'));
+
+  if (requestData.has('file')) {
+    formDataForUpload.append('document', requestData.get('file'));
+  }
+  formDataForUpload.append('chat_id', `${telegramChatId}`);
+
+  console.log('formDataForUpload', formDataForUpload);
+  const responseUpload = await fetch(`https://api.telegram.org/bot${telegramBotId}/sendDocument`, {
+    method: 'POST',
+    mode: 'cors',
+    cache: 'no-cache',
+    credentials: 'same-origin',
+    // headers: {
+    //   'Content-Type': 'application/json',
+    // },
+    redirect: 'follow',
+    referrerPolicy: 'no-referrer',
+    body: formDataForUpload,
+  }).then((res) => res.json());
+
+  console.log('responseUpload', responseUpload);
+*/
+
+
+  // ${uploadFile ? `Файл: ${uploadFile};` : ''}
+
+  const message = `*⚠️ Новое обращение*
+
+👤имя: ${formData.name};
+📞почта или контакт в любом мессенджере: ${formData.contact};
+${formData.company ? `📬название компании: ${formData.company};` : ''}
+${formData.services ? `интересуют: ${formData.services};` : ''}
+${formData.budget ? `бюджет: ${formData.budget};` : ''}
+
+`;
+
+  const response = await fetch(`https://api.telegram.org/bot${telegramBotId}/sendMessage`, {
+    method: 'POST',
+    mode: 'cors',
+    cache: 'no-cache',
+    credentials: 'same-origin',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    redirect: 'follow',
+    referrerPolicy: 'no-referrer',
+    body: JSON.stringify({
+      chat_id: telegramChatId,
+      text: message,
+      parse_mode: 'Markdown',
+    }),
+  });
+
+
+  const responseData = await response.json();
+
+  return NextResponse.json(responseData);
 }

@@ -2,7 +2,7 @@ import React from 'react';
 import './MainCases.scss';
 import { makeCn } from '@/src/utils';
 import { Card } from '@/src/components/Card';
-import getCases from '@/src/utils/getCases';
+import getCases from '@/src/contentfulApi/getCases';
 import { chunk } from 'lodash';
 
 const cn = makeCn('main-cases');

@@ -1,12 +1,13 @@
 'use client';
 
 import React from 'react';
-import { makeCn, MediaObject } from '@/src/utils';
+import { makeCn } from '@/src/utils';
 import './Card.scss';
 import Image from 'next/image';
 import ReactStars from 'react-stars';
 import Link from 'next/link';
 import { routerLinks } from '@/src/data/navigation';
+import { MediaObject } from '@/src/contentfulApi';
 
 const cn = makeCn('card');
 

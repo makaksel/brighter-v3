@@ -4,7 +4,7 @@ import { CaseSidebar } from '@/src/components/CaseSidebar';
 import './page.scss';
 import { makeCn } from '@/src/utils';
 import Image from 'next/image';
-import getCaseById from '@/src/utils/getCaseById';
+import getCaseById from '@/src/contentfulApi/getCaseById';
 import { IPageProps } from '@/src/models';
 
 export const metadata: Metadata = {

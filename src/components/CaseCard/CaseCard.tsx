@@ -1,13 +1,14 @@
 'use client';
 
 import React from 'react';
-import { makeCn, MediaObject } from '@/src/utils';
+import { makeCn } from '@/src/utils';
 import './CaseCard.scss';
 import Image from 'next/image';
 import Link from 'next/link';
 import { routerLinks } from '@/src/data/navigation';
 import ArrowRight from '@/src/resources/icons/ArrowRight.svg';
 import ReactStars from 'react-stars';
+import { MediaObject } from '@/src/contentfulApi';
 
 const cn = makeCn('case-card');
 

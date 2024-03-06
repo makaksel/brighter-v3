@@ -2,7 +2,7 @@ import React from 'react';
 import './PortfolioCases.scss';
 import { makeCn } from '@/src/utils';
 import { CaseCard } from '@/src/components/CaseCard';
-import getCases from '@/src/utils/getCases';
+import getCases from '@/src/contentfulApi/getCases';
 
 const cn = makeCn('portfolio-cases');
 

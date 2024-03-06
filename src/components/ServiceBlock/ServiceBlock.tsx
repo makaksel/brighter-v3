@@ -7,7 +7,7 @@ import Link from 'next/link';
 import { routerLinks } from '@/src/data/navigation';
 import ArrowRight from '@/src/resources/icons/ArrowRight.svg';
 import { ContactCollapse } from '@/src/components/ContactCollapse';
-import { ServiceCollapse } from '@/src/data';
+import { ServiceFaq } from '@/src/contentfulApi/getServices';
 
 const cn = makeCn('service-block');
 
@@ -17,10 +17,11 @@ interface ServiceBlockProps {
   titleNumber: string;
   badge: string;
   about?: string;
-  adsText?: string;
+  cost?: string;
+  addition?: string;
   link?: string;
   linkText?: string;
-  collapseList: ServiceCollapse[];
+  collapseList?: ServiceFaq[];
 }
 
 export const ServiceBlock: React.FC<ServiceBlockProps> = ({
@@ -28,7 +29,8 @@ export const ServiceBlock: React.FC<ServiceBlockProps> = ({
   titleNumber,
   badge,
   about,
-  adsText,
+  cost,
+  addition,
   collapseList,
   link = routerLinks.brif,
   linkText,
@@ -48,7 +50,7 @@ export const ServiceBlock: React.FC<ServiceBlockProps> = ({
     <div className={cn()} id={id}>
 
       <div className={cn('number')}>
-        <span>[{titleNumber}]</span>
+        <span>{`[${titleNumber.padStart(2, '0')}]`}</span>
       </div>
 
       <div className={cn('badge-wrp')}>
@@ -60,7 +62,9 @@ export const ServiceBlock: React.FC<ServiceBlockProps> = ({
       </div>
 
       <div className={cn('ads')}>
-        {adsText && <p className={cn('ads-text')}>{adsText}</p>}
+        {addition && <p className={cn('ads-text')}>{addition}</p>}
+        {cost && <p className={cn('ads-text')}>стоимость - <span  className={cn('ads-text-black')}>{cost}</span></p>}
+
         <Link href={link} className={cn('ads-link')}>
           <span>{linkText || 'обсудить'}</span>
           <ArrowRight className={cn('ads-link-icon')} />
@@ -68,15 +72,14 @@ export const ServiceBlock: React.FC<ServiceBlockProps> = ({
       </div>
 
       <div className={cn('list')}>
-        {collapseList.map((item) => (
+        {collapseList && collapseList.map((item, index) => (
           <ContactCollapse
-            key={item.id}
+            key={index}
             title={item.title}
-            desc={item.desc}
-            price={item.price}
+            about={item.about}
             days={item.days}
-            open={collapseOpen === item.id}
-            handleClick={() => handleClickCollapse(item.id)}
+            open={collapseOpen === index}
+            handleClick={() => handleClickCollapse(index)}
           />
         ))}
       </div>

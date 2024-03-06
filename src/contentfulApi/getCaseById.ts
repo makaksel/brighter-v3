@@ -1,5 +1,5 @@
-import { contentfulClient } from '@/src/utils/contentfulClient';
-import { CaseFields } from '@/src/utils/getCases';
+import { contentfulClient } from '@/src/contentfulApi/contentfulClient';
+import { CaseFields } from '@/src/contentfulApi/getCases';
 import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
 
 

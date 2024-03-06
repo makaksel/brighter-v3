@@ -68,28 +68,8 @@ export const BrifFrom: React.FC = () => {
 
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [modalIsOpen, setModalIsOpen] = useState<boolean>(false);
+  const [fileUpload, setFileUpload] = useState<File | null>(null);
 
-  const processData = async (data: BrifFrom) => {
-    setIsLoading(true);
-    setModalIsOpen(true);
-
-    const servicesData = Object.entries(data.services).reduce((acc: string[], [key, val]: [string, boolean]) => {
-      if (!val) return acc;
-      // @ts-ignore
-      const newService: string = servicesMap[key];
-      return [...acc, newService];
-    }, []).join(', ');
-    const resultData = { ...data, services: servicesData };
-
-    const response = await fetch('/api/contact', {
-      method: 'post',
-      body: JSON.stringify(resultData),
-    });
-
-    if (response) {
-      setIsLoading(false);
-    }
-  };
 
   const servicesHandleChange = (val: boolean, name: any) => {
     setValue(name, val);
@@ -103,9 +83,52 @@ export const BrifFrom: React.FC = () => {
     setValue('budget', name);
   };
 
+
+  /** Создание оповещение в ТГ */
+  const processData = async (data: BrifFrom) => {
+    setIsLoading(true);
+    setModalIsOpen(true);
+
+    const formData = new FormData();
+
+    const servicesData = Object.entries(data.services).reduce((acc: string[], [key, val]: [string, boolean]) => {
+      if (!val) return acc;
+      // @ts-ignore
+      const newService: string = servicesMap[key];
+      return [...acc, newService];
+    }, []).join(', ');
+
+    Object.entries(data)
+      .forEach(([key, value]) => {
+        if (key === 'services') {
+          value = servicesData;
+        }
+
+        if (value) {
+          formData.append(key, value);
+        }
+      });
+
+    // const fileUp = await toBase64(fileUpload)
+
+    if (fileUpload) {
+      formData.append('file', fileUpload);
+    }
+
+    const response = await fetch('/api/contact', {
+      method: 'POST',
+      body: formData,
+    });
+
+    if (response) {
+      setIsLoading(false);
+    }
+  };
+
   const fileHandleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    // var tmppath = event.target.files[0].mozFullPath;
-    // console.log(tmppath);
+    if (event.target.files) {
+      setFileUpload(event.target.files[0]);
+    }
   };
 
   return (
@@ -237,8 +260,21 @@ export const BrifFrom: React.FC = () => {
 
         <div>
           <div className={cn('file-input-wrp')}>
+            {/*<Controller
+              control={control}
+              name="file"
+              render={({ field }) =>
+                <label className={cn('file-input')}>
+                  <input type="file" title="upload btn"
+                         className={cn('file-input-field', [onest.className])}
+                         accept=".doc, .docx, .txt, .pdf"  {...field}/>
+                  <span className={cn('file-input-label')}>выбрать файл</span>
+                </label>
+              }
+            />*/}
             <label className={cn('file-input')}>
-              <input type="file" name="file" title="upload btn" className={cn('file-input-field', [onest.className])}
+              <input type="file" title="upload btn"
+                     className={cn('file-input-field', [onest.className])}
                      accept=".doc, .docx, .txt, .pdf" onChange={fileHandleChange} />
               <span className={cn('file-input-label')}>выбрать файл</span>
             </label>
