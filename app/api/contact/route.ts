@@ -1,12 +1,10 @@
 import { NextResponse } from 'next/server';
 import { telegramBotId, telegramChatId } from '@/src/data';
-import path from 'path';
-import { promises as fs } from 'fs';
 
 export async function POST(request: Request) {
   const requestData = await request.formData();
   const formData = Object.fromEntries(requestData);
-  let uploadedFileLink = null;
+/*  let uploadedFileLink = null;
 
   const file = requestData.get('file');
   if (file) {
@@ -14,7 +12,6 @@ export async function POST(request: Request) {
     const buffer = Buffer.from(await file.arrayBuffer());
     //@ts-ignore
     const filename = file.name.replaceAll(' ', '_');
-    console.log(filename);
 
     await fs.writeFile(
       path.join(process.cwd(), '/public/assets/' + filename),
@@ -22,8 +19,9 @@ export async function POST(request: Request) {
     );
 
     uploadedFileLink = `https://www.poyarche.ru/${filename}`;
-  }
+  }*/
 
+  // ${uploadedFileLink ? `Файл: ${uploadedFileLink};` : ''}
 
   const message = `*⚠️ Новое обращение*
 
@@ -33,7 +31,7 @@ ${formData.company ? `📬название компании: ${formData.company}
 
 ${formData.services ? `интересует: ${formData.services};` : ''}
 ${formData.budget ? `бюджет: ${formData.budget};` : ''}
-${uploadedFileLink ? `Файл: ${uploadedFileLink};` : ''}
+
 `;
 
   const response = await fetch(`https://api.telegram.org/bot${telegramBotId}/sendMessage`, {
