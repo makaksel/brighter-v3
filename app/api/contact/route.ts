@@ -1,67 +1,43 @@
 import { NextResponse } from 'next/server';
 import { telegramBotId, telegramChatId } from '@/src/data';
+import { Telegram } from 'telegraf';
+import path from 'path';
+import { writeFile } from 'fs/promises';
+
+const telegramm = new Telegram(telegramBotId);
 
 
 export async function POST(request: Request) {
   const requestData = await request.formData();
   const formData = Object.fromEntries(requestData);
-/*
-  const formDataForUpload = new FormData();
+  let uploadedFileLink = null;
 
-  const fileData: File = formData.file
-  console.log(fileData);
-  if (fileData) {
-
-    const bytes = await fileData.arrayBuffer();
-    const buffer = Buffer.from(bytes)
-
-    const file = fs.readFileSync(requestData.get('file') as string);
+  const file = requestData.get('file');
+  if (file) {
     //@ts-ignore
-    const upload = await contentfulClient.upload.create({
-        file: buffer,
-      }
+    const buffer = Buffer.from(await file.arrayBuffer());
+    //@ts-ignore
+    const filename = file.name.replaceAll(' ', '_');
+    console.log(filename);
+
+    await writeFile(
+      path.join(process.cwd(), 'public/assets/' + filename),
+      buffer,
     );
-    console.log(upload);
+
+    uploadedFileLink = `https://www.poyarche.ru/${filename}`
   }
-*/
 
-
-/*
-  console.log('requestData.get(\'file\')', requestData.get('file'));
-
-  if (requestData.has('file')) {
-    formDataForUpload.append('document', requestData.get('file'));
-  }
-  formDataForUpload.append('chat_id', `${telegramChatId}`);
-
-  console.log('formDataForUpload', formDataForUpload);
-  const responseUpload = await fetch(`https://api.telegram.org/bot${telegramBotId}/sendDocument`, {
-    method: 'POST',
-    mode: 'cors',
-    cache: 'no-cache',
-    credentials: 'same-origin',
-    // headers: {
-    //   'Content-Type': 'application/json',
-    // },
-    redirect: 'follow',
-    referrerPolicy: 'no-referrer',
-    body: formDataForUpload,
-  }).then((res) => res.json());
-
-  console.log('responseUpload', responseUpload);
-*/
-
-
-  // ${uploadFile ? `Файл: ${uploadFile};` : ''}
 
   const message = `*⚠️ Новое обращение*
 
 👤имя: ${formData.name};
 📞почта или контакт в любом мессенджере: ${formData.contact};
 ${formData.company ? `📬название компании: ${formData.company};` : ''}
-${formData.services ? `интересуют: ${formData.services};` : ''}
-${formData.budget ? `бюджет: ${formData.budget};` : ''}
 
+${formData.services ? `интересует: ${formData.services};` : ''}
+${formData.budget ? `бюджет: ${formData.budget};` : ''}
+${uploadedFileLink ? `Файл: ${uploadedFileLink};` : ''}
 `;
 
   const response = await fetch(`https://api.telegram.org/bot${telegramBotId}/sendMessage`, {

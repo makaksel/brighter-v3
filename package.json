@@ -24,7 +24,8 @@
     "react-hook-form": "^7.50.1",
     "react-stars": "^2.2.5",
     "sass": "^1.63.6",
-    "swiper": "^11.0.6"
+    "swiper": "^11.0.6",
+    "telegraf": "^4.16.3"
   },
   "devDependencies": {
     "@bem-react/classname": "^1.6.0",
