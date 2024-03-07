@@ -23,7 +23,6 @@ export default async function page() {
       <Header />
       <MainHero />
 
-
       <Partners />
 
       <MainCases />
