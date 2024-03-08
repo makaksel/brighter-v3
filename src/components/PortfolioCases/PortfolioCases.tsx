@@ -19,6 +19,7 @@ export const PortfolioCases: React.FC = async () => {
           title={item.fields.title}
           desc={item.fields.about}
           imgs={item.fields.caseCardImgs}
+          mainImgNumber={item.fields.caseImgOrder}
         />
       ))}
     </div>

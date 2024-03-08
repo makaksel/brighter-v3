@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useMemo } from 'react';
 import { makeCn } from '@/src/utils';
 import './CaseCard.scss';
 import Image from 'next/image';
@@ -19,6 +19,7 @@ interface CaseCardProps {
   desc?: string;
   rating?: number;
   imgs: MediaObject[];
+  mainImgNumber: number;
 }
 
 
@@ -29,7 +30,19 @@ export const CaseCard: React.FC<CaseCardProps> = ({
   imgs,
   desc,
   rating = 5,
+  mainImgNumber = 2,
 }) => {
+
+  const mediaSort = useMemo(() => {
+    switch (mainImgNumber) {
+      case 1:
+        return 'left';
+      case 3:
+        return 'right';
+      default:
+        return 'center';
+    }
+  }, [mainImgNumber]);
 
   return (
     <div className={cn()}>
@@ -74,7 +87,7 @@ export const CaseCard: React.FC<CaseCardProps> = ({
 
       </div>
 
-      {!!imgs?.length && <div className={cn('media')}>
+      {!!imgs?.length && <div className={cn('media', { mediaSort })}>
 
         {!!imgs?.length && imgs.map((img) => (
           <Image key={null} src={`https:${img.fields.file.url}`} className={cn('img')} alt={title}

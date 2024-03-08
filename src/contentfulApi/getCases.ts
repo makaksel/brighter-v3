@@ -31,6 +31,7 @@ export interface CaseFields {
   imgs: MediaObject[];
   cardImg: MediaObject;
   caseCardImgs: MediaObject[];
+  caseImgOrder: number,
   behanceLink?: string;
 }
 

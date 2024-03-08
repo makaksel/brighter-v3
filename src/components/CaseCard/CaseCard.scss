@@ -99,7 +99,8 @@
     width: 100%;
     height: rem(670);
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
+
+    grid-template-columns: 1fr 2fr 1fr;
     grid-gap: 0 rem(20);
     min-width: 1px;
 
@@ -119,17 +120,16 @@
         display: none;
       }
     }
-  }
 
-  &:nth-child(3n+2) {
-    #{$this}__media {
-      grid-template-columns: 1fr 2fr 1fr;
-    }
-  }
+    &--mediaSort{
 
-  &:nth-child(3n+3) {
-    #{$this}__media {
-      grid-template-columns: 1fr 1fr 2fr;
+      &_left{
+        grid-template-columns: 2fr 1fr 1fr;
+      }
+
+      &_right{
+        grid-template-columns: 1fr 1fr 2fr;
+      }
     }
   }
 
