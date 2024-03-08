@@ -5,6 +5,7 @@ import './page.scss';
 import Script from 'next/script';
 import Head from 'next/head';
 import React from 'react';
+import { Header } from '@/src/components/Header';
 
 const onest = Onest({ subsets: ['latin'] });
 
@@ -289,6 +290,7 @@ export default function RootLayout({
       </noscript>
     }
 
+    <Header />
     {children}
 
 

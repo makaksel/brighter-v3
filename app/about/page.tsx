@@ -1,7 +1,6 @@
 import { Metadata } from 'next';
 import React from 'react';
 import './page.scss';
-import { Header } from '@/src/components/Header';
 import { Footer } from '@/src/components/Footer';
 import { AboutHero } from '@/src/components/AboutHero';
 import { Media } from '@/src/components/Media';
@@ -20,8 +19,6 @@ const cn = makeCn('about-page');
 export default function page() {
   return (
     <main className={cn()}>
-      <Header />
-
       <AboutHero />
 
       <Team />

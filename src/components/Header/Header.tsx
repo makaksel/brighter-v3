@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import { makeCn } from '@/src/utils';
 import './Header.scss';
@@ -7,24 +9,32 @@ import { routerLinks } from '@/src/data/navigation';
 import { HeaderNav } from '@/src/components/HeaderNav';
 import { DiscussLink } from '@/src/components/DiscussLink';
 import { Burger } from '@/src/components/Header/Burger';
+import { usePathname } from 'next/navigation';
 
 export const cn = makeCn('header');
 
 interface HeaderProps {
   className?: string;
+  theme?: 'black' | 'white';
 }
 
-export const Header: React.FC<HeaderProps> = ({ className }) => (
-  <div className={cn('', [className])}>
+export const Header: React.FC<HeaderProps> = ({ className, theme = 'black' }) => {
+  const pathname = usePathname();
+  const isWhiteTheme = pathname.toLowerCase().includes('brif') || pathname.toLowerCase().includes('services') ||
+    pathname.toLowerCase().includes('about')
 
-    <Link className={cn('logo-link')} href={routerLinks.root}>
-      <Logo className={cn('logo')} alt={'Поярче'} />
-    </Link>
+  return (
+    <div className={cn('', { isWhite: isWhiteTheme }, [className])}>
 
-    <HeaderNav className={cn('nav')}/>
+      <Link className={cn('logo-link')} href={routerLinks.root}>
+        <Logo className={cn('logo')} alt={'Поярче'} />
+      </Link>
 
-    <DiscussLink className={cn('discus')} />
+      <HeaderNav className={cn('nav')} />
 
-    <Burger />
-  </div>
-);
+      <DiscussLink className={cn('discus')} />
+
+      <Burger />
+    </div>
+  )
+};

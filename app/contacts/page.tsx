@@ -1,7 +1,6 @@
 import { Metadata } from 'next';
 import React from 'react';
 import './page.scss';
-import { Header } from '@/src/components/Header';
 import { Footer } from '@/src/components/Footer';
 import { Contacts } from '@/src/components/Contacts';
 import { makeCn } from '@/src/utils';
@@ -15,8 +14,6 @@ const cn = makeCn('contacts-page')
 export default function page() {
   return (
     <main>
-      <Header />
-
       <h1 className={cn('title')}>контакты</h1>
 
       <div className={cn('wrp')}>

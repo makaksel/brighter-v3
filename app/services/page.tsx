@@ -1,7 +1,6 @@
 import { Metadata } from 'next';
 import React from 'react';
 import './page.scss';
-import { Header } from '@/src/components/Header';
 import { Footer } from '@/src/components/Footer';
 import { makeCn } from '@/src/utils';
 import { ServicesHero } from '@/src/components/ServicesHero';
@@ -21,7 +20,6 @@ export default async function page() {
 
   return (
     <main className={cn()}>
-      <Header />
 
       <ServicesHero />
 

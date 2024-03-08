@@ -2,6 +2,9 @@
 @import "@/src/styles/mixins";
 
 .header {
+  --bg-color: var(--black);
+  --text-color: var(--white);
+
   @include container;
 
   display: flex;
@@ -9,12 +12,18 @@
   justify-content: space-between;
   position: sticky;
   top: 0;
-  
+
   padding: rem(30) var(--x-padding);
 
   background-color: var(--bg-color);
+  color: var(--text-color);
 
   z-index: 20;
+
+  &--isWhite {
+    --bg-color: var(--white);
+    --text-color: var(--gray-black);
+  }
 
 
   @include md {
@@ -122,7 +131,7 @@
         left: 0;
       }
 
-      &--closing{
+      &--closing {
         opacity: 0;
         left: 0;
       }
@@ -164,8 +173,8 @@
           fill: var(--text-color);
           stroke-width: rem(2);
 
-          @include md{
-            &.mobile{
+          @include md {
+            &.mobile {
               display: block;
 
               stroke: var(--text-color);

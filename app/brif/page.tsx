@@ -1,7 +1,6 @@
 import { Metadata } from 'next';
 import React from 'react';
 import './page.scss';
-import { Header } from '@/src/components/Header';
 import { Footer } from '@/src/components/Footer';
 import { makeCn } from '@/src/utils';
 import { BrifHero } from '@/src/components/BrifHero';
@@ -17,7 +16,6 @@ const cn = makeCn('brif-page')
 export default function page() {
   return (
     <main className={cn()}>
-      <Header />
       <BrifHero />
 
       <BrifFrom />

@@ -1,6 +1,5 @@
 import { Metadata } from 'next';
 import React from 'react';
-import { Header } from '@/src/components/Header';
 import { Footer } from '@/src/components/Footer';
 import { PortfolioHero } from '@/src/components/PortfolioHero';
 import { PortfolioCases } from '@/src/components/PortfolioCases';
@@ -14,8 +13,6 @@ export default async function page() {
 
   return (
     <main>
-      <Header />
-
       <PortfolioHero />
 
       <PortfolioCases />
