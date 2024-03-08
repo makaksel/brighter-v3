@@ -24,6 +24,7 @@ export interface CaseFields {
   rating: number,
   about: string,
   subtitle: string,
+  order: number,
   task: string,
   result: string,
   link: string;
@@ -44,12 +45,12 @@ export interface CaseResponse {
   items: Case[];
 }
 
-const getCases = async () => {
+const getCases = async (isMainPage?: boolean) => {
 
   const response = await contentfulClient.getEntries<{ contentTypeId: string, fields: CaseFields }>({
     content_type: 'case',
     // @ts-ignore
-    // order: 'fields.title',
+    order: isMainPage ? 'fields.order' : '',
     // @ts-ignore
     // select: ['fields.title'].join(',')
   }).then((response) => {
@@ -61,6 +62,10 @@ const getCases = async () => {
       },
     }));
   });
+
+  if (isMainPage) {
+    return response.filter((item) => !!item.fields.order).slice(0, 6);
+  }
 
   return response;
 };

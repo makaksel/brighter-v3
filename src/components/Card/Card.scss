@@ -9,10 +9,11 @@
 
   min-width: rem(325);
 
-  flex: 1 1 61.5%;
+  flex: 0 1 36.5%;
 
-  &:nth-child(even) {
-    flex: 1 1 36.5%;
+  &:nth-child(4n+0),
+  &:nth-child(4n+1) {
+    flex: 0 1 61.5%;
   }
 
   &__wrp {
@@ -52,7 +53,7 @@
     object-fit: cover;
   }
 
-  &__body{
+  &__body {
     display: flex;
     flex-direction: column;
   }
