@@ -8,8 +8,12 @@ import ArrowRight from '@/src/resources/icons/ArrowRight.svg';
 import { routerLinks } from '@/src/data/navigation';
 import { Contacts } from '@/src/components/Contacts';
 import ArrowRightMobile from '@/src/resources/icons/ArrowRightMobile.svg';
+import { usePathname } from 'next/navigation';
 
 export const Burger = () => {
+  const pathname = usePathname();
+  const pastPath = useRef<string>(pathname);
+
   const anchorEl = useRef<HTMLButtonElement | null>(null);
   const [open, setOpen] = useState(false);
   const [closing, setClosing] = useState(false);
@@ -22,20 +26,36 @@ export const Burger = () => {
     handleChangeOverflowBody('');
   }, [handleChangeOverflowBody]);
 
+  const handleModalOpen = useCallback(() => {
+    setOpen(true);
+
+    handleChangeOverflowBody('hidden');
+  }, [handleChangeOverflowBody]);
+
+  const handleModalClose = useCallback(() => {
+    setClosing(true);
+    setTimeout(() => {
+      handleChangeOverflowBody('');
+      setClosing(false);
+      setOpen(false);
+    }, 400);
+  }, [handleChangeOverflowBody]);
 
   const handleToggleOpen = useCallback(() => {
-    setOpen((prev) => !prev);
-
     if (open) {
-      setClosing(true);
-      setTimeout(() => {
-        handleChangeOverflowBody('');
-        setClosing(false);
-      }, 400);
+      handleModalClose();
     } else {
-      handleChangeOverflowBody('hidden');
+      handleModalOpen();
     }
-  }, [open, handleChangeOverflowBody]);
+  }, [open, handleModalClose, handleModalOpen]);
+
+  useEffect(() => {
+    console.log('here');
+    if (open && pastPath && pastPath.current !== pathname) {
+      pastPath.current = pathname;
+      handleModalClose();
+    }
+  }, [handleModalClose, open, pathname]);
 
   return (
     <>
@@ -47,7 +67,7 @@ export const Burger = () => {
       <div
         className={cn('burger-dropdown', { show: open, closing })}
       >
-        <Link className={'header-nav__link'} href="/">главная</Link>
+        <Link className={'header-nav__link'} href={routerLinks.root}>главная</Link>
 
         <HeaderNav className={cn('burger-nav')} />
 
