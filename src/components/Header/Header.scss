@@ -42,7 +42,7 @@
   &__nav {
 
     @include md {
-      display: none;
+      display: none!important;
     }
   }
 
