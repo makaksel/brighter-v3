@@ -50,7 +50,6 @@ export const Burger = () => {
   }, [open, handleModalClose, handleModalOpen]);
 
   useEffect(() => {
-    console.log('here');
     if (open && pastPath && pastPath.current !== pathname) {
       pastPath.current = pathname;
       handleModalClose();

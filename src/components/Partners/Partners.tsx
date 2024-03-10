@@ -68,6 +68,7 @@ export const Partners: React.FC = () => {
   return (
     <div className={cn('paralax')}>
       <motion.div className={cn('body')} style={{ x }}>
+
         <div className={cn('card')}>
           <Image src={Icon1} alt={'Иконка'} className={cn('card-img')} />
         </div>
@@ -86,6 +87,7 @@ export const Partners: React.FC = () => {
         <div className={cn('card')}>
           <Image src={Icon6} alt={'Иконка'} className={cn('card-img')} />
         </div>
+
         <div className={cn('card')}>
           <Image src={Icon1} alt={'Иконка'} className={cn('card-img')} />
         </div>
@@ -124,6 +126,43 @@ export const Partners: React.FC = () => {
           <Image src={Icon6} alt={'Иконка'} className={cn('card-img')} />
         </div>
 
+        <div className={cn('card')}>
+          <Image src={Icon1} alt={'Иконка'} className={cn('card-img')} />
+        </div>
+        <div className={cn('card')}>
+          <Image src={Icon2} alt={'Иконка'} className={cn('card-img')} />
+        </div>
+        <div className={cn('card')}>
+          <Image src={Icon3} alt={'Иконка'} className={cn('card-img')} />
+        </div>
+        <div className={cn('card')}>
+          <Image src={Icon4} alt={'Иконка'} className={cn('card-img')} />
+        </div>
+        <div className={cn('card')}>
+          <Image src={Icon5} alt={'Иконка'} className={cn('card-img')} />
+        </div>
+        <div className={cn('card')}>
+          <Image src={Icon6} alt={'Иконка'} className={cn('card-img')} />
+        </div>
+
+        <div className={cn('card')}>
+          <Image src={Icon1} alt={'Иконка'} className={cn('card-img')} />
+        </div>
+        <div className={cn('card')}>
+          <Image src={Icon2} alt={'Иконка'} className={cn('card-img')} />
+        </div>
+        <div className={cn('card')}>
+          <Image src={Icon3} alt={'Иконка'} className={cn('card-img')} />
+        </div>
+        <div className={cn('card')}>
+          <Image src={Icon4} alt={'Иконка'} className={cn('card-img')} />
+        </div>
+        <div className={cn('card')}>
+          <Image src={Icon5} alt={'Иконка'} className={cn('card-img')} />
+        </div>
+        <div className={cn('card')}>
+          <Image src={Icon6} alt={'Иконка'} className={cn('card-img')} />
+        </div>
       </motion.div>
     </div>);
 
