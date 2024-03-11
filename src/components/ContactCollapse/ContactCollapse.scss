@@ -3,7 +3,7 @@
 
 
 .contact-collapse {
-
+  overflow: hidden;
 
   &:not(:last-child){
     margin-bottom: rem(50);

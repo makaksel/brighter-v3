@@ -10,6 +10,8 @@
   padding-top: rem(50);
 
   border-top: rem(2) solid var(--gray-opacity);
+  overflow: hidden;
+  scroll-margin-top: rem(80);
 
   &:not(:last-child) {
     margin-bottom: rem(100);
