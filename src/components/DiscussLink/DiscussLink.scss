@@ -6,6 +6,7 @@
   align-items: center;
   gap: rem(10);
   max-width: max-content;
+  @include textBase;
 
   @include underlineActive(1, 3);
 
