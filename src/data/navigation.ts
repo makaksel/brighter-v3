@@ -13,10 +13,10 @@ export const navigation = {
     path: routerLinks.portfolio,
     label: 'порфтолио',
   },
-  services: {
-    path: routerLinks.services,
-    label: 'услуги',
-  },
+  // services: {
+  //   path: routerLinks.services,
+  //   label: 'услуги',
+  // },
   contacts: {
     path: routerLinks.contacts,
     label: 'контакты',
