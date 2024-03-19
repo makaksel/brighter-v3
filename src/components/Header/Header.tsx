@@ -21,10 +21,13 @@ interface HeaderProps {
 export const Header: React.FC<HeaderProps> = ({ className, theme = 'black' }) => {
   const pathname = usePathname();
   const isWhiteTheme = pathname.toLowerCase().includes('brif') || pathname.toLowerCase().includes('services') ||
-    pathname.toLowerCase().includes('about')
+    pathname.toLowerCase().includes('about');
+
+  const isHide = pathname.toLowerCase().includes('/portfolio/');
+
 
   return (
-    <div className={cn('', { isWhite: isWhiteTheme }, [className])}>
+    <div className={cn('', { isWhite: isWhiteTheme, isHide }, [className])}>
 
       <Link className={cn('logo-link')} href={routerLinks.root}>
         <Logo className={cn('logo')} alt={'Поярче'} />
@@ -36,5 +39,5 @@ export const Header: React.FC<HeaderProps> = ({ className, theme = 'black' }) =>
 
       <Burger />
     </div>
-  )
+  );
 };
