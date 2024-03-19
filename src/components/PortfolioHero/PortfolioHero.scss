@@ -5,8 +5,7 @@
 .portfolio-hero {
   position: relative;
   width: 100%;
-  height: rem(835);
-
+  height: rem(550);
 
   &__content {
     display: flex;
@@ -25,7 +24,7 @@
 
 
   @include md{
-    height: rem(375);
+      height: rem(290);
 
     &__content {
       margin-top: rem(50);

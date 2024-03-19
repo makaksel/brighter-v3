@@ -7,7 +7,6 @@ import { Media } from '@/src/components/Media';
 import { makeCn } from '@/src/utils';
 import { Team } from '@/src/components/Team';
 import { TeamSlider } from '@/src/components/TeamSlider';
-import { Principles } from '@/src/components/Principles';
 
 export const metadata: Metadata = {
   title: 'Поярче',
@@ -24,8 +23,6 @@ export default function page() {
       <Team />
 
       <TeamSlider />
-
-      <Principles />
 
       <Media />
 

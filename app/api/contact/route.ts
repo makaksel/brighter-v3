@@ -30,8 +30,6 @@ export async function POST(request: Request) {
 ${formData.company ? `📬название компании: ${formData.company};` : ''}
 
 ${formData.services ? `интересует: ${formData.services};` : ''}
-${formData.budget ? `бюджет: ${formData.budget};` : ''}
-
 `;
 
   const response = await fetch(`https://api.telegram.org/bot${telegramBotId}/sendMessage`, {

@@ -10,21 +10,33 @@ import TeamImg3 from '@/src/resources/images/team3.jpg';
 import TeamImg4 from '@/src/resources/images/team4.jpg';
 import TeamImg5 from '@/src/resources/images/team5.jpg';
 import TeamImg6 from '@/src/resources/images/team6.jpg';
+import TeamImg7 from '@/src/resources/images/team7.png';
+import TeamImg8 from '@/src/resources/images/team8.png';
+import TeamImg9 from '@/src/resources/images/team9.png';
+import TeamImg10 from '@/src/resources/images/team10.png';
 import TeamImgMobile from '@/src/resources/images/team1_mobile.jpg';
 import TeamImg2Mobile from '@/src/resources/images/team2_mobile.jpg';
 import TeamImg3Mobile from '@/src/resources/images/team3_mobile.jpg';
 import TeamImg4Mobile from '@/src/resources/images/team4_mobile.png';
 import TeamImg5Mobile from '@/src/resources/images/team5_mobile.jpg';
 import TeamImg6Mobile from '@/src/resources/images/team6_mobile.jpg';
+import TeamImg7Mobile from '@/src/resources/images/team7_mobile.png';
+import TeamImg8Mobile from '@/src/resources/images/team8_mobile.png';
+import TeamImg9Mobile from '@/src/resources/images/team9_mobile.png';
+import TeamImg10Mobile from '@/src/resources/images/team10_mobile.png';
 import TeamImgThumb from '@/src/resources/images/team1_thumb.jpg';
 import TeamImg2Thumb from '@/src/resources/images/team2_thumb.jpg';
 import TeamImg3Thumb from '@/src/resources/images/team3_thumb.png';
 import TeamImg4Thumb from '@/src/resources/images/team4_thumb.jpg';
 import TeamImg5Thumb from '@/src/resources/images/team5_thumb.jpg';
 import TeamImg6Thumb from '@/src/resources/images/team6_thumb.jpg';
+import TeamImg7Thumb from '@/src/resources/images/team7_thumb.png';
+import TeamImg8Thumb from '@/src/resources/images/team8_thumb.png';
+import TeamImg9Thumb from '@/src/resources/images/team9_thumb.png';
+import TeamImg10Thumb from '@/src/resources/images/team10_thumb.png';
 import 'swiper/css';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { EffectFade, FreeMode, Navigation, Thumbs } from 'swiper/modules';
+import { Autoplay, EffectFade, FreeMode, Navigation, Thumbs } from 'swiper/modules';
 import type { Swiper as SwiperClass } from 'swiper/types';
 
 const cn = makeCn('team-slider');
@@ -77,7 +89,11 @@ export const TeamSlider: React.FC = () => {
         slidesPerView={1}
         loop={true}
         effect={'fade'}
-        modules={[Navigation, Thumbs, EffectFade]}
+        autoplay={{
+          delay: 5000,
+          disableOnInteraction: false,
+        }}
+        modules={[Autoplay, Navigation, Thumbs, EffectFade]}
         thumbs={{ swiper: thumbsSwiper && !thumbsSwiper.destroyed ? thumbsSwiper : null }}
       >
         <SwiperSlide>
@@ -122,6 +138,16 @@ export const TeamSlider: React.FC = () => {
         </SwiperSlide>
         <SwiperSlide>
           <Slide
+            img={TeamImg7}
+            imgMobile={TeamImg7Mobile}
+            name={'маша фоменко'}
+            since={'[с 2023 года]'}
+            major={'графический дизайнер'}
+            quote={'"каждый дизайн несет в себе душу автора, который через работы освещает свои мысли, чувства и вдохновение”'}
+          />
+        </SwiperSlide>
+        <SwiperSlide>
+          <Slide
             img={TeamImg5}
             imgMobile={TeamImg5Mobile}
             name={'евгений кислов'}
@@ -138,6 +164,38 @@ export const TeamSlider: React.FC = () => {
             since={'[с 2024 года]'}
             major={'менеджер'}
             quote={'"Люди и их эмоции — настоящее вдохновение, энергия, приводящая в творчество”'}
+          />
+        </SwiperSlide>
+
+
+        <SwiperSlide>
+          <Slide
+            img={TeamImg8}
+            imgMobile={TeamImg8Mobile}
+            name={'лёня'}
+            since={'[с 2024 года]'}
+            major={'менеджер'}
+            quote={'"яркий дизайн предвосхищает мысли зрителя, направляет его эмоции в нужном русле и влюбляет его"'}
+          />
+        </SwiperSlide>
+        <SwiperSlide>
+          <Slide
+            img={TeamImg9}
+            imgMobile={TeamImg9Mobile}
+            name={'камилла кононова'}
+            since={'[с 2023 года]'}
+            major={'графический дизайнер'}
+            quote={'"дизайн - это не просто картинка, а отражение вашей ценности, духа, пользы, которую вы несете миру"'}
+          />
+        </SwiperSlide>
+        <SwiperSlide>
+          <Slide
+            img={TeamImg10}
+            imgMobile={TeamImg10Mobile}
+            name={'снежа'}
+            since={'[с 2024 года]'}
+            major={'талисман студии поярче'}
+            quote={'"мяу" или *мудрая и красивая непереводимая мысль на кошачьем наречии*'}
           />
         </SwiperSlide>
 
@@ -163,10 +221,24 @@ export const TeamSlider: React.FC = () => {
           <Image className={cn('thumb-img')} src={TeamImg4Thumb} alt={'team'} />
         </SwiperSlide>
         <SwiperSlide className={cn('thumb')}>
+          <Image className={cn('thumb-img')} src={TeamImg7Thumb} alt={'team'} />
+        </SwiperSlide>
+        <SwiperSlide className={cn('thumb')}>
           <Image className={cn('thumb-img')} src={TeamImg5Thumb} alt={'team'} />
         </SwiperSlide>
         <SwiperSlide className={cn('thumb')}>
           <Image className={cn('thumb-img')} src={TeamImg6Thumb} alt={'team'} />
+        </SwiperSlide>
+
+
+        <SwiperSlide className={cn('thumb')}>
+          <Image className={cn('thumb-img')} src={TeamImg8Thumb} alt={'team'} />
+        </SwiperSlide>
+        <SwiperSlide className={cn('thumb')}>
+          <Image className={cn('thumb-img')} src={TeamImg9Thumb} alt={'team'} />
+        </SwiperSlide>
+        <SwiperSlide className={cn('thumb')}>
+          <Image className={cn('thumb-img')} src={TeamImg10Thumb} alt={'team'} />
         </SwiperSlide>
       </Swiper>
 

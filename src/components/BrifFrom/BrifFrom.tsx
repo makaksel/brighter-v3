@@ -226,31 +226,6 @@ export const BrifFrom: React.FC = () => {
 
       </div>
 
-      <div className={cn('row')}>
-        <div>
-          <p className={cn('title-cell')}>
-            <span className={cn('title-cell-text')}>[бюджет]</span>
-          </p>
-        </div>
-        <div>
-          <div className={cn('checkboxes')}>
-            <CheckboxButton name="150000" onChange={budgetHandleChange} checked={budgetWatch === '150000'}>
-              ~ 150 000 ₽
-            </CheckboxButton>
-            <CheckboxButton name="250000" onChange={budgetHandleChange} checked={budgetWatch === '250000'}>
-              ~ 250 000 ₽
-            </CheckboxButton>
-            <CheckboxButton name="350000" onChange={budgetHandleChange} checked={budgetWatch === '350000'}>
-              ~ 350 000 ₽
-            </CheckboxButton>
-            <CheckboxButton name="450000" onChange={budgetHandleChange} checked={budgetWatch === '450000'}>
-              ~ 450 000 ₽
-            </CheckboxButton>
-
-          </div>
-        </div>
-      </div>
-
       <div className={cn('row', ['mt-100'])}>
         <div>
           <p className={cn('title-cell')}>
