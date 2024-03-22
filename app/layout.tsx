@@ -278,17 +278,7 @@ export default function RootLayout({
       <script src="//code.jivo.ru/widget/n5UOqKOYFI" async></script>
     </>}
 
-    {/*<!-- Planerka widget start -->*/}
-    <Script src="https://planerka.app/meet/assets/external/embed.js?v=0.1"></Script>
-    {/*<!-- Planerka widget end -->*/}
-
-
     <body className={onest.className}>
-    {/*<!-- Planerka widget start -->*/}
-    <div className="app-planerka-embed" data-planerka-embed="default" data-planerka-url="https://planerka.app/meet"
-         data-planerka-user="maxpoyarche" data-planerka-event="call"></div>
-    {/*<!-- Planerka widget end -->*/}
-
     {!!YM_ID &&
       <noscript>
         <div>
