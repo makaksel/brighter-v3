@@ -12,6 +12,8 @@ const cn = makeCn('case-sidebar');
 
 type CaseSidebarProps = {
   title: string;
+  about?: string;
+  task?: string;
   subtitle?: string;
   caseLink?: string;
   behanceLink?: string;
@@ -20,6 +22,8 @@ type CaseSidebarProps = {
 
 export const CaseSidebar: React.FC<CaseSidebarProps> = ({
   title,
+  about,
+  task,
   subtitle,
   caseLink,
   behanceLink,
@@ -43,16 +47,14 @@ export const CaseSidebar: React.FC<CaseSidebarProps> = ({
         </div>
 
         <div className={cn('body')}>
-          <div className={cn('row')}>
+          {task && <div className={cn('row')}>
             <p className={cn('row-title')}>[задача]</p>
-            <p className={cn('row-text')}>Создать дизайн сайта, который передает идею курса и образ автора, впечатляет
-              теплую аудиторию и подталкивает ее к более глубокому знакомству с экспертом и покупке</p>
-          </div>
-          <div className={cn('row')}>
+            <div className={cn('row-text')} dangerouslySetInnerHTML={{ __html: task }} />
+          </div>}
+          {about && <div className={cn('row')}>
             <p className={cn('row-title')}>[результат]</p>
-            <p className={cn('row-text')}>По итогу мы нашли идеальный баланс между дизайном, который выражает эксперта,
-              его продукт, и продающим наполнением, что подняло конверсию готового сайта</p>
-          </div>
+            <div className={cn('row-text')} dangerouslySetInnerHTML={{ __html: about }} />
+          </div>}
         </div>
 
         <div className={cn('footer')}>

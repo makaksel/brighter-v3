@@ -24,6 +24,8 @@ export default async function page({ params }: IPageProps) {
         subtitle={fields.subtitle}
         caseLink={fields.link}
         behanceLink={fields.behanceLink}
+        about={fields.about}
+        task={fields.task}
       />
       <div className={cn('media')}>
         {!!fields?.imgs && fields?.imgs.map((img) => {
@@ -31,7 +33,7 @@ export default async function page({ params }: IPageProps) {
             <Image
               key={`https:${img.fields.file.url}`}
               src={`https:${img.fields.file.url}`}
-              alt={'ник чернобаев'}
+              alt={fields.title}
               className={cn('media-img')}
               width={img.fields.file.details.image.width}
               height={img.fields.file.details.image.height}
