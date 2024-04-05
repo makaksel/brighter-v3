@@ -12,7 +12,7 @@ const cn = makeCn('case-sidebar');
 
 type CaseSidebarProps = {
   title: string;
-  about?: string;
+  result?: string;
   task?: string;
   subtitle?: string;
   caseLink?: string;
@@ -22,7 +22,7 @@ type CaseSidebarProps = {
 
 export const CaseSidebar: React.FC<CaseSidebarProps> = ({
   title,
-  about,
+  result,
   task,
   subtitle,
   caseLink,
@@ -51,9 +51,9 @@ export const CaseSidebar: React.FC<CaseSidebarProps> = ({
             <p className={cn('row-title')}>[задача]</p>
             <div className={cn('row-text')} dangerouslySetInnerHTML={{ __html: task }} />
           </div>}
-          {about && <div className={cn('row')}>
+          {result && <div className={cn('row')}>
             <p className={cn('row-title')}>[результат]</p>
-            <div className={cn('row-text')} dangerouslySetInnerHTML={{ __html: about }} />
+            <div className={cn('row-text')} dangerouslySetInnerHTML={{ __html: result }} />
           </div>}
         </div>
 

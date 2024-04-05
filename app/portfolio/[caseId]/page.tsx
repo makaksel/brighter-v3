@@ -24,7 +24,7 @@ export default async function page({ params }: IPageProps) {
         subtitle={fields.subtitle}
         caseLink={fields.link}
         behanceLink={fields.behanceLink}
-        about={fields.about}
+        result={fields.result}
         task={fields.task}
       />
       <div className={cn('media')}>
