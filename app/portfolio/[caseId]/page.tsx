@@ -29,14 +29,27 @@ export default async function page({ params }: IPageProps) {
       />
       <div className={cn('media')}>
         {!!fields?.imgs && fields?.imgs.map((img) => {
+
+          if (img.fields.file.contentType.includes('video')) {
+            return (
+              <video
+                key={`https:${img.fields.file.url}`}
+                src={`https:${img.fields.file.url}`}
+                className={cn('media-img')}
+                autoPlay
+                loop
+                playsInline
+              />
+            );
+          }
           return (
             <Image
               key={`https:${img.fields.file.url}`}
               src={`https:${img.fields.file.url}`}
               alt={fields.title}
               className={cn('media-img')}
-              width={img.fields.file.details.image.width}
-              height={img.fields.file.details.image.height}
+              width={img.fields.file.details.image?.width || '800'}
+              height={img.fields.file.details.image?.height || '600'}
             />);
         })}
       </div>
