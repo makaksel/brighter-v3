@@ -11,7 +11,7 @@ export const routerLinks = {
 export const navigation = {
   portfolio: {
     path: routerLinks.portfolio,
-    label: 'порфтолио',
+    label: 'портфолио',
   },
   // services: {
   //   path: routerLinks.services,
