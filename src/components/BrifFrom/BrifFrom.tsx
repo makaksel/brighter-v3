@@ -13,6 +13,7 @@ import { Controller, useForm } from 'react-hook-form';
 import get from 'lodash/get';
 import ArrowRightMobile from '@/src/resources/icons/ArrowRightMobile.svg';
 import { BrifModal } from '@/src/components/BrifModal';
+import { TELEGRAM_BOT_LABEL } from '@/src/data';
 
 const onest = Onest({ subsets: ['latin'] });
 
@@ -169,7 +170,7 @@ export const BrifFrom: React.FC = () => {
           rules={{ required: '[обязательно]' }}
           render={({ field }) =>
             <TextInput
-              placeholder="hello@poyarche.ru / @xpoyarche"
+              placeholder={`hello@poyarche.ru / ${TELEGRAM_BOT_LABEL}`}
               inputClassName={cn('input', [onest.className])}
               error={get(errors, 'contact.message') as unknown as string}
               {...field}

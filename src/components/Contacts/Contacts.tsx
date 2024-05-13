@@ -2,7 +2,7 @@ import React from 'react';
 import { makeCn } from '@/src/utils';
 import Link from 'next/link';
 import './Contacts.scss';
-import { EMAIL, TELEGRAM_BOT_LINK } from '@/src/data/const';
+import { EMAIL, TELEGRAM_BOT_LABEL, TELEGRAM_BOT_LINK } from '@/src/data/const';
 
 
 const cn = makeCn('contacts');
@@ -23,7 +23,7 @@ export const Contacts: React.FC<ContactsProps> = ({
         </div>
         <div className={cn('col')}>
           <Link className={cn('contact-link')} href={TELEGRAM_BOT_LINK}>
-            @xpoyarche
+            {TELEGRAM_BOT_LABEL}
           </Link>
         </div>
       </div>
@@ -42,7 +42,7 @@ export const Contacts: React.FC<ContactsProps> = ({
         <div className={cn('mobile-contacts-row')}>
           <span className={cn('mobile-contacts-title')}>telegram</span>
           <span className={cn('mobile-contacts-line')}></span>
-          <Link className={cn('mobile-contacts-link')} href={TELEGRAM_BOT_LINK}>@xpoyarche</Link>
+          <Link className={cn('mobile-contacts-link')} href={TELEGRAM_BOT_LINK}>{TELEGRAM_BOT_LABEL}</Link>
         </div>
         <div className={cn('mobile-contacts-row')}>
           <span className={cn('mobile-contacts-title')}>email</span>
