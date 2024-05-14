@@ -70,6 +70,8 @@ export const Burger = () => {
 
         <HeaderNav className={cn('burger-nav')} />
 
+        <Link className={'header-nav__link-express'} href={routerLinks.express}>экспресс</Link>
+
         <div className={cn('burger-footer')}>
 
           <Link className={'brif-link'} href={routerLinks.brif}>

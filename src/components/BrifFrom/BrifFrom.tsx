@@ -267,6 +267,7 @@ export const BrifFrom: React.FC = () => {
           <ArrowRightMobile className={cn('submit-btn-icon', ['mobile'])} />
         </button>
       </div>
+      
       <BrifModal open={modalIsOpen} handleClose={() => setModalIsOpen(false)} />
 
     </form>

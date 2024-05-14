@@ -1,0 +1,75 @@
+@import "@/src/styles/functions";
+@import "@/src/styles/mixins";
+
+
+.express-hero {
+  @include container;
+  width: 100%;
+  position: relative;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+
+    max-width: rem(1476);
+
+    padding: rem(162) var(--x-padding) 0;
+    margin: 0 auto;
+
+    @include md {
+      max-width: rem(355);
+    }
+  }
+
+  &__title {
+    display: flex;
+    flex-direction: column;
+
+    font-size: rem(200);
+    line-height: 100%;
+    font-weight: 400;
+
+    @include md {
+      font-size: rem(50);
+    }
+  }
+
+  &__line {
+    display: flex;
+
+    &:nth-child(2) {
+      justify-content: center;
+    }
+
+    &:nth-child(3) {
+      justify-content: right;
+    }
+
+  }
+
+  &__row {
+    position: absolute;
+    bottom: 0;
+
+    width: calc(100% - (var(--x-padding) * 2));
+    display: flex;
+    justify-content: space-between;
+
+    &-text {
+      @include textBase;
+      color: var(--gray-light);
+
+
+    }
+
+    @include md {
+      top: rem(30);
+      bottom: auto;
+    }
+
+  }
+
+
+
+
+}

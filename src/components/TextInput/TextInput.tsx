@@ -30,8 +30,8 @@ export interface TextInputProps {
 
 export const TextInput: React.FC<TextInputProps> = (props) => {
   const {
-    inputClassName,
     className,
+    inputClassName,
     type = 'text',
     name,
     value,

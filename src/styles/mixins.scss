@@ -7,6 +7,7 @@
   padding: 0 var(--x-padding);
 }
 
+
 @mixin textBase {
   font-size: rem(18);
   line-height: 120%;
@@ -16,6 +17,16 @@
 
   @include md {
     font-size: rem(15);
+  }
+}
+
+@mixin textLinkHeader {
+  @include textBase;
+
+  font-size: rem(20);
+
+  @include md {
+    font-size: rem(18);
   }
 }
 
@@ -115,6 +126,7 @@
     position: absolute;
     background: currentColor;
     transition: width 0.3s ease, opacity 0.3s ease 0.1s;
+
     width: 100%;
     pointer-events: none;
   }

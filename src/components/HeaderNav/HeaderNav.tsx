@@ -19,8 +19,17 @@ export const HeaderNav: React.FC<HeaderNavProps> = ({ className }) => {
   return (
     <nav className={cn('', [className])}>
       {Object.entries(navigation).map(([_, elem]) =>
-        <Link key={elem.path} className={cn('link', { active: pathname === elem.path })}
-              href={elem.path}><span className={cn('underline', { active: pathname === elem.path })}>{elem.label}</span></Link>,
+        <Link
+          key={elem.path}
+          className={cn('link', { active: pathname === elem.path })}
+          href={elem.path}
+        >
+          <span
+            className={cn('underline', { active: pathname === elem.path })}
+          >
+            {elem.label}
+          </span>
+        </Link>
       )}
     </nav>
   );

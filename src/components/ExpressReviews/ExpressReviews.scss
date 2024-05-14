@@ -1,0 +1,140 @@
+@import "@/src/styles/functions";
+@import "@/src/styles/mixins";
+
+
+.express-reviews {
+  $this: &;
+
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: rem(50);
+
+  &__body {
+    display: flex;
+    justify-content: space-between;
+    gap: rem(20);
+
+    @include md {
+      display: flex;
+      flex-direction: column;
+      gap: rem(50);
+    }
+  }
+
+  &__media {
+    $gap: rem(20);
+
+    @include md {
+      $gap: rem(10);
+    }
+
+    &-wrp {
+      width: 100%;
+      display: grid;
+      grid-template-columns: 3fr 5fr;
+      grid-gap: $gap;
+
+      @include md {
+        display: flex;
+        flex-direction: column-reverse;
+      }
+    }
+
+    &-left {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: $gap;
+
+      @include md {
+        flex-direction: row-reverse;
+      }
+
+      #{$this}__media-img {
+        @include md {
+          height: rem(174);
+        }
+      }
+    }
+
+    &-right {
+      width: 100%;
+      display: flex;
+
+      #{$this}__media-img {
+        @include md {
+          height: rem(326);
+        }
+      }
+
+    }
+
+    &-item {
+      display: flex;
+      width: 100%;
+      flex: 0 1 auto;
+      line-height: 0;
+    }
+
+    &-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__card {
+    display: flex;
+    max-width: rem(560);
+    width: 100%;
+    gap: rem(19);
+
+    @mixin cardTextBase {
+      font-size: rem(16);
+      line-height: rem(16);
+      font-weight: 500;
+      letter-spacing: -0.03em;
+
+      text-transform: none;
+    }
+
+    &-icon {
+      @include md {
+        width: rem(24);
+        height: rem(16);
+      }
+    }
+
+    &-body {
+      @include cardTextBase;
+
+      display: flex;
+      flex-direction: column;
+      gap: rem(9);
+      max-width: rem(396);
+
+      @include md {
+        max-width: 100%;
+      }
+    }
+
+    &-text {
+      font-size: rem(20);
+      line-height: rem(24);
+      font-weight: 600;
+
+      @include md {
+        font-size: rem(15);
+        line-height: rem(18);
+        font-weight: 500;
+      }
+    }
+
+
+    &-author {
+      color: var(--gray-light)
+    }
+  }
+
+}

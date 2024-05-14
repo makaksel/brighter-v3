@@ -25,11 +25,13 @@ export async function POST(request: Request) {
 
   const message = `*⚠️ Новое обращение*
 
-👤имя: ${formData.name};
-📞почта или контакт в любом мессенджере: ${formData.contact};
-${formData.company ? `📬название компании: ${formData.company};` : ''}
+👤 имя: ${formData.name};
+${formData?.contact ? `📞 почта или контакт в любом мессенджере: ${formData.contact};` : ''}
+${formData?.phone ? `📞 телефон: ${formData.phone};` : ''}
+${formData?.telegram ? `📬 telegram: ${formData.telegram};` : ''}
+${formData?.company ? `📬н азвание компании: ${formData.company};` : ''}
 
-${formData.services ? `интересует: ${formData.services};` : ''}
+${formData?.services ? `интересует: ${formData.services};` : ''}
 `;
 
   const response = await fetch(`https://api.telegram.org/bot${telegramBotId}/sendMessage`, {

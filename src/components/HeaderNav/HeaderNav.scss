@@ -7,14 +7,11 @@
   align-items: center;
   gap: rem(50);
 
+
   &__link {
-    @include textBase;
+    @include textLinkHeader;
 
     color: var(--text-color);
-  }
-
-
-  &--active {
   }
 
   &__underline{
@@ -28,6 +25,16 @@
 
   @include md {
     align-items: flex-start;
+
+
+    &__link-express{
+      @include h1;
+      @include underlineActive(2);
+
+      margin: rem(71) 0 0;
+      max-width: max-content;
+      color: var(--text-color);
+    }
 
     &__link {
       @include h1;

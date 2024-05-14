@@ -1,0 +1,24 @@
+@import "@/src/styles/functions";
+@import "@/src/styles/mixins";
+
+.express-page {
+
+  &__process-section {
+    margin-bottom: rem(250) !important;
+  }
+
+  @include md {
+    [id] {
+      scroll-margin-top: rem(61);
+
+      &::before {
+        content: '';
+        display: block;
+        height: rem(61);
+        margin-top: rem(-61);
+
+      }
+    }
+  }
+
+}

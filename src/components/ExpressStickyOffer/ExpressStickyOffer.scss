@@ -1,0 +1,89 @@
+@import "@/src/styles/functions";
+@import "@/src/styles/mixins";
+
+
+.express-sticky-offer {
+
+
+  &__btn {
+    width: calc(100% - (var(--x-padding) * 2));
+    padding: rem(36);
+    max-width: rem(1300);
+    margin: rem(-22) auto rem(37);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background-color: var(--white);
+    border-radius: rem(72);
+
+    color: #000000;
+
+    font-weight: 700;
+    font-size: rem(25);
+    line-height: rem(32);
+    letter-spacing: 0.1em;
+
+    position: sticky;
+    top: calc(100vh - #{rem(177)});
+    z-index: 10;
+
+    opacity: 1;
+    transition: opacity .2s ease-in-out, transform .2s .05s ease-in-out;
+
+    &:hover {
+      color: #000000
+    }
+
+    &--isHideBtn {
+      opacity: 0;
+      transform: translate(0, rem(300));
+    }
+
+    @include md {
+      margin-top: 0;
+      margin-bottom: rem(26);
+      top: calc(100vh - #{rem(104)});
+      padding: rem(15) rem(17) rem(17);
+
+      font-size: rem(17);
+      line-height: rem(22);
+    }
+  }
+
+  &__dot {
+    @include md {
+      width: rem(28);
+      height: rem(19);
+    }
+  }
+
+  &__arrow {
+    @include md {
+      width: rem(19);
+      height: rem(19);
+    }
+  }
+
+  &__text {
+    width: 100%;
+    max-width: rem(456);
+    margin: rem(-22) auto rem(400);
+
+    font-size: rem(24);
+    line-height: 120%;
+    font-weight: 500;
+    color: var(--gray-light);
+    text-align: center;
+
+    @include md {
+      margin-top: 0;
+      margin-bottom: rem(316);
+
+      max-width: rem(330);
+      font-size: rem(15);
+    }
+  }
+
+}

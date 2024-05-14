@@ -22,17 +22,15 @@
 
     transition: border .15s ease-in-out, background-color .15s ease-in-out, color .15s ease-in-out;
 
-    &::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    &::placeholder,
+    &:-ms-input-placeholder,
+    &::-ms-input-placeholder,
+    { /* Chrome, Firefox, Opera, Safari 10.1+ */
       color: var(--gray-opacity);
+    }
+
+    &::placeholder {
       opacity: 1; /* Firefox */
-    }
-
-    &:-ms-input-placeholder { /* Internet Explorer 10-11 */
-      color: var(--gray-opacity);
-    }
-
-    &::-ms-input-placeholder { /* Microsoft Edge */
-      color: var(--gray-opacity);
     }
 
     &[value=''] {
@@ -46,20 +44,13 @@
     }
 
     &--error {
-      border-bottom: rem(2) solid var(--red) !important;
+      border: rem(2) solid var(--red) !important;
       color: var(--red) !important;
 
-
-      &::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-        color: var(--red);
-        opacity: 1; /* Firefox */
-      }
-
-      &:-ms-input-placeholder { /* Internet Explorer 10-11 */
-        color: var(--red);
-      }
-
-      &::-ms-input-placeholder { /* Microsoft Edge */
+      &::placeholder,
+      &:-ms-input-placeholder,
+      &::-ms-input-placeholder,
+      { /* Chrome, Firefox, Opera, Safari 10.1+ */
         color: var(--red);
       }
     }

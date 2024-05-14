@@ -10,10 +10,14 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  flex-direction: column;
+  gap: rem(21);
+
   position: sticky;
   top: 0;
 
-  padding: rem(30) var(--x-padding);
+  padding: rem(25) var(--x-padding);
 
   background-color: var(--bg-color);
   color: var(--text-color);
@@ -29,9 +33,22 @@
     display: none;
   }
 
+  &--noSticky{
+    position: relative;
+  }
+
   @include md {
+    flex-direction: row;
+    gap: rem(21);
+
     padding: rem(20) var(--x-padding);
     transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+  }
+
+  &__row{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
   }
 
   &__logo {
@@ -41,6 +58,26 @@
   &__logo-link {
     display: flex;
     align-items: center;
+
+    margin: 0 auto;
+
+
+    @include md {
+      margin: 0;
+    }
+  }
+
+  &__express-link{
+    @include textLinkHeader;
+    @include underlineActive(1, -3);
+
+    &-wrp{
+      min-width: rem(180);
+    }
+
+    @include md {
+      display: none;
+    }
   }
 
   &__nav {
@@ -51,6 +88,8 @@
   }
 
   &__discus {
+    min-width: rem(180);
+
     @include md {
       display: none !important;
     }
@@ -63,7 +102,7 @@
 
     position: relative;
     width: rem(40);
-    height: rem(14);
+    height: rem(34);
 
     background-color: transparent;
     border: none;
@@ -73,6 +112,7 @@
 
     @include md {
       display: flex;
+      margin-left: auto;
     }
 
     &-line {
@@ -83,27 +123,25 @@
       &:nth-child(1) {
         transition: .2s ease-in-out;
         position: absolute;
-        top: 0;
+        top: rem(10);
       }
 
       &:nth-child(2) {
         transition: .2s ease-in-out;
         position: absolute;
-        bottom: 0;
+        bottom: rem(10);
       }
-
-
     }
 
     &--open {
       #{$burger}-line:nth-child(1) {
         transform: rotate(45deg);
-        top: rem(6);
+        top: rem(16);
       }
 
       #{$burger}-line:nth-child(2) {
         transform: rotate(-45deg);
-        bottom: rem(6);
+        bottom: rem(16);
       }
     }
 
@@ -157,7 +195,7 @@
       margin-top: auto;
       margin-bottom: rem(50);
 
-      padding-top: rem(100);
+      padding-top: rem(71);
 
 
       .brif-link {

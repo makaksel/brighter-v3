@@ -6,6 +6,7 @@ export const routerLinks = {
   contacts: '/contacts',
   about: '/about',
   brif: '/brif',
+  express: '/express',
 }
 
 export const navigation = {

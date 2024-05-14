@@ -20,24 +20,44 @@ interface HeaderProps {
 
 export const Header: React.FC<HeaderProps> = ({ className, theme = 'black' }) => {
   const pathname = usePathname();
+
   const isWhiteTheme = pathname.toLowerCase().includes('brif') || pathname.toLowerCase().includes('services') ||
-    pathname.toLowerCase().includes('about');
+    pathname.toLowerCase().includes('about') || pathname.toLowerCase().includes('express');
 
   const isHide = pathname.toLowerCase().includes('/portfolio/');
+  const noSticky = pathname.toLowerCase().includes('/express');
 
 
   return (
-    <div className={cn('', { isWhite: isWhiteTheme, isHide }, [className])}>
+    <div className={cn('', { isWhite: isWhiteTheme, isHide, noSticky }, [className])}>
 
-      <Link className={cn('logo-link')} href={routerLinks.root}>
-        <Logo className={cn('logo')} alt={'Поярче'} />
-      </Link>
+      <div className={cn('row')}>
+        <Link className={cn('logo-link')} href={routerLinks.root}>
+          <Logo className={cn('logo')} alt={'Поярче'} />
+        </Link>
+      </div>
 
-      <HeaderNav className={cn('nav')} />
+      <div className={cn('row')}>
+        <div className={cn('express-link-wrp')}>
+          <Link
+            className={cn('express-link')}
+            href={routerLinks.express}
+          >
+          <span
+            className={cn('express-underline')}
+          >
+            экспресс
+          </span>
+          </Link>
+        </div>
 
-      <DiscussLink className={cn('discus')} />
 
-      <Burger />
+        <HeaderNav className={cn('nav')} />
+
+        <DiscussLink className={cn('discus')} />
+
+        <Burger />
+      </div>
     </div>
   );
 };
