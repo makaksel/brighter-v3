@@ -12,7 +12,7 @@ export const ExpressHero: React.FC = () => <section className={cn()}>
   <div className={cn('content')}>
     <h1 className={cn('title', [NeutralFaceFont.className])}>
       <span className={cn('line')}>быстро</span>
-      <span className={cn('line')}>дешево</span>
+      <span className={cn('line')}>выгодно</span>
       <span className={cn('line')}>ярко</span>
     </h1>
   </div>

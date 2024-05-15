@@ -3,7 +3,7 @@
 
 
 .express-sticky-offer {
-
+  $this: &;
 
   &__btn {
     width: calc(100% - (var(--x-padding) * 2));
@@ -24,17 +24,34 @@
     font-size: rem(25);
     line-height: rem(32);
     letter-spacing: 0.1em;
+    text-transform: uppercase;
 
     position: sticky;
     top: calc(100vh - #{rem(177)});
     z-index: 10;
 
     opacity: 1;
-    transition: opacity .2s ease-in-out, transform .2s .05s ease-in-out;
+    transition: opacity .2s ease-in-out, transform .2s .05s ease-in-out, color .15s ease-in-out, background-color .15s ease-in-out;
 
     &:hover {
-      color: #000000
+      color: var(--white);
+      background-color: var(--red);
+
+      #{$this}__btn-icon{
+        fill: var(--white);
+      }
+
+      #{$this}__arrow-path{
+        fill: var(--red);
+      }
+
     }
+
+    &-icon{
+      transition: fill .15s ease-in-out;
+      fill: #000;
+    }
+
 
     &--isHideBtn {
       opacity: 0;
@@ -60,6 +77,11 @@
   }
 
   &__arrow {
+    &-path{
+      fill: var(--white);
+      transition: fill .15s ease-in-out;
+    }
+
     @include md {
       width: rem(19);
       height: rem(19);

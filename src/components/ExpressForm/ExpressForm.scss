@@ -10,6 +10,9 @@
   gap: rem(150);
   margin-bottom: rem(300);
 
+
+
+
   @include md {
     gap: rem(50);
     margin-bottom: rem(200);
@@ -20,6 +23,10 @@
     font-size: rem(180);
     line-height: 100%;
     font-weight: 400;
+
+    @include elg {
+      font-size: rem(130);
+    }
 
     @include md {
       font-size: rem(35);
@@ -91,6 +98,14 @@
     border-radius: rem(15);
     border: rem(2) solid var(--gray-opacity) !important;
 
+    transition: border 0.2s ease-in-out;
+
+
+    &:focus,
+    &:active{
+      border: rem(2) solid rgba(255, 255, 255, 0.5) !important;
+    }
+
     &:-webkit-autofill,
     &:-webkit-autofill:hover,
     &:-webkit-autofill:focus,
@@ -128,6 +143,7 @@
 
   &__submit {
     @include h2;
+
     padding: rem(17) rem(20);
     background-color: var(--white);
     border-radius: rem(15);
@@ -136,10 +152,13 @@
     box-shadow: none;
     cursor: pointer;
 
-    transition: opacity 0.15s ease-in-out;
+    color: #000;
+
+    transition: background-color 0.15s ease-in-out, color 0.15s ease-in-out;
 
     &:hover{
-      opacity: .6;
+      color: var(--white);
+      background-color: var(--red);
     }
 
     @include md {

@@ -80,7 +80,9 @@ export const ExpressForm: React.FC = () => {
           <Controller
             control={control}
             name="name"
-            rules={{ required: '[обязательно]' }}
+            rules={{
+              required: '[обязательно]',
+          }}
             render={({ field }) =>
               <TextInput placeholder="введите ваше имя"
                          inputClassName={cn('input', [onest.className])}
@@ -101,7 +103,9 @@ export const ExpressForm: React.FC = () => {
           <Controller
             control={control}
             name="phone"
-            rules={{ required: '[обязательно]' }}
+            rules={{
+              required: '[обязательно]',
+          }}
             render={({ field }) =>
               <TextInput placeholder="+7 987 123-45-67"
                          inputClassName={cn('input', [onest.className])}
