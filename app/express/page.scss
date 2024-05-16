@@ -7,6 +7,17 @@
     margin-bottom: rem(250) !important;
   }
 
+  &__form-title{
+    margin: 0 auto;
+    text-align: center;
+    font-size: rem(180);
+
+    @include md{
+      font-size: rem(35);
+    }
+  }
+
+
   @include md {
     [id] {
       scroll-margin-top: rem(61);
@@ -20,5 +31,7 @@
       }
     }
   }
+
+
 
 }

@@ -59,13 +59,14 @@
     }
 
     @include md {
+      height: rem(54);
       margin-top: 0;
       margin-bottom: rem(26);
       top: calc(100vh - #{rem(104)});
-      padding: rem(15) rem(17) rem(17);
+      padding: rem(17);
 
       font-size: rem(17);
-      line-height: rem(22);
+      line-height: 1;
     }
   }
 

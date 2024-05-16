@@ -15,6 +15,7 @@ export enum Anchors {
   PACK = 'pack',
   REVIEWS = 'reviews',
   TEAM = 'team',
+  FORM = 'form',
 }
 
 export const ExpressAnchorNav: React.FC<ExpressAnchorNavProps> = ({

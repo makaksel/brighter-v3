@@ -18,13 +18,15 @@ export const ExpressPack: React.FC = () => <div className={cn()}>
         img={PackCard1}
         bodyGapSize="big"
         title="Логотип"
-        text="уникальный логотип, который привлекателен для вашей аудитории и транслирует ценности компании"
+        textWidth={"390px"}
+        text="уникальный логотип, который привлекателен&nbsp;для&nbsp;вашей аудитории и&nbsp;транслирует ценности компании"
       />
       <ExpressPackCard
         img={PackCard2}
         bodyGapSize="small"
         title="шрифты и цвета"
-        text="базовый стиль, который сочетается с логотипом и упрощает брендирование онлайн- и офлайн-материалов"
+        textWidth={"347px"}
+        text="базовый стиль, который сочетается с&nbsp;логотипом и упрощает брендирование онлайн- и офлайн-материалов"
       />
     </div>
 
@@ -36,13 +38,15 @@ export const ExpressPack: React.FC = () => <div className={cn()}>
         img={PackCard3}
         bodyGapSize="big"
         title="визитка"
-        text="дизайн визитки в фирменном стиле и с размерами для упрощения печати"
+        textWidth={"345px"}
+        text="дизайн визитки в фирменном стиле и&nbsp;с&nbsp;размерами для упрощения печати"
       />
       <ExpressPackCard
         img={PackCard4}
         bodyGapSize="small"
         title="паттерн"
-        text="узор из упрощенной версии логотипа и примеры его использования в брендинге"
+        textWidth={"345px"}
+        text="узор из упрощенной версии логотипа и&nbsp;примеры его использования в брендинге"
       />
     </div>
 
@@ -64,6 +68,7 @@ export const ExpressPack: React.FC = () => <div className={cn()}>
         img={PackCard5}
         showBodyOnlyOnMD
         title="визуализация бренда"
+        textWidth={"345px"}
         text="воплощение имиджа, образа и идей вашего бренда в реальность с помощью айдентики"
       />
 

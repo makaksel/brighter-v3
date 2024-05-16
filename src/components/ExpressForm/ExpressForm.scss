@@ -7,36 +7,22 @@
 
   display: flex;
   flex-direction: column;
-  gap: rem(150);
+
   margin-bottom: rem(300);
 
-
-
-
   @include md {
-    gap: rem(50);
     margin-bottom: rem(200);
-  }
-
-  &__title {
-    text-align: center;
-    font-size: rem(180);
-    line-height: 100%;
-    font-weight: 400;
-
-    @include elg {
-      font-size: rem(130);
-    }
-
-    @include md {
-      font-size: rem(35);
-    }
   }
 
   &__form {
     width: 100%;
     max-width: rem(930);
-    margin: 0 auto;
+
+    margin: rem(100) auto 0;
+
+    @include md {
+      margin-top: rem(20);
+    }
   }
 
   &__row {
@@ -162,7 +148,9 @@
     }
 
     @include md {
+      height: rem(50);
       padding: rem(19) rem(25);
+      line-height: 0;
     }
   }
 

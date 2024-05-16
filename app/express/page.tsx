@@ -46,7 +46,10 @@ export default function page() {
         <ExpressTeam />
       </ExpressSection>
 
-      <ExpressForm />
+      <ExpressSection anchor={Anchors.FORM} title={'Оставьте заявку'} titleClassName={cn('form-title')}>
+        <ExpressForm />
+      </ExpressSection>
+     
 
       <Footer noBrifLink />
     </main>
