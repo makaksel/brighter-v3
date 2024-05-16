@@ -7,7 +7,6 @@ interface ExpressPackCard {
   img: string | StaticImageData;
   bodyGapSize?: 'small' | 'big';
   text?: string;
-  textWidth?: string;
   title?: string;
   showBodyOnlyOnMD?: boolean;
 }
@@ -16,7 +15,6 @@ export const ExpressPackCard: React.FC<ExpressPackCard> = ({
   img,
   text,
   title,
-  textWidth,
   bodyGapSize,
   showBodyOnlyOnMD,
 }) =>
@@ -26,9 +24,9 @@ export const ExpressPackCard: React.FC<ExpressPackCard> = ({
       <Image className={cn('card-img')} src={img} alt={title || ''} width={455} height={210} />
     </div>
 
-    <div className={cn('card-body', {showBodyOnlyOnMD})}>
+    <div className={cn('card-body', { showBodyOnlyOnMD })}>
       <p className={cn('card-title')}>{title}</p>
-      <p className={cn('card-text')} style={{maxWidth: `${textWidth}`}}>{text}</p>
+      {text && <p className={cn('card-text')} dangerouslySetInnerHTML={{ __html: text }}></p>}
     </div>
 
   </div>;
