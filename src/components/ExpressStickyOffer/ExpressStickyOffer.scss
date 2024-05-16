@@ -59,10 +59,16 @@
 
     @include md {
       height: rem(54);
-      margin-top: 0;
-      margin-bottom: rem(26);
-      top: calc(100vmax - #{rem(104)});
+
       padding: rem(17);
+      margin-top: 0;
+      margin-bottom: 0;
+
+      position: fixed;
+      top: auto;
+      left: var(--x-padding);
+      right: var(--x-padding);
+      bottom: rem(50);
 
       font-size: rem(17);
       line-height: 1;
