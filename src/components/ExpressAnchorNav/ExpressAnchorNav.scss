@@ -20,6 +20,10 @@
     padding: rem(15) rem(20);
   }
 
+  @include xs {
+    justify-content: center;
+  }
+
   &__link{
     @include textLinkHeader;
     color: var(--white)

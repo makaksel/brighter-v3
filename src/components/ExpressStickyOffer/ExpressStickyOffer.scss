@@ -23,7 +23,6 @@
     font-weight: 700;
     font-size: rem(25);
     line-height: rem(32);
-    letter-spacing: 0.1em;
     text-transform: uppercase;
 
     position: sticky;
@@ -62,7 +61,7 @@
       height: rem(54);
       margin-top: 0;
       margin-bottom: rem(26);
-      top: calc(100vh - #{rem(104)});
+      top: calc(100vmax - #{rem(104)});
       padding: rem(17);
 
       font-size: rem(17);

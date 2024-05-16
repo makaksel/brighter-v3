@@ -73,6 +73,10 @@
 
     &-wrp{
       min-width: rem(180);
+
+      @include md {
+        min-width: auto;
+      }
     }
 
     @include md {
