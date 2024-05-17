@@ -40,7 +40,7 @@ export const Header: React.FC<HeaderProps> = ({ className, theme = 'black' }) =>
       <div className={cn('row')}>
         <div className={cn('express-link-wrp')}>
           <Link
-            className={cn('express-link')}
+            className={cn('express-link', { active: pathname === routerLinks.express })}
             href={routerLinks.express}
           >
           <span
