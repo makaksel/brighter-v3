@@ -1,10 +1,6 @@
 import React from 'react';
 import { makeCn } from '@/src/utils';
-import Link from 'next/link';
 import './Footer.scss';
-import ArrowRight from '@/src/resources/icons/ArrowRight_big.svg';
-import ArrowRightMobile from '@/src/resources/icons/ArrowRightMobile.svg';
-import { routerLinks } from '@/src/data/navigation';
 import { Contacts } from '@/src/components/Contacts';
 
 
@@ -24,11 +20,6 @@ export const Footer: React.FC<FooterProps> = ({
   {!noBrifLink && <div className={cn('row')}>
     <div className={cn('col')}></div>
     <div className={cn('col')}>
-      <Link href={routerLinks.brif} className={cn('brif-link')}>
-        <span>обсудить проект</span>
-        <ArrowRight className={cn('brif-link-icon', ['hide-md'])} />
-        <ArrowRightMobile className={cn('brif-link-icon', ['mobile'])} />
-      </Link>
     </div>
   </div>}
 

@@ -1,0 +1,31 @@
+@import '@/src/styles/functions';
+@import '@/src/styles/media-queries';
+@import '@/src/styles/mixins';
+
+.ton {
+    display: flex;
+    align-items: center;
+    
+    max-width: rem(206);
+    gap: rem(10);
+    padding: rem(14) rem(20);
+    
+    background-color: var(--light-gray);
+    border-radius: rem(20);
+
+   
+
+    &__img{
+        display: flex;
+        flex: 0 0 rem(44);
+        width: rem(44);
+        height: rem(44);
+        object-fit: cover;
+    }
+
+    &__text{
+        @include textSmall;
+    }
+
+
+}

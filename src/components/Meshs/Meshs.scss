@@ -1,0 +1,17 @@
+@import '@/src/styles/functions';
+@import '@/src/styles/media-queries';
+@import '@/src/styles/mixins';
+
+.meshs {
+  display: flex;
+
+  margin-bottom: var(--y-spacing--large);
+  gap: rem(15);
+  
+  &__card{
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+  }
+}

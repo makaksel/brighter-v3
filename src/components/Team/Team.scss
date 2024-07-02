@@ -1,74 +1,38 @@
-@import "@/src/styles/functions";
-@import "@/src/styles/mixins";
-
+@import '@/src/styles/functions';
+@import '@/src/styles/media-queries';
+@import '@/src/styles/mixins';
 
 .team {
-  @include container;
-  position: relative;
-  width: 100%;
-  display: grid;
-  grid-template-columns: 3fr 5fr;
-  grid-gap: rem(20);
-  margin-bottom: rem(300);
+  display: flex;
+  align-items: flex-end;
 
-  @include md{
+  margin-bottom: var(--y-spacing--small);
+
+  &__list{
     display: flex;
-    flex-direction: column;
-    gap: rem(50);
-
-    margin-bottom: rem(150);
+    align-items: center;
+    margin-left: rem(16);
+   
   }
 
+  &__item{
+    margin-left: rem(-16);
 
-  &__content {
-    display: flex;
-    flex-direction: column;
-
-    max-width: rem(989);
-
-    padding: 0 var(--x-padding);
-    margin-top: rem(116);
-    gap: rem(50)
-  }
-
-
-
-  &__body{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-
-    height: 100%;
-    max-width: rem(621);
-
-    color: var(--gray-light);
-  }
-
-  &__title {
-    @include h3;
-    max-width: rem(610);
-    color: var(--black);
-  }
-
-  &__media{
-
+    width: 100%;
   }
 
   &__img{
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-
-    &--mobileImg{
-      display: none;
-    }
-
-    @include md{
-      &--mobileImg{
-        height: auto;
-        display: flex;
-      }
-    }
+    display: flex;
+    max-width: rem(62);
+    max-height: rem(62);
+    object-fit: cover;
+  
   }
 
+
+  &__text{
+    font-size: rem(37);
+    letter-spacing: -0.03;
+  }
+  
 }

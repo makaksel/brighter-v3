@@ -1,35 +1,35 @@
-import { Metadata } from 'next';
-import React from 'react';
-import { MainHero } from 'src/components/MainHero';
+import { Cases } from '@/src/components/Cases';
+import { Clients } from '@/src/components/Clients';
+import { Hero } from '@/src/components/Hero';
+import { Meshs } from '@/src/components/Meshs';
+import { OrderBtn } from '@/src/components/OrderBtn';
+import { WeDo } from '@/src/components/WeDo';
+import { anchors } from '@/src/data';
 import { makeCn } from '@/src/utils';
-import { Footer } from '@/src/components/Footer';
-import { Partners } from '@/src/components/Partners/Partners';
-import { MainCases } from 'src/components/MainCases';
-import { Media } from '@/src/components/Media';
+import { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Поярче',
   description: 'Если дизайн, то поярче. Разрабатываем не просто картинки, мы создаем смыслы.',
 };
 
-const cn = makeCn('main-page')
+const cn = makeCn('main-page');
 
 export default async function page() {
-
   return (
-    <main className={cn()}>
-      <MainHero />
+    <>
+      <main className={cn()}>
+        <Hero title="Создание цифровых продуктов для сrypto-tech" id={anchors.about} />
+        <Clients />
+        <WeDo />
+        <Cases />
 
-      <Partners />
+        <Meshs />
+        
+        {/* Contacts#contacts */}
+      </main>
 
-      <MainCases />
-
-      {/*<MainServices />*/}
-
-      <Media />
-
-      <Footer />
-    </main>
-
+      <OrderBtn />
+    </>
   );
 }

@@ -1,63 +1,26 @@
-'use client';
-
-import React from 'react';
-import { makeCn } from '@/src/utils';
-import './Header.scss';
-import Link from 'next/link';
-import Logo from '@/src/resources/icons/logo.svg';
+import { Burger } from '@/src/components/Burger';
 import { routerLinks } from '@/src/data/navigation';
-import { HeaderNav } from '@/src/components/HeaderNav';
-import { DiscussLink } from '@/src/components/DiscussLink';
-import { Burger } from '@/src/components/Header/Burger';
-import { usePathname } from 'next/navigation';
+import Logo from '@/src/resources/icons/logo.svg';
+import { makeCn } from '@/src/utils';
+import Link from 'next/link';
+import './Header.scss';
 
 export const cn = makeCn('header');
 
-interface HeaderProps {
-  className?: string;
-  theme?: 'black' | 'white';
-}
-
-export const Header: React.FC<HeaderProps> = ({ className, theme = 'black' }) => {
-  const pathname = usePathname();
-
-  const isWhiteTheme = pathname.toLowerCase().includes('brif') || pathname.toLowerCase().includes('services') ||
-    pathname.toLowerCase().includes('about') || pathname.toLowerCase().includes('express');
-
-  const isHide = pathname.toLowerCase().includes('/portfolio/');
-  const noSticky = pathname.toLowerCase().includes('/express');
-
-
+export const Header = () => {
   return (
-    <div className={cn('', { isWhite: isWhiteTheme, isHide, noSticky }, [className])}>
-
-      <div className={cn('row')}>
-        <Link className={cn('logo-link')} href={routerLinks.root}>
-          <Logo className={cn('logo')} alt={'Поярче'} />
-        </Link>
-      </div>
-
-      <div className={cn('row')}>
-        <div className={cn('express-link-wrp')}>
-          <Link
-            className={cn('express-link', { active: pathname === routerLinks.express })}
-            href={routerLinks.express}
-          >
-          <span
-            className={cn('express-underline')}
-          >
-            экспресс
-          </span>
+    <header className={cn()}>
+      <div className={cn('main')}>
+        <div className={cn('logo')}>
+          <Link className={cn('logo-link')} href={routerLinks.root}>
+            <Logo className={cn('logo-icon')} alt={'Поярче'} />
           </Link>
+          <p className={cn('logo-text')}>№1 для crypto-tech</p>
+          <p className={cn('logo-text')}>Экспертиза в кошельках, токенах, биржах</p>
         </div>
-
-
-        <HeaderNav className={cn('nav')} />
-
-        <DiscussLink className={cn('discus')} />
 
         <Burger />
       </div>
-    </div>
+    </header>
   );
 };

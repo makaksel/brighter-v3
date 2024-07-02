@@ -1,148 +1,95 @@
-@import "functions";
-@import "media-queries";
+@import 'functions';
+@import 'media-queries';
 
 @mixin container {
   width: 100%;
   max-width: var(--max-width);
-  padding: 0 var(--x-padding);
+  padding: 0 var(--x-spacing);
 }
 
-
 @mixin textBase {
-  font-size: rem(18);
+  font-size: rem(28);
   line-height: 120%;
 
   font-style: normal;
-  font-weight: 500;
 
   @include md {
-    font-size: rem(15);
+    font-size: rem(24);
   }
 }
 
-@mixin textLinkHeader {
-  @include textBase;
+@mixin textSmall {
+  font-size: rem(15);
+  line-height: 120%;
 
-  font-size: rem(20);
+  font-style: normal;
 
   @include md {
-    font-size: rem(18);
+    font-size: rem(13);
   }
 }
 
-@mixin h1 {
-  @include textBase;
-  font-size: rem(90);
-  line-height: 85%;
-  letter-spacing: -0.03em;
-
-  @include md {
-    font-size: rem(36);
-  }
-}
-
-@mixin h2 {
-  @include textBase;
-  font-size: rem(40);
+@mixin title {
+  font-size: rem(60);
   line-height: 100%;
-  letter-spacing: -0.03em;
+  font-style: normal;
+  font-weight: normal;
 
   @include md {
-    font-size: rem(20);
-  }
-}
-
-@mixin h3 {
-  @include textBase;
-  font-size: rem(32);
-  line-height: 120%;
-  letter-spacing: -0.03em;
-
-  @include md {
-    font-size: rem(18);
-  }
-}
-
-@mixin h4 {
-  @include textBase;
-  font-size: rem(20);
-  line-height: 120%;
-
-  @include md {
-    font-size: rem(15);
+    font-size: rem(34);
   }
 }
 
 
-@mixin underline($borderHeight: 1, $bottom: 0) {
-  position: relative;
-  cursor: pointer;
+@mixin button {
+  max-height: rem(74);
+  max-width: max-content;
 
-  > * {
-    cursor: pointer;
+  display: flex;
+  align-items: center;
+
+  padding: rem(20);
+
+  border-radius: rem(100);
+
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out;
+
+  background-color: var(--light-gray);
+  color: var(--black);
+
+  &:hover {
+    background-color: var(--orange);
+    color: var(--white);
   }
 
-  &:after {
-
-
-    content: "";
-
-    display: block;
-    width: 0;
-    height: rem($borderHeight);
-
-    position: absolute;
-    left: 0;
-    bottom: rem(-$bottom);
-
-    opacity: 0;
-
-    background: none repeat scroll 0 0 transparent;
-    background: currentColor;
-    transition: width 0.3s ease, opacity 0.3s ease ;
-
+  &--disabled {
     pointer-events: none;
-  }
-
-  &:hover:after {
-    width: 100%;
-    opacity: 1;
+    background-color: var(--white);
+    color: var(--black-2);
   }
 
 }
 
+@mixin orangeButton {
+  @include button();
 
-@mixin underlineActive($borderHeight: 1, $bottom: 0) {
-  position: relative;
+  background-color: var(--orange);
+  color: var(--white);
 
-  &:after {
-    background: none repeat scroll 0 0 transparent;
-    bottom: rem(-$bottom);
-    content: "";
-    display: block;
-    height: rem($borderHeight);
-    left: 0;
-    opacity: 1;
-    position: absolute;
-    background: currentColor;
-    transition: width 0.3s ease, opacity 0.3s ease 0.1s;
-
-    width: 100%;
-    pointer-events: none;
-  }
-
-  &:hover:after {
-    width: 0;
-    opacity: 0;
+  &:hover {
+    background-color: var(--white);
+    color: var(--black);
   }
 }
+
+
 
 @mixin scrollbar {
-
   ::-webkit-scrollbar {
     width: rem(16);
     height: rem(16);
     background-color: transparent;
+    transition: all 0.5s ease-in-out;
   }
 
   ::-webkit-scrollbar-thumb {
@@ -152,12 +99,13 @@
     border: rem(4) solid transparent;
     border-radius: rem(8);
     background-clip: padding-box;
-    transition: background-color .2s ease-in-out;
+    transition: all 0.5s ease-in-out;
 
-    background-color: var(--scroll-color);
+    background-color: rgba(0, 0, 0, 0.2);
 
     &:hover {
-      background-color: var(--scroll-color);
+      cursor: pointer;
+      background-color: var(--orange);
     }
   }
 }

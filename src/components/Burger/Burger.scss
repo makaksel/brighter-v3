@@ -1,0 +1,13 @@
+@import "@/src/styles/functions";
+@import "@/src/styles/mixins";
+
+.burger {
+  display: none;
+
+
+  &-dropdown{
+    display: none;
+  }
+  
+
+}

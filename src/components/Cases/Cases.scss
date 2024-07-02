@@ -1,0 +1,13 @@
+@import '@/src/styles/functions';
+@import '@/src/styles/media-queries';
+@import '@/src/styles/mixins';
+
+.cases {
+  display: flex;
+  flex-direction: column;
+
+  margin-bottom: var(--y-spacing--large);
+  gap: var(--y-spacing--large);
+  
+  
+}

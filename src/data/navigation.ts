@@ -1,29 +1,28 @@
 export const routerLinks = {
   root: '/',
-  portfolio: '/portfolio',
-  portfolioItem: '/portfolio/:id',
-  services: '/services',
-  contacts: '/contacts',
-  about: '/about',
-  brif: '/brif',
-  express: '/express',
+  form: '/form',
+  success: '/success',
+
+}
+
+export const anchors = {
+  about: 'about',
+  projects: 'projects',
+  contacts: 'contacts',
+
 }
 
 export const navigation = {
-  portfolio: {
-    path: routerLinks.portfolio,
-    label: 'портфолио',
-  },
-  // services: {
-  //   path: routerLinks.services,
-  //   label: 'услуги',
-  // },
-  contacts: {
-    path: routerLinks.contacts,
-    label: 'контакты',
-  },
   about: {
-    path: routerLinks.about,
-    label: 'о нас',
+    path: `#${anchors.about}`,
+    label: 'О нас',
+  },
+  projects: {
+    path:  `#${anchors.projects}`,
+    label: 'Проекты',
+  },
+  contacts: {
+    path:  `#${anchors.contacts}`,
+    label: 'Контакты',
   },
 };

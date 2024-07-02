@@ -11,7 +11,7 @@
   &__row {
     display: grid;
     grid-template-columns: 1fr minmax(rem(375), rem(1167));
-    grid-gap: var(--x-padding);
+    grid-gap: var(--x-spacing);
 
     @include md{
       grid-template-columns: 1fr;
@@ -29,7 +29,7 @@
 
 
   &__brif-link {
-    @include h1;
+    @include title;
 
     display: flex;
     align-items: center;
@@ -40,8 +40,6 @@
 
     margin-bottom: rem(200);
     gap: rem(10);
-
-    @include underlineActive(5, 16);
 
 
     &-icon {
@@ -63,7 +61,6 @@
 
     @include md{
       margin-bottom: rem(50);
-      @include underlineActive(2, 10);
     }
   }
 
@@ -99,7 +96,6 @@
     &-link {
       color: var(--gray-light);
 
-      @include underlineActive;
     }
 
     @include xs{

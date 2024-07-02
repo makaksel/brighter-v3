@@ -1,0 +1,23 @@
+@import '@/src/styles/functions';
+@import '@/src/styles/media-queries';
+@import '@/src/styles/mixins';
+
+.hero {
+  margin-bottom: var(--y-spacing--large);
+
+  &__title{
+    @include title;
+    margin-bottom: var(--y-spacing--medium);
+
+    &--largeGap{
+      margin-bottom: var(--y-spacing--large);
+    }
+  }
+
+  &__text{
+    margin-bottom: var(--y-spacing--small);
+  }
+
+
+ 
+}

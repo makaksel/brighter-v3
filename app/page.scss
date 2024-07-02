@@ -4,34 +4,31 @@
 
 :root {
   /* sizes */
-  --max-width: 100%; // todo 1880px - если решаться ограничить
+  --max-width: #{rem(804)}; // todo 1880px - если решаться ограничить
 
-  --x-padding: 20px;
+  --x-spacing: #{rem(50)};
 
+  --y-spacing--large: #{rem(100)};
+  --y-spacing--medium: #{rem(50)};
+  --y-spacing--small: #{rem(30)};
 
   /* colors */
-  --black: #080808;
   --white: #FFFFFF;
+  --white-2: #F1F1F1;
 
-  --red: #FF3E13;
+  --black: #000000;
+  --black-2: rgba(0,0,0,0.5);
 
-  --gray-black: #2D2D2D;
-  --gray-light: #A1A1A1;
-
-  --card-media--bg: #232323;
-
-  --scroll-color: #353535;
-
-  --gray-opacity: rgba(255, 255, 255, 0.2);
-
-  --footer-line: rgba(255, 255, 255, 0.2);
+  --orange: #FF5841;
+  --blue: #167EFB;
+  --light-gray: #FBF8F8;
 }
 
 
 @include md {
   :root {
     /* sizes */
-    --x-padding: 10px;
+    --x-spacing: 10px;
   }
 }
 
@@ -41,36 +38,50 @@ html {
   scroll-behavior: smooth;
 }
 
-body {
-  background-color: var(--black);
+.app {  
+  height: calc(100vh - #{rem(40)});
+  
+  display: grid;
+  grid-template-rows: auto 1fr;
+  grid-template-columns: 1fr minmax(auto, rem(804)) 1fr;
+  grid-gap: 0 var(--x-spacing);
+
+  padding: 0 var(--x-spacing);
+
+
   overflow-x: hidden;
+}
+
+
+body {
+  @include textBase;
+
+  display: flex;
+  flex-direction: column;
+
+  height: 100vh;
+  max-width: 100vw;
+  
+  background-color: var(--white);
+  overflow: hidden;
+
 
   -webkit-font-smoothing: antialiased;
   font-smoothing: always;
-
-  @include textBase;
 }
 
 main {
-  --bg-color: var(--black);
-  --text-color: var(--white);
-
   display: flex;
   flex-direction: column;
 
   position: relative;
 
-  min-height: calc(100vh - #{rem(120)});
-  max-width: 100vw;
-
-  text-transform: lowercase;
-
-  background-color: var(--bg-color);
-  color: var(--text-color);
+  color: var(--black);
   scroll-behavior: smooth;
 
-  //transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 }
+
+
 
 * {
   user-select: none;
@@ -93,34 +104,6 @@ a > * {
   background-color: rgba(0, 0, 0, 0);
 }
 
-.rating-component {
-  overflow: visible!important;
-
-  & > span {
-    overflow: visible!important;
-
-    &:not(:last-child) {
-      margin-right: 2px;
-    }
-  }
-
-  &-icon{
-    @include md {
-      width: rem(15);
-    }
-  }
-
-  @include md {
-    & > span {
-      font-size: 17px !important;
-
-      &:not(:last-child) {
-        margin-right: 4px;
-      }
-    }
-  }
-}
-
 .hide-md {
   @include md {
     display: none;
@@ -128,24 +111,17 @@ a > * {
 }
 
 
+.main-page{
+  margin-bottom: rem(182)
+}
+
 .not-found {
-  --bg-color: var(--white);
-  --text-color: var(--gray-black);
-
-  --footer-line: rgba(45, 45, 45, 0.2);
-  --gray-opacity: rgba(45, 45, 45, 0.2);
-
-
   @include container;
-
-  background-color: var(--bg-color);
-  color: var(--text-color);
 
 
   &__hero {
     margin-top: rem(116);
     margin-bottom: rem(235);
-    color: var(--gray-light);
 
     @include md {
       margin-top: rem(50);
@@ -154,8 +130,7 @@ a > * {
   }
 
   &__title {
-    @include h1;
-    color: var(--text-color);
+    @include title;
     margin-bottom: rem(20);
   }
 
@@ -176,7 +151,7 @@ a > * {
 
 
   &__btn {
-    @include h1;
+    @include title;
 
     display: flex;
     align-items: center;
@@ -191,34 +166,8 @@ a > * {
     gap: rem(10);
 
     padding-bottom: rem(12);
-    border-bottom: rem(5) solid var(--text-color);
 
 
-    &-icon {
-      stroke: var(--text-color);
-      stroke-width: rem(6);
 
-      &.mobile {
-        display: none;
-      }
-
-      @include md {
-        &.mobile {
-          display: block;
-
-          stroke: var(--text-color);
-          stroke-width: rem(2);
-        }
-      }
-
-
-    }
-
-    @include md {
-      grid-column: 1/2;
-
-      padding-bottom: rem(6);
-      border-bottom: rem(2) solid var(--text-color);
-    }
   }
 }

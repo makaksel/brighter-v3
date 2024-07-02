@@ -1,0 +1,17 @@
+@import '@/src/styles/functions';
+@import '@/src/styles/media-queries';
+@import '@/src/styles/mixins';
+
+.clients {
+  display: flex;
+  gap: rem(10);
+
+  &__img{
+    display: flex;
+    width: rem(60);
+    height: rem(60);
+    object-fit: cover;
+
+  }
+
+}

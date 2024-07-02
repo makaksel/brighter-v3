@@ -1,0 +1,14 @@
+@import '@/src/styles/functions';
+@import '@/src/styles/media-queries';
+@import '@/src/styles/mixins';
+
+.order-btn {
+  @include orangeButton;
+  
+  position: sticky;
+  top: rem(20);
+
+  margin-left: auto;
+
+ 
+}
