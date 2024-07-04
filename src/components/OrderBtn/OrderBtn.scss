@@ -4,11 +4,10 @@
 
 .order-btn {
   @include orangeButton;
-  
+
   position: sticky;
   top: rem(20);
 
   margin-left: auto;
-
- 
+          z-index: 56;
 }

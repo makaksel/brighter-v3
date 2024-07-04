@@ -1,0 +1,15 @@
+@import '@/src/styles/functions';
+@import '@/src/styles/media-queries';
+@import '@/src/styles/mixins';
+
+.contacts {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: rem(10);
+
+
+  &__link{
+    @include button;
+  }
+}

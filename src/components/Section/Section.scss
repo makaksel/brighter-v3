@@ -5,6 +5,10 @@
 .section {
   margin-bottom: var(--y-spacing--large);
 
+  &--noMargin{
+    margin-bottom: 0
+  }
+
   
   &__title{
     @include title;

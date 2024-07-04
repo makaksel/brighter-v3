@@ -26,6 +26,11 @@
     max-width: rem(62);
     max-height: rem(62);
     object-fit: cover;
+
+    @include md {
+      max-width: rem(50);
+      max-height: rem(50);
+    }
   
   }
 
@@ -33,6 +38,14 @@
   &__text{
     font-size: rem(37);
     letter-spacing: -0.03;
+
+    @include md {
+    font-size: rem(28);
+    }
+  }
+
+  @include md {
+    padding-top: rem(12);
   }
   
 }

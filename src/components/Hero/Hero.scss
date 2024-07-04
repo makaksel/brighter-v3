@@ -11,6 +11,10 @@
 
     &--largeGap{
       margin-bottom: var(--y-spacing--large);
+
+      @include md {
+        margin-bottom: var(--y-spacing--medium)
+      }
     }
   }
 

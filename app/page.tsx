@@ -1,5 +1,6 @@
 import { Cases } from '@/src/components/Cases';
 import { Clients } from '@/src/components/Clients';
+import { Contacts } from '@/src/components/Contacts';
 import { Hero } from '@/src/components/Hero';
 import { Meshs } from '@/src/components/Meshs';
 import { OrderBtn } from '@/src/components/OrderBtn';
@@ -23,13 +24,11 @@ export default async function page() {
         <Clients />
         <WeDo />
         <Cases />
-
         <Meshs />
-        
-        {/* Contacts#contacts */}
+        <Contacts />
       </main>
 
-      <OrderBtn />
+      <OrderBtn className="hide-md" />
     </>
   );
 }

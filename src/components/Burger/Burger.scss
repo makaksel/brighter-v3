@@ -1,13 +1,54 @@
-@import "@/src/styles/functions";
-@import "@/src/styles/mixins";
+@import '@/src/styles/functions';
+@import '@/src/styles/mixins';
 
 .burger {
-  display: none;
+  $this: &;
+  flex: 0 0 auto;
 
+  &__button {
+    @include button;
 
-  &-dropdown{
+    display: none;
+    justify-content: center;
+
+    max-width: none;
+    width: rem(97);
+    height: rem(59);
+
+    &-text {
+      position: absolute;
+      opacity: 1;
+    }
+    &-icon {
+      position: absolute;
+      opacity: 0;
+      stroke: var(--black);
+    }
+
+    &-icon,
+    &-text {
+      transition: opacity 0.15s ease-in-out;
+    }
+
+    &--open, &--closing{
+      #{$this}__button-text {
+        opacity: 0;
+      }
+      #{$this}__button-icon {
+        opacity: 1;
+      }
+    }
+
+    @include md {
+      display: flex;
+    }
+  }
+
+  &__dropdown {
     display: none;
   }
-  
 
+  @include md {
+    margin-bottom: rem(60);
+  }
 }

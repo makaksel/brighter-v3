@@ -1,0 +1,19 @@
+@import '@/src/styles/functions';
+@import '@/src/styles/media-queries';
+@import '@/src/styles/mixins';
+
+.section {
+  margin-bottom: var(--y-spacing--large);
+
+  &--noMargin{
+    margin-bottom: 0
+  }
+
+  
+  &__title{
+    @include title;
+    margin-bottom: var(--y-spacing--small);
+  }
+
+  
+}

@@ -1,5 +1,6 @@
 import CaseImg1 from '@/src/resources/images/case1.png';
-import CaseImg2 from '@/src/resources/images/case2.png';
+import CaseImg21 from '@/src/resources/images/case2_1.png';
+import CaseImg22 from '@/src/resources/images/case2_2.png';
 import CaseImg3 from '@/src/resources/images/case3.png';
 import CaseImg4 from '@/src/resources/images/case4.png';
 import Ceo1 from '@/src/resources/images/ceo1.png';
@@ -35,7 +36,22 @@ const list: CaseCard[] = [
       subtitle: 'CEO компании Safe Crypto',
       text: '"Постоянное сотрудничество со студией нам дало хороший профит во всех направлениях компании. Всегда качественно, быстро и практично "',
     },
-    media: <Image src={CaseImg2} className={cnCase('media-img')} alt={`Safe Wallet`} />,
+    media: (
+      <div className={cnCase('media-custom')}>
+        <Image src={CaseImg21} className={cnCase('media-img')} alt={`Safe Wallet`} />
+        <Image src={CaseImg22} className={cnCase('media-img')} alt={`Safe Wallet`} />
+        <video
+        src={'./assets/video/case2.mp4'}
+        className={cnCase('media-video')}
+        autoPlay
+        loop
+        playsInline
+        preload="auto"
+        no-controls
+        muted
+      />
+      </div>
+    ),
   },
   {
     id: 3,

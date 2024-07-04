@@ -40,26 +40,47 @@
   }
 }
 
-
-@mixin button {
-  max-height: rem(74);
+@mixin buttonWrp {
   max-width: max-content;
 
   display: flex;
   align-items: center;
+  flex: 0 0 auto;
 
   padding: rem(20);
 
   border-radius: rem(100);
 
-  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out;
-
   background-color: var(--light-gray);
   color: var(--black);
 
+  @include md {
+    padding: rem(15);
+  }
+}
+
+@mixin button {
+  @include buttonWrp;
+  @include textBase;
+
+  max-height: rem(74);
+  border: 0;
+
+  transition:
+    color 0.15s ease-in-out,
+    stroke 0.15s ease-in-out,
+    background-color 0.15s ease-in-out;
+
   &:hover {
+    cursor: pointer;
     background-color: var(--orange);
     color: var(--white);
+
+    > * {
+      color: var(--white);
+      fill: var(--white);
+      stroke: var(--white);
+    }
   }
 
   &--disabled {
@@ -68,6 +89,9 @@
     color: var(--black-2);
   }
 
+  @include md {
+    max-height: rem(59);
+  }
 }
 
 @mixin orangeButton {
@@ -82,7 +106,17 @@
   }
 }
 
+@mixin roundedImage {
+  width: rem(60);
+  height: rem(60);
 
+  border-radius: 100%;
+
+  @include md {
+    width: rem(40);
+    height: rem(40);
+  }
+}
 
 @mixin scrollbar {
   ::-webkit-scrollbar {

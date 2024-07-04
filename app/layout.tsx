@@ -48,7 +48,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
         <div className="app">
           <Header />
-          <Navigation />
+          <Navigation className="hide-md"/>
           {children}
         </div>
       </body>

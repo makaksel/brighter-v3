@@ -5,8 +5,12 @@ import { routerLinks } from '@/src/data';
 
 const cn = makeCn('order-btn');
 
-export const OrderBtn = () => {
+interface OrderBtnProps {
+  className?: string;
+}
+
+export const OrderBtn: React.FC<OrderBtnProps> = ({className}) => {
   return (
-    <Link className={cn('')} href={routerLinks.form}>Заказать</Link>
+    <Link className={cn('', [className])} href={routerLinks.form}>Заказать</Link>
   );
 };

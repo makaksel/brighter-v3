@@ -3,25 +3,30 @@
 @import "../src/styles/mixins";
 
 :root {
+    /* colors */
+    --white: #FFFFFF;
+    --white-2: #F1F1F1;
+  
+    --black: #000000;
+    --black-2: rgba(0,0,0,0.5);
+  
+    --orange: #FF5841;
+    --blue: #167EFB;
+    --light-gray: #FBF8F8;
+
   /* sizes */
   --max-width: #{rem(804)}; // todo 1880px - если решаться ограничить
 
   --x-spacing: #{rem(50)};
 
-  --y-spacing--large: #{rem(100)};
-  --y-spacing--medium: #{rem(50)};
   --y-spacing--small: #{rem(30)};
+  --y-spacing--medium: #{rem(50)};
+  --y-spacing--large: #{rem(100)};
 
-  /* colors */
-  --white: #FFFFFF;
-  --white-2: #F1F1F1;
 
-  --black: #000000;
-  --black-2: rgba(0,0,0,0.5);
-
-  --orange: #FF5841;
-  --blue: #167EFB;
-  --light-gray: #FBF8F8;
+  @include md {
+    --y-spacing--small: #{rem(20)};
+  }
 }
 
 
@@ -48,8 +53,14 @@ html {
 
   padding: 0 var(--x-spacing);
 
-
   overflow-x: hidden;
+  scroll-behavior: smooth;
+
+
+  @include md {
+    display: flex;
+    flex-direction: column
+  }
 }
 
 
@@ -106,13 +117,17 @@ a > * {
 
 .hide-md {
   @include md {
-    display: none;
+    display: none!important;
   }
 }
 
 
 .main-page{
-  margin-bottom: rem(182)
+  margin-bottom: rem(185);
+
+  @include md {
+    margin-bottom: rem(30);
+  }
 }
 
 .not-found {
@@ -136,7 +151,7 @@ a > * {
 
   &__grid-wrp {
     display: grid;
-    grid-template-columns: minmax(200px, 1fr) 1fr;
+    grid-template-columns: minmax(#{rem(200)}, 1fr) 1fr;
     grid-gap: rem(20);
 
     @include md {

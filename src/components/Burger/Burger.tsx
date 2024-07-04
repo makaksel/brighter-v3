@@ -4,6 +4,9 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import { usePathname } from 'next/navigation';
 import './Burger.scss';
 import { makeCn } from '@/src/utils';
+import CloseIcon from '@/src/resources/icons/crest.svg';
+import { OrderBtn } from '../OrderBtn';
+import { Navigation } from '../Navigation';
 
 export const cn = makeCn('burger');
 
@@ -57,17 +60,16 @@ export const Burger = () => {
   }, [handleModalClose, open, pathname]);
 
   return (
-    <>
-      <button ref={anchorEl} type="button" className={cn('', { open, closing })} onClick={handleToggleOpen}>
-        меню
+    <div className={cn('')}>
+      <button ref={anchorEl} type="button" className={cn('button', { open, closing })} onClick={handleToggleOpen}>
+        <span className={cn('button-text')}>Меню</span>
+        <CloseIcon className={cn('button-icon')} alt={'Закрыть меню'} />
       </button>
-      <div className={cn('dropdown', { show: open, closing })}>
-        <nav className={cn('nav')} />
 
-        <div className={cn('footer')}>
-          <div className={cn('contacts')} />
-        </div>
+      <div className={cn('dropdown', { show: open, closing })}>
+        <Navigation />
+        <OrderBtn />
       </div>
-    </>
+    </div>
   );
 };

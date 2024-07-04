@@ -1,5 +1,8 @@
+import { Footer } from '@/src/components/Footer';
 import { makeCn } from '@/src/utils';
 import { Metadata } from 'next';
+import './page.scss';
+import { OrderForm } from '@/src/components/OrderForm';
 
 export const metadata: Metadata = {
   title: 'Поярче',
@@ -11,56 +14,8 @@ const cn = makeCn('from-page');
 export default async function page() {
   return (
     <main className={cn()}>
-        <p>from</p>
-        <p>from</p>
-        <p>from</p>
-        <p>from</p>
-        <p>from</p>
-        <p>from</p>
-        <p>from</p>
-        <p>from</p>
-        <p>from</p>
-        <p>from</p>
-        <p>from</p>
-        <p>from</p>
-        <p>from</p>
-        <p>from</p>
-        <p>from</p>
-        <p>from</p>
-        <p>from</p>
-        <p>from</p>
-        <p>from</p>
-        <p>from</p>
-        <p>from</p>
-        <p>from</p>
-        <p>from</p>
-        <p>from</p>
-        <p>from</p>
-        <p>from</p>
-        <p>from</p>
-        <p>from</p>
-        <p>from</p>
-        <p>from</p>
-        <p>from</p>
-        <p>from</p>
-        <p>from</p>
-        <p>from</p>
-        <p>from</p>
-        <p>from</p>
-        <p>from</p>
-        <p>from</p>
-        <p>from</p>
-        <p>from</p>
-        <p>from</p>
-        <p>from</p>
-        <p>from</p>
-        <p>from</p>
-        <p>from</p>
-        <p>from</p>
-        <p>from</p>
-        <p>from</p>
-        <p>from</p>
-       
-      </main>
+      <OrderForm />
+      <Footer />
+    </main>
   );
 }

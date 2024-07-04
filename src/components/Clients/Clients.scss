@@ -12,6 +12,11 @@
     height: rem(60);
     object-fit: cover;
 
+    @include md {
+      width: rem(40);
+      height: rem(40);
+    }
+
   }
 
 }

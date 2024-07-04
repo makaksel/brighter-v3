@@ -7,11 +7,96 @@
 
   margin-bottom: var(--y-spacing--large);
   gap: rem(15);
-  
-  &__card{
+
+  @include md {
+    flex-direction: column;
+    gap: rem(20);
+    margin-bottom: 0;
+  }
+
+  &__card {
+    $card: &;
+    flex: 1 1 49%;
     position: relative;
 
     display: flex;
     flex-direction: column;
+
+    @include md {
+      flex: 1 1 auto;
+    }
+
+    &-btn {
+      position: absolute;
+      top: rem(20);
+      right: rem(20);
+
+      width: rem(60);
+      height: rem(60);
+      background-color: var(--white);
+
+      border: none;
+      border-radius: 100%;
+
+      transition: background-color 0.15s ease-in-out;
+
+      &-icon{
+        transition: stroke 0.15s ease-in-out;
+        stroke: var(--black);
+
+      }
+    }
+
+    &-media {
+      display: flex;
+      max-width: 100%;
+      border-radius: rem(18);
+      overflow: hidden;
+      margin-bottom: var(--y-spacing--small);
+    }
+
+    &-video {
+      display: flex;
+      width: 100% !important;
+      height: rem(622);
+      object-fit: cover;
+
+      &--right {
+        object-position: 99% 100%;
+      }
+
+      @include md {
+        height: rem(500);
+      }
+    }
+
+    &:hover {
+      #{$card}-btn {
+        background-color: var(--orange);
+
+        &-icon{
+          stroke: var(--white);
+        }
+      }
+    }
+  }
+
+  &__ceo {
+    display: flex;
+    align-items: center;
+    gap: rem(20);
+
+    &-img {
+      @include roundedImage;
+    }
+
+    &-subtitle {
+      @include textSmall;
+      color: var(--black-2);
+    }
+
+    @include md {
+      gap: rem(10);
+    }
   }
 }

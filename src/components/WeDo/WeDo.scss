@@ -10,17 +10,6 @@
 
 
   &__item{
-    max-width: max-content;
-
-    display: flex;
-    align-items: center;
-    flex: 0 0 auto;
-
-    padding: rem(20);
-
-    border-radius: rem(100);
-
-    background-color: var(--light-gray);
-    color: var(--black);
+    @include buttonWrp;
   }
 }

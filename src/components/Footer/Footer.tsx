@@ -1,43 +1,24 @@
-import React from 'react';
 import { makeCn } from '@/src/utils';
 import './Footer.scss';
-import { Contacts } from '@/src/components/Contacts';
-
+import { AnimateWrp } from '../AnimateWrp';
 
 const cn = makeCn('footer');
 
-interface FooterProps {
-  noContacts?: boolean;
-  noBrifLink?: boolean;
-}
-
-export const Footer: React.FC<FooterProps> = ({
-  noContacts,
-  noBrifLink,
-}) => <footer
-  className={cn()}>
-
-  {!noBrifLink && <div className={cn('row')}>
-    <div className={cn('col')}></div>
-    <div className={cn('col')}>
+export const Footer = () => (
+  <footer className={cn()}>
+    <AnimateWrp>
+    <div className={cn('docs')}>
+      <a href="/police.pdf" className={cn('link')} download="Политика обработки данных">
+        Политика обработки данных
+      </a>
+      <a href="/operations.pdf" className={cn('link', { disable: true })} download="Пользовательское соглашение">
+        Пользовательское соглашение
+      </a>
     </div>
-  </div>}
-
-  {!noContacts && <Contacts />}
-
-
-  <div className={cn('bottom')}>
-    <div>
-      <span>© 2024 поярче. Все авторские права защищены.</span>
-    </div>
-    <div className={cn('privacy')}>
-      <a href="/police.doc" className={cn('privacy-link')} download="Политика конфиденциальности">Политика
-        конфиденциальности</a>
-      <a href="/sends.docx" className={cn('privacy-link')} download="Согласие на рассылку">Согласие на рассылку</a>
-      <a href="/operations.docx" className={cn('privacy-link')} download="Согласие на обработку ПД">Согласие на
-        обработку ПД</a>
-      <a href="/offert.docx" className={cn('privacy-link')} download="Оферта">Оферта</a>
-    </div>
-  </div>
-
-</footer>;
+    <p className={cn('about')}>
+      ИП Мещеров Максим Владимирович, ИНН 631625080247, ОГРН 322631200130634, Юридический адрес: г.Самара,
+      ул.Ульяновская/ул.Чапаевская, д11/205, кв 106
+    </p>
+    </AnimateWrp>
+  </footer>
+);

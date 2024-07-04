@@ -1,0 +1,13 @@
+
+@import '@/src/styles/functions';
+@import '@/src/styles/media-queries';
+@import '@/src/styles/mixins';
+
+.success-page{
+    margin-bottom: 0;
+
+    &__hero{
+        margin-bottom: rem(329);
+    }
+    
+}

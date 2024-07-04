@@ -2,106 +2,30 @@
 @import "@/src/styles/mixins";
 
 .footer {
-  $this: &;
-  @include container;
+  display: flex;
+  flex-direction: column;
+  margin: auto 0 rem(53);
 
-  position: relative;
-  margin-top: auto;
+  @include textSmall;
 
-  &__row {
-    display: grid;
-    grid-template-columns: 1fr minmax(rem(375), rem(1167));
-    grid-gap: var(--x-spacing);
-
-    @include md{
-      grid-template-columns: 1fr;
-    }
-  }
-
-  &__col {
+  &__docs{
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    align-items: flex-end;
     gap: rem(20);
+    margin-bottom: rem(10);
 
-    position: relative;
-  }
-
-
-  &__brif-link {
-    @include title;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    max-width: 100%;
-    width: 100%;
-
-    margin-bottom: rem(200);
-    gap: rem(10);
-
-
-    &-icon {
-      fill: var(--text-color);
-
-      &.mobile{
-        display: none;
-      }
-
-      @include md{
-        &.mobile{
-          display: block;
-
-          stroke: var(--text-color);
-          stroke-width: rem(2);
-        }
-      }
-    }
-
-    @include md{
-      margin-bottom: rem(50);
-    }
-  }
-
-  &__contacts {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: rem(20);
-
-    margin-bottom: rem(100);
-
-  }
-
-  &__bottom {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap-reverse;
-
-    margin-bottom: rem(50);
-    gap: rem(15) rem(50);
-
-    color: var(--gray-light);
-  }
-
-
-  &__privacy {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: rem(15) rem(50);
-
-    &-link {
-      color: var(--gray-light);
-
-    }
-
-    @include xs{
+    @include md {
       flex-direction: column;
       align-items: flex-start;
+      margin-bottom: rem(20);
     }
   }
 
+  &__link{
+    @include textSmall;
+  }
+
+  &__about{
+    color: var(--black-2);
+  }
 }

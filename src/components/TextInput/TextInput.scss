@@ -3,68 +3,108 @@
 
 .TextInput {
   $this: &;
-
   position: relative;
 
+  $height: rem(60);
+  $top: rem(20);
+  $left: rem(20);
+  $padding: rem(20);
+  $labelBottom: calc(100% - #{rem(31)});
 
-  &__Input {
+  @include md {
+    $height: rem(76)!important;
+    $top: rem(16);
+    $padding: rem(16) rem(20)!important;
+    $labelBottom: calc(100% - #{rem(27)})
+  }
+
+
+  &__input {
     @include textBase;
-    $self: &;
+    @include buttonWrp;
 
-    width: 100%;
-    padding: rem(17) rem(20);
+    position: relative;
 
-    color: var(--text-color);
+    height: $height;
 
-    background-color: transparent;
-    border: none;
-    border-bottom: rem(2) solid rgba(45, 45, 45, 0.6);
+    padding: $padding;
+    align-items: flex-end;
 
-    transition: border .15s ease-in-out, background-color .15s ease-in-out, color .15s ease-in-out;
+    line-height: 100%;
+    opacity: 0;
 
-    &::placeholder,
-    &:-ms-input-placeholder,
-    &::-ms-input-placeholder,
-    { /* Chrome, Firefox, Opera, Safari 10.1+ */
-      color: var(--gray-opacity);
+    transform: translate(0, rem(-15));
+    
+    transition:
+      background-color 0.3s ease,
+      height 0.3s ease,
+      opacity 0.3s ease,
+      transform 0.3s ease;
+
+    &--focus{
+      height: $height;
     }
 
-    &::placeholder {
-      opacity: 1; /* Firefox */
+    &--visible{
+      transform: translate(0, 0);
+      opacity: 1;
     }
 
-    &[value=''] {
+
+    &-native {
+      @include textBase;
+
+      width: auto;
+      display: flex;
+      flex: 1 1 auto;
+
+      border: none;
+      outline: none !important;
       background-color: transparent;
-    }
-
-
-    &:focus {
-      //border-color: var(--light-600);
-      outline: none;
-    }
-
-    &--error {
-      border: rem(2) solid var(--red) !important;
-      color: var(--red) !important;
+  
+      &:focus + #{$this}__label,
+      &:not(:placeholder-shown) + #{$this}__label {
+        top: $top;
+        left: $left;
+        bottom: $labelBottom;
+        font-size: rem(11);
+        line-height: 100%;
+      }
 
       &::placeholder,
       &:-ms-input-placeholder,
-      &::-ms-input-placeholder,
-      { /* Chrome, Firefox, Opera, Safari 10.1+ */
-        color: var(--red);
+      &::-ms-input-placeholder {
+        /* Chrome, Firefox, Opera, Safari 10.1+ */
+        color: var(--gray-opacity);
+      }
+  
+      &::placeholder {
+        opacity: 1; /* Firefox */
       }
     }
   }
 
-  &--error {
-
+  &__label {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    bottom: 0;
+    color: var(--black-2);
+    left: $left;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    
   }
 
-  &__Message {
+  &__hidden {
+    visibility: hidden;
     position: absolute;
-
-    color: var(--error);
-    margin-left: rem(15);
-    margin-top: rem(5);
+    white-space: nowrap;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    padding: $padding;
   }
 }

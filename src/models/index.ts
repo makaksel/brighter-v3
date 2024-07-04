@@ -26,3 +26,11 @@ export interface MeshCard {
   media: React.ReactNode | React.ReactNode[];
   ceo: CEO;
 }
+
+export interface FormData { 
+  name: string;
+  email: string;
+  phone: string;
+  telegram: string;
+  comment: string;
+}
