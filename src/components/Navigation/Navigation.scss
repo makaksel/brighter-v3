@@ -1,27 +1,35 @@
-@import "@/src/styles/functions";
-@import "@/src/styles/media-queries";
-@import "@/src/styles/mixins";
+@import '@/src/styles/functions';
+@import '@/src/styles/media-queries';
+@import '@/src/styles/mixins';
 
 .navigation {
+  display: flex;
+  align-items: flex-end;
+
+  margin-bottom: rem(185);
+
+  @include md {
+    align-items: flex-start;
+    margin-bottom: rem(178);
+  }
+
+  &__nav {
     display: flex;
-    align-items: flex-end;
-    
-    margin-bottom: rem(185);
+    flex-direction: column;
+    align-items: flex-start;
 
-    &__nav{
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-    
-        gap: rem(15);
-    
-        position: sticky;
-        bottom: rem(50); 
-    }
+    gap: rem(15);
 
-    &__link{
-        @include button;
+    position: sticky;
+    bottom: rem(50);
+
+    @include md {
+      position: relative;
+      bottom: auto;
     }
- 
-    
+  }
+
+  &__link {
+    @include button;
+  }
 }

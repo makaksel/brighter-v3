@@ -9,5 +9,11 @@
   top: rem(20);
 
   margin-left: auto;
-          z-index: 56;
+  z-index: 56;
+
+  @include md {
+    position: relative;
+    top: auto;
+    margin-left: 0;
+  }
 }

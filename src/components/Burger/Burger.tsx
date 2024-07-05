@@ -1,25 +1,32 @@
 'use client';
 
 import { useCallback, useEffect, useRef, useState } from 'react';
-import { usePathname } from 'next/navigation';
+import { useParams, usePathname } from 'next/navigation';
 import './Burger.scss';
 import { makeCn } from '@/src/utils';
 import CloseIcon from '@/src/resources/icons/crest.svg';
-import { OrderBtn } from '../OrderBtn';
 import { Navigation } from '../Navigation';
+import { OrderBtn } from '../OrderBtn';
+import { HeaderLogoText } from '../Header/HeaderLogoText';
 
 export const cn = makeCn('burger');
 
 export const Burger = () => {
   const pathname = usePathname();
+  const params = useParams();
+
   const pastPath = useRef<string>(pathname);
+  const pastHash = useRef<string>('');
 
   const anchorEl = useRef<HTMLButtonElement | null>(null);
+
   const [open, setOpen] = useState(false);
   const [closing, setClosing] = useState(false);
 
   const handleChangeOverflowBody = useCallback((value: string) => {
-    document.body.style.overflow = value;
+    const app = document.getElementById('app');
+    if (!app) return;
+    app.style.overflow = value;
   }, []);
 
   useEffect(
@@ -59,6 +66,17 @@ export const Burger = () => {
     }
   }, [handleModalClose, open, pathname]);
 
+  useEffect(() => {
+    if (open) {
+      if(pastHash.current !== window.location.hash) {
+        pastHash.current = window.location.hash;
+        handleModalClose();
+      }
+    } else {
+      pastHash.current = window.location.hash;
+    }
+  }, [handleModalClose, open, params]);
+
   return (
     <div className={cn('')}>
       <button ref={anchorEl} type="button" className={cn('button', { open, closing })} onClick={handleToggleOpen}>
@@ -66,7 +84,8 @@ export const Burger = () => {
         <CloseIcon className={cn('button-icon')} alt={'Закрыть меню'} />
       </button>
 
-      <div className={cn('dropdown', { show: open, closing })}>
+      <div className={cn('dropdown', { open, closing })}>
+        <HeaderLogoText className={'mobile'} />
         <Navigation />
         <OrderBtn />
       </div>

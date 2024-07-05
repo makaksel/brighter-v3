@@ -46,7 +46,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
         <TelegrammBanner />
 
-        <div className="app">
+        <div className="app" id="app">
           <Header />
           <Navigation className="hide-md"/>
           {children}

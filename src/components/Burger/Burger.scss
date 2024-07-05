@@ -46,9 +46,26 @@
 
   &__dropdown {
     display: none;
-  }
+    flex-direction: column;
 
-  @include md {
-    margin-bottom: rem(60);
+    position: fixed;
+    top: rem(116);
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--white);
+
+    padding: 0 var(--x-spacing) rem(50);
+
+    overflow-y: auto;
+    z-index: 999;
+    
+    .mobile{
+      margin-bottom: rem(100)!important;
+    }
+
+    &--open{
+      display: flex;
+    }
   }
 }
