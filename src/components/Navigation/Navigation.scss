@@ -6,11 +6,8 @@
   display: flex;
   align-items: flex-end;
 
-  margin-bottom: rem(185);
-
   @include md {
     align-items: flex-start;
-    margin-bottom: rem(178);
   }
 
   &__nav {

@@ -6,6 +6,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import './Header.scss';
 import { HeaderLogoText } from './HeaderLogoText';
+import { OrderBtn } from '../OrderBtn';
 
 export const cn = makeCn('header');
 
@@ -22,6 +23,8 @@ export const Header = () => {
           </div>
 
           <Burger />
+
+          <OrderBtn className="hide-md" />
         </div>
      
       </header>

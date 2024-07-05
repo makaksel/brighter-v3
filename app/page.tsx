@@ -3,7 +3,6 @@ import { Clients } from '@/src/components/Clients';
 import { Contacts } from '@/src/components/Contacts';
 import { Hero } from '@/src/components/Hero';
 import { Meshs } from '@/src/components/Meshs';
-import { OrderBtn } from '@/src/components/OrderBtn';
 import { WeDo } from '@/src/components/WeDo';
 import { anchors } from '@/src/data';
 import { makeCn } from '@/src/utils';
@@ -28,7 +27,6 @@ export default async function page() {
         <Contacts />
       </main>
 
-      <OrderBtn className="hide-md" />
     </>
   );
 }

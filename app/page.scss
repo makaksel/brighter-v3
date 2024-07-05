@@ -48,7 +48,7 @@ html {
   
   display: grid;
   grid-template-rows: auto 1fr;
-  grid-template-columns: 1fr minmax(auto, rem(804)) 1fr;
+  grid-template-columns: 1fr minmax(auto, rem(804)) minmax(rem(161), 1fr);
   grid-gap: 0 var(--x-spacing);
 
   padding: 0 var(--x-spacing);

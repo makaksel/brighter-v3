@@ -5,9 +5,6 @@
 .order-btn {
   @include orangeButton;
 
-  position: sticky;
-  top: rem(20);
-
   margin-left: auto;
   z-index: 56;
 
@@ -15,5 +12,6 @@
     position: relative;
     top: auto;
     margin-left: 0;
+    margin-top: rem(178);
   }
 }
