@@ -31,17 +31,12 @@ export const Burger = () => {
 
   const handleModalOpen = useCallback(() => {
     setOpen(true);
-
     handleChangeOverflowBody('hidden');
   }, [handleChangeOverflowBody]);
 
   const handleModalClose = useCallback(() => {
-    setClosing(true);
-    setTimeout(() => {
-      handleChangeOverflowBody('');
-      setClosing(false);
-      setOpen(false);
-    }, 400);
+    handleChangeOverflowBody('');
+    setOpen(false);
   }, [handleChangeOverflowBody]);
 
   const handleToggleOpen = useCallback(() => {
@@ -54,7 +49,7 @@ export const Burger = () => {
 
   const handleRouteClick = () => {
     handleModalClose();
-  }
+  };
 
   return (
     <div className={cn('')}>
@@ -65,8 +60,8 @@ export const Burger = () => {
 
       <div className={cn('dropdown', { open, closing })}>
         <HeaderLogoText className={'mobile'} />
-        <Navigation onRouteClick={handleRouteClick}/>
-        <OrderBtn isMobile onClick={handleRouteClick}/>
+        <Navigation onRouteClick={handleRouteClick} />
+        <OrderBtn isMobile onClick={handleRouteClick} />
       </div>
     </div>
   );
