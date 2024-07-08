@@ -66,7 +66,7 @@ export const Burger = () => {
       <div className={cn('dropdown', { open, closing })}>
         <HeaderLogoText className={'mobile'} />
         <Navigation onRouteClick={handleRouteClick}/>
-        <OrderBtn isMobile/>
+        <OrderBtn isMobile onClick={handleRouteClick}/>
       </div>
     </div>
   );
