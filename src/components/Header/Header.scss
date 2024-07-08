@@ -8,7 +8,7 @@
   grid-column: 1/4;
 
   position: sticky;
-  top: 0;
+  top: rem(90);
 
   &__main {
     min-width: rem(1);
@@ -16,9 +16,6 @@
 
     display: flex;
     justify-content: space-between;
-
-    padding-top: rem(20);
-    padding-bottom: rem(30);
 
     @include md {
       align-items: center;
@@ -29,21 +26,21 @@
   }
 
   &__logo {
+    max-width: rem(174);
+
+    @include md {
+      max-width: rem(138);
+    }
+
     &-link {
       margin-bottom: rem(10);
     }
 
     &-icon {
-      object-fit: cover;
       display: flex;
-      
-      width: rem(173) !important;
+      width: 100%;
       height: auto !important;
-
-      @include md {
-        width: rem(137) !important;
-        height: auto !important;
-      }
+      object-fit: cover;
     }
 
     &-text {
@@ -76,5 +73,7 @@
   @include md {
     background-color: var(--white);
     z-index: 100;
+
+    top: 0;
   }
 }

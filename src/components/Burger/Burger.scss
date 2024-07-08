@@ -15,6 +15,10 @@
     width: rem(97);
     height: rem(59);
 
+    > * {
+      cursor: pointer;
+    }
+
     &-text {
       position: absolute;
       opacity: 1;

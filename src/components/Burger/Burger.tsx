@@ -1,7 +1,6 @@
 'use client';
 
 import { useCallback, useEffect, useRef, useState } from 'react';
-import { useParams, usePathname } from 'next/navigation';
 import './Burger.scss';
 import { makeCn } from '@/src/utils';
 import CloseIcon from '@/src/resources/icons/crest.svg';
@@ -12,12 +11,6 @@ import { HeaderLogoText } from '../Header/HeaderLogoText';
 export const cn = makeCn('burger');
 
 export const Burger = () => {
-  const pathname = usePathname();
-  const params = useParams();
-
-  const pastPath = useRef<string>(pathname);
-  const pastHash = useRef<string>('');
-
   const anchorEl = useRef<HTMLButtonElement | null>(null);
 
   const [open, setOpen] = useState(false);
@@ -59,23 +52,9 @@ export const Burger = () => {
     }
   }, [open, handleModalClose, handleModalOpen]);
 
-  useEffect(() => {
-    if (open && pastPath && pastPath.current !== pathname) {
-      pastPath.current = pathname;
-      handleModalClose();
-    }
-  }, [handleModalClose, open, pathname]);
-
-  useEffect(() => {
-    if (open) {
-      if(pastHash.current !== window.location.hash) {
-        pastHash.current = window.location.hash;
-        handleModalClose();
-      }
-    } else {
-      pastHash.current = window.location.hash;
-    }
-  }, [handleModalClose, open, params]);
+  const handleRouteClick = () => {
+    handleModalClose();
+  }
 
   return (
     <div className={cn('')}>
@@ -86,8 +65,8 @@ export const Burger = () => {
 
       <div className={cn('dropdown', { open, closing })}>
         <HeaderLogoText className={'mobile'} />
-        <Navigation />
-        <OrderBtn />
+        <Navigation onRouteClick={handleRouteClick}/>
+        <OrderBtn isMobile/>
       </div>
     </div>
   );

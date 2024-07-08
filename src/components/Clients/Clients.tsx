@@ -13,10 +13,19 @@ export const Clients = () => {
   return (
     <Section title="Наши клиенты">
       <div className={cn('')}>
-        <Image className={cn('img')} src={Client} alt={'Клиент'} />
-        <Image className={cn('img')} src={Client2} alt={'Клиент'} />
-        <Image className={cn('img')} src={Client3} alt={'Клиент'} />
-        <Image className={cn('img')} src={Client4} alt={'Клиент'} />
+        <div className={cn('img-wrp')}>
+          <Image className={cn('img')} src={Client} alt={'Клиент'} quality={100}/>
+        </div>
+
+        <div className={cn('img-wrp')}>
+          <Image className={cn('img')} src={Client2} alt={'Клиент'} quality={100} />
+        </div>
+        <div className={cn('img-wrp')}>
+          <Image className={cn('img')} src={Client3} alt={'Клиент'} quality={100} />
+        </div>
+        <div className={cn('img-wrp')}>
+          <Image className={cn('img')} src={Client4} alt={'Клиент'} quality={100} />
+        </div>
       </div>
     </Section>
   );

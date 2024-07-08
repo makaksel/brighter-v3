@@ -24,7 +24,6 @@ const list: MeshCard[] = [
         loop
         playsInline
         preload="auto"
-        no-controls
         muted
       />
     ),
@@ -45,7 +44,6 @@ const list: MeshCard[] = [
         loop
         playsInline
         preload="auto"
-        no-controls
         muted
       />
     ),

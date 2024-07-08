@@ -1,16 +1,24 @@
+'use client';
+
 import { makeCn } from '@/src/utils';
 import Link from 'next/link';
 import './OrderBtn.scss';
 import { routerLinks } from '@/src/data';
+import { usePathname } from 'next/navigation';
 
 const cn = makeCn('order-btn');
 
 interface OrderBtnProps {
   className?: string;
+  isMobile?: boolean;
 }
 
-export const OrderBtn: React.FC<OrderBtnProps> = ({className}) => {
+export const OrderBtn: React.FC<OrderBtnProps> = ({className, isMobile}) => {
+  const pathname = usePathname();
+
+  if(pathname !== '/' && !isMobile) return null;
+
   return (
-    <Link className={cn('', [className])} href={routerLinks.form}>Заказать</Link>
+    <Link className={cn('', {isMobile}, [className])} href={routerLinks.form}>Заказать</Link>
   );
 };

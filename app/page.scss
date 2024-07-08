@@ -77,10 +77,6 @@ body {
   
   background-color: var(--white);
   overflow: hidden;
-
-
-  -webkit-font-smoothing: antialiased;
-  font-smoothing: always;
 }
 
 main {
@@ -91,7 +87,12 @@ main {
 
   color: var(--black);
   scroll-behavior: smooth;
+  
+  top: rem(-19);
 
+  @include md {
+    top: 0
+  }
 }
 
 

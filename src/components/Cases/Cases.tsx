@@ -37,12 +37,12 @@ export const Cases = () => {
       media: (
         <div className={cnCase('media-custom', ['first'])}>
           <div className={cnCase('media-custom-row')}>
-            <Image src={CaseImg11} className={cnCase('media-img')} alt={`SegmentFinance`} />
-            <Image src={CaseImg12} className={cnCase('media-img')} alt={`SegmentFinance`} />
+            <Image src={CaseImg11} className={cnCase('media-img')} alt={`SegmentFinance`} quality={100}/>
+            <Image src={CaseImg12} className={cnCase('media-img')} alt={`SegmentFinance`} quality={100}/>
           </div>
           <div className={cnCase('media-custom-row')}>
-            <Image src={CaseImg13} className={cnCase('media-img')} alt={`SegmentFinance`} />
-            <Image src={CaseImg14} className={cnCase('media-img')} alt={`SegmentFinance`} />
+            <Image src={CaseImg13} className={cnCase('media-img')} alt={`SegmentFinance`} quality={100}/>
+            <Image src={CaseImg14} className={cnCase('media-img')} alt={`SegmentFinance`} quality={100}/>
           </div>
         </div>
       ),
@@ -60,8 +60,10 @@ export const Cases = () => {
       media: (
         <div className={cnCase('media-custom', ['second'])}>
           <div className={cnCase('media-custom-row')}>
-            <Image src={CaseImg21} className={cnCase('media-img')} alt={`Safe Wallet`} />
-            <Image src={CaseImg22} className={cnCase('media-img')} alt={`Safe Wallet`} />
+            <Image src={CaseImg21} className={cnCase('media-img')} alt={`Safe Wallet`} quality={100}
+    
+      />
+            <Image src={CaseImg22} className={cnCase('media-img')} alt={`Safe Wallet`} quality={100}/>
           </div>
           <div className={cnCase('media-custom-row')}>
             <video
@@ -71,7 +73,7 @@ export const Cases = () => {
               loop
               playsInline
               preload="auto"
-              no-controls
+            
               muted
             />
           </div>
@@ -84,9 +86,9 @@ export const Cases = () => {
       headerText: 'Продумали логику и путь юзера в личном<br/> кабинете криптообменника',
       media: (
         <div className={cnCase('media-custom', ['third'])}>
-          <Image src={CaseImg31} className={cnCase('media-img')} alt={`Криптообменник`} />
-          <Image src={CaseImg32} className={cnCase('media-img')} alt={`Криптообменник`} />
-          <Image src={CaseImg33} className={cnCase('media-img')} alt={`Криптообменник`} />
+          <Image src={CaseImg31} className={cnCase('media-img')} alt={`Криптообменник`} quality={100}/>
+          <Image src={CaseImg32} className={cnCase('media-img')} alt={`Криптообменник`} quality={100}/>
+          <Image src={CaseImg33} className={cnCase('media-img')} alt={`Криптообменник`} quality={100}/>
         </div>
       ),
     },
@@ -103,11 +105,11 @@ export const Cases = () => {
       media: (
         <div className={cnCase('media-custom', ['fourth'])}>
           <div className={cnCase('media-custom-row')}>
-            <Image src={CaseImg41} className={cnCase('media-img')} alt={`ИТ-решения от компании IN.TOP`} />
+            <Image src={CaseImg41} className={cnCase('media-img')} alt={`ИТ-решения от компании IN.TOP`} quality={100}/>
           </div>
           <div className={cnCase('media-custom-row')}>
-            <Image src={CaseImg42} className={cnCase('media-img')} alt={`ИТ-решения от компании IN.TOP`} />
-            <Image src={CaseImg43} className={cnCase('media-img')} alt={`ИТ-решения от компании IN.TOP`} />
+            <Image src={CaseImg42} className={cnCase('media-img')} alt={`ИТ-решения от компании IN.TOP`} quality={100}/>
+            <Image src={CaseImg43} className={cnCase('media-img')} alt={`ИТ-решения от компании IN.TOP`} quality={100}/>
           </div>
         </div>
       ),

@@ -8,14 +8,20 @@
 
   &__img{
     display: flex;
-    width: rem(60);
-    height: rem(60);
+    
+    width: 100%;
+    height: auto;
     object-fit: cover;
 
-    @include md {
-      width: rem(40);
-      height: rem(40);
+    &-wrp{
+      display: flex;
+      max-width: rem(60);
+
+      @include md {
+        max-width: rem(40);
+      }
     }
+
 
   }
 

@@ -96,7 +96,7 @@ export const TextInput: React.FC<TextInputProps> = (props) => {
         id={`input-${name}`}
       />
       {label && (
-        <label className={cn('label')} htmlFor={`input-${name}`}>
+        <label className={cn('label', {focus})} htmlFor={`input-${name}`}>
           {label}
         </label>
       )}
