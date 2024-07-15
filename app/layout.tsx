@@ -1,6 +1,4 @@
 import { Header } from '@/src/components/Header';
-import { Navigation } from '@/src/components/Navigation';
-import { TelegrammBanner } from '@/src/components/TelegrammBanner';
 import type { Metadata } from 'next';
 import { Onest } from 'next/font/google';
 import Head from 'next/head';
@@ -44,13 +42,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           </noscript>
         )}
 
-        <TelegrammBanner />
-
-        <div className="app" id="app">
-          <Header />
-          <Navigation className="hide-md"/>
-          {children}
-        </div>
+        <Header />
+        {children}
       </body>
     </html>
   );

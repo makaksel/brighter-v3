@@ -3,7 +3,7 @@
 
 .burger {
   $this: &;
-  flex: 0 0 auto;
+  margin-left: auto;
 
   &__button {
     @include button;
@@ -53,13 +53,13 @@
     flex-direction: column;
 
     position: fixed;
-    top: rem(116);
+    top: rem(79);
     left: 0;
     right: 0;
     bottom: 0;
     background-color: var(--white);
 
-    padding: 0 var(--x-spacing) rem(50);
+    padding: rem(103) var(--x-spacing) rem(50);
 
     overflow-y: auto;
     z-index: 999;

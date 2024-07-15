@@ -5,8 +5,6 @@ import './Burger.scss';
 import { makeCn } from '@/src/utils';
 import CloseIcon from '@/src/resources/icons/crest.svg';
 import { Navigation } from '../Navigation';
-import { OrderBtn } from '../OrderBtn';
-import { HeaderLogoText } from '../Header/HeaderLogoText';
 
 export const cn = makeCn('burger');
 
@@ -59,10 +57,9 @@ export const Burger = () => {
       </button>
 
       <div className={cn('dropdown', { open, closing })}>
-        <HeaderLogoText className={'mobile'} />
         <Navigation onRouteClick={handleRouteClick} />
-        <OrderBtn isMobile onClick={handleRouteClick} />
       </div>
     </div>
   );
+
 };

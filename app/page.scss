@@ -41,28 +41,8 @@
 
 html {
   scroll-behavior: smooth;
-}
 
-.app {  
-  height: calc(100vh - #{rem(40)});
-  
-  display: grid;
-  grid-template-rows: auto 1fr;
-  grid-template-columns: 1fr minmax(auto, rem(804)) minmax(rem(161), 1fr);
-  grid-gap: 0 var(--x-spacing);
-
-  padding: 0 var(--x-spacing);
-
-  overflow-x: hidden;
-  scroll-behavior: smooth;
-
-  scroll-padding-top: rem(60);
-
-  @include md {
-    display: flex;
-    flex-direction: column;
-    scroll-padding-top: rem(120);
-  }
+  scroll-padding-top: rem(120);
 }
 
 
@@ -72,11 +52,10 @@ body {
   display: flex;
   flex-direction: column;
 
-  height: 100vh;
   max-width: 100vw;
   
   background-color: var(--white);
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 main {
@@ -87,12 +66,9 @@ main {
 
   color: var(--black);
   scroll-behavior: smooth;
-  
-  top: rem(-19);
 
-  @include md {
-    top: 0
-  }
+  max-width: rem(804);
+  margin: 0 auto;
 }
 
 
