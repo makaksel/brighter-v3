@@ -1,6 +1,5 @@
 import { makeCn } from '@/src/utils';
 import { Team } from '@/src/components/Team';
-import { Ton } from '@/src/components/Ton';
 import './Hero.scss';
 
 const cn = makeCn('hero');
@@ -24,7 +23,6 @@ export const Hero: React.FC<HeroProps> = ({ title, id, largeGap, className }) =>
       </div>
 
       <Team />
-      <Ton />
 
     </section>
   );
