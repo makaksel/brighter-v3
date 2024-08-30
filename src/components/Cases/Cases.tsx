@@ -33,7 +33,7 @@ export const Cases = () => {
     {
       id: 3,
       logo: Client2,
-      headerText: 'Продумали логику и путь юзера в личном<br/> кабинете криптообменника',
+      headerText: 'Разработали первый в России криптообменник в ТМА, который сделан с любовью к юзерам',
       media: (
         <div className={cnCase('media-custom', ['third'])}>
           <div className={cnCase('media-custom-row')}>

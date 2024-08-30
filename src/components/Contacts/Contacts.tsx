@@ -2,12 +2,14 @@ import { makeCn } from '@/src/utils';
 import './Contacts.scss';
 import { Section } from '@/src/components/Section';
 import {
-  EMAIL,
-  TELEGRAM_CANNEL_FOOTER_LABEL,
-  TELEGRAM_CANNEL_FOOTER_LINK,
   anchors,
-  routerLinks,
-  TELEGRAMM, BEHANCE, DRIBBBLE, VC
+  BEHANCE,
+  DRIBBBLE,
+  EMAIL,
+  TELEGRAM_CHANEL_MAIN_LINK,
+  TELEGRAM_CHANNEL_FOOTER_LABEL,
+  TELEGRAM_CHANNEL_FOOTER_LINK,
+  VC
 } from '@/src/data';
 import Link from 'next/link';
 import Image from "next/image";
@@ -21,8 +23,8 @@ const cn = makeCn('contacts');
 const list = [
   {
     id: 1,
-    link: TELEGRAM_CANNEL_FOOTER_LINK,
-    label: TELEGRAM_CANNEL_FOOTER_LABEL,
+    link: TELEGRAM_CHANNEL_FOOTER_LINK,
+    label: TELEGRAM_CHANNEL_FOOTER_LABEL,
   },
   {
     id: 2,
@@ -37,7 +39,7 @@ export const Contacts = () => {
     <Section title="Наши контакты" id={anchors.contacts} noMargin>
       <div className={cn('')}>
         <div className={cn('img-wrp')}>
-          <Link className={'stretched-link'} href={TELEGRAMM} />
+          <Link className={'stretched-link'} href={TELEGRAM_CHANEL_MAIN_LINK} />
           <Image className={cn('img')} src={telegramm} alt={'telegramm'} quality={100}/>
         </div>
         <div className={cn('img-wrp')}>
