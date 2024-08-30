@@ -4,7 +4,7 @@ import { Section } from '@/src/components/Section';
 
 const cn = makeCn('we-do');
 
-const list = ['Web App', 'Креативы', 'Приложения', 'Иллюстрации', 'Сайты', '3D', 'Сервисы']
+const list = ['Приложения', 'Web App', 'DeFi сервисы', 'TMA', 'Сайты', 'Айдентика',  '3D', 'Motion']
 
 export const WeDo = () => {
   return (

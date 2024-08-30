@@ -31,6 +31,21 @@ const cn = makeCn('cases');
 export const Cases = () => {
   const list: CaseCard[] = [
     {
+      id: 3,
+      logo: Client2,
+      headerText: 'Продумали логику и путь юзера в личном<br/> кабинете криптообменника',
+      media: (
+        <div className={cnCase('media-custom', ['third'])}>
+          <div className={cnCase('media-custom-row')}>
+            <Image src={CaseImg31} className={cnCase('media-img')} alt={`Криптообменник`} quality={100}/>
+            <Image src={CaseImg32} className={cnCase('media-img')} alt={`Криптообменник`} quality={100}/>
+          </div>
+
+          <Image src={CaseImg33} className={cnCase('media-img')} alt={`Криптообменник`} quality={100}/>
+        </div>
+      ),
+    },
+    {
       id: 1,
       logo: Client4,
       headerText: 'Разрабатываем и развиваем дизайн<br/> составляющую SegmentFinance',
@@ -77,18 +92,6 @@ export const Cases = () => {
               muted
             />
           </div>
-        </div>
-      ),
-    },
-    {
-      id: 3,
-      logo: Client2,
-      headerText: 'Продумали логику и путь юзера в личном<br/> кабинете криптообменника',
-      media: (
-        <div className={cnCase('media-custom', ['third'])}>
-          <Image src={CaseImg31} className={cnCase('media-img')} alt={`Криптообменник`} quality={100}/>
-          <Image src={CaseImg32} className={cnCase('media-img')} alt={`Криптообменник`} quality={100}/>
-          <Image src={CaseImg33} className={cnCase('media-img')} alt={`Криптообменник`} quality={100}/>
         </div>
       ),
     },

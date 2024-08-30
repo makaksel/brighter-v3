@@ -8,6 +8,19 @@
 
   gap: rem(10);
 
+  margin-top: rem(30);
+
+  &__img{
+    width: 100%;
+    height: auto;
+    display: flex;
+    object-fit: cover;
+
+    &-wrp{
+      max-width: rem(60);
+      position: relative;
+    }
+  }
 
   &__link{
     @include button;

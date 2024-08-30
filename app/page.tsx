@@ -19,7 +19,7 @@ export default async function page() {
   return (
     <>
       <main className={cn()}>
-        <Hero title="Создание цифровых продуктов для сrypto-tech" id={anchors.about} />
+        <Hero title="Создание продуктового дизайна для Web3" id={anchors.about} />
         <Clients />
         <WeDo />
         <Cases />

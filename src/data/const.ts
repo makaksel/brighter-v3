@@ -10,3 +10,15 @@ export const EMAIL = 'hello@poyarche.ru';
 
 export const telegramBotId = `7181592544:AAHzvCJWX70eMiTQvdh_KqcgklkRz2QdFbc`;
 export const telegramChatId = -4158410028;
+
+
+export const TELEGRAMM = 'https://t.me/poyarcheru';
+export const BEHANCE = '  https://www.behance.net/74845a26';
+export const DRIBBBLE = 'https://dribbble.com/Hello_poyarche?onboarding=true&designer=true';
+export const VC = 'https://vc.ru/u/991332-studiya-poyarche';
+
+
+
+
+
+
